@@ -1,0 +1,24 @@
+[dlgFontPreferences]
+dlgFontPreferences={class=dialog, label=Font Preferences, app_name=gnome-font-properties}
+btnTerminalfont:={class=push_button, label_by=Terminal font:}
+btnWindowtitlefont:={class=push_button, label_by=Window title font:}
+btnDesktopfont:={class=push_button, label_by=Desktop font:}
+btnApplicationfont:={class=push_button, label_by=Application font:}
+rdoSubpixelsmoothing(LCDs)={class=radio_button, label=Subpixel smoothing (LCDs)}
+rdoBestcontrast={class=radio_button, label=Best contrast}
+rdoBestshapes={class=radio_button, label=Best shapes}
+btnDetails={class=push_button, label=Details...}
+rdoMonochrome={class=radio_button, label=Monochrome}
+btnClose={class=push_button, label=Close}
+btnHelp={class=push_button, label=Help}
+
+[dlgPickaFont]
+dlgPickaFont={class=fontchooser, label=Pick a Font, app_name=gnome-font-properties}
+tblSize={class=table, label_by=Size:}
+tblStyle={class=table, label_by=Style:}
+tblFamily={class=table, label_by=Family:}
+txtSize={class=text, label_by=Size:}
+txtPreview={class=text, label_by=Preview:}
+btnOK={class=push_button, label=OK}
+btnApply={class=push_button, label=Apply}
+btnCancel={class=push_button, label=Cancel}

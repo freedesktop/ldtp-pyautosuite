@@ -86,6 +86,7 @@ btnCopy={class=push_button, label=Copy}
 btnPaste={class=push_button, label=Paste}
 btnFind={class=push_button, label=Find}
 btnReplace={class=push_button, label=Replace}
+txt={class=text}
 
 [dlgDocumentStatistics]
 dlgDocumentStatistics={class=dialog, label=Document Statistics, app_name=gedit}

@@ -1,0 +1,569 @@
+[Calculator-Basic]
+Calculator-Basic={class=frame, app_name=gcalctool}
+mnuCalculator={class=menu, label=Calculator}
+mnuQuit={class=menu_item, label=Quit}
+mnuEmpty={class=menu_item, label=Empty}
+mnuEdit={class=menu, label=Edit}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuInsertASCIIValue={class=menu_item, label=Insert ASCII Value...}
+mnuEmpty={class=menu_item, label=Empty}
+mnuView={class=menu, label=View}
+mnuBasic={class=check_menu_item, label=Basic}
+mnuAdvanced={class=check_menu_item, label=Advanced}
+mnuFinancial={class=check_menu_item, label=Financial}
+mnuScientific={class=check_menu_item, label=Scientific}
+mnuShowTrailingZeroes={class=check_menu_item, label=Show Trailing Zeroes}
+mnuShowThousandsSeparator={class=check_menu_item, label=Show Thousands Separator}
+mnuMemoryRegisters={class=check_menu_item, label=Memory Registers}
+mnuUseArithmeticPrecedence={class=check_menu_item, label=Use Arithmetic Precedence}
+mnuEmpty={class=menu_item, label=Empty}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuAbout={class=menu_item, label=About}
+mnuEmpty={class=menu_item, label=Empty}
+btn={class=push_button, label=    }
+btnSum-of-theyears'-digitsdepreciation[Y]={class=push_button, label=Sum-of-the years'-digits depreciation [Y]}
+btn={class=push_button, label=    }
+btnStraight-linedepreciation[l]={class=push_button, label=Straight-line depreciation [l]}
+btn={class=push_button, label=    }
+btnPeriodicinterestrate[T]={class=push_button, label=Periodic interest rate [T]}
+btn={class=push_button, label=    }
+btnPresentvalue[p]={class=push_button, label=Present value [p]}
+btn={class=push_button, label=    }
+btnPeriodicpayment[P]={class=push_button, label=Periodic payment [P]}
+btn={class=push_button, label=    }
+btnFuturevalue[v]={class=push_button, label=Future value [v]}
+btn={class=push_button, label=    }
+btnDouble-decliningdepreciation[d]={class=push_button, label=Double-declining depreciation [d]}
+btnPaymentperiod[T]={class=push_button, label=Payment period [T]}
+btnCompoundingterm[m]={class=push_button, label=Compounding term [m]}
+rdoSettrigonometrictypetodegrees={class=radio_button, label=Set trigonometric type to degrees}
+rdoSettrigonometrictypetogradians={class=radio_button, label=Set trigonometric type to gradians}
+rdoSettrigonometrictypetoradians={class=radio_button, label=Set trigonometric type to radians}
+rdoSetnumericbasetobinary={class=radio_button, label=Set numeric base to binary (base 2)}
+rdoSetnumericbasetooctal={class=radio_button, label=Set numeric base to octal (base 8)}
+rdoSetnumericbasetodecimal={class=radio_button, label=Set numeric base to decimal (base 10)}
+rdoSetnumericbasetohexadecimal={class=radio_button, label=Set numeric base to hexadecimal (base 16)}
+chkSetinverseoptionfortrigonometricfunctions={class=check_box, label=Set inverse option for trigonometric functions}
+chkSethyperbolicoptionfortrigonometricfunctions={class=check_box, label=Set hyperbolic option for trigonometric functions}
+rdoSetdisplaytypetoengineeringformat={class=radio_button, label=Set display type to engineering format}
+rdoSetdisplaytypetofixed-pointformat={class=radio_button, label=Set display type to fixed-point format}
+rdoSetdisplaytypetoscientificformat={class=radio_button, label=Set display type to scientific format}
+btnBitwiseXNOR[n]={class=push_button, label=Bitwise XNOR [n]}
+btnBase10log[G]={class=push_button, label=Base 10 log [G]}
+btnRandomnumber={class=push_button, label=Random number}
+btnAccuracy={class=push_button, label=Accuracy}
+btnBitwiseXOR[^]={class=push_button, label=Bitwise XOR [^]}
+btnNaturallog[N]={class=push_button, label=Natural log [N]}
+btnFactorial={class=push_button, label=Factorial}
+btn={class=push_button, label=    }
+btnBitwiseNOT[~]={class=push_button, label=Bitwise NOT [~]}
+btnTangent[L]={class=push_button, label=Tangent [L]}
+btnXtothey={class=push_button, label=X to the y}
+btn={class=push_button, label=    }
+btnBitwiseAND[&]={class=push_button, label=Bitwise AND [&]}
+btnSine[K]={class=push_button, label=Sine [K]}
+btnTentothex={class=push_button, label=Ten to the x}
+btn={class=push_button, label=    }
+btnbitwiseOR[!]={class=push_button, label=bitwise OR [!]}
+btnCosine[J]={class=push_button, label=Cosine [J]}
+btnEtothex={class=push_button, label=E to the x}
+btn32bitunsignedinteger={class=push_button, label=32 bit unsigned integer}
+btnHexadecimaldigitC={class=push_button, label=Hexadecimal digit C}
+btnHexadecimaldigitF={class=push_button, label=Hexadecimal digit F}
+btnExponential={class=push_button, label=Exponential}
+btn16bitunsignedinteger={class=push_button, label=16 bit unsigned integer}
+btnHexadecimaldigitB={class=push_button, label=Hexadecimal digit B}
+btnHexadecimaldigitE={class=push_button, label=Hexadecimal digit E}
+btnUser-definedfunctions[f]={class=push_button, label=User-defined functions [f]}
+btnShiftright={class=push_button, label=Shift right}
+btnHexadecimaldigitA={class=push_button, label=Hexadecimal digit A}
+btnHexadecimaldigitD={class=push_button, label=Hexadecimal digit D}
+btnConstants[#]={class=push_button, label=Constants [#]}
+btnShiftleft={class=push_button, label=Shift left}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnClear={class=push_button, label=Clear}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnClearentry={class=push_button, label=Clear entry}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+btnBackspace={class=push_button, label=Backspace}
+btnExchangewithregister={class=push_button, label=Exchange with register}
+btnRetrievefromregister={class=push_button, label=Retrieve from register}
+btnStoretoregister={class=push_button, label=Store to register}
+btnClear={class=push_button, label=Clear}
+btnAbsolutevalue[u]={class=push_button, label=Absolute value [u]}
+btnFractionalportion={class=push_button, label=Fractional portion}
+btnIntegerportion={class=push_button, label=Integer portion}
+btnClearentry={class=push_button, label=Clear entry}
+btnSquare[@]={class=push_button, label=Square [@]}
+btnSquareroot[s]={class=push_button, label=Square root [s]}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnBackspace={class=push_button, label=Backspace}
+btnReciprocal[r]={class=push_button, label=Reciprocal [r]}
+btnPercentage={class=push_button, label=Percentage}
+btnRightbracket={class=push_button, label=Right bracket}
+btnLeftbracket={class=push_button, label=Left bracket}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+
+[Calculator-Scientific]
+Calculator-Scientific={class=frame, app_name=gcalctool}
+mnuCalculator={class=menu, label=Calculator}
+mnuQuit={class=menu_item, label=Quit}
+mnuEmpty={class=menu_item, label=Empty}
+mnuEdit={class=menu, label=Edit}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuInsertASCIIValue={class=menu_item, label=Insert ASCII Value...}
+mnuEmpty={class=menu_item, label=Empty}
+mnuView={class=menu, label=View}
+mnuBasic={class=check_menu_item, label=Basic}
+mnuAdvanced={class=check_menu_item, label=Advanced}
+mnuFinancial={class=check_menu_item, label=Financial}
+mnuScientific={class=check_menu_item, label=Scientific}
+mnuShowTrailingZeroes={class=check_menu_item, label=Show Trailing Zeroes}
+mnuShowThousandsSeparator={class=check_menu_item, label=Show Thousands Separator}
+mnuMemoryRegisters={class=check_menu_item, label=Memory Registers}
+mnuUseArithmeticPrecedence={class=check_menu_item, label=Use Arithmetic Precedence}
+mnuEmpty={class=menu_item, label=Empty}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuAbout={class=menu_item, label=About}
+mnuEmpty={class=menu_item, label=Empty}
+btn={class=push_button, label=    }
+btnSum-of-theyears'-digitsdepreciation[Y]={class=push_button, label=Sum-of-the years'-digits depreciation [Y]}
+btn={class=push_button, label=    }
+btnStraight-linedepreciation[l]={class=push_button, label=Straight-line depreciation [l]}
+btn={class=push_button, label=    }
+btnPeriodicinterestrate[T]={class=push_button, label=Periodic interest rate [T]}
+btn={class=push_button, label=    }
+btnPresentvalue[p]={class=push_button, label=Present value [p]}
+btn={class=push_button, label=    }
+btnPeriodicpayment[P]={class=push_button, label=Periodic payment [P]}
+btn={class=push_button, label=    }
+btnFuturevalue[v]={class=push_button, label=Future value [v]}
+btn={class=push_button, label=    }
+btnDouble-decliningdepreciation[d]={class=push_button, label=Double-declining depreciation [d]}
+btnPaymentperiod[T]={class=push_button, label=Payment period [T]}
+btnCompoundingterm[m]={class=push_button, label=Compounding term [m]}
+rdoSettrigonometrictypetodegrees={class=radio_button, label=Set trigonometric type to degrees}
+rdoSettrigonometrictypetogradians={class=radio_button, label=Set trigonometric type to gradians}
+rdoSettrigonometrictypetoradians={class=radio_button, label=Set trigonometric type to radians}
+rdoSetnumericbasetobinary={class=radio_button, label=Set numeric base to binary (base 2)}
+rdoSetnumericbasetooctal={class=radio_button, label=Set numeric base to octal (base 8)}
+rdoSetnumericbasetodecimal={class=radio_button, label=Set numeric base to decimal (base 10)}
+rdoSetnumericbasetohexadecimal={class=radio_button, label=Set numeric base to hexadecimal (base 16)}
+chkSetinverseoptionfortrigonometricfunctions={class=check_box, label=Set inverse option for trigonometric functions}
+chkSethyperbolicoptionfortrigonometricfunctions={class=check_box, label=Set hyperbolic option for trigonometric functions}
+rdoSetdisplaytypetoengineeringformat={class=radio_button, label=Set display type to engineering format}
+rdoSetdisplaytypetofixed-pointformat={class=radio_button, label=Set display type to fixed-point format}
+rdoSetdisplaytypetoscientificformat={class=radio_button, label=Set display type to scientific format}
+btnBitwiseXNOR[n]={class=push_button, label=Bitwise XNOR [n]}
+btnBase10log[G]={class=push_button, label=Base 10 log [G]}
+btnRandomnumber={class=push_button, label=Random number}
+btnAccuracy={class=push_button, label=Accuracy}
+btnBitwiseXOR[^]={class=push_button, label=Bitwise XOR [^]}
+btnNaturallog[N]={class=push_button, label=Natural log [N]}
+btnFactorial={class=push_button, label=Factorial}
+btn={class=push_button, label=    }
+btnBitwiseNOT[~]={class=push_button, label=Bitwise NOT [~]}
+btnTangent[L]={class=push_button, label=Tangent [L]}
+btnXtothey={class=push_button, label=X to the y}
+btn={class=push_button, label=    }
+btnBitwiseAND[&]={class=push_button, label=Bitwise AND [&]}
+btnSine[K]={class=push_button, label=Sine [K]}
+btnTentothex={class=push_button, label=Ten to the x}
+btn={class=push_button, label=    }
+btnbitwiseOR[!]={class=push_button, label=bitwise OR [!]}
+btnCosine[J]={class=push_button, label=Cosine [J]}
+btnEtothex={class=push_button, label=E to the x}
+btn32bitunsignedinteger={class=push_button, label=32 bit unsigned integer}
+btnHexadecimaldigitC={class=push_button, label=Hexadecimal digit C}
+btnHexadecimaldigitF={class=push_button, label=Hexadecimal digit F}
+btnExponential={class=push_button, label=Exponential}
+btn16bitunsignedinteger={class=push_button, label=16 bit unsigned integer}
+btnHexadecimaldigitB={class=push_button, label=Hexadecimal digit B}
+btnHexadecimaldigitE={class=push_button, label=Hexadecimal digit E}
+btnUser-definedfunctions[f]={class=push_button, label=User-defined functions [f]}
+btnShiftright={class=push_button, label=Shift right}
+btnHexadecimaldigitA={class=push_button, label=Hexadecimal digit A}
+btnHexadecimaldigitD={class=push_button, label=Hexadecimal digit D}
+btnConstants[#]={class=push_button, label=Constants [#]}
+btnShiftleft={class=push_button, label=Shift left}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnClear={class=push_button, label=Clear}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnClearentry={class=push_button, label=Clear entry}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+btnBackspace={class=push_button, label=Backspace}
+btnExchangewithregister={class=push_button, label=Exchange with register}
+btnRetrievefromregister={class=push_button, label=Retrieve from register}
+btnStoretoregister={class=push_button, label=Store to register}
+btnClear={class=push_button, label=Clear}
+btnAbsolutevalue[u]={class=push_button, label=Absolute value [u]}
+btnFractionalportion={class=push_button, label=Fractional portion}
+btnIntegerportion={class=push_button, label=Integer portion}
+btnClearentry={class=push_button, label=Clear entry}
+btnSquare[@]={class=push_button, label=Square [@]}
+btnSquareroot[s]={class=push_button, label=Square root [s]}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnBackspace={class=push_button, label=Backspace}
+btnReciprocal[r]={class=push_button, label=Reciprocal [r]}
+btnPercentage={class=push_button, label=Percentage}
+btnRightbracket={class=push_button, label=Right bracket}
+btnLeftbracket={class=push_button, label=Left bracket}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+
+[Calculator-Advanced]
+Calculator-Advanced={class=frame, app_name=gcalctool}
+mnuCalculator={class=menu, label=Calculator}
+mnuQuit={class=menu_item, label=Quit}
+mnuEmpty={class=menu_item, label=Empty}
+mnuEdit={class=menu, label=Edit}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuInsertASCIIValue={class=menu_item, label=Insert ASCII Value...}
+mnuEmpty={class=menu_item, label=Empty}
+mnuView={class=menu, label=View}
+mnuBasic={class=check_menu_item, label=Basic}
+mnuAdvanced={class=check_menu_item, label=Advanced}
+mnuFinancial={class=check_menu_item, label=Financial}
+mnuScientific={class=check_menu_item, label=Scientific}
+mnuShowTrailingZeroes={class=check_menu_item, label=Show Trailing Zeroes}
+mnuShowThousandsSeparator={class=check_menu_item, label=Show Thousands Separator}
+mnuMemoryRegisters={class=check_menu_item, label=Memory Registers}
+mnuUseArithmeticPrecedence={class=check_menu_item, label=Use Arithmetic Precedence}
+mnuEmpty={class=menu_item, label=Empty}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuAbout={class=menu_item, label=About}
+mnuEmpty={class=menu_item, label=Empty}
+btn={class=push_button, label=    }
+btnSum-of-theyears'-digitsdepreciation[Y]={class=push_button, label=Sum-of-the years'-digits depreciation [Y]}
+btn={class=push_button, label=    }
+btnStraight-linedepreciation[l]={class=push_button, label=Straight-line depreciation [l]}
+btn={class=push_button, label=    }
+btnPeriodicinterestrate[T]={class=push_button, label=Periodic interest rate [T]}
+btn={class=push_button, label=    }
+btnPresentvalue[p]={class=push_button, label=Present value [p]}
+btn={class=push_button, label=    }
+btnPeriodicpayment[P]={class=push_button, label=Periodic payment [P]}
+btn={class=push_button, label=    }
+btnFuturevalue[v]={class=push_button, label=Future value [v]}
+btn={class=push_button, label=    }
+btnDouble-decliningdepreciation[d]={class=push_button, label=Double-declining depreciation [d]}
+btnPaymentperiod[T]={class=push_button, label=Payment period [T]}
+btnCompoundingterm[m]={class=push_button, label=Compounding term [m]}
+rdoSettrigonometrictypetodegrees={class=radio_button, label=Set trigonometric type to degrees}
+rdoSettrigonometrictypetogradians={class=radio_button, label=Set trigonometric type to gradians}
+rdoSettrigonometrictypetoradians={class=radio_button, label=Set trigonometric type to radians}
+rdoSetnumericbasetobinary={class=radio_button, label=Set numeric base to binary (base 2)}
+rdoSetnumericbasetooctal={class=radio_button, label=Set numeric base to octal (base 8)}
+rdoSetnumericbasetodecimal={class=radio_button, label=Set numeric base to decimal (base 10)}
+rdoSetnumericbasetohexadecimal={class=radio_button, label=Set numeric base to hexadecimal (base 16)}
+chkSetinverseoptionfortrigonometricfunctions={class=check_box, label=Set inverse option for trigonometric functions}
+chkSethyperbolicoptionfortrigonometricfunctions={class=check_box, label=Set hyperbolic option for trigonometric functions}
+rdoSetdisplaytypetoengineeringformat={class=radio_button, label=Set display type to engineering format}
+rdoSetdisplaytypetofixed-pointformat={class=radio_button, label=Set display type to fixed-point format}
+rdoSetdisplaytypetoscientificformat={class=radio_button, label=Set display type to scientific format}
+btnBitwiseXNOR[n]={class=push_button, label=Bitwise XNOR [n]}
+btnBase10log[G]={class=push_button, label=Base 10 log [G]}
+btnRandomnumber={class=push_button, label=Random number}
+btnAccuracy={class=push_button, label=Accuracy}
+btnBitwiseXOR[^]={class=push_button, label=Bitwise XOR [^]}
+btnNaturallog[N]={class=push_button, label=Natural log [N]}
+btnFactorial={class=push_button, label=Factorial}
+btn={class=push_button, label=    }
+btnBitwiseNOT[~]={class=push_button, label=Bitwise NOT [~]}
+btnTangent[L]={class=push_button, label=Tangent [L]}
+btnXtothey={class=push_button, label=X to the y}
+btn={class=push_button, label=    }
+btnBitwiseAND[&]={class=push_button, label=Bitwise AND [&]}
+btnSine[K]={class=push_button, label=Sine [K]}
+btnTentothex={class=push_button, label=Ten to the x}
+btn={class=push_button, label=    }
+btnbitwiseOR[!]={class=push_button, label=bitwise OR [!]}
+btnCosine[J]={class=push_button, label=Cosine [J]}
+btnEtothex={class=push_button, label=E to the x}
+btn32bitunsignedinteger={class=push_button, label=32 bit unsigned integer}
+btnHexadecimaldigitC={class=push_button, label=Hexadecimal digit C}
+btnHexadecimaldigitF={class=push_button, label=Hexadecimal digit F}
+btnExponential={class=push_button, label=Exponential}
+btn16bitunsignedinteger={class=push_button, label=16 bit unsigned integer}
+btnHexadecimaldigitB={class=push_button, label=Hexadecimal digit B}
+btnHexadecimaldigitE={class=push_button, label=Hexadecimal digit E}
+btnUser-definedfunctions[f]={class=push_button, label=User-defined functions [f]}
+btnShiftright={class=push_button, label=Shift right}
+btnHexadecimaldigitA={class=push_button, label=Hexadecimal digit A}
+btnHexadecimaldigitD={class=push_button, label=Hexadecimal digit D}
+btnConstants[#]={class=push_button, label=Constants [#]}
+btnShiftleft={class=push_button, label=Shift left}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnClear={class=push_button, label=Clear}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnClearentry={class=push_button, label=Clear entry}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7, instance_index=1}
+btnBackspace={class=push_button, label=Backspace}
+btnExchangewithregister={class=push_button, label=Exchange with register}
+btnRetrievefromregister={class=push_button, label=Retrieve from register}
+btnStoretoregister={class=push_button, label=Store to register}
+btnClear={class=push_button, label=Clear}
+btnAbsolutevalue[u]={class=push_button, label=Absolute value [u]}
+btnFractionalportion={class=push_button, label=Fractional portion}
+btnIntegerportion={class=push_button, label=Integer portion}
+btnClearentry={class=push_button, label=Clear entry}
+btnSquare[@]={class=push_button, label=Square [@]}
+btnSquareroot[s]={class=push_button, label=Square root [s]}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnBackspace={class=push_button, label=Backspace}
+btnReciprocal[r]={class=push_button, label=Reciprocal [r]}
+btnPercentage={class=push_button, label=Percentage}
+btnRightbracket={class=push_button, label=Right bracket}
+btnLeftbracket={class=push_button, label=Left bracket}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7, instance_index=0}
+
+[Calculator-Financial]
+Calculator-Financial={class=frame, app_name=gcalctool}
+mnuCalculator={class=menu, label=Calculator}
+mnuQuit={class=menu_item, label=Quit}
+mnuEmpty={class=menu_item, label=Empty}
+mnuEdit={class=menu, label=Edit}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuInsertASCIIValue={class=menu_item, label=Insert ASCII Value...}
+mnuEmpty={class=menu_item, label=Empty}
+mnuView={class=menu, label=View}
+mnuBasic={class=check_menu_item, label=Basic}
+mnuAdvanced={class=check_menu_item, label=Advanced}
+mnuFinancial={class=check_menu_item, label=Financial}
+mnuScientific={class=check_menu_item, label=Scientific}
+mnuShowTrailingZeroes={class=check_menu_item, label=Show Trailing Zeroes}
+mnuShowThousandsSeparator={class=check_menu_item, label=Show Thousands Separator}
+mnuMemoryRegisters={class=check_menu_item, label=Memory Registers}
+mnuUseArithmeticPrecedence={class=check_menu_item, label=Use Arithmetic Precedence}
+mnuEmpty={class=menu_item, label=Empty}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuAbout={class=menu_item, label=About}
+mnuEmpty={class=menu_item, label=Empty}
+btn={class=push_button, label=    }
+btnSum-of-theyears'-digitsdepreciation[Y]={class=push_button, label=Sum-of-the years'-digits depreciation [Y]}
+btn={class=push_button, label=    }
+btnStraight-linedepreciation[l]={class=push_button, label=Straight-line depreciation [l]}
+btn={class=push_button, label=    }
+btnPeriodicinterestrate[T]={class=push_button, label=Periodic interest rate [T]}
+btn={class=push_button, label=    }
+btnPresentvalue[p]={class=push_button, label=Present value [p]}
+btn={class=push_button, label=    }
+btnPeriodicpayment[P]={class=push_button, label=Periodic payment [P]}
+btn={class=push_button, label=    }
+btnFuturevalue[v]={class=push_button, label=Future value [v]}
+btn={class=push_button, label=    }
+btnDouble-decliningdepreciation[d]={class=push_button, label=Double-declining depreciation [d]}
+btnPaymentperiod[T]={class=push_button, label=Payment period [T]}
+btnCompoundingterm[m]={class=push_button, label=Compounding term [m]}
+rdoSettrigonometrictypetodegrees={class=radio_button, label=Set trigonometric type to degrees}
+rdoSettrigonometrictypetogradians={class=radio_button, label=Set trigonometric type to gradians}
+rdoSettrigonometrictypetoradians={class=radio_button, label=Set trigonometric type to radians}
+rdoSetnumericbasetobinary={class=radio_button, label=Set numeric base to binary (base 2)}
+rdoSetnumericbasetooctal={class=radio_button, label=Set numeric base to octal (base 8)}
+rdoSetnumericbasetodecimal={class=radio_button, label=Set numeric base to decimal (base 10)}
+rdoSetnumericbasetohexadecimal={class=radio_button, label=Set numeric base to hexadecimal (base 16)}
+chkSetinverseoptionfortrigonometricfunctions={class=check_box, label=Set inverse option for trigonometric functions}
+chkSethyperbolicoptionfortrigonometricfunctions={class=check_box, label=Set hyperbolic option for trigonometric functions}
+rdoSetdisplaytypetoengineeringformat={class=radio_button, label=Set display type to engineering format}
+rdoSetdisplaytypetofixed-pointformat={class=radio_button, label=Set display type to fixed-point format}
+rdoSetdisplaytypetoscientificformat={class=radio_button, label=Set display type to scientific format}
+btnBitwiseXNOR[n]={class=push_button, label=Bitwise XNOR [n]}
+btnBase10log[G]={class=push_button, label=Base 10 log [G]}
+btnRandomnumber={class=push_button, label=Random number}
+btnAccuracy={class=push_button, label=Accuracy}
+btnBitwiseXOR[^]={class=push_button, label=Bitwise XOR [^]}
+btnNaturallog[N]={class=push_button, label=Natural log [N]}
+btnFactorial={class=push_button, label=Factorial}
+btn={class=push_button, label=    }
+btnBitwiseNOT[~]={class=push_button, label=Bitwise NOT [~]}
+btnTangent[L]={class=push_button, label=Tangent [L]}
+btnXtothey={class=push_button, label=X to the y}
+btn={class=push_button, label=    }
+btnBitwiseAND[&]={class=push_button, label=Bitwise AND [&]}
+btnSine[K]={class=push_button, label=Sine [K]}
+btnTentothex={class=push_button, label=Ten to the x}
+btn={class=push_button, label=    }
+btnbitwiseOR[!]={class=push_button, label=bitwise OR [!]}
+btnCosine[J]={class=push_button, label=Cosine [J]}
+btnEtothex={class=push_button, label=E to the x}
+btn32bitunsignedinteger={class=push_button, label=32 bit unsigned integer}
+btnHexadecimaldigitC={class=push_button, label=Hexadecimal digit C}
+btnHexadecimaldigitF={class=push_button, label=Hexadecimal digit F}
+btnExponential={class=push_button, label=Exponential}
+btn16bitunsignedinteger={class=push_button, label=16 bit unsigned integer}
+btnHexadecimaldigitB={class=push_button, label=Hexadecimal digit B}
+btnHexadecimaldigitE={class=push_button, label=Hexadecimal digit E}
+btnUser-definedfunctions[f]={class=push_button, label=User-defined functions [f]}
+btnShiftright={class=push_button, label=Shift right}
+btnHexadecimaldigitA={class=push_button, label=Hexadecimal digit A}
+btnHexadecimaldigitD={class=push_button, label=Hexadecimal digit D}
+btnConstants[#]={class=push_button, label=Constants [#]}
+btnShiftleft={class=push_button, label=Shift left}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnClear={class=push_button, label=Clear}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnClearentry={class=push_button, label=Clear entry}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+btnBackspace={class=push_button, label=Backspace}
+btnExchangewithregister={class=push_button, label=Exchange with register}
+btnRetrievefromregister={class=push_button, label=Retrieve from register}
+btnStoretoregister={class=push_button, label=Store to register}
+btnClear={class=push_button, label=Clear}
+btnAbsolutevalue[u]={class=push_button, label=Absolute value [u]}
+btnFractionalportion={class=push_button, label=Fractional portion}
+btnIntegerportion={class=push_button, label=Integer portion}
+btnClearentry={class=push_button, label=Clear entry}
+btnSquare[@]={class=push_button, label=Square [@]}
+btnSquareroot[s]={class=push_button, label=Square root [s]}
+btnChangesign[c]={class=push_button, label=Change sign [c]}
+btnBackspace={class=push_button, label=Backspace}
+btnReciprocal[r]={class=push_button, label=Reciprocal [r]}
+btnPercentage={class=push_button, label=Percentage}
+btnRightbracket={class=push_button, label=Right bracket}
+btnLeftbracket={class=push_button, label=Left bracket}
+btnAdd={class=push_button, label=Add}
+btnSubtract={class=push_button, label=Subtract}
+btnMultiply={class=push_button, label=Multiply}
+btnDivide={class=push_button, label=Divide}
+btnCalculateresult={class=push_button, label=Calculate result}
+btnNumeric3={class=push_button, label=Numeric 3}
+btnNumeric6={class=push_button, label=Numeric 6}
+btnNumeric9={class=push_button, label=Numeric 9}
+btnNumericpoint={class=push_button, label=Numeric point}
+btnNumeric2={class=push_button, label=Numeric 2}
+btnNumeric5={class=push_button, label=Numeric 5}
+btnNumeric8={class=push_button, label=Numeric 8}
+btnNumeric0={class=push_button, label=Numeric 0}
+btnNumeric1={class=push_button, label=Numeric 1}
+btnNumeric4={class=push_button, label=Numeric 4}
+btnNumeric7={class=push_button, label=Numeric 7}
+
+[InsertASCIIValue]
+InsertASCIIValue={class=frame, app_name=gcalctool}
+txtCharacter={class=text, label_by=Character:}
+btnCancel={class=push_button, label=Cancel}
+btnInsert={class=push_button, label=Insert}
+
+[MemoryRegisters]
+MemoryRegisters={class=frame, app_name=gcalctool}
+
+[dlgAboutGcalctool]
+dlgAboutGcalctool={class=dialog, label=About Gcalctool, app_name=gcalctool}
+btnCredits={class=push_button, label=Credits}
+btnClose={class=push_button, label=Close}
+
+[dlgCredits]
+dlgCredits={class=dialog, label=Credits, app_name=gcalctool}
+ptlCredits={class=page_tab_list}
+ptabWrittenby={class=page_tab, label=Written by}
+ptabDocumentedby={class=page_tab, label=Documented by}
+ptabTranslatedby={class=page_tab, label=Translated by}
+btnClose={class=push_button, label=Close}

@@ -1,0 +1,63 @@
+[SearchforFiles]
+SearchforFiles={class=frame, app_name=gnome-search-tool}
+txtLookinFolderEntry={class=text, label=Look in Folder Entry}
+btnBrowse={class=push_button, label=Browse...}
+txtNameContainsEntry={class=text, label=Name Contains Entry}
+tbtnShowmoreoptions={class=toggle_button, label=Show more options}
+txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+sbtnSearchRuleValueEntry4={class=spin_button, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+mnuContainsthetext={class=menu_item, label=Contains the text}
+mnuDatemodifiedlessthan(days)={class=menu_item, label=Date modified less than (days)}
+mnuDatemodifiedmorethan(days)={class=menu_item, label=Date modified more than (days)}
+mnuSizeatleast(kilobytes)={class=menu_item, label=Size at least (kilobytes)}
+mnuSizeatmost(kilobytes)={class=menu_item, label=Size at most (kilobytes)}
+mnuFileisempty={class=menu_item, label=File is empty}
+mnuOwnedbyuser={class=menu_item, label=Owned by user}
+mnuOwnedbygroup={class=menu_item, label=Owned by group}
+mnuOwnerisunrecognized={class=menu_item, label=Owner is unrecognized}
+mnuNamedoesnotcontain={class=menu_item, label=Name does not contain}
+mnuNamematchesregularexpression={class=menu_item, label=Name matches regular expression}
+mnuShowhiddenandbackupfiles={class=menu_item, label=Show hidden and backup files}
+mnuFollowsymboliclinks={class=menu_item, label=Follow symbolic links}
+mnuIncludeotherfilesystems={class=menu_item, label=Include other filesystems}
+btnAdd={class=push_button, label=Add}
+tblSearchresults={class=table, label_by=Search results:}
+btnHelp={class=push_button, label=Help}
+btnClose={class=push_button, label=Close}
+btnFind={class=push_button, label=Find}
+btnStop={class=push_button, label=Stop}
+cmbAvailableoptions={class=combo_box, label=Search Rules Menu}
+
+[dlgBrowse]
+dlgBrowse={class=dialog, label=Browse, app_name=gnome-search-tool}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnhome={class=toggle_button, label=home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+btnOpen={class=push_button, label=Open}
+btnCancel={class=push_button, label=Cancel}
