@@ -1,0 +1,95 @@
+[PDFViewer]
+PDFViewer={class=frame, app_name=gpdf}
+mnuFile={class=menu, label=File}
+mnuOpen={class=menu_item, label=Open...}
+mnuSaveaCopy={class=menu_item, label=Save a Copy...}
+mnuPrint={class=menu_item, label=Print...}
+mnuProperties={class=menu_item, label=Properties}
+mnu1={class=menu_item, label=1. f1040es.pdf}
+mnuClose={class=menu_item, label=Close}
+mnuView={class=menu, label=View}
+mnuFullScreen={class=check_menu_item, label=Full Screen}
+mnuZoomIn={class=menu_item, label=Zoom In}
+mnuZoomOut={class=menu_item, label=Zoom Out}
+mnuBestFit={class=menu_item, label=Best Fit}
+mnuFitpagewidth={class=menu_item, label=Fit page width}
+mnuSidebar={class=check_menu_item, label=Sidebar}
+mnuGo={class=menu, label=Go}
+mnuBack={class=menu_item, label=Back}
+mnuForward={class=menu_item, label=Forward}
+mnuPreviousPage={class=menu_item, label=Previous Page}
+mnuNextPage={class=menu_item, label=Next Page}
+mnuFirstPage={class=menu_item, label=First Page}
+mnuLastPage={class=menu_item, label=Last Page}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuAbout={class=menu_item, label=About}
+btnOpen={class=push_button, label=Open}
+btnSaveaCopy={class=push_button, label=Save a Copy}
+btnPrint={class=push_button, label=Print}
+btnBack={class=push_button, label=Back}
+btnForward={class=push_button, label=Forward}
+btnFirst={class=push_button, label=First}
+btnPrevious={class=push_button, label=Previous}
+btnNext={class=push_button, label=Next}
+btnLast={class=push_button, label=Last}
+txtCurrentpage={class=text, label=Current page}
+btnIn={class=push_button, label=In}
+btnOut={class=push_button, label=Out}
+btnBestFit={class=push_button, label=Best Fit}
+btnFitWidth={class=push_button, label=Fit Width}
+btnexecute={class=push_button, label=execute}
+btnclose={class=push_button, label=close}
+scrollBar={class=scroll_bar}
+
+[dlgPDFProperties]
+dlgPDFProperties={class=dialog, label=PDF Properties, app_name=gnome-pdf-viewer}
+btnClose={class=push_button, label=Close}
+
+[dlgSaveaCopy]
+dlgSaveaCopy={class=dialog, label=Save a Copy, app_name=gnome-pdf-viewer}
+cmbFilesystem={class=combo_box, label=Save in folder}
+mnuHome={class=menu_item, label=Home}
+mnuDesktop={class=menu_item, label=Desktop}
+mnuFilesystem={class=menu_item, label=Filesystem}
+mnufloppy={class=menu_item, label=floppy}
+mnucdrom={class=menu_item, label=cdrom}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+mnuPDFDocuments={class=menu_item, label=PDF Documents}
+mnuAllFiles={class=menu_item, label=All Files}
+btnSave={class=push_button, label=Save}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgLoadfile]
+dlgLoadfile={class=dialog, label=Load file, app_name=gpdf}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+mnuPDFDocuments={class=menu_item, label=PDF Documents}
+mnuAllFiles={class=menu_item, label=All Files}
+btnOpen={class=push_button, label=Open}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgAboutGNOMEPDFViewer]
+dlgAboutGNOMEPDFViewer={class=dialog, label=About GNOME PDF Viewer, app_name=gpdf}
+btnLicense={class=push_button, label=License}
+btnCredits={class=push_button, label=Credits}
+btnClose={class=push_button, label=Close}
+
+[dlgCredits]
+dlgCredits={class=dialog, label=Credits, app_name=gpdf}
+ptlCredits={class=page_tab_list}
+ptabWrittenby={class=page_tab, label=Written by}
+ptabDocumentedby={class=page_tab, label=Documented by}
+btnClose={class=push_button, label=Close}

@@ -1,0 +1,15 @@
+Test suite for gnome-pdf-viewer (Gnome 2.9.x)
+
+Test case                            Prerequisite
+---------                            ------------
+
+open-pdf-file.py  		   You need to have a pdf-file called 'sample.pdf' 
+                                   in the Home folder.
+                                  
+The test script below has the same pre-requisite, if it is to be executed alone. Else it can simply follow the open-pdf-file.py test script.
+
+view-pdf-properties.py
+
+
+Author:
+Aishwariya Devi S  <aishwariyabhavan@yahoo.com>
