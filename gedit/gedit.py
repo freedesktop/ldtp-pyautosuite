@@ -1,23 +1,31 @@
 #!/usr/bin/python
 
 from ldtp import *
-import string,sys
+import string, sys, os
+
+appmap_path = ''
 
 if len (sys.argv) == 1:
-  print 'Appmap path missing'
-  sys.exit (0);
+  if os.access ('./gedit.map', os.F_OK | os.R_OK) == 0:
+    print 'Appmap path missing'
+    sys.exit(0);
+  else:
+    appmap_path = '.'
 else:
-  initappmap (sys.argv[1] + '/gedit.map')
-  
+  appmap_path = sys.argv[1]
+
+initappmap (appmap_path + '/gedit.map')
+
 launchapp ('gedit')
 
-selectmenuitem ('gedit', 'mnuFile;mnuClose')
+#To open an new file
+execfile ('open-newfile.py')
 
-# Open existing file
-execfile ('open-existing-file.py')
+#To open an existing file
+execfile ('open-existingfile.py')
 
-# Open page setup
-execfile ('page-setup.py')
+#To perform edit operations
+execfile ('edit.py')
 
-# close gedit
-selectmenuitem ('gedit', 'mnuFile;mnuQuit')
+#To open pagesetup dialog
+execfile ('pagesetup.py')
