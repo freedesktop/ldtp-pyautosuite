@@ -1,0 +1,12 @@
+These are the test scripts having a few testcases automated for Firefox.
+
+These scripts are done based on the firefox trunk available on 24th May 2005.
+
+To run these scripts the trunk version of firefox is to be downloaded to the system.
+
+The path of the firefox trunk executable is to be mentioned in firefox.py line num 3
+
+The url.txt contains the urls that will be browsed during automation.
+
+The images directory contains the images of the web pages in url.txt. During automation the pages displayed will be compared with these images. Hence incase new urls are added to url.txt its image also is to be added here in the images folder.
+ 

@@ -1,0 +1,178 @@
+[MozillaFirefox]
+MozillaFirefox={class=frame, app_name=Mozilla}
+mnuFile={class=menu, label=File}
+mnuNewWindow={class=menu_item, label=New Window}
+mnuNewTab={class=menu_item, label=New Tab}
+mnuOpenLocation={class=menu_item, label=Open Location...}
+mnuOpenFile={class=menu_item, label=Open File...}
+mnuClose={class=menu_item, label=Close}
+mnuSavePageAs={class=menu_item, label=Save Page As...}
+mnuSendLink={class=menu_item, label=Send Link...}
+mnuPageSetup={class=menu_item, label=Page Setup...}
+mnuPrintPreview={class=menu_item, label=Print Preview}
+mnuPrint={class=menu_item, label=Print...}
+mnuImport={class=menu_item, label=Import...}
+mnuWorkOffline={class=menu_item, label=Work Offline}
+mnuQuit={class=menu_item, label=Quit}
+mnuEdit={class=menu, label=Edit}
+mnuUndo={class=menu_item, label=Undo}
+mnuRedo={class=menu_item, label=Redo}
+mnuCut={class=menu_item, label=Cut}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuDelete={class=menu_item, label=Delete}
+mnuSelectAll={class=menu_item, label=Select All}
+mnuFindinThisPage={class=menu_item, label=Find in This Page...}
+mnuFindAgain={class=menu_item, label=Find Again}
+mnuPreferences={class=menu_item, label=Preferences}
+mnuView={class=menu, label=View}
+mnuToolbars={class=menu, label=Toolbars}
+mnuNavigationToolbar={class=menu_item, label=Navigation Toolbar}
+mnuCustomize={class=menu_item, label=Customize...}
+mnuStatusBar={class=menu_item, label=Status Bar}
+mnuSidebar={class=menu, label=Sidebar}
+mnuBookmarks={class=menu_item, label=Bookmarks}
+mnuHistory={class=menu_item, label=History}
+mnuStop={class=menu_item, label=Stop}
+mnuReload={class=menu_item, label=Reload}
+mnuTextSize={class=menu, label=Text Size}
+mnuIncrease={class=menu_item, label=Increase}
+mnuDecrease={class=menu_item, label=Decrease}
+mnuNormal={class=menu_item, label=Normal}
+mnuPageStyle={class=menu, label=Page Style}
+mnuNoStyle={class=menu_item, label=No Style}
+mnuBasicPageStyle={class=menu_item, label=Basic Page Style}
+mnuCharacterEncoding={class=menu, label=Character Encoding}
+mnuAuto-Detect={class=menu_item, label=Auto-Detect}
+mnuMoreEncodings={class=menu, label=More Encodings}
+mnuWestEuropean={class=menu_item, label=West European}
+mnuEastEuropean={class=menu_item, label=East European}
+mnuEastAsian={class=menu_item, label=East Asian}
+mnuSE&SWAsian={class=menu_item, label=SE & SW Asian}
+mnuMiddleEastern={class=menu_item, label=Middle Eastern}
+mnuUnicode={class=menu_item, label=Unicode}
+mnuCustomizeList={class=menu_item, label=Customize List...}
+mnuPageSource={class=menu_item, label=Page Source}
+mnuFullScreen={class=menu_item, label=Full Screen}
+mnuGo={class=menu, label=Go}
+mnuBack={class=menu_item, label=Back}
+mnuForward={class=menu_item, label=Forward}
+mnuHome={class=menu_item, label=Home}
+mnuHistory={class=menu_item, label=History}
+mnuBookmarks={class=menu, label=Bookmarks}
+mnuBookmarkThisPage={class=menu_item, label=Bookmark This Page...}
+mnuManageBookmarks={class=menu_item, label=Manage Bookmarks...}
+mnuTools={class=menu, label=Tools}
+mnuWebSearch={class=menu_item, label=Web Search}
+mnuDownloads={class=menu_item, label=Downloads}
+mnuExtensions={class=menu_item, label=Extensions}
+mnuThemes={class=menu_item, label=Themes}
+mnuJavaScriptConsole={class=menu_item, label=JavaScript Console}
+mnuDOMInspector={class=menu_item, label=DOM Inspector}
+mnuPageInfo={class=menu_item, label=Page Info}
+mnuHelp={class=menu, label=Help}
+mnuHelpContents={class=menu_item, label=Help Contents}
+mnuPromoteFirefox={class=menu_item, label=Promote Firefox}
+mnuAboutMozillaFirefox={class=menu_item, label=About Mozilla Firefox}
+btnGototheNovellhomepage={class=push_button, instance_index = 1}
+btnBack={class=push_button, label=Back}
+btnnoname={class=push_button, label=no name}
+btnForward={class=push_button, label=Forward}
+btnnoname={class=push_button, label=no name}
+btnReload={class=push_button, label=Reload}
+btnStop={class=push_button, label=Stop}
+btnHome={class=push_button, label=Home}
+txtUrl={class=text, instance_index=3}
+btnGo={class=push_button, label=Go}
+txtSearch={class=text, instance_index=4}
+btnGettingStarted={class=push_button, label=Getting Started}
+btnLatestHeadlines={class=push_button, label=Latest Headlines}
+btnfile:///home/aginesh/={class=push_button, label=file:///home/aginesh/.gnome2/panel2.d/default/launchers/curly-00dc1f9dcf.desktop}
+btnBookmarksToolbarItems={class=push_button, label=Bookmarks Toolbar Items}
+btnGo={class=push_button, label=Go}
+btnSearch={class=push_button, label=Search}
+btnOpen={class=push_button, label=Open}
+
+[FirefoxHelp]
+FirefoxHelp={class=frame, app_name=Mozilla, label=Mozilla Firefox Help}
+txtversion1.0.1={class=text, label=version 1.0.1}
+txtContributors={class=text, label=©1998-2005 Contributors. All Rights Reserved. Firefox and the Firefox logos are trademarks of the Mozilla Foundation. All rights reserved. Some trademark rights used under license from The Charlton Company.}
+btnCredits={class=push_button, label=Credits}
+btnOK={class=push_button, label=OK}
+
+[frmSecuritywarning]
+frmSecuritywarning={class=frame, label=Security Warning, app_name=Mozilla}
+txtYouhaverequestedanencryptedpage={class=text, label=You have requested an encrypted page. The web site has identified itself correctly, and information you see or enter on this page can't easily be read by a third party.}
+chkAlert={class=check_box, label=Alert me whenever I am about to view an encrypted page.}
+btnOK={class=push_button, label=OK}
+
+[SecurityError:DomainNameMismatch]
+SecurityError:DomainNameMismatch={class=frame, app_name=mozilla, label = Security Error: Domain Name Mismatch}
+txtYouhaveattemptedtoestablishaconnectionwith"sf.net".However,thesecuritycertificatepresentedbelongsto"sourceforge.net".Itispossible,thoughunlikely,thatsomeonemaybetryingtointerceptyourcommunicationwiththiswebsite.={class=text, label=You have attempted to establish a connection with "sf.net". However, the security certificate presented belongs to "sourceforge.net". It is possible, though unlikely, that someone may be trying to intercept your communication with this web site.}
+txtIfyoususpectthecertificateshowndoesnotbelongto"sf.net",pleasecanceltheconnectionandnotifythesiteadministrator.={class=text, label=If you suspect the certificate shown does not belong to "sf.net", please cancel the connection and notify the site administrator.}
+btnViewCertificate={class=push_button, label=View Certificate}
+btnCancel={class=push_button, label=Cancel}
+btnOK={class=push_button, label=OK}
+
+[frmAddBookmark]
+frmAddBookmark={class=frame, app_name=Mozilla, label=Add Bookmark}
+txtName={class=text, label=Name:}
+txtCreatein={class=text, label=Create in:}
+txtBookmarks={class=text, label=Bookmarks}
+btnnoname={class=push_button, label=no name}
+btnShowallthebookmarksfolders={class=push_button, label=Show all the bookmarks folders}
+btnCancel={class=push_button, label=Cancel}
+btnAdd={class=push_button, label=Add}
+
+[PageSetup]
+PageSetup={class=frame, app_name=Mozilla, label=Page Setup}
+rdoPortrait={class=radio_button, label=Portrait}
+rdoLandscape={class=radio_button, label=Landscape}
+chkShrinkToFitPageWidth={class=check_box, label=Shrink To Fit Page Width}
+chkPrintBackground={class=check_box, label=Print Background (colors & images)}
+btnCancel={class=push_button, label=Cancel}
+btnOK={class=push_button, label=OK}
+
+[DefaultBrowser]
+DefaultBrowser={class=frame, app_name=Mozilla, label=Default Browser}
+txtFirefoxisnotcurrentlysetasyourdefaultbrowser.Wouldyouliketomakeityourdefaultbrowser?={class=text, label=Firefox is not currently set as your default browser. Would you like to make it your default browser?}
+chkAlwaysperformthischeckwhenstartingFirefox.={class=check_box, label=Always perform this check when starting Firefox.}
+btnNo={class=push_button, label=No}
+btnYes={class=push_button, label=Yes}
+
+[MozillaFirefoxHelp]
+MozillaFirefoxHelp={class=frame, app_name=Mozilla, label=Mozilla Firefox Help}
+btnHideSidebar={class=push_button, label=Hide Sidebar}
+btnBack={class=push_button, label=Back}
+btnForward={class=push_button, label=Forward}
+btnHome={class=push_button, label=Home}
+btnCustomize={class=push_button, label=Customize}
+btnPrint={class=push_button, label=Print}
+btnGototheHelponHelpsection={class=push_button, label=Go to the Help on Help section}
+
+[Print]
+Print={class=frame, app_name=Mozilla, label=Print}
+btnProperties={class=push_button, label=Properties...}
+chkPrinttoFile={class=check_box, label=Print to File}
+rdoAllPages={class=radio_button, label=All Pages}
+rdoPages={class=radio_button, label=Pages}
+txtfrom={class=text, label=from}
+txtto={class=text, label=to}
+rdoSelection={class=radio_button, label=Selection}
+txtNumberofcopies={class=text, label=Number of copies:}
+rdoAslaidoutonthescreen={class=radio_button, label=As laid out on the screen}
+rdoTheselectedframe={class=radio_button, label=The selected frame}
+rdoEachframeseparately={class=radio_button, label=Each frame separately}
+btnCancel={class=push_button, label=Cancel}
+btnPrint={class=push_button, label=Print}
+
+[PrinterProperties]
+PrinterProperties={class=frame, app_name=Mozilla, label=Printer Properties}
+rdoGrayScale={class=radio_button, label=GrayScale}
+rdoColor={class=radio_button, label=Color}
+txtTop={class=text, label=Top:}
+txtBottom={class=text, label=Bottom:}
+txtLeft={class=text, label=Left:}
+txtRight={class=text, label=Right:}
+btnCancel={class=push_button, label=Cancel}
+btnOK={class=push_button, label=OK}
