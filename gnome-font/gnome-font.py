@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from ldtp import *
 import string, sys, os
-
+from ldtputils import *
 appmap_path = ''
 
 if len (sys.argv) == 1:
