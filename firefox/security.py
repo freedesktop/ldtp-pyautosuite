@@ -61,6 +61,15 @@ try:
 #sometimes the security window comes up again
     if guiexist('frmSecuritywarning') == 1:
 	security_warning()
+
+#coming out of the secure web pages
+    settextvalue ('mozilla', 'txtUrl', 'http://www.novell.com')
+    click ('mozilla', 'btnGo')
+	
+    wait (10)
+    if guiexist ('frmSecuritywarning') == 1:
+	security_warning()
+    	     
     
 except error, msg:
     log (str(msg), 'error')

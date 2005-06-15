@@ -93,6 +93,36 @@ btnGo={class=push_button, label=Go}
 btnSearch={class=push_button, label=Search}
 btnOpen={class=push_button, label=Open}
 
+[DeerParkPreferences]
+DeerParkPreferences={class=frame, app_name=mozilla, label = Deer Park Preferences}
+txtLocation={class=text, label=Location(s):}
+btnUseCurrentPage={class=push_button, label=Use Current Page}
+btnUseBookmark={class=push_button, label=Use Bookmark...}
+btnUseBlankPage={class=push_button, label=Use Blank Page}
+chkDeerParkshouldchecktoseeifitisthedefaultbrowserwhenstarting.={class=check_box, label=Deer Park should check to see if it is the default browser when starting.}
+btnCheckNow={class=push_button, label=Check Now}
+txtDeterminehowDeerParkconnectstotheInternet.={class=text, label=Determine how Deer Park connects to the Internet.}
+btnConnectionSettings={class=push_button, label=Connection Settings...}
+chkAllowtexttobeselectedwiththekeyboard={class=check_box, label=Allow text to be selected with the keyboard}
+chkBeginfindingwhenyoubegintyping={class=check_box, label=Begin finding when you begin typing}
+chkResizelargeimagestofitinthebrowserwindow={class=check_box, label=Resize large images to fit in the browser window}
+chkUseautoscrolling={class=check_box, label=Use autoscrolling}
+chkUsesmoothscrolling={class=check_box, label=Use smooth scrolling}
+txtChooseLanguageswebpagesaredisplayedin.={class=text, label=Choose Languages web pages are displayed in.}
+btnEditLanguages={class=push_button, label=Edit Languages...}
+txtPeriodicallycheckforupdatesto={class=text, label=Periodically check for updates to:}
+chkDeerPark={class=check_box, label=Deer Park}
+btnCheckNow={class=push_button, label=Check Now...}
+chkMyExtensionsandThemes={class=check_box, label=My Extensions and Themes}
+btnCheckNow={class=push_button, label=Check Now...}
+chkUseSSL2.0={class=check_box, label=Use SSL 2.0}
+chkUseSSL3.0={class=check_box, label=Use SSL 3.0}
+chkUseTLS1.0={class=check_box, label=Use TLS 1.0}
+txtWhenawebsiterequiresacertificate={class=text, label=When a web site requires a certificate:}
+rdoSelectoneautomatically={class=radio_button, label=Select one automatically}
+rdoAskmeeverytime={class=radio_button, label=Ask me every time}
+btnClose={class=push_button, label=Close}
+
 [FirefoxHelp]
 FirefoxHelp={class=frame, app_name=Mozilla, label=Mozilla Firefox Help}
 txtversion1.0.1={class=text, label=version 1.0.1}

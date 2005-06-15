@@ -33,7 +33,7 @@ default_dir = os.getcwd ()
 default_image_dir = default_dir + '/images'
 default_doc_dir = default_dir + '/doc'
 default_tmp_dir = default_dir + '/tmp'
-firefox_exe_path = '/home/aginesh/firefox/firefox'
+firefox_exe_path = '/home/ldtp/firefox/firefox'
 
 log ('Firefox Test Report', 'begin')
 
@@ -88,6 +88,8 @@ execfile ('search.py')
 execfile ('page-load-control.py')
 
 execfile ('security.py')
+
+execfile ('home-page.py')
 
 execfile ('exit-browser.py')
 

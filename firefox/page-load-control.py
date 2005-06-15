@@ -111,7 +111,7 @@ try:
 	if enabled == 1:
 		log ('Stop button active when page enabled', 'error')
 	else:
-		log ('Stop button disabled when page is loaded fully', 'info')
+		log ('Stop button disabled when page loading is over', 'info')
 	settextvalue ('mozilla', 'txtUrl', 'http://www.novell.com')
 	click ('mozilla', 'btnGo')
 	enabled = stateenabled('mozilla', 'btnStop')

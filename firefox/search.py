@@ -41,7 +41,7 @@ try:
 	typekey('<ctrl>k<return>')
 except:
 	log ('Unable to search', 'fail')
-
+log ('testing the search text box', 'testend')
 # - TODO
 #   - Capture screen shot after search
 #   - Do a comparison
