@@ -2,6 +2,7 @@
 
 from ldtp import *
 import string, sys, os
+from ldtputils import *
 
 appmap_path = ''
 
@@ -18,6 +19,9 @@ initappmap (appmap_path + '/gedit.map')
 
 launchapp ('gedit')
 
+#To add the initial XML info to the log script
+log ('GEditSuite',"begin")
+
 #To open an new file
 execfile ('open-newfile.py')
 
@@ -29,3 +33,5 @@ execfile ('edit.py')
 
 #To open pagesetup dialog
 execfile ('pagesetup.py')
+
+log ('GEditSuite','end')
