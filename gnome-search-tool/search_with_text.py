@@ -23,29 +23,25 @@
 #  Boston, MA 02111-1307, USA.
 #
 
-#!/usr/bin/python
-                                                           
-from ldtp import *
-import string, sys, os
-                                                           
-appmap_path = ''
-                                                           
-if len (sys.argv) == 1:
-  if os.access ('./gnome-search-tool.map', os.F_OK | os.R_OK) == 0:
-    print 'Appmap path missing'
-    sys.exit(0);
-  else:
-    appmap_path = '.'
-else:
-  appmap_path = sys.argv[1]
-                                                           
-#Initialize Appmap
-initappmap (appmap_path + '/gnome-search-tool.map')
-                                                           
-launchapp ('gnome-search-tool')
+#Searching for files with given text in that
+def search (search_string, text):
+        try:
+                settextvalue ('SearchforFiles', 'txtNameContainsEntry', search_string)
+		click ('SearchforFiles', 'tbtnShowmoreoptions')
+                click('SearchforFiles', 'btnAdd')
+                settextvalue ('SearchforFiles', 'txtContainsthetextentry', text)
+                click('SearchforFiles', 'btnFind')
+                log ('Search for file with given text', 'pass')
+        except:
+                log ('Search for file with given text', 'fail')
 
-log ('Sanity Suite for gnome-search-tool', 'teststart')
-execfile('simplesearch.py')
-#execfile('browsefiles.py')
-execfile('search_with_text.py')
-log ('Sanity Suite for gnome-search-tool', 'testend')
+#Getting the data from a file
+file = open('search_with_text.dat', 'r')
+argmts = file.readlines()
+search_string = argmts[1].strip( )
+text = argmts[2].strip( )
+
+#Calling the function
+log ('Search for file with given text', 'teststart')
+search (search_string, text)
+log ('Simple for file with given text', 'testend')

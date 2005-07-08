@@ -1,37 +1,43 @@
 [SearchforFiles]
 SearchforFiles={class=frame, app_name=gnome-search-tool}
-txtLookinFolderEntry={class=text, label=Look in Folder Entry}
-btnBrowse={class=push_button, label=Browse...}
+btnldtp={class=push_button, label=ldtp}
+cmbLookinfolder={class=combo_box, instance_index=1}
+mnuHome={class=menu_item, label=Home}
+mnuDesktop={class=menu_item, label=Desktop}
+mnuFilesystem={class=menu_item, label=Filesystem}
+mnufloppy={class=menu_item, label=floppy}
+mnucdrom={class=menu_item, label=cdrom}
+mnuOther={class=menu_item, label=Other...}
 txtNameContainsEntry={class=text, label=Name Contains Entry}
 tbtnShowmoreoptions={class=toggle_button, label=Show more options}
-txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+txtContainsthetextentry={class=text, label='Contains the text' entry}
 btnRemove={class=push_button, label=Remove}
-sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
+sbtn'Datemodifiedlessthan'entry={class=spin_button, label='Date modified less than' entry}
 btnRemove={class=push_button, label=Remove}
-sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
+sbtn'Datemodifiedmorethan'entry={class=spin_button, label='Date modified more than' entry}
 btnRemove={class=push_button, label=Remove}
-sbtnSearchRuleValueEntry4={class=spin_button, label=Search Rule Value Entry}
+sbtn'Sizeatleast'entry={class=spin_button, label='Size at least' entry}
 btnRemove={class=push_button, label=Remove}
-sbtnSearchRuleValueEntry={class=spin_button, label=Search Rule Value Entry}
-btnRemove={class=push_button, label=Remove}
-btnRemove={class=push_button, label=Remove}
-txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
-btnRemove={class=push_button, label=Remove}
-txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+sbtn'Sizeatmost'entry={class=spin_button, label='Size at most' entry}
 btnRemove={class=push_button, label=Remove}
 btnRemove={class=push_button, label=Remove}
-txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+txt'Ownedbyuser'entry={class=text, label='Owned by user' entry}
 btnRemove={class=push_button, label=Remove}
-txtSearchRuleValueEntry={class=text, label=Search Rule Value Entry}
+txt'Ownedbygroup'entry={class=text, label='Owned by group' entry}
+btnRemove={class=push_button, label=Remove}
+btnRemove={class=push_button, label=Remove}
+txt'Namedoesnotcontain'entry={class=text, label='Name does not contain' entry}
+btnRemove={class=push_button, label=Remove}
+txt'Namematchesregularexpression'entry={class=text, label='Name matches regular expression' entry}
 btnRemove={class=push_button, label=Remove}
 btnRemove={class=push_button, label=Remove}
 btnRemove={class=push_button, label=Remove}
 btnRemove={class=push_button, label=Remove}
 mnuContainsthetext={class=menu_item, label=Contains the text}
-mnuDatemodifiedlessthan(days)={class=menu_item, label=Date modified less than (days)}
-mnuDatemodifiedmorethan(days)={class=menu_item, label=Date modified more than (days)}
-mnuSizeatleast(kilobytes)={class=menu_item, label=Size at least (kilobytes)}
-mnuSizeatmost(kilobytes)={class=menu_item, label=Size at most (kilobytes)}
+mnuDatemodifiedlessthan={class=menu_item, label=Date modified less than}
+mnuDatemodifiedmorethan={class=menu_item, label=Date modified more than}
+mnuSizeatleast={class=menu_item, label=Size at least}
+mnuSizeatmost={class=menu_item, label=Size at most}
 mnuFileisempty={class=menu_item, label=File is empty}
 mnuOwnedbyuser={class=menu_item, label=Owned by user}
 mnuOwnedbygroup={class=menu_item, label=Owned by group}
@@ -56,7 +62,7 @@ tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
 tblShortcuts={class=table, label=Shortcuts}
 btnAdd={class=push_button, label=Add}
 btnRemove={class=push_button, label=Remove}
-tbtnhome={class=toggle_button, label=home}
+tbtnHome={class=toggle_button, label=Home}
 btnCreateFolder={class=push_button, label=Create Folder}
 tblFiles={class=table, label=Files}
 btnOpen={class=push_button, label=Open}
