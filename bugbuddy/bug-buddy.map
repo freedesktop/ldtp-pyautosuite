@@ -1,0 +1,116 @@
+[BugBuddy]
+BugBuddy={class=frame, app_name=bug-buddy}
+pnl0={class=panel, instance_index=0,parent=BugBuddy}
+pnl1={class=panel, instance_index=1,parent=BugBuddy}
+lblWelcometoBugBuddy={class=label, label=Welcome to Bug Buddy}
+pnl2={class=panel, instance_index=2,parent=BugBuddy}
+ptl0={class=page_tab_list, instance_index=0}
+ptb0={class=page_tab, instance_index=0}
+lbl2={class=label, instance_index=2,parent=BugBuddy}
+rdoTheapplicationdoesnotfunctioncorrectly={class=radio_button, label=The application does not function correctly}
+rdoThedocumentationiswrong={class=radio_button, label=The documentation is wrong}
+rdoThetranslationiswrong={class=radio_button, label=The translation is wrong}
+rdoRequestamissingfeature={class=radio_button, label=Request a missing feature}
+rdoDebugacrashedorrunningapplication={class=radio_button, label=Debug a crashed or running application (experts only)}
+ptb1={class=page_tab, instance_index=1}
+ptl1={class=page_tab_list, instance_index=1}
+ptb2={class=page_tab, instance_index=2}
+ptb3={class=page_tab, instance_index=3}
+lblDebug={class=label, label=Debug}
+pnl3={class=panel, instance_index=3,parent=BugBuddy}
+cbonothing={class=combo_box, label=nothing}
+mnucrashedapplication={class=menu_item, label=crashed application, parent=mnunothing}
+mnucorefile={class=menu_item, label=core file, parent=mnunothing}
+mnunothing={class=menu_item, label=nothing, parent=mnunothing}
+pnl4={class=panel, instance_index=4,parent=BugBuddy}
+btnStart={class=push_button, label=Start}
+pnl5={class=panel, instance_index=5,parent=BugBuddy}
+btnStop={class=push_button, label=Stop}
+lblBinaryfile={class=label, label=Binary file:}
+cboPath={class=combo_box, label=Path}
+txt0={class=text, instance_index=0,parent=cboPath}
+btnBrowse={class=push_button, label=Browse...}
+lblProcessID={class=label, label=Process ID:}
+txt1={class=text, instance_index=1,parent=BugBuddy}
+lblCorefile={class=label, label=Core file}
+cboPath={class=combo_box, label=Path}
+txt2={class=text, instance_index=2,parent=cboPath}
+btnBrowse={class=push_button, label=Browse...}
+txt3={class=text, instance_index=3,parent=BugBuddy}
+btnCopy={class=push_button, label=Copy}
+btnSave={class=push_button, label=Save}
+btnShowDebuggingDetails={class=push_button, label=Show Debugging Details}
+ptb4={class=page_tab, instance_index=4}
+lblPleaseselecttheproductorapplicationforthebugyouwishtoreport.={class=label, label=Please select the product or application for the bug you wish to report.}
+tblProducts={class=table, instance_index=0, parent=BugBuddy}
+rdoShowApplications={class=radio_button, label=Show Applications}
+rdoShowProducts={class=radio_button, label=Show Products}
+ptb5={class=page_tab, instance_index=5}
+lblPleasechooseacomponent,version,andseveritylevel.={class=label, label=Please choose a component, version, and severity level.}
+tblComponent={class=table, instance_index=1, parent=BugBuddy}
+lblVersion={class=label, label=Version:}
+cbo3={class=combo_box, instance_index=3,parent=BugBuddy}
+lblSeverity={class=label, label=Severity:}
+cbo4={class=combo_box, instance_index=4,parent=BugBuddy}
+ptb6={class=page_tab, instance_index=6}
+lblPleasetakeaminutetoseeifyourbugisoneofthemostfrequentlyreportedbugs.
+Ifthebugisalreadyreported,pleasedonotreportitagain.={class=label, label=Please take a minute to see if your bug is one of the most frequently reported bugs.
+If the bug is already reported, please do not report it again.}
+tbl2={class=table, instance_index=2,parent=BugBuddy}
+lblShowmostfrequentbugsin={class=label, label=Show most frequent bugs in:}
+cbo5={class=combo_box, instance_index=5,parent=BugBuddy}
+ptb7={class=page_tab, instance_index=7}
+lblPleasemakeyourbugreportinEnglish,ifpossible.={class=label, label=Please make your bug report in English, if possible.}
+pnlSummary={class=panel, label=Summary}
+txtSummary={class=text, instance_index=4}
+lblSummary={class=label, label=Summary}
+pnlDescription={class=panel, label=Description}
+txtDescription={class=text, instance_index=5}
+lblDescription={class=label, label=Description}
+pnlIncludeatextfile={class=panel, label=Include a text file}
+cboPath={class=combo_box, label=Path}
+txt6={class=text, instance_index=6,parent=cboPath}
+btnBrowse={class=push_button, label=Browse...}
+lblIncludeatextfile={class=label, label=Include a text file}
+ptb8={class=page_tab, instance_index=8}
+lblBugBuddyusesemailtosubmitthebugreports.
+PleasechoosehowyouwouldlikeBugBuddytosendemail.={class=label, label=Bug Buddy uses email to submit the bug reports.
+Please choose how you would like Bug Buddy to send email.}
+rdoUsesendmaildirectly={class=radio_button, label=Use sendmail directly}
+rdoJustsavetoafilesoIcansubmitabugreportmanually={class=radio_button, label=Just save to a file so I can submit a bug report manually}
+pnlSendmailSettings={class=panel, label=Sendmail Settings}
+pnl10={class=panel, instance_index=10,parent=pnlSendmailSettings}
+lblEmail={class=label, label=Email:}
+cbo7={class=combo_box, instance_index=7,parent=pnlSendmailSettings}
+txtEmail={class=text, instance_index=7}
+cboPath={class=combo_box, label=Path}
+txtPathofsendmail={class=text, instance_index=8}
+btnBrowse={class=push_button, label=Browse...}
+lblPathofsendmail={class=label, label=Path of sendmail:}
+cbo9={class=combo_box, instance_index=9,parent=pnlSendmailSettings}
+txtName={class=text, instance_index=9}
+lblName={class=label, label=Name:}
+lblSendmailSettings={class=label, label=Sendmail Settings}
+ptb9={class=page_tab, instance_index=9}
+pnl11={class=panel, instance_index=11,parent=BugBuddy}
+cbo10={class=combo_box, instance_index=10,parent=BugBuddy}
+txtTo={class=text, instance_index=10}
+cbo11={class=combo_box, instance_index=11,parent=BugBuddy}
+txtCC={class=text, instance_index=11}
+lblTo={class=label, label=To:}
+lblCc={class=label, label=Cc:}
+lblSavein={class=label, label=Save in:}
+cboPath={class=combo_box, label=Path}
+txt12={class=text, instance_index=12,parent=cboPath}
+btnBrowse={class=push_button, label=Browse...}
+txt13={class=text, instance_index=13,parent=BugBuddy}
+ptb10={class=page_tab, instance_index=10}
+lblAssbarnPhenomenon={class=label, label=Assbarn Phenomenon}
+chkSubmitanotherbug={class=check_box, label=Submit another bug}
+btnHelp={class=push_button, label=Help}
+btnAbout={class=push_button, label=About}
+btnCancel={class=push_button, label=Cancel}
+btnBack={class=push_button, label=Back}
+btnClose={class=push_button, label=Close}
+btnForward={class=push_button, label=Forward}
+btnSendReport={class=push_button, label=Send Report}
