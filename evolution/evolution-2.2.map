@@ -1,0 +1,397 @@
+[Evolution-Mail]
+Evolution-Mail={class=frame, app_name=evolution-2.2}
+mnuFile={class=menu, label=File}
+mnuNew={class=menu, label=New}
+mnuMailMessage={class=menu_item, label=Mail Message}
+mnuMailFolder={class=menu_item, label=Mail Folder}
+mnuAllDayAppointment={class=menu_item, label=All Day Appointment}
+mnuAppointment={class=menu_item, label=Appointment}
+mnuAssignedTask={class=menu_item, label=Assigned Task}
+mnuContact={class=menu_item, label=Contact}
+mnuContactList={class=menu_item, label=Contact List}
+mnuMeeting={class=menu_item, label=Meeting}
+mnuTask={class=menu_item, label=Task}
+mnuAddressBook={class=menu_item, label=Address Book}
+mnuCalendar={class=menu_item, label=Calendar}
+mnuTasklist={class=menu_item, label=Task list}
+mnuNewWindow={class=menu_item, label=New Window}
+mnuOpenMessage={class=menu_item, label=Open Message}
+mnuSaveAs={class=menu_item, label=Save As...}
+mnuImport={class=menu_item, label=Import...}
+mnuPrintPreview={class=menu_item, label=Print Preview}
+mnuPrint={class=menu_item, label=Print...}
+mnuFolder={class=menu, label=Folder}
+mnuProperties={class=menu_item, label=Properties}
+mnuWorkOffline={class=menu_item, label=Work Offline}
+mnuClose={class=menu_item, label=Close}
+mnuExit={class=menu_item, label=Exit}
+mnuEdit={class=menu, label=Edit}
+mnuSelectAll={class=menu_item, label=Select All}
+mnuSelectThread={class=menu_item, label=Select Thread}
+mnuInvertSelection={class=menu_item, label=Invert Selection}
+mnuCut={class=menu_item, label=Cut}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuSearchinMessage={class=menu_item, label=Search in Message...}
+mnuDelete={class=menu_item, label=Delete}
+mnuUndelete={class=menu_item, label=Undelete}
+mnuMarkasRead={class=menu_item, label=Mark as Read}
+mnuMarkasUnread={class=menu_item, label=Mark as Unread}
+mnuMarkasImportant={class=menu_item, label=Mark as Important}
+mnuMarkasUnimportant={class=menu_item, label=Mark as Unimportant}
+mnuMarkasJunk={class=menu_item, label=Mark as Junk}
+mnuMarkasNotJunk={class=menu_item, label=Mark as Not Junk}
+mnuMarkAllasRead={class=menu_item, label=Mark All as Read}
+mnuPreferences={class=menu_item, label=Preferences}
+mnuView={class=menu, label=View}
+mnuWindow={class=menu, label=Window}
+mnuMail={class=menu_item, label=Mail}
+mnuContacts={class=menu_item, label=Contacts}
+mnuCalendars={class=menu_item, label=Calendars}
+mnuTasks={class=menu_item, label=Tasks}
+mnuWindowButtons={class=menu, label=Window Buttons}
+mnuIconsandtext={class=radio_menu_item, label=Icons and text}
+mnuIconsonly={class=radio_menu_item, label=Icons only}
+mnuTextonly={class=radio_menu_item, label=Text only}
+mnuToolbarstyle={class=radio_menu_item, label=Toolbar style}
+mnuHidebuttons={class=check_menu_item, label=Hide buttons}
+mnuToolbar={class=check_menu_item, label=Toolbar}
+mnuPreviewPane={class=check_menu_item, label=Preview Pane}
+mnuThreadedMessageList={class=check_menu_item, label=Threaded Message List}
+mnuHideDeletedMessages={class=check_menu_item, label=Hide Deleted Messages}
+mnuGoTo={class=menu, label=Go To}
+mnuNextMessage={class=menu_item, label=Next Message}
+mnuNextUnreadMessage={class=menu_item, label=Next Unread Message}
+mnuNextImportantMessage={class=menu_item, label=Next Important Message}
+mnuNextThread={class=menu_item, label=Next Thread}
+mnuPreviousMessage={class=menu_item, label=Previous Message}
+mnuPreviousUnreadMessage={class=menu_item, label=Previous Unread Message}
+mnuPreviousImportantMessage={class=menu_item, label=Previous Important Message}
+mnuTextSize={class=menu, label=Text Size}
+mnuSmaller={class=menu_item, label=Smaller}
+mnuLarger={class=menu_item, label=Larger}
+mnuOriginalSize={class=menu_item, label=Original Size}
+mnuMessageDisplay={class=menu, label=Message Display}
+mnuLoadImages={class=menu_item, label=Load Images}
+mnuCaretMode={class=check_menu_item, label=Caret Mode}
+mnuNormalDisplay={class=radio_menu_item, label=Normal Display}
+mnuShowFullHeaders={class=radio_menu_item, label=Show Full Headers}
+mnuShowEmailSource={class=radio_menu_item, label=Show Email Source}
+mnuHideSelectedMessages={class=menu_item, label=Hide Selected Messages}
+mnuHideReadMessages={class=menu_item, label=Hide Read Messages}
+mnuShowHiddenMessages={class=menu_item, label=Show Hidden Messages}
+mnuCharacterEncoding={class=menu, label=Character Encoding}
+mnuBaltic={class=radio_menu_item, label=Baltic (ISO-8859-13)}
+mnuBaltic={class=radio_menu_item, label=Baltic (ISO-8859-4)}
+mnuCentralEuropean={class=radio_menu_item, label=Central European (ISO-8859-2)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (Big5)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (BIG5HKSCS)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (EUC-TW)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (GB18030)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (GB2312)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (HZ)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (ISO-2022-CN)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (KOI8-R)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (Windows-1251)}
+mnuCyrillic,Ukrainian={class=radio_menu_item, label=Cyrillic, Ukrainian (KOI8-U)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (ISO-8859-5)}
+mnuGreek={class=radio_menu_item, label=Greek (ISO-8859-7)}
+mnuHebrew,Visual={class=radio_menu_item, label=Hebrew, Visual (ISO-8859-8)}
+mnuJapanese={class=radio_menu_item, label=Japanese (ISO-2022-JP)}
+mnuJapanese={class=radio_menu_item, label=Japanese (EUC-JP)}
+mnuJapanese={class=radio_menu_item, label=Japanese (Shift_JIS)}
+mnuKorean={class=radio_menu_item, label=Korean (EUC-KR)}
+mnuTurkish={class=radio_menu_item, label=Turkish (ISO-8859-9)}
+mnuUnicode={class=radio_menu_item, label=Unicode (UTF-8)}
+mnuUnicode={class=radio_menu_item, label=Unicode (UTF-7)}
+mnuWesternEuropean={class=radio_menu_item, label=Western European (ISO-8859-1)}
+mnuWesternEuropean,New={class=radio_menu_item, label=Western European, New (ISO-8859-15)}
+mnuDefault={class=radio_menu_item, label=Default}
+mnuActions={class=menu, label=Actions}
+mnuSend/Receive={class=menu_item, label=Send / Receive}
+mnuForgetPasswords={class=menu_item, label=Forget Passwords}
+mnuComposeNewMessage={class=menu_item, label=Compose New Message}
+mnuPostNewMessage={class=menu_item, label=Post New Message}
+mnuCancel={class=menu_item, label=Cancel}
+mnuFollowUp={class=menu_item, label=Follow Up...}
+mnuReplytoSender={class=menu_item, label=Reply to Sender}
+mnuReplytoList={class=menu_item, label=Reply to List}
+mnuReplytoAll={class=menu_item, label=Reply to All}
+mnuForward={class=menu_item, label=Forward}
+mnuForwardAs...={class=menu, label=Forward As...}
+mnuAttached={class=menu_item, label=Attached}
+mnuInline={class=menu_item, label=Inline}
+mnuQuoted={class=menu_item, label=Quoted}
+mnuRedirect={class=menu_item, label=Redirect}
+mnuPostaReply={class=menu_item, label=Post a Reply}
+mnuEditasNewMessage={class=menu_item, label=Edit as New Message...}
+mnuMovetoFolder={class=menu_item, label=Move to Folder}
+mnuCopytoFolder={class=menu_item, label=Copy to Folder}
+mnuAddSendertoAddressBook={class=menu_item, label=Add Sender to Address Book}
+mnuApplyFilters={class=menu_item, label=Apply Filters}
+mnuFilterJunk={class=menu_item, label=Filter Junk}
+mnuSaveAttachments={class=menu_item, label=Save Attachments ...}
+mnuExpunge={class=menu_item, label=Expunge}
+mnuEmptyTrash={class=menu_item, label=Empty Trash}
+mnuMailingList={class=menu, label=Mailing List}
+mnuGetlistusageinformation={class=menu_item, label=Get list usage information}
+mnuSubscribetolist={class=menu_item, label=Subscribe to list}
+mnuUn-subscribetolist={class=menu_item, label=Un-subscribe to list}
+mnuPostmessagetolist={class=menu_item, label=Post message to list}
+mnuContactlistowner={class=menu_item, label=Contact list owner}
+mnuGetlistarchive={class=menu_item, label=Get list archive}
+mnuTools={class=menu, label=Tools}
+mnuFilters={class=menu_item, label=Filters...}
+mnuCreateFilterFromMessage={class=menu, label=Create Filter From Message}
+mnuFilteronSubject={class=menu_item, label=Filter on Subject...}
+mnuFilteronSender={class=menu_item, label=Filter on Sender...}
+mnuFilteronRecipients={class=menu_item, label=Filter on Recipients...}
+mnuFilteronMailingList={class=menu_item, label=Filter on Mailing List...}
+mnuvFolderEditor={class=menu_item, label=vFolder Editor...}
+mnuCreatevFolderFromMessage={class=menu, label=Create vFolder From Message}
+mnuvFolderonSubject={class=menu_item, label=vFolder on Subject...}
+mnuvFolderonSender={class=menu_item, label=vFolder on Sender...}
+mnuvFolderonRecipients={class=menu_item, label=vFolder on Recipients...}
+mnuvFolderonMailingList={class=menu_item, label=vFolder on Mailing List...}
+mnuSubscribetoFolders={class=menu_item, label=Subscribe to Folders...}
+mnuPilotSettings={class=menu_item, label=Pilot Settings...}
+mnuManagePlugins={class=menu_item, label=Manage Plugins...}
+mnuSearch={class=menu, label=Search}
+mnuFindNow={class=menu_item, label=Find Now}
+mnuClear={class=menu_item, label=Clear}
+mnuAdvanced={class=menu_item, label=Advanced...}
+mnuSaveSearch={class=menu_item, label=Save Search...}
+mnuEditSavedSearches={class=menu_item, label=Edit Saved Searches...}
+mnuCreatevFolderFromSearch={class=menu_item, label=Create vFolder From Search...}
+mnuHelp={class=menu, label=Help}
+mnuContents={class=menu_item, label=Contents}
+mnuQuickReference={class=menu_item, label=Quick Reference}
+mnuSubmitBugReport={class=menu_item, label=Submit Bug Report}
+mnuAboutEvolution={class=menu_item, label=About Evolution...}
+btnNew={class=push_button, label=New}
+btnSend/Receive={class=push_button, label=Send / Receive}
+btnReply={class=push_button, label=Reply}
+btnReplytoAll={class=push_button, label=Reply to All}
+btnForward={class=push_button, label=Forward}
+btnMove={class=push_button, label=Move}
+btnCopy={class=push_button, label=Copy}
+btnPrint={class=push_button, label=Print}
+btnDelete={class=push_button, label=Delete}
+btnJunk={class=push_button, label=Junk}
+btnNotJunk={class=push_button, label=Not Junk}
+btnCancel={class=push_button, label=Cancel}
+btnPrevious={class=push_button, label=Previous}
+btnNext={class=push_button, label=Next}
+tbtnMail={class=toggle_button, label=Mail}
+tbtnContacts={class=toggle_button, label=Contacts}
+tbtnCalendars={class=toggle_button, label=Calendars}
+tbtnTasks={class=toggle_button, label=Tasks}
+mnuSubjectorSendercontains={class=menu_item, label=Subject or Sender contains}
+mnuRecipientscontain={class=menu_item, label=Recipients contain}
+mnuMessagecontains={class=menu_item, label=Message contains}
+mnuSubjectcontains={class=menu_item, label=Subject contains}
+mnuSendercontains={class=menu_item, label=Sender contains}
+mnuBodycontains={class=menu_item, label=Body contains}
+mnuSubjectorSendercontains={class=menu_item, label=Subject or Sender contains}
+mnuAdvanced={class=menu_item, label=Advanced...}
+txtSearchTextEntry={class=text, label=Search Text Entry}
+btnFindNow={class=push_button, label=Find Now}
+btnClear={class=push_button, label=Clear}
+
+[Composeamessage]
+Composeamessage={class=frame, app_name=evolution-2.2, label=Compose a message}
+mnuFile={class=menu, label=File}
+mnuOpen={class=menu_item, label=Open...}
+mnuSend={class=menu_item, label=Send}
+mnuSave={class=menu_item, label=Save}
+mnuSaveAs={class=menu_item, label=Save As...}
+mnuSaveDraft={class=menu_item, label=Save Draft}
+mnuClose={class=menu_item, label=Close}
+mnuEdit={class=menu, label=Edit}
+mnuUndo={class=menu_item, label=Undo}
+mnuRedo={class=menu_item, label=Redo}
+mnuCut={class=menu_item, label=Cut}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuPasteQuotation={class=menu_item, label=Paste Quotation}
+mnuSelectAll={class=menu_item, label=Select All}
+mnuFind={class=menu_item, label=Find...}
+mnuFindAgain={class=menu_item, label=Find Again}
+mnuReplace={class=menu_item, label=Replace...}
+mnuCharacterEncoding={class=menu, label=Character Encoding}
+mnuBaltic={class=radio_menu_item, label=Baltic (ISO-8859-13)}
+mnuBaltic={class=radio_menu_item, label=Baltic (ISO-8859-4)}
+mnuCentralEuropean={class=radio_menu_item, label=Central European (ISO-8859-2)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (Big5)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (BIG5HKSCS)}
+mnuChinese,Traditional={class=radio_menu_item, label=Chinese, Traditional (EUC-TW)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (GB18030)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (GB2312)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (HZ)}
+mnuChinese,Simplified={class=radio_menu_item, label=Chinese, Simplified (ISO-2022-CN)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (KOI8-R)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (Windows-1251)}
+mnuCyrillic,Ukrainian={class=radio_menu_item, label=Cyrillic, Ukrainian (KOI8-U)}
+mnuCyrillic={class=radio_menu_item, label=Cyrillic (ISO-8859-5)}
+mnuGreek={class=radio_menu_item, label=Greek (ISO-8859-7)}
+mnuHebrew,Visual={class=radio_menu_item, label=Hebrew, Visual (ISO-8859-8)}
+mnuJapanese={class=radio_menu_item, label=Japanese (ISO-2022-JP)}
+mnuJapanese={class=radio_menu_item, label=Japanese (EUC-JP)}
+mnuJapanese={class=radio_menu_item, label=Japanese (Shift_JIS)}
+mnuKorean={class=radio_menu_item, label=Korean (EUC-KR)}
+mnuTurkish={class=radio_menu_item, label=Turkish (ISO-8859-9)}
+mnuUnicode={class=radio_menu_item, label=Unicode (UTF-8)}
+mnuUnicode={class=radio_menu_item, label=Unicode (UTF-7)}
+mnuWesternEuropean={class=radio_menu_item, label=Western European (ISO-8859-1)}
+mnuWesternEuropean,New={class=radio_menu_item, label=Western European, New (ISO-8859-15)}
+mnuSpellCheckDocument={class=menu_item, label=Spell Check Document...}
+mnuCurrentLanguages={class=menu, label=Current Languages}
+mnuEnglish={class=check_menu_item, label=English (American)}
+mnuEnglish={class=check_menu_item, label=English (British)}
+mnuEnglish={class=check_menu_item, label=English (Canadian)}
+mnuFormat={class=menu, label=Format}
+mnuHTML={class=check_menu_item, label=HTML}
+mnuStyle={class=menu, label=Style}
+mnuPlaintext={class=menu_item, label=Plain text}
+mnuBold={class=menu_item, label=Bold}
+mnuItalic={class=menu_item, label=Italic}
+mnuUnderline={class=menu_item, label=Underline}
+mnuStrikeout={class=menu_item, label=Strikeout}
+mnuFontSize={class=menu, label=Font Size}
+mnu-2={class=menu_item, label=-2}
+mnu-1={class=menu_item, label=-1}
+mnu+0={class=menu_item, label=+0}
+mnu+1={class=menu_item, label=+1}
+mnu+2={class=menu_item, label=+2}
+mnu+3={class=menu_item, label=+3}
+mnuText={class=menu_item, label=Text...}
+mnuHeading={class=menu, label=Heading}
+mnuNormal={class=menu_item, label=Normal}
+mnuHeader1={class=menu_item, label=Header 1}
+mnuHeader2={class=menu_item, label=Header 2}
+mnuHeader3={class=menu_item, label=Header 3}
+mnuHeader4={class=menu_item, label=Header 4}
+mnuHeader5={class=menu_item, label=Header 5}
+mnuHeader6={class=menu_item, label=Header 6}
+mnuBulletedList={class=menu_item, label=Bulleted List}
+mnuRomanNumeralList={class=menu_item, label=Roman Numeral List}
+mnuNumberedList={class=menu_item, label=Numbered List}
+mnuAlphabeticalList={class=menu_item, label=Alphabetical List}
+mnuAddress={class=menu_item, label=Address}
+mnuPreformat={class=menu_item, label=Preformat}
+mnuAlignment={class=menu, label=Alignment}
+mnuLeft={class=menu_item, label=Left}
+mnuCenter={class=menu_item, label=Center}
+mnuRight={class=menu_item, label=Right}
+mnuParagraph={class=menu_item, label=Paragraph...}
+mnuIncreaseIndent={class=menu_item, label=Increase Indent}
+mnuDecreaseIndent={class=menu_item, label=Decrease Indent}
+mnuWrapLines={class=menu_item, label=Wrap Lines}
+mnuPage={class=menu_item, label=Page...}
+mnuView={class=menu, label=View}
+mnuShowattachments={class=check_menu_item, label=Show attachments}
+mnuFromField={class=check_menu_item, label=From Field}
+mnuToField={class=check_menu_item, label=To Field}
+mnuPost-ToField={class=check_menu_item, label=Post-To Field}
+mnuReply-ToField={class=check_menu_item, label=Reply-To Field}
+mnuCcField={class=check_menu_item, label=Cc Field}
+mnuBccField={class=check_menu_item, label=Bcc Field}
+mnuInsert={class=menu, label=Insert}
+mnuAttachment={class=menu_item, label=Attachment...}
+mnuSendOptions={class=menu_item, label=Send Options}
+mnuImage={class=menu_item, label=Image...}
+mnuLink={class=menu_item, label=Link...}
+mnuRule={class=menu_item, label=Rule...}
+mnuTable={class=menu_item, label=Table...}
+mnuTextfile={class=menu_item, label=Text file...}
+mnuHTMLfile={class=menu_item, label=HTML file...}
+mnuSmiley={class=menu, label=Smiley}
+mnuSmile={class=menu_item, label=Smile}
+mnuWink={class=menu_item, label=Wink}
+mnuSurprised={class=menu_item, label=Surprised}
+mnuLaughing={class=menu_item, label=Laughing}
+mnuOhno!={class=menu_item, label=Oh no!}
+mnuFrown={class=menu_item, label=Frown}
+mnuIndifferent={class=menu_item, label=Indifferent}
+mnuUndecided={class=menu_item, label=Undecided}
+mnuLick={class=menu_item, label=Lick}
+mnuCrying={class=menu_item, label=Crying}
+mnuSick={class=menu_item, label=Sick}
+mnuSecurity={class=menu, label=Security}
+mnuPGPSign={class=check_menu_item, label=PGP Sign}
+mnuPGPEncrypt={class=check_menu_item, label=PGP Encrypt}
+mnuS/MIMESign={class=check_menu_item, label=S/MIME Sign}
+mnuS/MIMEEncrypt={class=check_menu_item, label=S/MIME Encrypt}
+btnSend={class=push_button, label=Send}
+btnAttach={class=push_button, label=Attach}
+btnUndo={class=push_button, label=Undo}
+btnRedo={class=push_button, label=Redo}
+btnCut={class=push_button, label=Cut}
+btnCopy={class=push_button, label=Copy}
+btnPaste={class=push_button, label=Paste}
+btnFind={class=push_button, label=Find}
+btnReplace={class=push_button, label=Replace}
+btnImage={class=push_button, label=Image}
+btnLink={class=push_button, label=Link}
+btnRule={class=push_button, label=Rule}
+btnTable={class=push_button, label=Table}
+txtSubject={class=text, label_by=Subject:}
+txtPostTo={class=text, label=Post To:}
+btnPostTo:={class=push_button, label=Post To:}
+txtBcc={class=text, label=Bcc:}
+btnBcc:={class=push_button, label=Bcc:}
+txtCc={class=text, label=Cc:}
+btnCc:={class=push_button, label=Cc:}
+txtTo={class=text, label=To:}
+btnTo:={class=push_button, label=To:}
+txtReply-To={class=text, label_by=Reply-To:}
+mnuNagappanA<anagappan@novell={class=menu_item, label=Nagappan A <anagappan@novell.com>}
+mnuNone={class=menu_item, label=None}
+mnuAutogenerated={class=menu_item, label=Autogenerated}
+mnu-2={class=menu_item, label=-2}
+mnu-1={class=menu_item, label=-1}
+mnu+0={class=menu_item, label=+0}
+mnu+1={class=menu_item, label=+1}
+mnu+2={class=menu_item, label=+2}
+mnu+3={class=menu_item, label=+3}
+mnu+4={class=menu_item, label=+4}
+mnuNormal={class=menu_item, label=Normal}
+mnuPreformat={class=menu_item, label=Preformat}
+mnuBulletedList={class=menu_item, label=Bulleted List}
+mnuNumberedList={class=menu_item, label=Numbered List}
+mnuRomanList={class=menu_item, label=Roman List}
+mnuAlphabeticalList={class=menu_item, label=Alphabetical List}
+mnuHeader1={class=menu_item, label=Header 1}
+mnuHeader2={class=menu_item, label=Header 2}
+mnuHeader3={class=menu_item, label=Header 3}
+mnuHeader4={class=menu_item, label=Header 4}
+mnuHeader5={class=menu_item, label=Header 5}
+mnuHeader6={class=menu_item, label=Header 6}
+mnuAddress={class=menu_item, label=Address}
+tbtnTypewriter={class=toggle_button, label=Typewriter}
+tbtnBold={class=toggle_button, label=Bold}
+tbtnItalic={class=toggle_button, label=Italic}
+tbtnUnderline={class=toggle_button, label=Underline}
+tbtnStrikeout={class=toggle_button, label=Strikeout}
+rdoLeftalign={class=radio_button, label=Left align}
+rdoCenter={class=radio_button, label=Center}
+rdoRightalign={class=radio_button, label=Right align}
+btnUnindent={class=push_button, label=Unindent}
+btnIndent={class=push_button, label=Indent}
+btncolorpreview={class=push_button, label=color preview}
+tbtnPopup={class=toggle_button, label=Popup}
+paneAttachmentBar={class=layered_pane, label=Attachment Bar}
+
+[dlgAttachfile(s)]
+dlgAttachfile(s)={class=dialog, label=Attach file(s), app_name=evolution-2.2}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+chkSuggestautomaticdisplayofattachment={class=check_box, label=Suggest automatic display of attachment}
+btnOpen={class=push_button, label=Open}
+btnCancel={class=push_button, label=Cancel}

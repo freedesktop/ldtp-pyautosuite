@@ -1,0 +1,11 @@
++ In this release we have provided test scripts for Evolution-2.3.4 mailer automated testing
+
++ For all the verifications involving image comparision it is necessary to replace the following files with those images taken in the testing scenario.
+	* composemail_refimg.png
+	* attachmail_refimg.png
+	* forwardmail_refimg.png
+	* replymail_refimg.png
+
++ Please make sure that all the image files are in .png format.
+
++ Please make sure that all tha .dat files contain the correct data for the scenario in which the testing is undertaken.
