@@ -1,0 +1,194 @@
+[ArchiveManager]
+ArchiveManager={class=frame, app_name=file-roller, label=Archive Manager}
+mnuArchive={class=menu, label=Archive}
+mnuNew={class=menu_item, label=New}
+mnuOpen={class=menu_item, label=Open}
+mnuOpenRecent={class=menu, label=Open Recent}
+mnuEmpty={class=menu_item, label=Empty}
+mnuSaveAs={class=menu_item, label=Save As}
+mnuRename={class=menu_item, label=Rename...}
+mnuCopy={class=menu_item, label=Copy...}
+mnuMove={class=menu_item, label=Move...}
+mnuMovetoTrash={class=menu_item, label=Move to Trash}
+mnuTestIntegrity={class=menu_item, label=Test Integrity}
+mnuProperties={class=menu_item, label=Properties}
+mnuClose={class=menu_item, label=Close}
+mnuQuit={class=menu_item, label=Quit}
+mnuEmpty={class=menu_item, label=Empty}
+mnuEdit={class=menu, label=Edit}
+mnuAddFiles={class=menu_item, label=Add Files...}
+mnuAddaFolder={class=menu_item, label=Add a Folder...}
+mnuExtract={class=menu_item, label=Extract...}
+mnuCut={class=menu_item, label=Cut}
+mnuCopy={class=menu_item, label=Copy}
+mnuPaste={class=menu_item, label=Paste}
+mnuRename={class=menu_item, label=Rename...}
+mnuDelete={class=menu_item, label=Delete}
+mnuSelectAll={class=menu_item, label=Select All}
+mnuDeselectAll={class=menu_item, label=Deselect All}
+mnuOpenFiles={class=menu_item, label=Open Files...}
+mnuViewFile={class=menu_item, label=View File}
+mnuPassword={class=menu_item, label=Password...}
+mnuEmpty={class=menu_item, label=Empty}
+mnuView={class=menu, label=View}
+mnuToolbar={class=check_menu_item, label=Toolbar}
+mnuStatusbar={class=check_menu_item, label=Statusbar}
+mnuStop={class=menu_item, label=Stop}
+mnuRefresh={class=menu_item, label=Refresh}
+mnuViewAllFiles={class=check_menu_item, label=View All Files}
+mnuViewasaFolder={class=check_menu_item, label=View as a Folder}
+mnuArrangeFiles={class=menu, label=Arrange Files}
+mnubyName={class=check_menu_item, label=by Name}
+mnubySize={class=check_menu_item, label=by Size}
+mnubyType={class=check_menu_item, label=by Type}
+mnubyDatemodified={class=check_menu_item, label=by Date modified}
+mnubyLocation={class=check_menu_item, label=by Location}
+mnuReversedOrder={class=check_menu_item, label=Reversed Order}
+mnuEmpty={class=menu_item, label=Empty}
+mnuLastOutput={class=menu_item, label=Last Output}
+mnuEmpty={class=menu_item, label=Empty}
+mnuHelp={class=menu, label=Help}
+mnuHelp={class=menu_item, label=Help}
+mnuAbout={class=menu_item, label=About}
+mnuEmpty={class=menu_item, label=Empty}
+btnNew={class=push_button, label=New}
+btnOpen={class=push_button, label=Open}
+btnAdd={class=push_button, label=Add}
+btnExtract={class=push_button, label=Extract}
+btnDelete={class=push_button, label=Delete}
+btnView={class=push_button, label=View}
+btnStop={class=push_button, label=Stop}
+btnBack={class=push_button, label=Back}
+btngoforward={class=push_button, label=go forward}
+btngoup={class=push_button, label=go up}
+btnhome={class=push_button, label=home}
+tbl0={class=table, instance_index=0, parent=ArchiveManager}
+
+[dlgOpen]
+dlgOpen={class=dialog, label=Open, app_name=file-roller}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+mnuAllarchives={class=menu_item, label=All archives}
+mnuAllfiles={class=menu_item, label=All files}
+btnOpen={class=push_button, label=Open}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgRename]
+dlgRename={class=dialog, label=Rename, app_name=file-roller}
+txtNewName={class=text, instance_index=0, parent=dlgRename}
+btnRename={class=push_button, label=Rename}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgCopy]
+dlgCopy={class=dialog, label=Copy, app_name=file-roller}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+btnCopy={class=push_button, label=Copy}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgMove]
+dlgMove={class=dialog, label=Move, app_name=file-roller}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+btnMove={class=push_button, label=Move}
+btnCancel={class=push_button, label=Cancel}
+btbnHome={class=push_button, label=Home}
+
+[dlgNew]
+dlgNew={class=dialog, label=New, app_name=file-roller}
+mnuHome={class=menu_item, label=Home}
+mnuDesktop={class=menu_item, label=Desktop}
+mnuFilesystem={class=menu_item, label=Filesystem}
+mnufloppy={class=menu_item, label=floppy}
+mnuDVD={class=menu_item, label=DVD}
+mnu13GHardDrive={class=menu_item, label=13G Hard Drive}
+mnu21GHardDrive={class=menu_item, label=21G Hard Drive}
+mnu21GHardDrive={class=menu_item, label=21G Hard Drive (2)}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+mnuAllarchives={class=menu_item, label=All archives}
+mnuAllfiles={class=menu_item, label=All files}
+mnuAutomatic={class=menu_item, label=Automatic}
+mnuAr={class=menu_item, label=Ar (.ar)}
+mnuEar={class=menu_item, label=Ear (.ear)}
+mnuJar={class=menu_item, label=Jar (.jar)}
+mnuTaruncompressed={class=menu_item, label=Tar uncompressed (.tar)}
+mnuTarcompressedwithbzip2={class=menu_item, label=Tar compressed with bzip2 (.tar.bz2)}
+mnuTarcompressedwithgzip={class=menu_item, label=Tar compressed with gzip (.tar.gz)}
+mnuWar={class=menu_item, label=War (.war)}
+mnuZip={class=menu_item, label=Zip (.zip)}
+btnNew={class=push_button, label=New}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgfile-roller]
+dlgfile-roller={class=dialog, label=file-roller.tar.gz Properties, app_name=file-roller}
+btnClose={class=push_button, label=Close}
+
+[dlgAddFiles]
+dlgAddFiles={class=dialog, label=Add Files, app_name=file-roller}
+txtName={class=text, label_by=Name:}
+tbtnBrowseforotherfolders={class=toggle_button, label=Browse for other folders}
+tblShortcuts={class=table, label=Shortcuts}
+btnAdd={class=push_button, label=Add}
+btnRemove={class=push_button, label=Remove}
+tbtnHome={class=toggle_button, label=Home}
+btnCreateFolder={class=push_button, label=Create Folder}
+tblFiles={class=table, label=Files}
+chkAddonlyifnewer={class=check_box, label=Add only if newer}
+btnAdd={class=push_button, label=Add}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgExtract]
+dlgExtract={class=dialog, label=Extract, app_name=file-roller}
+btnmnagashree={class=push_button, label=mnagashree}
+mnuHome={class=menu_item, label=Home}
+mnuDesktop={class=menu_item, label=Desktop}
+mnuFilesystem={class=menu_item, label=Filesystem}
+mnufloppy={class=menu_item, label=floppy}
+mnuDVD={class=menu_item, label=DVD}
+mnu13GHardDrive={class=menu_item, label=13G Hard Drive}
+mnu21GHardDrive={class=menu_item, label=21G Hard Drive}
+mnu21GHardDrive={class=menu_item, label=21G Hard Drive (2)}
+mnuOther={class=menu_item, label=Other...}
+rdoSelectedfiles={class=radio_button, label=Selected files}
+rdoAllfiles={class=radio_button, label=All files}
+rdoFiles={class=radio_button, label=Files:}
+chkRe-createfolders={class=check_box, label=Re-create folders}
+chkOverwriteexistingfiles={class=check_box, label=Overwrite existing files}
+chkDonotextractolderfiles={class=check_box, label=Do not extract older files}
+chkOpendestinationfolderafterextraction={class=check_box, label=Open destination folder after extraction}
+btnExtract={class=push_button, label=Extract}
+btnCancel={class=push_button, label=Cancel}
+btnHelp={class=push_button, label=Help}
+
+[dlgDelete]
+dlgDelete={class=dialog, label=Delete, app_name=file-roller}
+rdoSelectedfiles={class=radio_button, label=Selected files}
+rdoAllfiles={class=radio_button, label=All files}
+rdoFiles={class=radio_button, label=Files:}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}

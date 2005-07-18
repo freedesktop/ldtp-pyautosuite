@@ -1,0 +1,5 @@
+Executed and verified all the scripts that are written for file-roller 2.11.1 on SUSE 9.3 
+Precondition:
+file-roller.tar.gz file should be placed under home directory 
+Known bugs:
+Copying an archive to other location does not work due to the bug in file-roller
