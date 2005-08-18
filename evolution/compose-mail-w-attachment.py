@@ -27,8 +27,9 @@
 #To compose a new mail message through File menu
 def compose_mail_w_attachment ( to, subject, body,filename ,cc=''):
     try:
-        selectmenuitem ('evolution', 'mnuTools;mnuMail')
-        time.sleep(3)
+        time.sleep (10)
+        selectmenuitem ('evolution', 'mnuView;mnuWindow;mnuMail')
+        time.sleep (10)
         selectmenuitem ('evolution', 'mnuFile;mnuFileNew;mnuMailMessage')
         time.sleep(3)
         if guiexist ('Composeamessage') == 0:
@@ -42,7 +43,6 @@ def compose_mail_w_attachment ( to, subject, body,filename ,cc=''):
                 log ('Select file dialog does not appear','error')
                 raise LdtpExecutionError (0)
             else:
-                #setcontext (subject,'dlgAttachfile')
                 selectrow ('dlgAttachfile','tblFiles',filename)
                 click ('dlgAttachfile','btnAttach')
                 time.sleep(5)
@@ -50,7 +50,6 @@ def compose_mail_w_attachment ( to, subject, body,filename ,cc=''):
                     log ('Select file dialog does not close after clicking attach button','error')
                     raise LdtpExecutionError (0)
                 else:
-                    #setcontext ('dlgAttachfile',subject)
                     click ('Composeamessage', 'btnSend')
                     time.sleep(3)
                     if guiexist ('Composeamessage') == 1:

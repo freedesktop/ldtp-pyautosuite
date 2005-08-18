@@ -27,47 +27,45 @@
 #Moving an existing Mail
 
 # Section to select and move mail
-def delete_mail (source_fldr):
-	#TODO: Currently deletes only the last mail. Should be extended to delete
-	#any arbitary mail
+def delete_mail (source_fldr, mail_index):
 	try:
+		time.sleep (10)
 		selectrowpartialmatch ('evolution', 'ttblMailFolderTree',
 				       source_fldr)
 		rowcount = getrowcount('evolution', 'ttblMessageList') 
 		if rowcount > 0:
-			#selectlastrow ('evolution', 'ttblMessageList')
-			selectrowindex ('evolution', 'ttblMessageList',
-					rowcount-3)
-			selectmenuitem ('evolution',
-					'mnuEdit;mnuDeleteMessage')
+			if mail_index == -1:
+				mail_index = rowcount - 1
+			selectrowindex ('evolution', 'ttblMessageList', mail_index)
+			selectmenuitem ('evolution', 'mnuEdit;mnuDeleteMessage')
 			time.sleep (3)
-			selectrowpartialmatch ('evolution',
-					       'ttblMailFolderTree',to_fldr)
+			selectrowpartialmatch ('evolution', 'ttblMailFolderTree',source_fldr)
 			time.sleep (5)
-			row_after = getrowcount('evolution',
-						'ttblMessageList')
-			selectmenuitem ('evolution', 'mnuFile;mnuClose')
+			row_after = getrowcount('evolution','ttblMessageList')
+			#selectmenuitem ('evolution', 'mnuFile;mnuClose')
 			if row_after < rowcount:
-				log ('Deleting a mail passed successfully',
-					     'pass') 
+				log ('Deleting a mail passed successfully', 'pass') 
 			else:
-				log ('Deleting a mail failed','fail')
+				log ('Deleting a mail failed', 'fail')
 		else:
 			log ('From folder empty!', 'Warning')
-			log ('Did not Delete any mail from source folder',
-			     'Pass')
+			log ('Did not Delete any mail from source folder', 'Pass')
 	except ldtp.error,msg:
-		print 'Deleting mail between folders failed',str(msg)
-		log ('Moving mail failed','fail')
+		print 'Deleting mail between folders failed', str(msg)
+		log ('Moving mail failed', 'fail')
 			
 #Read input from file
 file = open ('deletemail.dat', 'r')
 argmts = file.readlines()
-source_fldr = argmts[0].strip( )
+source_fldr = argmts[0].strip ()
+mail_index = argmts[1].strip ()
 
+if mail_index == '$':
+	mail_index = -1
+	
 # Call the function
 log ('deletemail', 'teststart')	
-delete_mail (source_fldr)
+delete_mail (source_fldr, mail_index)
 log ('deletemail', 'testend')
 log ('Deleting mail succeeded', 'pass') 
                                                                            

@@ -28,7 +28,7 @@
 #To compose a new mail message through File menu
 def compose_mail ( to, subject, body, cc=''):
     try:
-        selectmenuitem ('evolution', 'mnuTools;mnuMail')
+        selectmenuitem ('evolution', 'mnuView;mnuWindow;mnuMail')
         time.sleep(3)
         selectmenuitem ('evolution', 'mnuFile;mnuFileNew;mnuMailMessage')
         time.sleep(3)
@@ -38,7 +38,7 @@ def compose_mail ( to, subject, body, cc=''):
         else:
             populate_mail_header (to, subject, body, cc)
             click ('Composeamessage', 'btnSend')
-            time.sleep(3)
+            time.sleep(15)
             if guiexist ('Composeamessage') == 1:
                 log ('Failed during clicking the send button','error')
                 raise LdtpExecutionError (0)
@@ -58,13 +58,13 @@ cc = record[1].strip()
 subject = record[2].strip()
 body = record[3].strip()
 
-log ('Compose new message','Start')
+log ('Compose new message','teststart')
 time.sleep(3)
 compose_mail (to,subject,body,cc)
 time.sleep(3)
-log ('Compose new message','end')
-log ('Compose new message Verification','Start')
+log ('Compose new message','testend')
+log ('Compose new message Verification','teststart')
 time.sleep(3)
-verifymailwithimage ('Sent Items',-9,'composemail_refimage.png')
+verifymailwithimage ('Sent Items',-1,'composemail_refimage.png')
 time.sleep(3)
-log ('Compose new message Verification','end')
+log ('Compose new message Verification','testend')

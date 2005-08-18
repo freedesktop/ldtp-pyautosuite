@@ -17,7 +17,7 @@ mnuTask={class=menu_item, label=Task, parent=mnuFileNew}
 mnuAddressBook={class=menu_item, label=Address Book, parent=mnuFileNew}
 mnuCalendar={class=menu_item, label=Calendar, parent=mnuFileNew}
 mnuTasklist={class=menu_item, label=Task list, parent=mnuFileNew}
-mnuNewWindow={class=menu_item, label=New Window, parent=mnuFile}
+mnuFileNewWindow={class=menu_item, label=New Window, parent=mnuFile}
 mnuSend/Receive={class=menu_item, label=Send / Receive, parent=mnuFile}
 mnuSaveMessage={class=menu_item, label=Save Message..., parent=mnuFile}
 mnuImport={class=menu_item, label=Import..., parent=mnuFile}
@@ -37,7 +37,6 @@ mnuFindinMessage={class=menu_item, label=Find in Message..., parent=mnuEdit}
 mnuSynchronizationOptions={class=menu_item, label=Synchronization Options..., parent=mnuEdit}
 mnuMessageFilters={class=menu_item, label=Message Filters, parent=mnuEdit}
 mnuSearchFolders={class=menu_item, label=Search Folders, parent=mnuEdit}
-mnuPlugins={class=menu_item, label=Plugins, parent=mnuEdit}
 mnuPreferences={class=menu_item, label=Preferences, parent=mnuEdit}
 mnuView={class=menu, label=View}
 mnuCurrentView={class=menu, label=Current View}
@@ -50,6 +49,11 @@ mnuByFollowUpFlag={class=radio_menu_item, label=By Follow Up Flag, parent=mnuByF
 mnuCustomView={class=radio_menu_item, label=Custom View, parent=mnuCustomView}
 mnuSaveCustomView={class=menu_item, label=Save Custom View..., parent=mnuSaveCustomView...}
 mnuDefineViews={class=menu_item, label=Define Views..., parent=mnuDefineViews...}
+mnuWindow={class=menu, label=Window}
+mnuMail={class=menu_item, label=Mail, parent=mnuWindow}
+mnuContacts={class=menu_item, label=Contacts, parent=mnuWindow}
+mnuCalendars={class=menu_item, label=Calendars, parent=mnuWindow}
+mnuTasks={class=menu_item, label=Tasks, parent=mnuWindow}
 mnuToolbar={class=check_menu_item, label=Toolbar, parent=mnuView}
 mnuMessagePreview={class=check_menu_item, label=Message Preview, parent=mnuView}
 mnuSwitcherAppearance={class=menu, label=Switcher Appearance}
@@ -58,11 +62,11 @@ mnuIconsonly={class=radio_menu_item, label=Icons only, parent=mnuIconsonly}
 mnuTextonly={class=radio_menu_item, label=Text only, parent=mnuTextonly}
 mnuToolbarstyle={class=radio_menu_item, label=Toolbar style, parent=mnuToolbarstyle}
 mnuHidebuttons={class=check_menu_item, label=Hide buttons, parent=mnuHidebuttons}
-mnuShowMessages={class=menu, label=Show Messages}
-mnuAll={class=radio_menu_item, label=All, parent=mnuAll}
-mnuUnreadMessages={class=radio_menu_item, label=Unread Messages, parent=mnuUnreadMessages}
 mnuGroupByThreads={class=check_menu_item, label=Group By Threads, parent=mnuView}
 mnuHideDeletedMessages={class=check_menu_item, label=Hide Deleted Messages, parent=mnuView}
+mnuHideSelectedMessages={class=menu_item, label=Hide Selected Messages, parent=mnuView}
+mnuHideReadMessages={class=menu_item, label=Hide Read Messages, parent=mnuView}
+mnuShowHiddenMessages={class=menu_item, label=Show Hidden Messages, parent=mnuView}
 mnuLoadImages={class=menu_item, label=Load Images, parent=mnuView}
 mnuAllMessageHeaders={class=check_menu_item, label=All Message Headers, parent=mnuView}
 mnuCaretMode={class=check_menu_item, label=Caret Mode, parent=mnuView}
@@ -147,18 +151,6 @@ mnuVFolderonSubject={class=menu_item, label=VFolder on Subject..., parent=mnuVFo
 mnuVFolderonSender={class=menu_item, label=VFolder on Sender..., parent=mnuVFolderonSender...}
 mnuVFolderonRecipients={class=menu_item, label=VFolder on Recipients..., parent=mnuVFolderonRecipients...}
 mnuVFolderonMailingList={class=menu_item, label=VFolder on Mailing List..., parent=mnuVFolderonMailingList...}
-mnuMailingList={class=menu, label=Mailing List}
-mnuGetlistusageinformation={class=menu_item, label=Get list usage information, parent=mnuGetlistusageinformation}
-mnuSubscribetolist={class=menu_item, label=Subscribe to list, parent=mnuSubscribetolist}
-mnuUn-subscribetolist={class=menu_item, label=Un-subscribe to list, parent=mnuUn-subscribetolist}
-mnuPostmessagetolist={class=menu_item, label=Post message to list, parent=mnuPostmessagetolist}
-mnuContactlistowner={class=menu_item, label=Contact list owner, parent=mnuContactlistowner}
-mnuGetlistarchive={class=menu_item, label=Get list archive, parent=mnuGetlistarchive}
-mnuTools={class=menu, label=Tools}
-mnuMail={class=menu_item, label=Mail, parent=mnuTools}
-mnuContacts={class=menu_item, label=Contacts, parent=mnuTools}
-mnuCalendars={class=menu_item, label=Calendars, parent=mnuTools}
-mnuTasks={class=menu_item, label=Tasks, parent=mnuTools}
 mnuSearch={class=menu, label=Search}
 mnuFindNow={class=menu_item, label=Find Now, parent=mnuSearch}
 mnuClear={class=menu_item, label=Clear, parent=mnuSearch}
@@ -217,7 +209,7 @@ ptl0={class=page_tab_list, instance_index=0}
 ptb0={class=page_tab, instance_index=0}
 pnl30={class=panel, instance_index=30,parent=Evolution-Mail}
 pnl31={class=panel, instance_index=31,parent=Evolution-Mail}
-lbl82total={class=label, label=82 total}
+lbl118total={class=label, label=118 total}
 ttblMailFolderTree={class=tree_table, label=Mail Folder Tree}
 tbtnMail={class=toggle_button, label=Mail}
 tbtnContacts={class=toggle_button, label=Contacts}
@@ -242,13 +234,54 @@ btnFindNow={class=push_button, label=Find Now}
 pnl35={class=panel, instance_index=35,parent=Evolution-Mail}
 btnClear={class=push_button, label=Clear}
 ttblMessageList={class=tree_table, label=Message List}
+pnlPanelcontainingHTML={class=panel}
+pnl37={class=panel, instance_index=37,parent=pnlPanelcontainingHTML}
+tbl0={class=table, instance_index=0}
+pnl38={class=panel, instance_index=38,parent=pnlPanelcontainingHTML}
+tbl1={class=table, instance_index=1,parent=pnlPanelcontainingHTML}
+pnl39={class=panel, instance_index=39,parent=pnlPanelcontainingHTML}
+txt1={class=text, instance_index=1,parent=pnlPanelcontainingHTML}
+pnl40={class=panel, instance_index=40,parent=pnlPanelcontainingHTML}
+txt2={class=text, instance_index=2,parent=pnlPanelcontainingHTML}
+pnl41={class=panel, instance_index=41,parent=pnlPanelcontainingHTML}
+txt3={class=text, instance_index=3,parent=pnlPanelcontainingHTML}
+pnl42={class=panel, instance_index=42,parent=pnlPanelcontainingHTML}
+txt4={class=text, instance_index=4,parent=pnlPanelcontainingHTML}
+pnl43={class=panel, instance_index=43,parent=pnlPanelcontainingHTML}
+txt5={class=text, instance_index=5,parent=pnlPanelcontainingHTML}
+pnl44={class=panel, instance_index=44,parent=pnlPanelcontainingHTML}
+txt6={class=text, instance_index=6,parent=pnlPanelcontainingHTML}
+pnl45={class=panel, instance_index=45,parent=pnlPanelcontainingHTML}
+txt7={class=text, instance_index=7,parent=pnlPanelcontainingHTML}
+pnl46={class=panel, instance_index=46,parent=pnlPanelcontainingHTML}
+txt8={class=text, instance_index=8,parent=pnlPanelcontainingHTML}
+pnl47={class=panel, instance_index=47,parent=pnlPanelcontainingHTML}
+pnl48={class=panel, instance_index=48,parent=pnlPanelcontainingHTML}
+pnl49={class=panel, instance_index=49,parent=pnlPanelcontainingHTML}
+btn17={class=push_button, instance_index=17,parent=pnlPanelcontainingHTML}
+lblNoAttachment={class=label, label=No Attachment}
+btnSaveAll={class=push_button, label=Save All}
+paneAttachmentBar={class=layered_pane, label=Attachment Bar}
+pnl50={class=panel, instance_index=50,parent=pnlPanelcontainingHTML}
+tbl2={class=table, instance_index=2,parent=pnlPanelcontainingHTML}
+pnl51={class=panel, instance_index=51,parent=pnlPanelcontainingHTML}
 pnlPanelcontainingHTML={class=panel, label=Panel containing HTML}
-btn17={class=push_button, instance_index=17,parent=Evolution-Mail}
-lblComposeanewmailmessage={class=label, label=Compose a new mail message}
+pnl53={class=panel, instance_index=53,parent=pnlPanelcontainingHTML}
+txt9={class=text, instance_index=9,parent=pnlPanelcontainingHTML}
+pnl54={class=panel, instance_index=54,parent=pnlPanelcontainingHTML}
+txt10={class=text, instance_index=10,parent=pnlPanelcontainingHTML}
+pnl55={class=panel, instance_index=55,parent=pnlPanelcontainingHTML}
+txt11={class=text, instance_index=11,parent=pnlPanelcontainingHTML}
+pnl56={class=panel, instance_index=56,parent=pnlPanelcontainingHTML}
+txt12={class=text, instance_index=12,parent=pnlPanelcontainingHTML}
+pnl57={class=panel, instance_index=57,parent=pnlPanelcontainingHTML}
+txt13={class=text, instance_index=13,parent=pnlPanelcontainingHTML}
+btn19={class=push_button, instance_index=19,parent=Evolution-Mail}
+lbl2={class=label, instance_index=2,parent=Evolution-Mail}
 ptl2={class=page_tab_list, instance_index=2}
 ptb2={class=page_tab, instance_index=2}
-pnl37={class=panel, instance_index=37,parent=Evolution-Mail}
-pnl38={class=panel, instance_index=38,parent=Evolution-Mail}
+pnl58={class=panel, instance_index=58,parent=Evolution-Mail}
+pnl59={class=panel, instance_index=59,parent=Evolution-Mail}
 
 [Composeamessage]
 Composeamessage={class=frame, app_name=evolution, label=Compose a message}
@@ -660,3 +693,415 @@ pnl33={class=panel, instance_index=33,parent=pnlPanelcontainingHTML}
 pnlPanelcontainingHTML={class=panel, label=Panel containing HTML}
 pnl35={class=panel, instance_index=35,parent=pnlPanelcontainingHTML}
 txt8={class=text, instance_index=8,parent=pnlPanelcontainingHTML}
+
+[dlgMeeting-Nosummary]
+dlgMeeting-Nosummary={class=dialog, label=Meeting - No summary, app_name=evolution}
+ptlMeeting-Nosummary0={class=page_tab_list, instance_index=0}
+ptabAppointment={class=page_tab, label=Appointment}
+lblBasics={class=label, label=Basics}
+lbl1={class=label, instance_index=1,parent=ptabAppointment}
+pnl0={class=panel, instance_index=0,parent=ptabAppointment}
+lblDescription={class=label, label=Description:}
+txt0={class=text, instance_index=0,parent=ptabAppointment}
+btnCategories={class=push_button, label=Categories...}
+cboPublic={class=combo_box, label=Public}
+mnuPublic={class=menu_item, label=Public, parent=mnuPublic}
+mnuPrivate={class=menu_item, label=Private, parent=mnuPublic}
+mnuConfidential={class=menu_item, label=Confidential, parent=mnuPublic}
+lblCalendar={class=label, label=Calendar:}
+cboPersonal={class=combo_box, label=    Personal}
+mnuOnThisComputer={class=menu_item, label=On This Computer, parent=mnuOnThisComputer}
+mnuPersonal={class=menu_item, label=    Personal, parent=mnuPersonal}
+mnuOnTheWeb={class=menu_item, label=On The Web, parent=mnuOnTheWeb}
+mnunewcalendar={class=menu_item, label=    new calendar, parent=mnunewcalendar}
+mnuContacts={class=menu_item, label=Contacts, parent=mnuContacts}
+mnuBirthdays&Anniversaries={class=menu_item, label=    Birthdays & Anniversaries, parent=mnuBirthdays&Anniversaries}
+mnuWeather={class=menu_item, label=Weather, parent=mnuWeather}
+lblClassification={class=label, label=Classification:}
+txtEventDescription={class=text, label=Event Description}
+txt2={class=text, instance_index=2,parent=ptabAppointment}
+txtLocation={class=text, label_by=Location:}
+lblLocation={class=label, label=Location:}
+txt3={class=text, instance_index=3,parent=ptabAppointment}
+lblSummary={class=label, label=Summary:}
+lblDateandTime={class=label, label=Date and Time}
+lbl8={class=label, instance_index=8,parent=ptabAppointment}
+pnl1={class=panel, instance_index=1,parent=ptabAppointment}
+lblThisappointmenthascustomizedalarms={class=label, label=This appointment has customized alarms}
+cbo15minutesbeforeappointment={class=combo_box, label=15 minutes before appointment}
+mnu15minutesbeforeappointment={class=menu_item, label=15 minutes before appointment, parent=mnu15minutesbeforeappointment}
+mnu1hourbeforeappointment={class=menu_item, label=1 hour before appointment, parent=mnu1hourbeforeappointment}
+mnu1daybeforeappointment={class=menu_item, label=1 day before appointment, parent=mnu1daybeforeappointment}
+btnCustomize={class=push_button, label=Customize...}
+chkAlarm={class=check_box, label=Alarm}
+chkShowtimeasbusy={class=check_box, label=Show time as busy}
+txt4={class=text, instance_index=4,parent=ptabAppointment}
+btnTimezoneButton={class=push_button, label=Timezone Button}
+chkAlldayevent={class=check_box, label=All day event}
+lblEndtime={class=label, label=End time:}
+lblStarttime={class=label, label=Start time:}
+txt5={class=text, instance_index=5,parent=ptabAppointment}
+btnTimezoneButton={class=push_button, label=Timezone Button}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtEndtime={class=text, label_by=End time:}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtStarttime={class=text, label_by=Start time:}
+pnlSendOptions={class=panel, label=Send Options}
+pnl3={class=panel, instance_index=3,parent=pnlSendOptions}
+btnAdvancedsendoptions={class=push_button, label=Advanced send options}
+lblSendOptions={class=label, label=Send Options}
+ptabRecurrence={class=page_tab, label=Recurrence}
+lblRecurrence={class=label, label=Recurrence}
+lbl14={class=label, instance_index=14,parent=ptabRecurrence}
+chkThisappointmentrecurs={class=check_box, label=This appointment recurs}
+lblEvery={class=label, label=Every}
+sbtn0={class=spin_button, instance_index=0,parent=ptabRecurrence}
+cboday={class=combo_box, label=day,parent=ptabRecurrence}
+mnuday={class=menu_item, label=day(s), parent=mnuday(s)}
+mnuweek={class=menu_item, label=week(s), parent=mnuday(s)}
+mnumonth={class=menu_item, label=month(s), parent=mnuday(s)}
+mnuyear={class=menu_item, label=year(s), parent=mnuday(s)}
+pnl4={class=panel, instance_index=4,parent=ptabRecurrence}
+lblonthe={class=label, label=on the}
+cbo1st={class=combo_box, label=1st}
+mnufirst={class=menu_item, label=first, parent=mnu1st}
+mnusecond={class=menu_item, label=second, parent=mnu1st}
+mnuthird={class=menu_item, label=third, parent=mnu1st}
+mnufourth={class=menu_item, label=fourth, parent=mnu1st}
+mnulast={class=menu_item, label=last, parent=mnu1st}
+mnu1st={class=menu_item, label=1st, parent=mnu1st}
+mnuOtherDate={class=menu, label=Other Date}
+mnu1stto10th={class=menu, label=1st to 10th}
+mnu1st={class=menu_item, label=1st, parent=mnu1st}
+mnu2nd={class=menu_item, label=2nd, parent=mnu2nd}
+mnu3rd={class=menu_item, label=3rd, parent=mnu3rd}
+mnu4th={class=menu_item, label=4th, parent=mnu4th}
+mnu5th={class=menu_item, label=5th, parent=mnu5th}
+mnu6th={class=menu_item, label=6th, parent=mnu6th}
+mnu7th={class=menu_item, label=7th, parent=mnu7th}
+mnu8th={class=menu_item, label=8th, parent=mnu8th}
+mnu9th={class=menu_item, label=9th, parent=mnu9th}
+mnu10th={class=menu_item, label=10th, parent=mnu10th}
+mnu11thto20th={class=menu, label=11th to 20th}
+mnu11th={class=menu_item, label=11th, parent=mnu11th}
+mnu12th={class=menu_item, label=12th, parent=mnu12th}
+mnu13th={class=menu_item, label=13th, parent=mnu13th}
+mnu14th={class=menu_item, label=14th, parent=mnu14th}
+mnu15th={class=menu_item, label=15th, parent=mnu15th}
+mnu16th={class=menu_item, label=16th, parent=mnu16th}
+mnu17th={class=menu_item, label=17th, parent=mnu17th}
+mnu18th={class=menu_item, label=18th, parent=mnu18th}
+mnu19th={class=menu_item, label=19th, parent=mnu19th}
+mnu20th={class=menu_item, label=20th, parent=mnu20th}
+mnu21stto31st={class=menu, label=21st to 31st}
+mnu21st={class=menu_item, label=21st, parent=mnu21st}
+mnu22nd={class=menu_item, label=22nd, parent=mnu22nd}
+mnu23rd={class=menu_item, label=23rd, parent=mnu23rd}
+mnu24th={class=menu_item, label=24th, parent=mnu24th}
+mnu25th={class=menu_item, label=25th, parent=mnu25th}
+mnu26th={class=menu_item, label=26th, parent=mnu26th}
+mnu27th={class=menu_item, label=27th, parent=mnu27th}
+mnu28th={class=menu_item, label=28th, parent=mnu28th}
+mnu29th={class=menu_item, label=29th, parent=mnu29th}
+mnu30th={class=menu_item, label=30th, parent=mnu30th}
+mnu31st={class=menu_item, label=31st, parent=mnu31st}
+cboday={class=combo_box, label=day}
+mnuday={class=menu_item, label=day, parent=mnuday}
+mnuMonday={class=menu_item, label=Monday, parent=mnuday}
+mnuTuesday={class=menu_item, label=Tuesday, parent=mnuday}
+mnuWednesday={class=menu_item, label=Wednesday, parent=mnuday}
+mnuThursday={class=menu_item, label=Thursday, parent=mnuday}
+mnuFriday={class=menu_item, label=Friday, parent=mnuday}
+mnuSaturday={class=menu_item, label=Saturday, parent=mnuday}
+mnuSunday={class=menu_item, label=Sunday, parent=mnuday}
+cboforever={class=combo_box, label=forever}
+mnufor={class=menu_item, label=for, parent=mnuforever}
+mnuuntil={class=menu_item, label=until, parent=mnuforever}
+mnuforever={class=menu_item, label=forever, parent=mnuforever}
+pnl5={class=panel, instance_index=5,parent=ptabRecurrence}
+sbtn1={class=spin_button, instance_index=1,parent=ptabRecurrence}
+lbloccurrences={class=label, label=occurrences}
+pnl6={class=panel, instance_index=6,parent=ptabRecurrence}
+lblExceptions={class=label, label=Exceptions}
+lbl19={class=label, instance_index=19,parent=ptabRecurrence}
+tbl0={class=table, instance_index=0,parent=ptabRecurrence}
+btnAdd={class=push_button, label=Add}
+btnEdit={class=push_button, label=Edit}
+btnRemove={class=push_button, label=Remove}
+lblPreview={class=label, label=Preview}
+lbl21={class=label, instance_index=21,parent=ptabRecurrence}
+pnl7={class=panel, instance_index=7,parent=ptabRecurrence}
+paneMonthCalendar={class=layered_pane, label=Month Calendar}
+pnl8={class=panel, instance_index=8,parent=paneMonthCalendar}
+pnl9={class=panel, instance_index=9,parent=paneMonthCalendar}
+btnPreviousButton={class=push_button, label=Previous Button}
+pnl10={class=panel, instance_index=10,parent=paneMonthCalendar}
+btnPreviousButton={class=push_button, label=Previous Button}
+ptabScheduling={class=page_tab, label=Scheduling}
+pnl11={class=panel, instance_index=11,parent=ptabScheduling}
+pnl12={class=panel, instance_index=12,parent=ptabScheduling}
+pnl13={class=panel, instance_index=13,parent=ptabScheduling}
+lblEndtime={class=label, label=End time:}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtStarttime={class=text, label_by=Start time:}
+lblStarttime={class=label, label=Start time:}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtAutopick={class=text, label_by=Autopick}
+btn<<={class=push_button, label=<<}
+btnAutopick={class=push_button, label=Autopick}
+btn>>={class=push_button, label=>>}
+btnContacts={class=push_button, label=Contacts...}
+btnOptions={class=push_button, label=Options}
+lblTentative={class=label, label=Tentative}
+lblBusy={class=label, label=Busy}
+lblOutofOffice={class=label, label=Out of Office}
+lblNoInformation={class=label, label=No Information}
+pane1={class=layered_pane, instance_index=1,parent=ptabScheduling}
+pnl14={class=panel, instance_index=14,parent=ptabScheduling}
+pane2={class=layered_pane, instance_index=2,parent=ptabScheduling}
+pnl15={class=panel, instance_index=15,parent=ptabScheduling}
+tbl1={class=table, instance_index=1,parent=ptabScheduling}
+ptabInvitations={class=page_tab, label=Invitations}
+lblOrganizer={class=label, label=Organizer:}
+cboOrganizer={class=combo_box, label=Organizer}
+txt14={class=text, instance_index=14,parent=cboOrganizer}
+lblOrganizer={class=label, label=Organizer:}
+lblNone={class=label, label=None}
+btnChangeOrganizer={class=push_button, label=Change Organizer}
+lblAttendees={class=label, label=Attendees}
+lbl32={class=label, instance_index=32,parent=ptabInvitations}
+tbl2={class=table, instance_index=2,parent=ptabInvitations}
+btnAdd={class=push_button, label=Add, parent=ptabInvitations}
+btnRemove={class=push_button, label=Remove}
+btnContacts={class=push_button, label=Contacts...}
+lblAttachmentBar={class=label, label=Attachment Bar (drop attachments here)}
+lbl34={class=label, instance_index=34,parent=dlgMeeting-Nosummary}
+paneAttachmentBar={class=layered_pane, label=Attachment Bar}
+btnHelp={class=push_button, label=Help}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgCategories]
+dlgCategories={class=dialog, label=Categories, app_name=evolution}
+pnl0={class=panel, instance_index=0,parent=dlgCategories}
+btnNew={class=push_button, label=New}
+btnEdit={class=push_button, label=Edit}
+btnDelete={class=push_button, label=Delete}
+tbl0={class=table, instance_index=0}
+lblAvailableCategories={class=label, label=Available Categories:}
+lblItem={class=label, label=Item(s) belong to these categories:}
+txt0={class=text, instance_index=0}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgAddexception]
+dlgAddexception={class=dialog, label=Add exception, app_name=evolution}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txt1={class=text, instance_index=1,parent=cboTimeComboBox}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgEvolutionQuery]
+dlgEvolutionQuery={class=dialog, label=Evolution Query, app_name=evolution}
+lblWouldyouliketosendmeetinginvitationstoparticipants?
+
+EmailinvitationswillbesenttoallparticipantsandallowthemtoRSVP.={class=label, label=Would you like to send meeting invitations to participants?
+
+Email invitations will be sent to all participants and allow them to RSVP.}
+btnSend={class=push_button, label=Send}
+btnDon'tSend={class=push_button, label=Don't Send}
+
+[dlgNewCalendar]
+dlgNewCalendar={class=dialog, label=New Calendar, app_name=evolution}
+ptlNewCalendar0={class=page_tab_list, instance_index=0, parent=NewCalendar}
+ptb0={class=page_tab, instance_index=0, parent=NewCalendar }
+pnlCalendar={class=panel, label=Calendar}
+pnl1={class=panel, instance_index=1,parent=pnlCalendar}
+pnl2={class=panel, instance_index=2,parent=pnlCalendar}
+sbtn0={class=spin_button, instance_index=0,parent=pnlCalendar}
+cbominutes={class=combo_box, label=minutes}
+mnuminutes={class=menu_item, label=minutes, parent=mnuminutes}
+mnuhours={class=menu_item, label=hours, parent=mnuminutes}
+mnudays={class=menu_item, label=days, parent=mnuminutes}
+mnuweeks={class=menu_item, label=weeks, parent=mnuminutes}
+lblRefresh={class=label, label=Refresh:}
+txt0={class=text, instance_index=0,parent=pnlCalendar}
+lblURL={class=label, label=URL:}
+chkMarkasdefaultfolder={class=check_box, label=Mark as default folder}
+chkCopycalendarcontentslocallyforofflineoperation={class=check_box, label=Copy calendar contents locally for offline operation}
+btn0={class=push_button, instance_index=0,parent=pnlCalendar}
+lblColor={class=label, label=Color:}
+txt1={class=text, instance_index=1,parent=pnlCalendar}
+lblName={class=label, label=Name:}
+lblType={class=label, label=Type:}
+cboOnThisComputer={class=combo_box, label=On This Computer}
+mnuOnThisComputer={class=menu_item, label=On This Computer, parent=mnuOnThisComputer}
+mnuOnTheWeb={class=menu_item, label=On The Web, parent=mnuOnTheWeb}
+mnuContacts={class=menu_item, label=Contacts, parent=mnuContacts}
+mnuWeather={class=menu_item, label=Weather, parent=mnuWeather}
+lblCalendar={class=label, label=Calendar}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}
+
+[dlgAppointment-Nosummary]
+dlgAppointment-Nosummary={class=dialog, label=Appointment - No summary, app_name=evolution}
+ptlAppointment-Nosummary0={class=page_tab_list, instance_index=0}
+ptabAppointment={class=page_tab, label=Appointment}
+lblBasics={class=label, label=Basics}
+lbl1={class=label, instance_index=1,parent=ptabAppointment}
+pnl0={class=panel, instance_index=0,parent=ptabAppointment}
+lblDescription={class=label, label=Description:}
+txt0={class=text, instance_index=0,parent=ptabAppointment}
+btnCategories={class=push_button, label=Categories...}
+cboPublic={class=combo_box, label=Public}
+mnuPublic={class=menu_item, label=Public, parent=mnuPublic}
+mnuPrivate={class=menu_item, label=Private, parent=mnuPublic}
+mnuConfidential={class=menu_item, label=Confidential, parent=mnuPublic}
+lblCalendar={class=label, label=Calendar:}
+cboPersonal={class=combo_box, label=    Personal}
+mnuOnThisComputer={class=menu_item, label=On This Computer, parent=mnuOnThisComputer}
+mnuPersonal={class=menu_item, label=    Personal, parent=mnuPersonal}
+mnuOnTheWeb={class=menu_item, label=On The Web, parent=mnuOnTheWeb}
+mnuContacts={class=menu_item, label=Contacts, parent=mnuContacts}
+mnuBirthdays&Anniversaries={class=menu_item, label=    Birthdays & Anniversaries, parent=mnuBirthdays&Anniversaries}
+mnuWeather={class=menu_item, label=Weather, parent=mnuWeather}
+lblClassification={class=label, label=Classification:}
+txtEventDescription={class=text, label=Event Description}
+txt2={class=text, instance_index=2,parent=ptabAppointment}
+lblLocation={class=label, label=Location:}
+txtLocation={class=text, label_by=Location:}
+txt3={class=text, instance_index=3,parent=ptabAppointment}
+lblSummary={class=label, label=Summary:}
+lblDateandTime={class=label, label=Date and Time}
+lbl8={class=label, instance_index=8,parent=ptabAppointment}
+pnl1={class=panel, instance_index=1,parent=ptabAppointment}
+lblThisappointmenthascustomizedalarms={class=label, label=This appointment has customized alarms}
+cbo15minutesbeforeappointment={class=combo_box, label=15 minutes before appointment}
+mnu15minutesbeforeappointment={class=menu_item, label=15 minutes before appointment, parent=mnu15minutesbeforeappointment}
+mnu1hourbeforeappointment={class=menu_item, label=1 hour before appointment, parent=mnu1hourbeforeappointment}
+mnu1daybeforeappointment={class=menu_item, label=1 day before appointment, parent=mnu1daybeforeappointment}
+btnCustomize={class=push_button, label=Customize...}
+chkAlarm={class=check_box, label=Alarm}
+chkShowtimeasbusy={class=check_box, label=Show time as busy}
+txt4={class=text, instance_index=4,parent=ptabAppointment}
+btnTimezoneButton={class=push_button, label=Timezone Button}
+chkAlldayevent={class=check_box, label=All day event}
+lblEndtime={class=label, label=End time:}
+lblStarttime={class=label, label=Start time:}
+txt5={class=text, instance_index=5,parent=ptabAppointment}
+btnTimezoneButton={class=push_button, label=Timezone Button}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtEndtime={class=text, label_by=End time:}
+txtTextDateEntry={class=text, label=Text Date Entry}
+btnDateButton={class=push_button, label=Date Button}
+cboTimeComboBox={class=combo_box, label=Time Combo Box}
+txtStarttime={class=text, label_by=Start time:}
+pnlSendOptions={class=panel, label=Send Options}
+pnl3={class=panel, instance_index=3,parent=pnlSendOptions}
+btnAdvancedsendoptions={class=push_button, label=Advanced send options}
+lblSendOptions={class=label, label=Send Options}
+ptabRecurrence={class=page_tab, label=Recurrence}
+lblRecurrence={class=label, label=Recurrence}
+lbl14={class=label, instance_index=14,parent=ptabRecurrence}
+chkThisappointmentrecurs={class=check_box, label=This appointment recurs}
+lblEvery={class=label, label=Every}
+sbtn0={class=spin_button, instance_index=0,parent=ptabRecurrence}
+cbomonth={class=combo_box, label=month(s)}
+mnuday={class=menu_item, label=day(s), parent=mnumonth(s)}
+mnuweek={class=menu_item, label=week(s), parent=mnumonth(s)}
+mnumonth={class=menu_item, label=month(s), parent=mnumonth(s)}
+mnuyear={class=menu_item, label=year(s), parent=mnumonth(s)}
+pnl4={class=panel, instance_index=4,parent=ptabRecurrence}
+lblonthe={class=label, label=on the}
+cbo1st={class=combo_box, label=1st}
+mnufirst={class=menu_item, label=first, parent=mnu1st}
+mnusecond={class=menu_item, label=second, parent=mnu1st}
+mnuthird={class=menu_item, label=third, parent=mnu1st}
+mnufourth={class=menu_item, label=fourth, parent=mnu1st}
+mnulast={class=menu_item, label=last, parent=mnu1st}
+mnu1st={class=menu_item, label=1st, parent=mnu1st}
+mnuOtherDate={class=menu, label=Other Date}
+mnu1stto10th={class=menu, label=1st to 10th}
+mnu1st={class=menu_item, label=1st, parent=mnu1st}
+mnu2nd={class=menu_item, label=2nd, parent=mnu2nd}
+mnu3rd={class=menu_item, label=3rd, parent=mnu3rd}
+mnu4th={class=menu_item, label=4th, parent=mnu4th}
+mnu5th={class=menu_item, label=5th, parent=mnu5th}
+mnu6th={class=menu_item, label=6th, parent=mnu6th}
+mnu7th={class=menu_item, label=7th, parent=mnu7th}
+mnu8th={class=menu_item, label=8th, parent=mnu8th}
+mnu9th={class=menu_item, label=9th, parent=mnu9th}
+mnu10th={class=menu_item, label=10th, parent=mnu10th}
+mnu11thto20th={class=menu, label=11th to 20th}
+mnu11th={class=menu_item, label=11th, parent=mnu11th}
+mnu12th={class=menu_item, label=12th, parent=mnu12th}
+mnu13th={class=menu_item, label=13th, parent=mnu13th}
+mnu14th={class=menu_item, label=14th, parent=mnu14th}
+mnu15th={class=menu_item, label=15th, parent=mnu15th}
+mnu16th={class=menu_item, label=16th, parent=mnu16th}
+mnu17th={class=menu_item, label=17th, parent=mnu17th}
+mnu18th={class=menu_item, label=18th, parent=mnu18th}
+mnu19th={class=menu_item, label=19th, parent=mnu19th}
+mnu20th={class=menu_item, label=20th, parent=mnu20th}
+mnu21stto31st={class=menu, label=21st to 31st}
+mnu21st={class=menu_item, label=21st, parent=mnu21st}
+mnu22nd={class=menu_item, label=22nd, parent=mnu22nd}
+mnu23rd={class=menu_item, label=23rd, parent=mnu23rd}
+mnu24th={class=menu_item, label=24th, parent=mnu24th}
+mnu25th={class=menu_item, label=25th, parent=mnu25th}
+mnu26th={class=menu_item, label=26th, parent=mnu26th}
+mnu27th={class=menu_item, label=27th, parent=mnu27th}
+mnu28th={class=menu_item, label=28th, parent=mnu28th}
+mnu29th={class=menu_item, label=29th, parent=mnu29th}
+mnu30th={class=menu_item, label=30th, parent=mnu30th}
+mnu31st={class=menu_item, label=31st, parent=mnu31st}
+cboday={class=combo_box, label=day(s)}
+mnuday={class=menu_item, label=day, parent=mnuday}
+mnuMonday={class=menu_item, label=Monday, parent=mnuday}
+mnuTuesday={class=menu_item, label=Tuesday, parent=mnuday}
+mnuWednesday={class=menu_item, label=Wednesday, parent=mnuday}
+mnuThursday={class=menu_item, label=Thursday, parent=mnuday}
+mnuFriday={class=menu_item, label=Friday, parent=mnuday}
+mnuSaturday={class=menu_item, label=Saturday, parent=mnuday}
+mnuSunday={class=menu_item, label=Sunday, parent=mnuday}
+cboforever={class=combo_box, label=forever}
+mnufor={class=menu_item, label=for, parent=mnuforever}
+mnuuntil={class=menu_item, label=until, parent=mnuforever}
+mnuforever={class=menu_item, label=forever, parent=mnuforever}
+pnl5={class=panel, instance_index=5,parent=ptabRecurrence}
+sbtn1={class=spin_button, instance_index=1,parent=ptabRecurrence}
+lbloccurrences={class=label, label=occurrences}
+pnl6={class=panel, instance_index=6,parent=ptabRecurrence}
+lblExceptions={class=label, label=Exceptions}
+lbl18={class=label, instance_index=18,parent=ptabRecurrence}
+tbl0={class=table, instance_index=0,parent=ptabRecurrence}
+btnAdd={class=push_button, label=Add}
+btnEdit={class=push_button, label=Edit}
+btnRemove={class=push_button, label=Remove}
+lblPreview={class=label, label=Preview}
+lbl20={class=label, instance_index=20,parent=ptabRecurrence}
+pnl7={class=panel, instance_index=7,parent=ptabRecurrence}
+paneMonthCalendar={class=layered_pane, label=Month Calendar}
+pnl8={class=panel, instance_index=8,parent=paneMonthCalendar}
+pnl9={class=panel, instance_index=9,parent=paneMonthCalendar}
+btnPreviousButton={class=push_button, label=Previous Button}
+pnl10={class=panel, instance_index=10,parent=paneMonthCalendar}
+btnPreviousButton={class=push_button, label=Previous Button}
+lblAttachmentBar={class=label, label=Attachment Bar (drop attachments here)}
+lbl22={class=label, instance_index=22,parent=dlgAppointment-Nosummary}
+paneAttachmentBar={class=layered_pane, label=Attachment Bar}
+btnHelp={class=push_button, label=Help}
+btnOK={class=push_button, label=OK}
+btnCancel={class=push_button, label=Cancel}

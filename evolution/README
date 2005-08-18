@@ -1,6 +1,6 @@
-+ In this release we have provided test scripts for Evolution-2.3.4 mailer automated testing
++ In this release we have provided test scripts for Evolution-2.3.7 mailer automated testing
 
-+ For all the verifications involving image comparision it is necessary to replace the following files with those images taken in the testing scenario.
++ For all the verifications involving image comparision it is necessary to replace the following files with those images taken in the testing scenario. Please save these file in the <LDTP-HOME>/pyautosuite/evolution/IMAGES
 	* composemail_refimg.png
 	* attachmail_refimg.png
 	* forwardmail_refimg.png
@@ -9,3 +9,15 @@
 + Please make sure that all the image files are in .png format.
 
 + Please make sure that all tha .dat files contain the correct data for the scenario in which the testing is undertaken.
+
++ We have provided test scripts for Evolution-2.3.7 Calendar automated testing of the following actions
+	* Create and verify meeting
+	* Create and verify appointment
+	* Create and configure a web calendar
+
++ Please make sure that the test cases used are not present already in the calendar
+
++ Please make sure that all the .dat files contain the correct data for the scenario in which the testing is undertaken.
+  For example: The entry 'nags@dell.net' should be replaced with the test account using which testing is undertaken, in 
+  all .dat files.
++ Please note that if a field in a .dat file is optional it is necessary to include '$' as placeholder for that value.

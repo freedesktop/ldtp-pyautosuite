@@ -75,6 +75,12 @@ try:
                     log ('Failed to close new calendar dialog', 'error')
                     raise LdtpExecutionError (0)
                 else:
+                    time.sleep (5)
+                    #Fixme: Just a workaround for verifying the calendar
+                    #If there is any better way please replace the following code with that :)
+                    if seletecrowpartialmatch ('evolution', 'tbl0', 'Independance Day') == 0:
+                        log ('Configuratoin of web calendar failed', 'cause')
+                        raise LdtpExecutionError (0)
                     log ('Calendar creation', 'Pass')
 except error,msg:
     print 'Creation of Calendar failed' + str(msg)

@@ -25,13 +25,14 @@
 #
 
 #To view mail
-def view_mail (folder_name,i,ref_image):
+def view_mail (folder_name, i, ref_image):
     try:
-        verifymailwithimage (folder_name,i,ref_image)
+        time.sleep (5)
+        verifymailwithimage (folder_name, i, ref_image)
     except:
-        log ('View mail failed','error')
+        log ('View mail failed', 'error')
         raise LdtpExecutionError (0)
-
+    
 #Reading inputs from file
 file = open ('view-mail.dat','r')
 argmts = file.readlines()
@@ -41,6 +42,6 @@ ref_image = argmts[2].strip()
 
 log ('View mail verification','teststart')
 time.sleep(2)
-view_mail (folder_name,i,ref_image)
+view_mail (folder_name, i, ref_image)
 time.sleep(2)
 log ('View mail verification','testend')

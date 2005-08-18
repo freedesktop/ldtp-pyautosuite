@@ -50,7 +50,7 @@ def populate_mail_header (to, subject,body,
         #Note: I have edited the evolution.map to change 'txt0'
         #to 'txtSubject'
         
-        #switching is involved
+        #cant use set and verify since context switching is involved
         if subject!='':
             settextvalue ('Composeamessage', 'txtSubject', subject)
             setcontext ('Compose a message', subject)
@@ -72,24 +72,26 @@ def populate_mail_header (to, subject,body,
         log ('Compose new message failed', 'Fail' )
 
 #To capture image of the ith mail in the given folder
-def capturemailimage (folder_name,i,filename):
+def capturemailimage (folder_name, i, filename):
     try:
-        selectmenuitem ('evolution','mnuTools;mnuMail')
-        selectrowpartialmatch ('evolution','ttblMailFolder',folder_name)
-        if i==-9:
-            i = getrowcount ('evolution','ttblMessageList') - 3
-        selectrowindex ('evolution','ttblMessageList',i)
+        selectmenuitem ('evolution','mnuView;mnuWindow;mnuMail')
+        time.sleep (3)
+        selectrowpartialmatch ('evolution', 'ttblMailFolderTree', folder_name)
+        if i == -1:
+            i = getrowcount ('evolution', 'ttblMessageList') - 1
+        print 'The obtained index is i' + i
+        selectrowindex ('evolution', 'ttblMessageList', i)
         time.sleep(3)    
-        subject = getcellvalue ('evolution','ttblMessageList',i+1,4)
-        time.sleep (1)
-        selectmenuitem ('evolution','mnuMessage;mnuOpeninNewWindow')
-        setcontext ('Readonlyframe',subject)
-        time.sleep (5)
-        imagecapture (subject,filename)
-        selectmenuitem ('Readonlyframe','mnuFile;mnuClose')
-        time.sleep(1)
+        subject = getcellvalue ('evolution', 'ttblMessageList', i, 4)
+        time.sleep (2)
+        selectmenuitem ('evolution', 'mnuMessage;mnuOpeninNewWindow')
+        setcontext ('Readonlyframe', subject)
+        time.sleep (3)
+        imagecapture ('Readonlyframe', 'IMAGES/'+filename)
+        selectmenuitem ('Readonlyframe', 'mnuFile;mnuClose')
+        time.sleep(2)
         if guiexist ('Readonlyframe') == 1:
-            log ('Message Window is not close after capturing','warning')
+            log ('Message Window is not close after capturing', 'warning')
             raise LdtpExecutionError (0)
         releasecontext ()
         return 1
@@ -97,17 +99,18 @@ def capturemailimage (folder_name,i,filename):
         log ('Capturing of mail failed','warning')
         LdtpExecutionError(0)
         
-    
 #To verify the ith mail in the given folder with the given image
-def verifymailwithimage (folder_name,mail_index,refimg_filename):
+def verifymailwithimage (folder_name, mail_index, refimg_filename):
     try:
-        capturemailimage (folfer_name,mail_index,'cur_mail.png')
-        if imagecompare ('cur_mail.png',refimg_filename) == 0.0:
+        capturemailimage (folder_name, mail_index, 'IMAGES/cur_mail.png')
+        print 'The difference in image is:' + str (imagecompare ('IMAGES/cur_mail.png', refimg_filename))
+        if imagecompare ('cur_mail.png', refimg_filename) == 0.0:
             return 1
         else:
             return 0
-    except:
-        log ('Comparision of mail images failed - ref image: ' + refimg_filename ,'error')
+    except ldtp.error, msg:
+        print 'Comparision failed due to the following error -' + str (msg)
+        log ('Comparision of mail images failed - ref image: ' + refimg_filename , 'error')
         LdtpExecutionError (0)
             
 

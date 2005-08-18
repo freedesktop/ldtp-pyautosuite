@@ -27,58 +27,57 @@
 #Copying an existing Mail
 
 # Section to select and copy mail
-def copy_mail (from_fldr,to_fldr):
-	#TODO: Current implementation supports copying only the last mail.
-	#It should be extended to copy any arbitary mail like i.
+def copy_mail (from_fldr,to_fldr, mail_index):
 	try:
+		time.sleep (10)
 		selectrowpartialmatch ('evolution', 'ttblMailFolderTree',
 				       to_fldr)
-		row_before = getrowcount('evolution', 'ttblMessageList') 
+		row_before = getrowcount('evolution', 'ttblMessageList')
+		time.sleep (2)
 		selectrowpartialmatch ('evolution', 'ttblMailFolderTree',
 				       from_fldr)
 		rowcount = getrowcount('evolution', 'ttblMessageList') 
 		if rowcount > 0:
-			#selectlastrow ('evolution', 'ttblMessageList')
-			selectrowindex ('evolution', 'ttblMessageList',
-					rowcount-3)
-			selectmenuitem ('evolution',
-					'mnuMessage;mnuCopyToFolder')
-			selectrowpartialmatch ('dlgSelectfolder',
-				       'ttblMailFolderTree',to_fldr )
-			click ('dlgSelectfolder','btnCopy')
+			if mail_index == -1:
+				mail_index = getrowcount ('evolution','ttblMessageList') -1
+			selectrowindex ('evolution', 'ttblMessageList', mail_index)
+			selectmenuitem ('evolution', 'mnuMessage;mnuCopyToFolder')
+			time.sleep (2)
+			selectrowpartialmatch ('dlgSelectfolder','ttblMailFolderTree', to_fldr )
+			click ('dlgSelectfolder', 'btnCopy')
+			time.sleep (2)
 			if guiexist('dlgSelectfolder') == 0:
-				log ('Select folder dialog not closed',
-				     'error')
-				raise LdtpexecutionError(0)
+				log ('Select folder dialog not closed', 'error')
+				raise LdtpExecutionError(0)
 			else:
-				selectrowpartialmatch ('evolution',
-					       'ttblMailFolderTree',to_fldr)
-				wait (5)
+				selectrowpartialmatch ('evolution', 'ttblMailFolderTree', to_fldr)
+				time.sleep (5)
 				row_after = getrowcount('evolution', 'ttblMessageList')
 				selectmenuitem ('evolution', 'mnuFile;mnuClose')
 				if row_after > row_before:
-					log ('Copying a mail passed successfully',
-					     'pass') 
+					log ('Copying a mail passed successfully','pass') 
 				else :
-					log ('Copying a mail failed',
-					     'fail')
+					log ('Copying a mail failed', 'fail')
 		else:
 			log ('From folder empty!', 'Warning')
-			log ('Did not move any mails to other folder',
-			     'Pass')
+			log ('Did not move any mails to other folder', 'Pass')
 	except ldtp.error,msg:
 		print 'Copying mail between folders failed',str(msg)
 		log ('Copying mail failed','fail')
 			
 #Read input from file
 file = open ('copymail.dat', 'r')
-argmts = file.readlines()
-from_fldr = argmts[0].strip( )
-to_fldr = argmts[1].strip( )
+argmts = file.readlines ()
+from_fldr = argmts[0].strip ()
+to_fldr = argmts[1].strip ()
+mail_index = argmts[2].strip ()
+
+if mail_index == '$':
+	mail_index = -1;
 
 # Call the function
 log ('copyingmail', 'teststart')	
-copy_mail (from_fldr,to_fldr)
+copy_mail (from_fldr, to_fldr, mail_index)
 log ('copyingmail', 'testend')
-log ('Cppying mail succeded', 'pass') 
+
                                                                            

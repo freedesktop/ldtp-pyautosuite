@@ -28,34 +28,27 @@
 from evoutils.mail import *
 
 #To Forward mail
-def forward_mail (to,body,subject_new='',cc=''):
+def forward_mail (source_fldr, mail_index,  to, body, subject_new='', cc=''):
 	try:
-		selectmenuitem('evolution','mnuTools;mnuMail')
-		time.sleep(3)
-
-		#TODO: Write additional code to select the particular
-		#folder from Folder tree before moving to the next statement
+		time.sleep (3)
+		selectmenuitem ('evolution', 'mnuView;mnuWindow;mnuMail')
+		time.sleep (3)
+		time.sleep (10)
+		selectrowpartialmatch ('evolution', 'ttblMailFolderTree', source_fldr)
+		if mail_index == -1:
+			mail_index = getrowcount ('evolution', 'ttblMessageList') - 1
 		
-		#TODO: Uncomment the following when getrowcount bug
-		#is fixed in evolution/accessibility
-		#selectlastrow ('evolution', 'ttblMessageList')
+		selectrowindex ('evolution', 'ttblMessageList', mail_index)
 
-		cur_index=getrowcount ('evolution','ttblMessageList')-3;
-
-		#TOOD: When Uncommenting the previous statement remove
-		#the following statement
-		selectrowindex ('evolution','ttblMessageList',cur_index)
-
-		subject = getcellvalue('evolution','ttblMessageList',cur_index+1,4)
-		click('evolution','btnForward')
+		subject = getcellvalue ('evolution', 'ttblMessageList', mail_index, 4)
+		click ('evolution','btnForward')
 		time.sleep(3)
-		setcontext ('Compose a message','[Fwd: '+subject+']')
-		if guiexist('Composeamessage') == 0:
-			log ('Failed to open forward frame','error')
+		setcontext ('Compose a message', '[Fwd: '+subject+']')
+		if guiexist ('Composeamessage') == 0:
+			log ('Failed to open forward frame', 'error')
 			raise LdtpExecutionError(0)
 		else:
-			if populate_mail_header (to,subject_new,
-						 body,cc) == 0:
+			if populate_mail_header (to, subject_new, body, cc) == 0:
 				log ('Failed to populate mail header',
 				     'error')
 				raise LdtpExecutionError (0)
@@ -65,34 +58,38 @@ def forward_mail (to,body,subject_new='',cc=''):
 					log ('Failed to close Compose dialog after sending','error')
 					raise LdtpExecutionError(0)
 				else:
-					click('evolution','btnSend/Receive')
-					log('Forward-message-Success','pass')
+					click('evolution', 'btnSend/Receive')
+					log('Forward-message-Success', 'pass')
 					releasecontext()
 	except error:
 		print 'Forward messsage Failed'
-		log('Forward-Mail-Failed','fail')
+		log ('Forward-Mail-Failed', 'fail')
 
 #Trying to read from the file
 inpfile = open('forward-mail.dat', 'r')
-argmts = inpfile.readlines()
-to_mailid = argmts[0].strip( )
-Bodytxt_Mail = argmts[1].strip( )
-if Bodytxt_Mail == '~':
+argmts = inpfile.readlines ()
+to_mailid = argmts[0].strip ()
+Bodytxt_Mail = argmts[1].strip ()
+if Bodytxt_Mail == '$':
 	Bodytxt_Mail = ''
-Subjecttxt = argmts[2].strip( )
-if Subjecttxt == '~':
+Subjecttxt = argmts[2].strip ()
+if Subjecttxt == '$':
 	Subjecttxt = ''
-Cc_mailid = argmts[3].strip( )
-if Cc_mailid == '~':
+Cc_mailid = argmts[3].strip ()
+if Cc_mailid == '$':
 	Cc_mailid = ''
+source_fldr = argmts[4].strip ()
+if source_fldr == '$':
+	source_fldr = 'Inbox'
+mail_index = argmts[5].strip ()
+if mail_index == '$':
+	mail_index = -1
 
 # Call the function
+log ('Forward Mail' , 'teststart')
+forward_mail (source_fldr, mail_index, to_mailid, Bodytxt_Mail, Subjecttxt, Cc_mailid)
+log ('Forward Mail', 'testend')
+log ('Forward Mail - Verification', 'teststart')
+verifymailwithimage ('Sent Items', -9, 'forwardmail_refimage.png')
+log ('Forward Mail - Verification', 'testend')
 
-log('Forward Mail and verify','teststart')
-log('Forward Mail' ,'teststart')
-forward_mail (to_mailid,Bodytxt_Mail,Subjecttxt,Cc_mailid)
-log('Forward Mail' ,'testend')
-log('Forward Mail - Verification','teststart')
-verifymailwithimage ('Sent Items',-9,'forwardmail_refimage.png')
-log('Forward Mail - Verification' ,'testend')
-log('Forward Mail and verify','testend')
