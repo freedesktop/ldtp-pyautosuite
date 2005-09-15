@@ -56,6 +56,7 @@ try:
         time.sleep (2)
         if guiexist ('alrtOverWrite') == 1:
             click ('alrtOverWrite', 'btnReplace')
+        selectmenuitem ('gedit', 'mnuDocuments;mnuCloseAll')
         # TODO
         # - Verify saved text file content using compare function
         log ('Create New Document', 'pass')

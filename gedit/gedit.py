@@ -35,12 +35,15 @@ default_doc_dir = default_dir + '/doc'
 default_tmp_dir = default_dir + '/tmp'
 gedit_exe_path = 'gedit'
 
+startlog ('gedit-execution.xml', 1)
+
 log ('Gedit Test Report', 'begin')
 
 if len (sys.argv) == 1:
   if os.access ('./gedit.map', os.F_OK | os.R_OK) == 0:
     log ('Appmap path missing', 'error')
     log ('Gedit Test Report', 'end')
+    stoplog ()
     sys.exit(0);
   else:
     appmap_path = '.'
@@ -57,6 +60,7 @@ try:
 except LdtpExecutionError:
   log ('Unable to launch gedit', 'Error')
   log ('Gedit Test Report', 'end')
+  stoplog ()
   sys.exit (0)
 
 time.sleep (5)
@@ -75,6 +79,8 @@ execfile ('gedit05.py')
 time.sleep (3)
 #to print preview and print a document in gedit.
 execfile ('gedit06.py')
+log ('Gedit Test Report', 'end')
+stoplog ()
 sys.exit (0)
 time.sleep (3)
 #to close the currently opened document in gedit .
