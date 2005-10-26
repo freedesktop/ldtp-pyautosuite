@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<data>
+  <source_folder>Inbox</source_folder>
+  <message_index>0</message_index>
+  <search_condition>Sender</search_condition>
+  <search_folder>vfolder_sender</search_folder>
+</data>

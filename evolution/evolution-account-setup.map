@@ -1,0 +1,1956 @@
+[frmEvolution-Mail]
+frmEvolution-Mail={class=frame,parent=evolution,child_index=0,label=Evolution - Mail}
+flr0={class=filler,parent=frmEvolution-Mail,child_index=0}
+pnl0={class=panel,parent=flr0,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+mbr0={class=menu_bar,parent=pnl2,child_index=1}
+mnuFile={class=menu,parent=mbr0,child_index=0,label=_File}
+mnuNew={class=menu,parent=mnuFile,child_index=0,label=_New}
+mnuMailMessage={class=menu_item,parent=mnuNew,child_index=2,label=_Mail _Message}
+mnuMailFolder={class=menu_item,parent=mnuNew,child_index=3,label=Mail _Folder}
+mnuAllDayAppointment={class=menu_item,parent=mnuNew,child_index=5,label=All Day A_ppointment}
+mnuAppointment={class=menu_item,parent=mnuNew,child_index=6,label=_Appointment}
+mnuAssignedTask={class=menu_item,parent=mnuNew,child_index=7,label=Assigne_d Task}
+mnuContact={class=menu_item,parent=mnuNew,child_index=8,label=_Contact}
+mnuContactList={class=menu_item,parent=mnuNew,child_index=9,label=Contact _List}
+mnuMeeting={class=menu_item,parent=mnuNew,child_index=10,label=M_eeting}
+mnuTask={class=menu_item,parent=mnuNew,child_index=11,label=_Task}
+mnuAddressBook={class=menu_item,parent=mnuNew,child_index=13,label=Address _Book}
+mnuCalendar={class=menu_item,parent=mnuNew,child_index=14,label=Cale_ndar}
+mnuTasklist={class=menu_item,parent=mnuNew,child_index=15,label=Task l_ist}
+mnuNewWindow={class=menu_item,parent=mnuFile,child_index=1,label=New _Window}
+mnuSend/Receive={class=menu_item,parent=mnuFile,child_index=3,label=_Send / Receive}
+mnuSaveMessage={class=menu_item,parent=mnuFile,child_index=5,label=_Save Message...}
+mnuSubscribetoOtherUser'sFolder={class=menu_item,parent=mnuFile,child_index=6,label=Subscribe to Other User's Folder}
+mnuPermissions={class=menu_item,parent=mnuFile,child_index=7,label=Permissions...}
+mnuImport={class=menu_item,parent=mnuFile,child_index=9,label=_Import...}
+mnuPrintPreview={class=menu_item,parent=mnuFile,child_index=11,label=Print Pre_view}
+mnuPrint={class=menu_item,parent=mnuFile,child_index=12,label=_Print...}
+mnuEmptyTrash={class=menu_item,parent=mnuFile,child_index=15,label=Empty _Trash}
+mnuForgetPasswords={class=menu_item,parent=mnuFile,child_index=16,label=Forget _Passwords}
+mnuWorkOffline={class=menu_item,parent=mnuFile,child_index=17,label=_Work Offline}
+mnuCloseWindow={class=menu_item,parent=mnuFile,child_index=18,label=_Close Window}
+mnuQuit={class=menu_item,parent=mnuFile,child_index=19,label=_Quit}
+mnuEdit={class=menu,parent=mbr0,child_index=1,label=_Edit}
+mnuCopy={class=menu_item,parent=mnuEdit,child_index=3,label=_Copy}
+mnuSelectAllText={class=menu_item,parent=mnuEdit,child_index=5,label=Select _All Text}
+mnuDeleteMessage={class=menu_item,parent=mnuEdit,child_index=7,label=_Delete Message}
+mnuUndeleteMessage={class=menu_item,parent=mnuEdit,child_index=8,label=_Undelete Message}
+mnuFindinMessage={class=menu_item,parent=mnuEdit,child_index=10,label=_Find in Message...}
+mnuSynchronizationOptions={class=menu_item,parent=mnuEdit,child_index=13,label=_Synchronization Options...}
+mnuMessageFilters={class=menu_item,parent=mnuEdit,child_index=15,label=Message F_ilters}
+mnuSearchFolders={class=menu_item,parent=mnuEdit,child_index=17,label=Search F_olders}
+mnuPlugins={class=menu_item,parent=mnuEdit,child_index=19,label=Plugins}
+mnuPreferences={class=menu_item,parent=mnuEdit,child_index=20,label=Prefere_nces}
+mnuView={class=menu,parent=mbr0,child_index=2,label=_View}
+mnuWindow={class=menu,parent=mnuView,child_index=1,label=_Window}
+mnuMail={class=menu_item,parent=mnuWindow,child_index=1,label=_Mail}
+mnuContacts={class=menu_item,parent=mnuWindow,child_index=2,label=C_ontacts}
+mnuCalendars={class=menu_item,parent=mnuWindow,child_index=3,label=_Calendars}
+mnuTasks={class=menu_item,parent=mnuWindow,child_index=4,label=_Tasks}
+mnuToolbar={class=check_menu_item,parent=mnuView,child_index=2,label=Tool_bar}
+mnuMessagePreview={class=check_menu_item,parent=mnuView,child_index=4,label=Message _Preview}
+mnuSwitcherAppearance={class=menu,parent=mnuView,child_index=5,label=_Switcher Appearance}
+mnuIconsandtext={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=0,label=Icons _and text}
+mnuIconsonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=1,label=_Icons only}
+mnuTextonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=2,label=_Text only}
+mnuToolbarstyle={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=3,label=Tool_bar style}
+mnuHidebuttons={class=check_menu_item,parent=mnuSwitcherAppearance,child_index=5,label=_Hide buttons}
+mnuGroupByThreads={class=check_menu_item,parent=mnuView,child_index=10,label=Group By _Threads}
+mnuHideDeletedMessages={class=check_menu_item,parent=mnuView,child_index=11,label=Hide _Deleted Messages}
+mnuHideSelectedMessages={class=menu_item,parent=mnuView,child_index=13,label=Hid_e Selected Messages}
+mnuHideReadMessages={class=menu_item,parent=mnuView,child_index=14,label=Hide _Read Messages}
+mnuShowHiddenMessages={class=menu_item,parent=mnuView,child_index=15,label=Sh_ow Hidden Messages}
+mnuLoadImages={class=menu_item,parent=mnuView,child_index=18,label=_Load Images}
+mnuAllMessageHeaders={class=check_menu_item,parent=mnuView,child_index=19,label=All Message _Headers}
+mnuCaretMode={class=check_menu_item,parent=mnuView,child_index=20,label=_Caret Mode}
+mnuMessageSource={class=menu_item,parent=mnuView,child_index=21,label=Message Source}
+mnuZoomIn={class=menu_item,parent=mnuView,child_index=24,label=_Zoom In}
+mnuZoomOut={class=menu_item,parent=mnuView,child_index=25,label=Zoom _Out}
+mnuNormalSize={class=menu_item,parent=mnuView,child_index=26,label=_Normal Size}
+mnuCharacterEncoding={class=menu,parent=mnuView,child_index=28,label=Character Encoding}
+mnuBaltic(ISO-8859-13)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=0,label=Baltic (ISO-8859-13)}
+mnuBaltic(ISO-8859-4)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=1,label=Baltic (ISO-8859-4)}
+mnuCentralEuropean(ISO-8859-2)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=2,label=Central European (ISO-8859-2)}
+mnuChinese,Traditional(Big5)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=3,label=Chinese, Traditional (Big5)}
+mnuChinese,Traditional(BIG5HKSCS)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=4,label=Chinese, Traditional (BIG5HKSCS)}
+mnuChinese,Traditional(EUC-TW)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=5,label=Chinese, Traditional (EUC-TW)}
+mnuChinese,Simplified(GB18030)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=6,label=Chinese, Simplified (GB18030)}
+mnuChinese,Simplified(GB2312)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=7,label=Chinese, Simplified (GB2312)}
+mnuChinese,Simplified(HZ)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=8,label=Chinese, Simplified (HZ)}
+mnuChinese,Simplified(ISO-2022-CN)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=9,label=Chinese, Simplified (ISO-2022-CN)}
+mnuCyrillic(KOI8-R)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=10,label=Cyrillic (KOI8-R)}
+mnuCyrillic(Windows-1251)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=11,label=Cyrillic (Windows-1251)}
+mnuCyrillic,Ukrainian(KOI8-U)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=12,label=Cyrillic, Ukrainian (KOI8-U)}
+mnuCyrillic(ISO-8859-5)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=13,label=Cyrillic (ISO-8859-5)}
+mnuGreek(ISO-8859-7)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=14,label=Greek (ISO-8859-7)}
+mnuHebrew,Visual(ISO-8859-8)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=15,label=Hebrew, Visual (ISO-8859-8)}
+mnuJapanese(ISO-2022-JP)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=16,label=Japanese (ISO-2022-JP)}
+mnuJapanese(EUC-JP)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=17,label=Japanese (EUC-JP)}
+mnuJapanese(ShiftJIS)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=18,label=Japanese (Shift_JIS)}
+mnuKorean(EUC-KR)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=19,label=Korean (EUC-KR)}
+mnuTurkish(ISO-8859-9)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=20,label=Turkish (ISO-8859-9)}
+mnuUnicode(UTF-8)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=21,label=Unicode (UTF-8)}
+mnuUnicode(UTF-7)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=22,label=Unicode (UTF-7)}
+mnuWesternEuropean(ISO-8859-1)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=23,label=Western European (ISO-8859-1)}
+mnuWesternEuropean,New(ISO-8859-15)={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=24,label=Western European, New (ISO-8859-15)}
+mnuDefault={class=radio_menu_item,parent=mnuCharacterEncoding,child_index=26,label=Default}
+mnuFolder={class=menu,parent=mbr0,child_index=4,label=F_older}
+mnuNew1={class=menu_item,parent=mnuFolder,child_index=0,label=_New...}
+mnuSubscriptions={class=menu_item,parent=mnuFolder,child_index=1,label=_Subscriptions}
+mnuCopyFolderTo={class=menu_item,parent=mnuFolder,child_index=3,label=_Copy Folder To...}
+mnuMoveFolderTo={class=menu_item,parent=mnuFolder,child_index=4,label=_Move Folder To...}
+mnuSelectAllMessages={class=menu_item,parent=mnuFolder,child_index=7,label=Select _All Messages}
+mnuSelectMessageThread={class=menu_item,parent=mnuFolder,child_index=8,label=Select Message _Thread}
+mnuMarkMessagesasRead={class=menu_item,parent=mnuFolder,child_index=9,label=Mark Me_ssages as Read}
+mnuExpunge={class=menu_item,parent=mnuFolder,child_index=10,label=E_xpunge}
+mnuRename={class=menu_item,parent=mnuFolder,child_index=13,label=_Rename...}
+mnuDelete={class=menu_item,parent=mnuFolder,child_index=14,label=_Delete}
+mnuProperties={class=menu_item,parent=mnuFolder,child_index=16,label=_Properties}
+mnuMessage={class=menu,parent=mbr0,child_index=6,label=_Message}
+mnuComposeNewMessage={class=menu_item,parent=mnuMessage,child_index=1,label=Compose _New Message}
+mnuPostNewMessagetoFolder={class=menu_item,parent=mnuMessage,child_index=2,label=Pos_t New Message to Folder}
+mnuOpeninNewWindow={class=menu_item,parent=mnuMessage,child_index=3,label=_Open in New Window}
+mnuEditasNewMessage={class=menu_item,parent=mnuMessage,child_index=4,label=_Edit as New Message...}
+mnuAddSendertoAddressBook={class=menu_item,parent=mnuMessage,child_index=5,label=A_dd Sender to Address Book}
+mnuGoTo={class=menu,parent=mnuMessage,child_index=8,label=_Go To}
+mnuNextMessage={class=menu_item,parent=mnuGoTo,child_index=0,label=_Next Message}
+mnuNextUnreadMessage={class=menu_item,parent=mnuGoTo,child_index=1,label=Next _Unread Message}
+mnuNextImportantMessage={class=menu_item,parent=mnuGoTo,child_index=2,label=Next _Important Message}
+mnuNextThread={class=menu_item,parent=mnuGoTo,child_index=3,label=Next _Thread}
+mnuPreviousMessage={class=menu_item,parent=mnuGoTo,child_index=5,label=_Previous Message}
+mnuPreviousUnreadMessage={class=menu_item,parent=mnuGoTo,child_index=6,label=P_revious Unread Message}
+mnuPreviousImportantMessage={class=menu_item,parent=mnuGoTo,child_index=7,label=Pr_evious Important Message}
+mnuReply={class=menu_item,parent=mnuMessage,child_index=11,label=Reply}
+mnuPostaReply={class=menu_item,parent=mnuMessage,child_index=12,label=Post a Repl_y}
+mnuReplytoSender={class=menu_item,parent=mnuMessage,child_index=13,label=_Reply to Sender}
+mnuReplytoList={class=menu_item,parent=mnuMessage,child_index=14,label=Reply to _List}
+mnuForward={class=menu_item,parent=mnuMessage,child_index=15,label=_Forward}
+mnuRedirect={class=menu_item,parent=mnuMessage,child_index=16,label=Re_direct}
+mnuMovetoFolder={class=menu_item,parent=mnuMessage,child_index=18,label=_Move to Folder}
+mnuCopytoFolder={class=menu_item,parent=mnuMessage,child_index=19,label=_Copy to Folder}
+mnuMarkas={class=menu,parent=mnuMessage,child_index=21,label=Mar_k as}
+mnuRead={class=menu_item,parent=mnuMarkas,child_index=0,label=_Read}
+mnuUnread={class=menu_item,parent=mnuMarkas,child_index=1,label=_Unread}
+mnuImportant={class=menu_item,parent=mnuMarkas,child_index=3,label=_Important}
+mnuUnimportant={class=menu_item,parent=mnuMarkas,child_index=4,label=Uni_mportant}
+mnuJunk={class=menu_item,parent=mnuMarkas,child_index=6,label=_Junk}
+mnuNotJunk={class=menu_item,parent=mnuMarkas,child_index=7,label=_Not Junk}
+mnuFollowUp={class=menu_item,parent=mnuMarkas,child_index=9,label=Follow _Up...}
+mnuApplyFilters={class=menu_item,parent=mnuMessage,child_index=22,label=A_pply Filters}
+mnuCheckforJunk={class=menu_item,parent=mnuMessage,child_index=23,label=Check for _Junk}
+mnuCreateRule={class=menu,parent=mnuMessage,child_index=26,label=Create R_ule}
+mnuFilteronSubject={class=menu_item,parent=mnuCreateRule,child_index=0,label=Filter on _Subject...}
+mnuFilteronSender={class=menu_item,parent=mnuCreateRule,child_index=1,label=Filter o_n Sender...}
+mnuFilteronRecipients={class=menu_item,parent=mnuCreateRule,child_index=2,label=Filter on _Recipients...}
+mnuFilteronMailingList={class=menu_item,parent=mnuCreateRule,child_index=3,label=Filter on Mailing _List...}
+mnuSearchFolderfromSubject={class=menu_item,parent=mnuCreateRule,child_index=5,label=Search Folder from S_ubject...}
+mnuSearchFolderfromSender={class=menu_item,parent=mnuCreateRule,child_index=6,label=Search Fol_der from Sender...}
+mnuSearchFolderfromRecipients={class=menu_item,parent=mnuCreateRule,child_index=7,label=Search Folder from Recipients...}
+mnuSearchFolderfromMailingList={class=menu_item,parent=mnuCreateRule,child_index=8,label=Search Folder from Mailing _List...}
+mnuMailingList={class=menu,parent=mnuMessage,child_index=27,label=Mailing _List}
+mnuGetlistusageinformation={class=menu_item,parent=mnuMailingList,child_index=0,label=Get list _usage information}
+mnuSubscribetolist={class=menu_item,parent=mnuMailingList,child_index=1,label=_Subscribe to list}
+mnuUn-subscribetolist={class=menu_item,parent=mnuMailingList,child_index=2,label=_Un-subscribe to list}
+mnuPostmessagetolist={class=menu_item,parent=mnuMailingList,child_index=3,label=_Post message to list}
+mnuContactlistowner={class=menu_item,parent=mnuMailingList,child_index=4,label=C_ontact list owner}
+mnuGetlistarchive={class=menu_item,parent=mnuMailingList,child_index=5,label=Get list _archive}
+mnuSearch={class=menu,parent=mbr0,child_index=9,label=_Search}
+mnuFindNow={class=menu_item,parent=mnuSearch,child_index=1,label=_Find Now}
+mnuClear={class=menu_item,parent=mnuSearch,child_index=2,label=_Clear}
+mnuAdvancedSearch={class=menu_item,parent=mnuSearch,child_index=3,label=_Advanced Search...}
+mnuSaveSearch={class=menu_item,parent=mnuSearch,child_index=5,label=_Save _Search...}
+mnuEditSavedSearches={class=menu_item,parent=mnuSearch,child_index=6,label=_Edit Saved Searches...}
+mnuCreateSearchFolderFromSearch={class=menu_item,parent=mnuSearch,child_index=8,label=C_reate Search Folder From Search...}
+mnuHelp={class=menu,parent=mbr0,child_index=10,label=_Help}
+mnuContents={class=menu_item,parent=mnuHelp,child_index=1,label=_Contents}
+mnuQuickReference={class=menu_item,parent=mnuHelp,child_index=2,label=_Quick Reference}
+mnuSubmitBugReport={class=menu_item,parent=mnuHelp,child_index=4,label=Submit _Bug Report}
+mnuAboutEvolution={class=menu_item,parent=mnuHelp,child_index=6,label=_About Evolution...}
+mnu163={class=menu,parent=mbr0,child_index=11}
+pnl3={class=panel,parent=pnl0,child_index=1}
+pnl4={class=panel,parent=pnl3,child_index=0}
+tbar0={class=tool_bar,parent=pnl4,child_index=1}
+pnl5={class=panel,parent=tbar0,child_index=0}
+flr1={class=filler,parent=pnl5,child_index=0}
+btn0={class=push_button,parent=flr1,child_index=0}
+pnl6={class=panel,parent=flr1,child_index=1}
+pnl7={class=panel,parent=pnl6,child_index=0}
+btnNew={class=push_button,parent=pnl7,child_index=0,label=New}
+pnl8={class=panel,parent=tbar0,child_index=1}
+pnl9={class=panel,parent=tbar0,child_index=2}
+btnSend/Receive={class=push_button,parent=pnl9,child_index=0,label=Send / Receive}
+pnl10={class=panel,parent=tbar0,child_index=3}
+pnl11={class=panel,parent=tbar0,child_index=4}
+pnl12={class=panel,parent=tbar0,child_index=5}
+btnReply={class=push_button,parent=pnl12,child_index=0,label=Reply}
+pnl13={class=panel,parent=tbar0,child_index=6}
+btnReplytoAll={class=push_button,parent=pnl13,child_index=0,label=Reply to All}
+pnl14={class=panel,parent=tbar0,child_index=7}
+btnForward={class=push_button,parent=pnl14,child_index=0,label=Forward}
+pnl15={class=panel,parent=tbar0,child_index=8}
+pnl16={class=panel,parent=tbar0,child_index=9}
+btnMove={class=push_button,parent=pnl16,child_index=0,label=Move}
+pnl17={class=panel,parent=tbar0,child_index=10}
+btnCopy={class=push_button,parent=pnl17,child_index=0,label=Copy}
+pnl18={class=panel,parent=tbar0,child_index=11}
+pnl19={class=panel,parent=tbar0,child_index=12}
+btnPrint={class=push_button,parent=pnl19,child_index=0,label=Print}
+pnl20={class=panel,parent=tbar0,child_index=13}
+btnDelete={class=push_button,parent=pnl20,child_index=0,label=Delete}
+pnl21={class=panel,parent=tbar0,child_index=14}
+btnJunk={class=push_button,parent=pnl21,child_index=0,label=Junk}
+pnl22={class=panel,parent=tbar0,child_index=15}
+btnNotJunk={class=push_button,parent=pnl22,child_index=0,label=Not Junk}
+pnl23={class=panel,parent=tbar0,child_index=16}
+btnCancel={class=push_button,parent=pnl23,child_index=0,label=Cancel}
+pnl24={class=panel,parent=tbar0,child_index=17}
+pnl25={class=panel,parent=tbar0,child_index=18}
+pnl26={class=panel,parent=tbar0,child_index=19}
+btnPrevious={class=push_button,parent=pnl26,child_index=0,label=Previous}
+pnl27={class=panel,parent=tbar0,child_index=20}
+btnNext={class=push_button,parent=pnl27,child_index=0,label=Next}
+pnl28={class=panel,parent=tbar0,child_index=21}
+flr2={class=filler,parent=pnl0,child_index=2}
+splt0={class=split_pane,parent=flr2,child_index=0}
+pnl29={class=panel,parent=splt0,child_index=0}
+ptl0={class=page_tab_list,parent=pnl29,child_index=0}
+ptab0={class=page_tab,parent=ptl0,child_index=0}
+pnl30={class=panel,parent=ptab0,child_index=0}
+pnl31={class=panel,parent=pnl30,child_index=0}
+flr3={class=filler,parent=pnl31,child_index=0}
+flr4={class=filler,parent=flr3,child_index=0}
+ukn2={class=unknown,parent=flr4,child_index=0}
+ukn3={class=unknown,parent=flr4,child_index=1}
+lbl0={class=label,parent=flr4,child_index=2}
+flr5={class=filler,parent=flr3,child_index=1}
+scpn0={class=scroll_pane,parent=flr5,child_index=0}
+ttblMailFolderTree={class=tree_table,parent=scpn0,child_index=0,label=Mail Folder Tree}
+tch0={class=table_column_header,parent=ttblMailFolderTree,child_index=0}
+ptab1={class=page_tab,parent=ptl0,child_index=1}
+pnl32={class=panel,parent=ptab1,child_index=0}
+pnl33={class=panel,parent=pnl32,child_index=0}
+flr6={class=filler,parent=pnl33,child_index=0}
+flr7={class=filler,parent=flr6,child_index=0}
+ukn4={class=unknown,parent=flr7,child_index=0}
+ukn5={class=unknown,parent=flr7,child_index=1}
+lblNocontacts={class=label,parent=flr7,child_index=2,label=No contacts}
+scpn1={class=scroll_pane,parent=flr6,child_index=1}
+ttblContactSourceSelector={class=tree_table,parent=scpn1,child_index=0,label=Contact Source Selector}
+tch0={class=table_column_header,parent=ttblContactSourceSelector,child_index=0}
+ptab2={class=page_tab,parent=ptl0,child_index=2}
+pnl34={class=panel,parent=ptab2,child_index=0}
+pnl35={class=panel,parent=pnl34,child_index=0}
+flr8={class=filler,parent=pnl35,child_index=0}
+flr9={class=filler,parent=flr8,child_index=0}
+ukn6={class=unknown,parent=flr9,child_index=0}
+ukn7={class=unknown,parent=flr9,child_index=1}
+lblWednesday19Oct2005={class=label,parent=flr9,child_index=2,label=Wednesday 19 Oct 2005}
+scpn2={class=scroll_pane,parent=flr8,child_index=1}
+ttblCalendarSourceSelector={class=tree_table,parent=scpn2,child_index=0,label=Calendar Source Selector}
+tch0={class=table_column_header,parent=ttblCalendarSourceSelector,child_index=0}
+scbr0={class=scroll_bar,parent=scpn2,child_index=1}
+ptab3={class=page_tab,parent=ptl0,child_index=3}
+pnl36={class=panel,parent=ptab3,child_index=0}
+pnl37={class=panel,parent=pnl36,child_index=0}
+flr10={class=filler,parent=pnl37,child_index=0}
+flr11={class=filler,parent=flr10,child_index=0}
+ukn8={class=unknown,parent=flr11,child_index=0}
+ukn9={class=unknown,parent=flr11,child_index=1}
+lbl0tasks={class=label,parent=flr11,child_index=2,label=0 tasks}
+scpn3={class=scroll_pane,parent=flr10,child_index=1}
+ttblTaskSourceSelector={class=tree_table,parent=scpn3,child_index=0,label=Task Source Selector}
+tch0={class=table_column_header,parent=ttblTaskSourceSelector,child_index=0}
+tbtnMail={class=toggle_button,parent=pnl29,child_index=1,label=Mail}
+tbtnContacts={class=toggle_button,parent=pnl29,child_index=2,label=Contacts}
+tbtnCalendars={class=toggle_button,parent=pnl29,child_index=3,label=Calendars}
+tbtnTasks={class=toggle_button,parent=pnl29,child_index=4,label=Tasks}
+ptl1={class=page_tab_list,parent=splt0,child_index=1}
+ptab4={class=page_tab,parent=ptl1,child_index=0}
+pnl38={class=panel,parent=ptab4,child_index=0}
+pnl39={class=panel,parent=pnl38,child_index=0}
+flr12={class=filler,parent=pnl39,child_index=0}
+flr13={class=filler,parent=flr12,child_index=0}
+cboSearchType={class=combo_box,parent=flr13,child_index=0}
+mnu164={class=menu,parent=cboSearchType,child_index=0}
+flr14={class=filler,parent=flr13,child_index=1}
+txtSearch Text Entry={class=text,parent=flr14,child_index=0,label=Search Text Entry}
+pnl40={class=panel,parent=flr13,child_index=2}
+btnFindNow={class=push_button,parent=pnl40,child_index=0,label=Find _Now}
+pnl41={class=panel,parent=flr13,child_index=3}
+btnClear={class=push_button,parent=pnl41,child_index=0,label=_Clear}
+splt1={class=split_pane,parent=flr12,child_index=1}
+scpn4={class=scroll_pane,parent=splt1,child_index=0}
+uknMessageList={class=unknown,parent=scpn4,child_index=0,label=Message List}
+ttblMessageList={class=tree_table,parent=uknMessageList,child_index=0,label=Message List}
+tchStatus={class=table_column_header,parent=ttblMessageList,child_index=0,label=Status}
+tchAttachment={class=table_column_header,parent=ttblMessageList,child_index=1,label=Attachment}
+tchFlagged={class=table_column_header,parent=ttblMessageList,child_index=2,label=Flagged}
+tchFrom={class=table_column_header,parent=ttblMessageList,child_index=3,label=From}
+tchSubject={class=table_column_header,parent=ttblMessageList,child_index=4,label=Subject}
+tchDate={class=table_column_header,parent=ttblMessageList,child_index=5,label=Date}
+scbr1={class=scroll_bar,parent=scpn4,child_index=1}
+scpn5={class=scroll_pane,parent=splt1,child_index=1}
+pnlPanelcontainingHTML={class=panel,parent=scpn5,child_index=0,label=Panel containing HTML}
+scbr2={class=scroll_bar,parent=scpn5,child_index=1}
+ptab5={class=page_tab,parent=ptl1,child_index=1}
+pnl43={class=panel,parent=ptab5,child_index=0}
+pnl44={class=panel,parent=pnl43,child_index=0}
+ptl2={class=page_tab_list,parent=pnl44,child_index=0}
+ptab6={class=page_tab,parent=ptl2,child_index=0}
+cnvsevolutionaddressbook={class=canvas,parent=ptab6,child_index=0,label=evolution addressbook}
+flr15={class=filler,parent=cnvsevolutionaddressbook,child_index=0}
+cboSearchType1={class=combo_box,parent=flr15,child_index=0}
+mnu173={class=menu,parent=cboSearchType1,child_index=0}
+flr16={class=filler,parent=flr15,child_index=1}
+txtSearch Text Entry1={class=text,parent=flr16,child_index=0,label=Search Text Entry}
+pnl45={class=panel,parent=flr15,child_index=2}
+btnFindNow1={class=push_button,parent=pnl45,child_index=0,label=Find _Now}
+pnl46={class=panel,parent=flr15,child_index=3}
+btnClear1={class=push_button,parent=pnl46,child_index=0,label=_Clear}
+splt2={class=split_pane,parent=cnvsevolutionaddressbook,child_index=1}
+scpn6={class=scroll_pane,parent=splt2,child_index=0}
+pane0={class=layered_pane,parent=scpn6,child_index=0}
+pnl47={class=panel,parent=pane0,child_index=0}
+ukn11={class=unknown,parent=pnl47,child_index=0}
+pnlcurrentaddressbookfolderhas0cards={class=panel,parent=pnl47,child_index=1,label=current addressbook folder has 0 cards}
+scpn7={class=scroll_pane,parent=splt2,child_index=1}
+pnlPanelcontainingHTML1={class=panel,parent=scpn7,child_index=0,label=Panel containing HTML}
+ptab7={class=page_tab,parent=ptl1,child_index=2}
+pnl50={class=panel,parent=ptab7,child_index=0}
+pnl51={class=panel,parent=pnl50,child_index=0}
+flrGnomeCalendar={class=filler,parent=pnl51,child_index=0,label=Gnome Calendar}
+flrsearchbar={class=filler,parent=flrGnomeCalendar,child_index=0,label=search bar}
+cboSearchType2={class=combo_box,parent=flrsearchbar,child_index=0}
+mnu179={class=menu,parent=cboSearchType2,child_index=0}
+flr19={class=filler,parent=flrsearchbar,child_index=1}
+cboAnyCategory={class=combo_box,parent=flr19,child_index=0}
+mnu185={class=menu,parent=cboAnyCategory,child_index=0}
+pnl52={class=panel,parent=flrsearchbar,child_index=2}
+btnFindNow2={class=push_button,parent=pnl52,child_index=0,label=Find _Now}
+pnl53={class=panel,parent=flrsearchbar,child_index=3}
+btnClear2={class=push_button,parent=pnl53,child_index=0,label=_Clear}
+uknDayView={class=unknown,parent=flrGnomeCalendar,child_index=1,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+tblDayView={class=table,parent=uknDayView,child_index=0,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+paneMonthCalendar={class=layered_pane,parent=flrGnomeCalendar,child_index=2,label=Month Calendar}
+pnl54={class=panel,parent=paneMonthCalendar,child_index=0}
+calviewCalendar={class=calendar_view,parent=pnl54,child_index=0,label=Calendar: from 26 September 2005 to 05 February 2006}
+pnl55={class=panel,parent=pnl54,child_index=1}
+btnPrevious Button={class=push_button,parent=pnl55,child_index=0,label=Previous Button}
+pnl56={class=panel,parent=pnl54,child_index=2}
+btnPrevious Button1={class=push_button,parent=pnl56,child_index=0,label=Previous Button}
+pnl57={class=panel,parent=flrGnomeCalendar,child_index=3}
+scpn8={class=scroll_pane,parent=pnl57,child_index=0}
+uknTaskTable={class=unknown,parent=scpn8,child_index=0,label=Task Table}
+tblTaskTable={class=table,parent=uknTaskTable,child_index=0,label=Task Table}
+tchType={class=table_column_header,parent=tblTaskTable,child_index=0,label=Type}
+tchComplete={class=table_column_header,parent=tblTaskTable,child_index=1,label=Complete}
+tchSummary={class=table_column_header,parent=tblTaskTable,child_index=2,label=Summary}
+uknClicktoaddatask={class=unknown,parent=uknTaskTable,child_index=1,label=Click to add a task}
+ukn63={class=unknown,parent=uknClicktoaddatask,child_index=0}
+ptab8={class=page_tab,parent=ptl1,child_index=3}
+pnl58={class=panel,parent=ptab8,child_index=0}
+pnl59={class=panel,parent=pnl58,child_index=0}
+pnl60={class=panel,parent=pnl59,child_index=0}
+splt3={class=split_pane,parent=pnl60,child_index=0}
+pnl61={class=panel,parent=splt3,child_index=0}
+scpn9={class=scroll_pane,parent=pnl61,child_index=0}
+uknTaskTable1={class=unknown,parent=scpn9,child_index=0,label=Task Table}
+tblTaskTable1={class=table,parent=uknTaskTable1,child_index=0,label=Task Table}
+tchType1={class=table_column_header,parent=tblTaskTable1,child_index=0,label=Type}
+tchComplete1={class=table_column_header,parent=tblTaskTable1,child_index=1,label=Complete}
+tchSummary1={class=table_column_header,parent=tblTaskTable1,child_index=2,label=Summary}
+uknClicktoaddatask1={class=unknown,parent=uknTaskTable1,child_index=1,label=Click to add a task}
+ukn66={class=unknown,parent=uknClicktoaddatask1,child_index=0}
+pnl62={class=panel,parent=splt3,child_index=1}
+scpn10={class=scroll_pane,parent=pnl62,child_index=0}
+pnlPanelcontainingHTML2={class=panel,parent=scpn10,child_index=0,label=Panel containing HTML}
+pnl64={class=panel,parent=pnlPanelcontainingHTML2,child_index=0}
+txt2={class=text,parent=pnl64,child_index=0}
+flr20={class=filler,parent=pnl60,child_index=1}
+cboSearchType3={class=combo_box,parent=flr20,child_index=0}
+mnu211={class=menu,parent=cboSearchType3,child_index=0}
+flr21={class=filler,parent=flr20,child_index=1}
+cboAnyCategory1={class=combo_box,parent=flr21,child_index=0}
+mnu216={class=menu,parent=cboAnyCategory1,child_index=0}
+pnl65={class=panel,parent=flr20,child_index=2}
+btnFindNow3={class=push_button,parent=pnl65,child_index=0,label=Find _Now}
+pnl66={class=panel,parent=flr20,child_index=3}
+btnClear3={class=push_button,parent=pnl66,child_index=0,label=_Clear}
+flr22={class=filler,parent=flr2,child_index=1}
+btn25={class=push_button,parent=flr22,child_index=0}
+lblChangeEvolution'ssettings={class=label,parent=flr22,child_index=1,label=Change Evolution's settings}
+ptl3={class=page_tab_list,parent=flr22,child_index=2}
+ptab9={class=page_tab,parent=ptl3,child_index=0}
+pnl67={class=panel,parent=ptab9,child_index=0}
+pnl68={class=panel,parent=pnl67,child_index=0}
+flr23={class=filler,parent=pnl68,child_index=0}
+ukn67={class=unknown,parent=flr23,child_index=0}
+flr24={class=filler,parent=flr23,child_index=1}
+ptab10={class=page_tab,parent=ptl3,child_index=1}
+pnl69={class=panel,parent=ptab10,child_index=0}
+pnl70={class=panel,parent=pnl69,child_index=0}
+flr25={class=filler,parent=pnl70,child_index=0}
+ukn68={class=unknown,parent=flr25,child_index=0}
+flr26={class=filler,parent=flr25,child_index=1}
+ptab11={class=page_tab,parent=ptl3,child_index=2}
+pnl71={class=panel,parent=ptab11,child_index=0}
+pnl72={class=panel,parent=pnl71,child_index=0}
+flr27={class=filler,parent=pnl72,child_index=0}
+ukn69={class=unknown,parent=flr27,child_index=0}
+flr28={class=filler,parent=flr27,child_index=1}
+ptab12={class=page_tab,parent=ptl3,child_index=3}
+pnl73={class=panel,parent=ptab12,child_index=0}
+pnl74={class=panel,parent=pnl73,child_index=0}
+flr29={class=filler,parent=pnl74,child_index=0}
+ukn70={class=unknown,parent=flr29,child_index=0}
+flr30={class=filler,parent=flr29,child_index=1}
+flr31={class=filler,parent=flr0,child_index=1}
+
+[frmEvolution-Contacts]
+frmEvolution-Contacts={class=frame,parent=evolution,child_index=0,label=Evolution - Contacts}
+flr0={class=filler,parent=frmEvolution-Contacts,child_index=0}
+pnl0={class=panel,parent=flr0,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+mbr0={class=menu_bar,parent=pnl2,child_index=1}
+mnuFile={class=menu,parent=mbr0,child_index=0,label=_File}
+mnuNew={class=menu,parent=mnuFile,child_index=0,label=_New}
+mnuContact={class=menu_item,parent=mnuNew,child_index=2,label=_Contact}
+mnuContactList={class=menu_item,parent=mnuNew,child_index=3,label=Contact _List}
+mnuAddressBook={class=menu_item,parent=mnuNew,child_index=4,label=Address _Book}
+mnuAllDayAppointment={class=menu_item,parent=mnuNew,child_index=6,label=All Day A_ppointment}
+mnuAppointment={class=menu_item,parent=mnuNew,child_index=7,label=_Appointment}
+mnuAssignedTask={class=menu_item,parent=mnuNew,child_index=8,label=Assigne_d Task}
+mnuMailMessage={class=menu_item,parent=mnuNew,child_index=9,label=_Mail _Message}
+mnuMeeting={class=menu_item,parent=mnuNew,child_index=10,label=M_eeting}
+mnuTask={class=menu_item,parent=mnuNew,child_index=11,label=_Task}
+mnuCalendar={class=menu_item,parent=mnuNew,child_index=13,label=Cale_ndar}
+mnuMailFolder={class=menu_item,parent=mnuNew,child_index=14,label=Mail _Folder}
+mnuTasklist={class=menu_item,parent=mnuNew,child_index=15,label=Task l_ist}
+mnuNewWindow={class=menu_item,parent=mnuFile,child_index=1,label=New _Window}
+mnuSend/Receive={class=menu_item,parent=mnuFile,child_index=3,label=_Send / Receive}
+mnuOpen={class=menu_item,parent=mnuFile,child_index=5,label=_Open}
+mnuSaveasVCard={class=menu_item,parent=mnuFile,child_index=6,label=_Save as VCard...}
+mnuSubscribetoOtherUser'sContacts={class=menu_item,parent=mnuFile,child_index=7,label=Subscribe to Other User's Contacts}
+mnuPermissions={class=menu_item,parent=mnuFile,child_index=8,label=Permissions...}
+mnuImport={class=menu_item,parent=mnuFile,child_index=10,label=_Import...}
+mnuPrintPreview={class=menu_item,parent=mnuFile,child_index=12,label=Print Pre_view}
+mnuPrint={class=menu_item,parent=mnuFile,child_index=13,label=_Print...}
+mnuForgetPasswords={class=menu_item,parent=mnuFile,child_index=16,label=Forget _Passwords}
+mnuWorkOffline={class=menu_item,parent=mnuFile,child_index=17,label=_Work Offline}
+mnuCloseWindow={class=menu_item,parent=mnuFile,child_index=18,label=_Close Window}
+mnuQuit={class=menu_item,parent=mnuFile,child_index=19,label=_Quit}
+mnuEdit={class=menu,parent=mbr0,child_index=1,label=_Edit}
+mnuSelectAll={class=menu_item,parent=mnuEdit,child_index=1,label=_Select All}
+mnuCut={class=menu_item,parent=mnuEdit,child_index=3,label=C_ut}
+mnuCopy={class=menu_item,parent=mnuEdit,child_index=4,label=_Copy}
+mnuPaste={class=menu_item,parent=mnuEdit,child_index=5,label=_Paste}
+mnuDelete={class=menu_item,parent=mnuEdit,child_index=7,label=_Delete}
+mnuSynchronizationOptions={class=menu_item,parent=mnuEdit,child_index=9,label=_Synchronization Options...}
+mnuPlugins={class=menu_item,parent=mnuEdit,child_index=13,label=Plugins}
+mnuPreferences={class=menu_item,parent=mnuEdit,child_index=14,label=Prefere_nces}
+mnuView={class=menu,parent=mbr0,child_index=2,label=_View}
+mnuCurrentView={class=menu,parent=mnuView,child_index=1,label=_Current View}
+mnuAddressCards={class=radio_menu_item,parent=mnuCurrentView,child_index=0,label=_Address Cards}
+mnuPhoneList={class=radio_menu_item,parent=mnuCurrentView,child_index=1,label=_Phone List}
+mnuByCompany={class=radio_menu_item,parent=mnuCurrentView,child_index=2,label=By _Company}
+mnuDefineViews={class=menu_item,parent=mnuCurrentView,child_index=4,label=Define Views...}
+mnuWindow={class=menu,parent=mnuView,child_index=2,label=_Window}
+mnuMail={class=menu_item,parent=mnuWindow,child_index=1,label=_Mail}
+mnuContacts={class=menu_item,parent=mnuWindow,child_index=2,label=C_ontacts}
+mnuCalendars={class=menu_item,parent=mnuWindow,child_index=3,label=_Calendars}
+mnuTasks={class=menu_item,parent=mnuWindow,child_index=4,label=_Tasks}
+mnuToolbar={class=check_menu_item,parent=mnuView,child_index=3,label=Tool_bar}
+mnuSwitcherAppearance={class=menu,parent=mnuView,child_index=5,label=_Switcher Appearance}
+mnuIconsandtext={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=0,label=Icons _and text}
+mnuIconsonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=1,label=_Icons only}
+mnuTextonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=2,label=_Text only}
+mnuToolbarstyle={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=3,label=Tool_bar style}
+mnuHidebuttons={class=check_menu_item,parent=mnuSwitcherAppearance,child_index=5,label=_Hide buttons}
+mnuPreviewPane={class=check_menu_item,parent=mnuView,child_index=7,label=_Preview _Pane}
+mnuActions={class=menu,parent=mbr0,child_index=6,label=_Actions}
+mnuForwardContact={class=menu_item,parent=mnuActions,child_index=0,label=_Forward Contact...}
+mnuSendMessagetoContact={class=menu_item,parent=mnuActions,child_index=1,label=_Send Message to Contact...}
+mnuStop={class=menu_item,parent=mnuActions,child_index=2,label=Stop}
+mnuCopytoFolder={class=menu_item,parent=mnuActions,child_index=4,label=_Copy to Folder...}
+mnuMovetoFolder={class=menu_item,parent=mnuActions,child_index=5,label=_Move to Folder...}
+mnuSearch={class=menu,parent=mbr0,child_index=8,label=_Search}
+mnuFindNow={class=menu_item,parent=mnuSearch,child_index=1,label=_Find Now}
+mnuClear={class=menu_item,parent=mnuSearch,child_index=2,label=_Clear}
+mnuAdvanced={class=menu_item,parent=mnuSearch,child_index=3,label=Advanced...}
+mnuHelp={class=menu,parent=mbr0,child_index=9,label=_Help}
+mnuContents={class=menu_item,parent=mnuHelp,child_index=1,label=_Contents}
+mnuQuickReference={class=menu_item,parent=mnuHelp,child_index=2,label=_Quick Reference}
+mnuSubmitBugReport={class=menu_item,parent=mnuHelp,child_index=4,label=Submit _Bug Report}
+mnuAboutEvolution={class=menu_item,parent=mnuHelp,child_index=6,label=_About Evolution...}
+mnu70={class=menu,parent=mbr0,child_index=10}
+pnl3={class=panel,parent=pnl0,child_index=1}
+pnl4={class=panel,parent=pnl3,child_index=0}
+tbar0={class=tool_bar,parent=pnl4,child_index=1}
+pnl5={class=panel,parent=tbar0,child_index=0}
+flr1={class=filler,parent=pnl5,child_index=0}
+btn0={class=push_button,parent=flr1,child_index=0}
+pnl6={class=panel,parent=flr1,child_index=1}
+pnl7={class=panel,parent=pnl6,child_index=0}
+btnNew={class=push_button,parent=pnl7,child_index=0,label=New}
+pnl8={class=panel,parent=tbar0,child_index=1}
+pnl9={class=panel,parent=tbar0,child_index=2}
+btnSend/Receive={class=push_button,parent=pnl9,child_index=0,label=Send / Receive}
+pnl10={class=panel,parent=tbar0,child_index=3}
+btnPrint={class=push_button,parent=pnl10,child_index=0,label=Print}
+pnl11={class=panel,parent=tbar0,child_index=4}
+btnDelete={class=push_button,parent=pnl11,child_index=0,label=Delete}
+pnl12={class=panel,parent=tbar0,child_index=5}
+btnStop={class=push_button,parent=pnl12,child_index=0,label=Stop}
+flr2={class=filler,parent=pnl0,child_index=2}
+splt0={class=split_pane,parent=flr2,child_index=0}
+pnl13={class=panel,parent=splt0,child_index=0}
+ptl0={class=page_tab_list,parent=pnl13,child_index=0}
+ptab0={class=page_tab,parent=ptl0,child_index=0}
+pnl14={class=panel,parent=ptab0,child_index=0}
+pnl15={class=panel,parent=pnl14,child_index=0}
+flr3={class=filler,parent=pnl15,child_index=0}
+flr4={class=filler,parent=flr3,child_index=0}
+ukn2={class=unknown,parent=flr4,child_index=0}
+ukn3={class=unknown,parent=flr4,child_index=1}
+lbl0={class=label,parent=flr4,child_index=2}
+flr5={class=filler,parent=flr3,child_index=1}
+scpn0={class=scroll_pane,parent=flr5,child_index=0}
+ttblMailFolderTree={class=tree_table,parent=scpn0,child_index=0,label=Mail Folder Tree}
+tch0={class=table_column_header,parent=ttblMailFolderTree,child_index=0}
+ptab1={class=page_tab,parent=ptl0,child_index=1}
+pnl16={class=panel,parent=ptab1,child_index=0}
+pnl17={class=panel,parent=pnl16,child_index=0}
+flr6={class=filler,parent=pnl17,child_index=0}
+flr7={class=filler,parent=flr6,child_index=0}
+ukn4={class=unknown,parent=flr7,child_index=0}
+ukn5={class=unknown,parent=flr7,child_index=1}
+lblNocontacts={class=label,parent=flr7,child_index=2,label=No contacts}
+scpn1={class=scroll_pane,parent=flr6,child_index=1}
+ttblContactSourceSelector={class=tree_table,parent=scpn1,child_index=0,label=Contact Source Selector}
+tch0={class=table_column_header,parent=ttblContactSourceSelector,child_index=0}
+ptab2={class=page_tab,parent=ptl0,child_index=2}
+pnl18={class=panel,parent=ptab2,child_index=0}
+pnl19={class=panel,parent=pnl18,child_index=0}
+flr8={class=filler,parent=pnl19,child_index=0}
+flr9={class=filler,parent=flr8,child_index=0}
+ukn6={class=unknown,parent=flr9,child_index=0}
+ukn7={class=unknown,parent=flr9,child_index=1}
+lblWednesday19Oct2005={class=label,parent=flr9,child_index=2,label=Wednesday 19 Oct 2005}
+scpn2={class=scroll_pane,parent=flr8,child_index=1}
+ttblCalendarSourceSelector={class=tree_table,parent=scpn2,child_index=0,label=Calendar Source Selector}
+tch0={class=table_column_header,parent=ttblCalendarSourceSelector,child_index=0}
+scbr0={class=scroll_bar,parent=scpn2,child_index=1}
+ptab3={class=page_tab,parent=ptl0,child_index=3}
+pnl20={class=panel,parent=ptab3,child_index=0}
+pnl21={class=panel,parent=pnl20,child_index=0}
+flr10={class=filler,parent=pnl21,child_index=0}
+flr11={class=filler,parent=flr10,child_index=0}
+ukn8={class=unknown,parent=flr11,child_index=0}
+ukn9={class=unknown,parent=flr11,child_index=1}
+lbl0tasks={class=label,parent=flr11,child_index=2,label=0 tasks}
+scpn3={class=scroll_pane,parent=flr10,child_index=1}
+ttblTaskSourceSelector={class=tree_table,parent=scpn3,child_index=0,label=Task Source Selector}
+tch0={class=table_column_header,parent=ttblTaskSourceSelector,child_index=0}
+tbtnMail={class=toggle_button,parent=pnl13,child_index=1,label=Mail}
+tbtnContacts={class=toggle_button,parent=pnl13,child_index=2,label=Contacts}
+tbtnCalendars={class=toggle_button,parent=pnl13,child_index=3,label=Calendars}
+tbtnTasks={class=toggle_button,parent=pnl13,child_index=4,label=Tasks}
+ptl1={class=page_tab_list,parent=splt0,child_index=1}
+ptab4={class=page_tab,parent=ptl1,child_index=0}
+pnl22={class=panel,parent=ptab4,child_index=0}
+pnl23={class=panel,parent=pnl22,child_index=0}
+flr12={class=filler,parent=pnl23,child_index=0}
+flr13={class=filler,parent=flr12,child_index=0}
+cboSearchType={class=combo_box,parent=flr13,child_index=0}
+mnu71={class=menu,parent=cboSearchType,child_index=0}
+flr14={class=filler,parent=flr13,child_index=1}
+txtSearch Text Entry={class=text,parent=flr14,child_index=0,label=Search Text Entry}
+pnl24={class=panel,parent=flr13,child_index=2}
+btnFindNow={class=push_button,parent=pnl24,child_index=0,label=Find _Now}
+pnl25={class=panel,parent=flr13,child_index=3}
+btnClear={class=push_button,parent=pnl25,child_index=0,label=_Clear}
+splt1={class=split_pane,parent=flr12,child_index=1}
+scpn4={class=scroll_pane,parent=splt1,child_index=0}
+uknMessageList={class=unknown,parent=scpn4,child_index=0,label=Message List}
+ttblMessageList={class=tree_table,parent=uknMessageList,child_index=0,label=Message List}
+tchStatus={class=table_column_header,parent=ttblMessageList,child_index=0,label=Status}
+tchAttachment={class=table_column_header,parent=ttblMessageList,child_index=1,label=Attachment}
+tchFlagged={class=table_column_header,parent=ttblMessageList,child_index=2,label=Flagged}
+tchFrom={class=table_column_header,parent=ttblMessageList,child_index=3,label=From}
+tchSubject={class=table_column_header,parent=ttblMessageList,child_index=4,label=Subject}
+tchDate={class=table_column_header,parent=ttblMessageList,child_index=5,label=Date}
+scbr1={class=scroll_bar,parent=scpn4,child_index=1}
+scpn5={class=scroll_pane,parent=splt1,child_index=1}
+pnlPanelcontainingHTML={class=panel,parent=scpn5,child_index=0,label=Panel containing HTML}
+scbr2={class=scroll_bar,parent=scpn5,child_index=1}
+ptab5={class=page_tab,parent=ptl1,child_index=1}
+pnl27={class=panel,parent=ptab5,child_index=0}
+pnl28={class=panel,parent=pnl27,child_index=0}
+ptl2={class=page_tab_list,parent=pnl28,child_index=0}
+ptab6={class=page_tab,parent=ptl2,child_index=0}
+cnvsevolutionaddressbook={class=canvas,parent=ptab6,child_index=0,label=evolution addressbook}
+flr15={class=filler,parent=cnvsevolutionaddressbook,child_index=0}
+cboSearchType1={class=combo_box,parent=flr15,child_index=0}
+mnu80={class=menu,parent=cboSearchType1,child_index=0}
+flr16={class=filler,parent=flr15,child_index=1}
+txtSearch Text Entry1={class=text,parent=flr16,child_index=0,label=Search Text Entry}
+pnl29={class=panel,parent=flr15,child_index=2}
+btnFindNow1={class=push_button,parent=pnl29,child_index=0,label=Find _Now}
+pnl30={class=panel,parent=flr15,child_index=3}
+btnClear1={class=push_button,parent=pnl30,child_index=0,label=_Clear}
+splt2={class=split_pane,parent=cnvsevolutionaddressbook,child_index=1}
+scpn6={class=scroll_pane,parent=splt2,child_index=0}
+pane0={class=layered_pane,parent=scpn6,child_index=0}
+pnl31={class=panel,parent=pane0,child_index=0}
+ukn11={class=unknown,parent=pnl31,child_index=0}
+pnlcurrentaddressbookfolderhas0cards={class=panel,parent=pnl31,child_index=1,label=current addressbook folder has 0 cards}
+scpn7={class=scroll_pane,parent=splt2,child_index=1}
+pnlPanelcontainingHTML1={class=panel,parent=scpn7,child_index=0,label=Panel containing HTML}
+ptab7={class=page_tab,parent=ptl1,child_index=2}
+pnl34={class=panel,parent=ptab7,child_index=0}
+pnl35={class=panel,parent=pnl34,child_index=0}
+flrGnomeCalendar={class=filler,parent=pnl35,child_index=0,label=Gnome Calendar}
+flrsearchbar={class=filler,parent=flrGnomeCalendar,child_index=0,label=search bar}
+cboSearchType2={class=combo_box,parent=flrsearchbar,child_index=0}
+mnu86={class=menu,parent=cboSearchType2,child_index=0}
+flr19={class=filler,parent=flrsearchbar,child_index=1}
+cboAnyCategory={class=combo_box,parent=flr19,child_index=0}
+mnu92={class=menu,parent=cboAnyCategory,child_index=0}
+pnl36={class=panel,parent=flrsearchbar,child_index=2}
+btnFindNow2={class=push_button,parent=pnl36,child_index=0,label=Find _Now}
+pnl37={class=panel,parent=flrsearchbar,child_index=3}
+btnClear2={class=push_button,parent=pnl37,child_index=0,label=_Clear}
+uknDayView={class=unknown,parent=flrGnomeCalendar,child_index=1,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+tblDayView={class=table,parent=uknDayView,child_index=0,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+paneMonthCalendar={class=layered_pane,parent=flrGnomeCalendar,child_index=2,label=Month Calendar}
+pnl38={class=panel,parent=paneMonthCalendar,child_index=0}
+calviewCalendar={class=calendar_view,parent=pnl38,child_index=0,label=Calendar: from 26 September 2005 to 05 February 2006}
+pnl39={class=panel,parent=pnl38,child_index=1}
+btnPrevious Button={class=push_button,parent=pnl39,child_index=0,label=Previous Button}
+pnl40={class=panel,parent=pnl38,child_index=2}
+btnPrevious Button1={class=push_button,parent=pnl40,child_index=0,label=Previous Button}
+pnl41={class=panel,parent=flrGnomeCalendar,child_index=3}
+scpn8={class=scroll_pane,parent=pnl41,child_index=0}
+uknTaskTable={class=unknown,parent=scpn8,child_index=0,label=Task Table}
+tblTaskTable={class=table,parent=uknTaskTable,child_index=0,label=Task Table}
+tchType={class=table_column_header,parent=tblTaskTable,child_index=0,label=Type}
+tchComplete={class=table_column_header,parent=tblTaskTable,child_index=1,label=Complete}
+tchSummary={class=table_column_header,parent=tblTaskTable,child_index=2,label=Summary}
+uknClicktoaddatask={class=unknown,parent=uknTaskTable,child_index=1,label=Click to add a task}
+ukn63={class=unknown,parent=uknClicktoaddatask,child_index=0}
+ptab8={class=page_tab,parent=ptl1,child_index=3}
+pnl42={class=panel,parent=ptab8,child_index=0}
+pnl43={class=panel,parent=pnl42,child_index=0}
+pnl44={class=panel,parent=pnl43,child_index=0}
+splt3={class=split_pane,parent=pnl44,child_index=0}
+pnl45={class=panel,parent=splt3,child_index=0}
+scpn9={class=scroll_pane,parent=pnl45,child_index=0}
+uknTaskTable1={class=unknown,parent=scpn9,child_index=0,label=Task Table}
+tblTaskTable1={class=table,parent=uknTaskTable1,child_index=0,label=Task Table}
+tchType1={class=table_column_header,parent=tblTaskTable1,child_index=0,label=Type}
+tchComplete1={class=table_column_header,parent=tblTaskTable1,child_index=1,label=Complete}
+tchSummary1={class=table_column_header,parent=tblTaskTable1,child_index=2,label=Summary}
+uknClicktoaddatask1={class=unknown,parent=uknTaskTable1,child_index=1,label=Click to add a task}
+ukn66={class=unknown,parent=uknClicktoaddatask1,child_index=0}
+pnl46={class=panel,parent=splt3,child_index=1}
+scpn10={class=scroll_pane,parent=pnl46,child_index=0}
+pnlPanelcontainingHTML2={class=panel,parent=scpn10,child_index=0,label=Panel containing HTML}
+pnl48={class=panel,parent=pnlPanelcontainingHTML2,child_index=0}
+txt2={class=text,parent=pnl48,child_index=0}
+flr20={class=filler,parent=pnl44,child_index=1}
+cboSearchType3={class=combo_box,parent=flr20,child_index=0}
+mnu118={class=menu,parent=cboSearchType3,child_index=0}
+flr21={class=filler,parent=flr20,child_index=1}
+cboAnyCategory1={class=combo_box,parent=flr21,child_index=0}
+mnu123={class=menu,parent=cboAnyCategory1,child_index=0}
+pnl49={class=panel,parent=flr20,child_index=2}
+btnFindNow3={class=push_button,parent=pnl49,child_index=0,label=Find _Now}
+pnl50={class=panel,parent=flr20,child_index=3}
+btnClear3={class=push_button,parent=pnl50,child_index=0,label=_Clear}
+flr22={class=filler,parent=flr2,child_index=1}
+btn16={class=push_button,parent=flr22,child_index=0}
+lblChangeEvolution'ssettings={class=label,parent=flr22,child_index=1,label=Change Evolution's settings}
+ptl3={class=page_tab_list,parent=flr22,child_index=2}
+ptab9={class=page_tab,parent=ptl3,child_index=0}
+pnl51={class=panel,parent=ptab9,child_index=0}
+pnl52={class=panel,parent=pnl51,child_index=0}
+flr23={class=filler,parent=pnl52,child_index=0}
+ukn67={class=unknown,parent=flr23,child_index=0}
+flr24={class=filler,parent=flr23,child_index=1}
+ptab10={class=page_tab,parent=ptl3,child_index=1}
+pnl53={class=panel,parent=ptab10,child_index=0}
+pnl54={class=panel,parent=pnl53,child_index=0}
+flr25={class=filler,parent=pnl54,child_index=0}
+ukn68={class=unknown,parent=flr25,child_index=0}
+flr26={class=filler,parent=flr25,child_index=1}
+ptab11={class=page_tab,parent=ptl3,child_index=2}
+pnl55={class=panel,parent=ptab11,child_index=0}
+pnl56={class=panel,parent=pnl55,child_index=0}
+flr27={class=filler,parent=pnl56,child_index=0}
+ukn69={class=unknown,parent=flr27,child_index=0}
+flr28={class=filler,parent=flr27,child_index=1}
+ptab12={class=page_tab,parent=ptl3,child_index=3}
+pnl57={class=panel,parent=ptab12,child_index=0}
+pnl58={class=panel,parent=pnl57,child_index=0}
+flr29={class=filler,parent=pnl58,child_index=0}
+ukn70={class=unknown,parent=flr29,child_index=0}
+flr30={class=filler,parent=flr29,child_index=1}
+flr31={class=filler,parent=flr0,child_index=1}
+
+[frmEvolution-Calendars]
+frmEvolution-Calendars={class=frame,parent=evolution,child_index=0,label=Evolution - Calendars}
+flr0={class=filler,parent=frmEvolution-Calendars,child_index=0}
+pnl0={class=panel,parent=flr0,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+mbr0={class=menu_bar,parent=pnl2,child_index=1}
+mnuFile={class=menu,parent=mbr0,child_index=0,label=_File}
+mnuNew={class=menu,parent=mnuFile,child_index=0,label=_New}
+mnuAppointment={class=menu_item,parent=mnuNew,child_index=2,label=_Appointment}
+mnuMeeting={class=menu_item,parent=mnuNew,child_index=3,label=M_eeting}
+mnuAllDayAppointment={class=menu_item,parent=mnuNew,child_index=4,label=All Day A_ppointment}
+mnuCalendar={class=menu_item,parent=mnuNew,child_index=5,label=Cale_ndar}
+mnuAssignedTask={class=menu_item,parent=mnuNew,child_index=7,label=Assigne_d Task}
+mnuContact={class=menu_item,parent=mnuNew,child_index=8,label=_Contact}
+mnuContactList={class=menu_item,parent=mnuNew,child_index=9,label=Contact _List}
+mnuMailMessage={class=menu_item,parent=mnuNew,child_index=10,label=_Mail _Message}
+mnuTask={class=menu_item,parent=mnuNew,child_index=11,label=_Task}
+mnuAddressBook={class=menu_item,parent=mnuNew,child_index=13,label=Address _Book}
+mnuMailFolder={class=menu_item,parent=mnuNew,child_index=14,label=Mail _Folder}
+mnuTasklist={class=menu_item,parent=mnuNew,child_index=15,label=Task l_ist}
+mnuNewWindow={class=menu_item,parent=mnuFile,child_index=1,label=New _Window}
+mnuSend/Receive={class=menu_item,parent=mnuFile,child_index=3,label=_Send / Receive}
+mnuOpenAppointment={class=menu_item,parent=mnuFile,child_index=5,label=_Open Appointment}
+mnuSubscribetoOtherUser'sCalendar={class=menu_item,parent=mnuFile,child_index=6,label=Subscribe to Other User's Calendar}
+mnuPermissions={class=menu_item,parent=mnuFile,child_index=7,label=Permissions...}
+mnuImport={class=menu_item,parent=mnuFile,child_index=9,label=_Import...}
+mnuPrintPreview={class=menu_item,parent=mnuFile,child_index=11,label=Print Pre_view}
+mnuPrint={class=menu_item,parent=mnuFile,child_index=12,label=_Print...}
+mnuForgetPasswords={class=menu_item,parent=mnuFile,child_index=15,label=Forget _Passwords}
+mnuWorkOffline={class=menu_item,parent=mnuFile,child_index=16,label=_Work Offline}
+mnuCloseWindow={class=menu_item,parent=mnuFile,child_index=17,label=_Close Window}
+mnuQuit={class=menu_item,parent=mnuFile,child_index=18,label=_Quit}
+mnuEdit={class=menu,parent=mbr0,child_index=1,label=_Edit}
+mnuCut={class=menu_item,parent=mnuEdit,child_index=1,label=C_ut}
+mnuCopy={class=menu_item,parent=mnuEdit,child_index=2,label=_Copy}
+mnuPaste={class=menu_item,parent=mnuEdit,child_index=3,label=_Paste}
+mnuDelete={class=menu_item,parent=mnuEdit,child_index=5,label=_Delete}
+mnuDeletethisOccurrence={class=menu_item,parent=mnuEdit,child_index=6,label=Delete this Occurrence}
+mnuDeleteAllOccurrences={class=menu_item,parent=mnuEdit,child_index=7,label=Delete All Occurrences}
+mnuSynchronizationOptions={class=menu_item,parent=mnuEdit,child_index=9,label=_Synchronization Options...}
+mnuPlugins={class=menu_item,parent=mnuEdit,child_index=13,label=Plugins}
+mnuPreferences={class=menu_item,parent=mnuEdit,child_index=14,label=Prefere_nces}
+mnuView={class=menu,parent=mbr0,child_index=2,label=_View}
+mnuSelectToday={class=menu_item,parent=mnuView,child_index=1,label=Select _Today}
+mnuSelectDate={class=menu_item,parent=mnuView,child_index=2,label=Select _Date}
+mnuCurrentView={class=menu,parent=mnuView,child_index=4,label=_Current View}
+mnuDayView={class=radio_menu_item,parent=mnuCurrentView,child_index=0,label=_Day View}
+mnuWorkWeekView={class=radio_menu_item,parent=mnuCurrentView,child_index=1,label=_Work _Week View}
+mnuWeekView={class=radio_menu_item,parent=mnuCurrentView,child_index=2,label=W_eek View}
+mnuMonthView={class=radio_menu_item,parent=mnuCurrentView,child_index=3,label=_Month View}
+mnuListView={class=radio_menu_item,parent=mnuCurrentView,child_index=4,label=_List View}
+mnuDefineViews={class=menu_item,parent=mnuCurrentView,child_index=6,label=Define Views...}
+mnuWindow={class=menu,parent=mnuView,child_index=5,label=_Window}
+mnuMail={class=menu_item,parent=mnuWindow,child_index=1,label=_Mail}
+mnuContacts={class=menu_item,parent=mnuWindow,child_index=2,label=C_ontacts}
+mnuCalendars={class=menu_item,parent=mnuWindow,child_index=3,label=_Calendars}
+mnuTasks={class=menu_item,parent=mnuWindow,child_index=4,label=_Tasks}
+mnuToolbar={class=check_menu_item,parent=mnuView,child_index=6,label=Tool_bar}
+mnuSwitcherAppearance={class=menu,parent=mnuView,child_index=8,label=_Switcher Appearance}
+mnuIconsandtext={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=0,label=Icons _and text}
+mnuIconsonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=1,label=_Icons only}
+mnuTextonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=2,label=_Text only}
+mnuToolbarstyle={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=3,label=Tool_bar style}
+mnuHidebuttons={class=check_menu_item,parent=mnuSwitcherAppearance,child_index=5,label=_Hide buttons}
+mnuActions={class=menu,parent=mbr0,child_index=6,label=_Actions}
+mnuPublishFree/BusyInformation={class=menu_item,parent=mnuActions,child_index=0,label=_Publish Free/Busy Information}
+mnuPurge={class=menu_item,parent=mnuActions,child_index=1,label=Purg_e}
+mnuSearch={class=menu,parent=mbr0,child_index=8,label=_Search}
+mnuFindNow={class=menu_item,parent=mnuSearch,child_index=1,label=_Find Now}
+mnuClear={class=menu_item,parent=mnuSearch,child_index=2,label=_Clear}
+mnuHelp={class=menu,parent=mbr0,child_index=9,label=_Help}
+mnuContents={class=menu_item,parent=mnuHelp,child_index=1,label=_Contents}
+mnuQuickReference={class=menu_item,parent=mnuHelp,child_index=2,label=_Quick Reference}
+mnuSubmitBugReport={class=menu_item,parent=mnuHelp,child_index=4,label=Submit _Bug Report}
+mnuAboutEvolution={class=menu_item,parent=mnuHelp,child_index=6,label=_About Evolution...}
+mnu69={class=menu,parent=mbr0,child_index=10}
+pnl3={class=panel,parent=pnl0,child_index=1}
+pnl4={class=panel,parent=pnl3,child_index=0}
+tbar0={class=tool_bar,parent=pnl4,child_index=1}
+pnl5={class=panel,parent=tbar0,child_index=0}
+flr1={class=filler,parent=pnl5,child_index=0}
+btn0={class=push_button,parent=flr1,child_index=0}
+pnl6={class=panel,parent=flr1,child_index=1}
+pnl7={class=panel,parent=pnl6,child_index=0}
+btnNew={class=push_button,parent=pnl7,child_index=0,label=New}
+pnl8={class=panel,parent=tbar0,child_index=1}
+pnl9={class=panel,parent=tbar0,child_index=2}
+btnSend/Receive={class=push_button,parent=pnl9,child_index=0,label=Send / Receive}
+pnl10={class=panel,parent=tbar0,child_index=3}
+btnPrint={class=push_button,parent=pnl10,child_index=0,label=Print}
+pnl11={class=panel,parent=tbar0,child_index=4}
+btnDelete={class=push_button,parent=pnl11,child_index=0,label=Delete}
+pnl12={class=panel,parent=tbar0,child_index=5}
+pnl13={class=panel,parent=tbar0,child_index=6}
+btnPrevious={class=push_button,parent=pnl13,child_index=0,label=Previous}
+pnl14={class=panel,parent=tbar0,child_index=7}
+btnToday={class=push_button,parent=pnl14,child_index=0,label=Today}
+pnl15={class=panel,parent=tbar0,child_index=8}
+btnNext={class=push_button,parent=pnl15,child_index=0,label=Next}
+pnl16={class=panel,parent=tbar0,child_index=9}
+pnl17={class=panel,parent=tbar0,child_index=10}
+btnGoTo={class=push_button,parent=pnl17,child_index=0,label=Go To}
+pnl18={class=panel,parent=tbar0,child_index=11}
+pnl19={class=panel,parent=tbar0,child_index=12}
+btnDay={class=push_button,parent=pnl19,child_index=0,label=Day}
+pnl20={class=panel,parent=tbar0,child_index=13}
+btnWorkWeek={class=push_button,parent=pnl20,child_index=0,label=Work Week}
+pnl21={class=panel,parent=tbar0,child_index=14}
+btnWeek={class=push_button,parent=pnl21,child_index=0,label=Week}
+pnl22={class=panel,parent=tbar0,child_index=15}
+btnMonth={class=push_button,parent=pnl22,child_index=0,label=Month}
+pnl23={class=panel,parent=tbar0,child_index=16}
+btnList={class=push_button,parent=pnl23,child_index=0,label=List}
+flr2={class=filler,parent=pnl0,child_index=2}
+splt0={class=split_pane,parent=flr2,child_index=0}
+pnl24={class=panel,parent=splt0,child_index=0}
+ptl0={class=page_tab_list,parent=pnl24,child_index=0}
+ptab0={class=page_tab,parent=ptl0,child_index=0}
+pnl25={class=panel,parent=ptab0,child_index=0}
+pnl26={class=panel,parent=pnl25,child_index=0}
+flr3={class=filler,parent=pnl26,child_index=0}
+flr4={class=filler,parent=flr3,child_index=0}
+ukn2={class=unknown,parent=flr4,child_index=0}
+ukn3={class=unknown,parent=flr4,child_index=1}
+lbl0={class=label,parent=flr4,child_index=2}
+flr5={class=filler,parent=flr3,child_index=1}
+scpn0={class=scroll_pane,parent=flr5,child_index=0}
+ttblMailFolderTree={class=tree_table,parent=scpn0,child_index=0,label=Mail Folder Tree}
+tch0={class=table_column_header,parent=ttblMailFolderTree,child_index=0}
+ptab1={class=page_tab,parent=ptl0,child_index=1}
+pnl27={class=panel,parent=ptab1,child_index=0}
+pnl28={class=panel,parent=pnl27,child_index=0}
+flr6={class=filler,parent=pnl28,child_index=0}
+flr7={class=filler,parent=flr6,child_index=0}
+ukn4={class=unknown,parent=flr7,child_index=0}
+ukn5={class=unknown,parent=flr7,child_index=1}
+lblNocontacts={class=label,parent=flr7,child_index=2,label=No contacts}
+scpn1={class=scroll_pane,parent=flr6,child_index=1}
+ttblContactSourceSelector={class=tree_table,parent=scpn1,child_index=0,label=Contact Source Selector}
+tch0={class=table_column_header,parent=ttblContactSourceSelector,child_index=0}
+ptab2={class=page_tab,parent=ptl0,child_index=2}
+pnl29={class=panel,parent=ptab2,child_index=0}
+pnl30={class=panel,parent=pnl29,child_index=0}
+flr8={class=filler,parent=pnl30,child_index=0}
+flr9={class=filler,parent=flr8,child_index=0}
+ukn6={class=unknown,parent=flr9,child_index=0}
+ukn7={class=unknown,parent=flr9,child_index=1}
+lblWednesday19Oct2005={class=label,parent=flr9,child_index=2,label=Wednesday 19 Oct 2005}
+scpn2={class=scroll_pane,parent=flr8,child_index=1}
+ttblCalendarSourceSelector={class=tree_table,parent=scpn2,child_index=0,label=Calendar Source Selector}
+tch0={class=table_column_header,parent=ttblCalendarSourceSelector,child_index=0}
+scbr0={class=scroll_bar,parent=scpn2,child_index=1}
+ptab3={class=page_tab,parent=ptl0,child_index=3}
+pnl31={class=panel,parent=ptab3,child_index=0}
+pnl32={class=panel,parent=pnl31,child_index=0}
+flr10={class=filler,parent=pnl32,child_index=0}
+flr11={class=filler,parent=flr10,child_index=0}
+ukn8={class=unknown,parent=flr11,child_index=0}
+ukn9={class=unknown,parent=flr11,child_index=1}
+lbl0tasks={class=label,parent=flr11,child_index=2,label=0 tasks}
+scpn3={class=scroll_pane,parent=flr10,child_index=1}
+ttblTaskSourceSelector={class=tree_table,parent=scpn3,child_index=0,label=Task Source Selector}
+tch0={class=table_column_header,parent=ttblTaskSourceSelector,child_index=0}
+tbtnMail={class=toggle_button,parent=pnl24,child_index=1,label=Mail}
+tbtnContacts={class=toggle_button,parent=pnl24,child_index=2,label=Contacts}
+tbtnCalendars={class=toggle_button,parent=pnl24,child_index=3,label=Calendars}
+tbtnTasks={class=toggle_button,parent=pnl24,child_index=4,label=Tasks}
+ptl1={class=page_tab_list,parent=splt0,child_index=1}
+ptab4={class=page_tab,parent=ptl1,child_index=0}
+pnl33={class=panel,parent=ptab4,child_index=0}
+pnl34={class=panel,parent=pnl33,child_index=0}
+flr12={class=filler,parent=pnl34,child_index=0}
+flr13={class=filler,parent=flr12,child_index=0}
+cboSearchType={class=combo_box,parent=flr13,child_index=0}
+mnu70={class=menu,parent=cboSearchType,child_index=0}
+flr14={class=filler,parent=flr13,child_index=1}
+txtSearch Text Entry={class=text,parent=flr14,child_index=0,label=Search Text Entry}
+pnl35={class=panel,parent=flr13,child_index=2}
+btnFindNow={class=push_button,parent=pnl35,child_index=0,label=Find _Now}
+pnl36={class=panel,parent=flr13,child_index=3}
+btnClear={class=push_button,parent=pnl36,child_index=0,label=_Clear}
+splt1={class=split_pane,parent=flr12,child_index=1}
+scpn4={class=scroll_pane,parent=splt1,child_index=0}
+uknMessageList={class=unknown,parent=scpn4,child_index=0,label=Message List}
+ttblMessageList={class=tree_table,parent=uknMessageList,child_index=0,label=Message List}
+tchStatus={class=table_column_header,parent=ttblMessageList,child_index=0,label=Status}
+tchAttachment={class=table_column_header,parent=ttblMessageList,child_index=1,label=Attachment}
+tchFlagged={class=table_column_header,parent=ttblMessageList,child_index=2,label=Flagged}
+tchFrom={class=table_column_header,parent=ttblMessageList,child_index=3,label=From}
+tchSubject={class=table_column_header,parent=ttblMessageList,child_index=4,label=Subject}
+tchDate={class=table_column_header,parent=ttblMessageList,child_index=5,label=Date}
+scbr1={class=scroll_bar,parent=scpn4,child_index=1}
+scpn5={class=scroll_pane,parent=splt1,child_index=1}
+pnlPanelcontainingHTML={class=panel,parent=scpn5,child_index=0,label=Panel containing HTML}
+scbr2={class=scroll_bar,parent=scpn5,child_index=1}
+ptab5={class=page_tab,parent=ptl1,child_index=1}
+pnl38={class=panel,parent=ptab5,child_index=0}
+pnl39={class=panel,parent=pnl38,child_index=0}
+ptl2={class=page_tab_list,parent=pnl39,child_index=0}
+ptab6={class=page_tab,parent=ptl2,child_index=0}
+cnvsevolutionaddressbook={class=canvas,parent=ptab6,child_index=0,label=evolution addressbook}
+flr15={class=filler,parent=cnvsevolutionaddressbook,child_index=0}
+cboSearchType1={class=combo_box,parent=flr15,child_index=0}
+mnu79={class=menu,parent=cboSearchType1,child_index=0}
+flr16={class=filler,parent=flr15,child_index=1}
+txtSearch Text Entry1={class=text,parent=flr16,child_index=0,label=Search Text Entry}
+pnl40={class=panel,parent=flr15,child_index=2}
+btnFindNow1={class=push_button,parent=pnl40,child_index=0,label=Find _Now}
+pnl41={class=panel,parent=flr15,child_index=3}
+btnClear1={class=push_button,parent=pnl41,child_index=0,label=_Clear}
+splt2={class=split_pane,parent=cnvsevolutionaddressbook,child_index=1}
+scpn6={class=scroll_pane,parent=splt2,child_index=0}
+pane0={class=layered_pane,parent=scpn6,child_index=0}
+pnl42={class=panel,parent=pane0,child_index=0}
+ukn11={class=unknown,parent=pnl42,child_index=0}
+pnlcurrentaddressbookfolderhas0cards={class=panel,parent=pnl42,child_index=1,label=current addressbook folder has 0 cards}
+scpn7={class=scroll_pane,parent=splt2,child_index=1}
+pnlPanelcontainingHTML1={class=panel,parent=scpn7,child_index=0,label=Panel containing HTML}
+ptab7={class=page_tab,parent=ptl1,child_index=2}
+pnl45={class=panel,parent=ptab7,child_index=0}
+pnl46={class=panel,parent=pnl45,child_index=0}
+flrGnomeCalendar={class=filler,parent=pnl46,child_index=0,label=Gnome Calendar}
+flrsearchbar={class=filler,parent=flrGnomeCalendar,child_index=0,label=search bar}
+cboSearchType2={class=combo_box,parent=flrsearchbar,child_index=0}
+mnu85={class=menu,parent=cboSearchType2,child_index=0}
+flr19={class=filler,parent=flrsearchbar,child_index=1}
+cboAnyCategory={class=combo_box,parent=flr19,child_index=0}
+mnu91={class=menu,parent=cboAnyCategory,child_index=0}
+pnl47={class=panel,parent=flrsearchbar,child_index=2}
+btnFindNow2={class=push_button,parent=pnl47,child_index=0,label=Find _Now}
+pnl48={class=panel,parent=flrsearchbar,child_index=3}
+btnClear2={class=push_button,parent=pnl48,child_index=0,label=_Clear}
+uknDayView={class=unknown,parent=flrGnomeCalendar,child_index=1,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+tblDayView={class=table,parent=uknDayView,child_index=0,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+paneMonthCalendar={class=layered_pane,parent=flrGnomeCalendar,child_index=2,label=Month Calendar}
+pnl49={class=panel,parent=paneMonthCalendar,child_index=0}
+calviewCalendar={class=calendar_view,parent=pnl49,child_index=0,label=Calendar: from 26 September 2005 to 05 February 2006}
+pnl50={class=panel,parent=pnl49,child_index=1}
+btnPrevious Button={class=push_button,parent=pnl50,child_index=0,label=Previous Button}
+pnl51={class=panel,parent=pnl49,child_index=2}
+btnPrevious Button1={class=push_button,parent=pnl51,child_index=0,label=Previous Button}
+pnl52={class=panel,parent=flrGnomeCalendar,child_index=3}
+scpn8={class=scroll_pane,parent=pnl52,child_index=0}
+uknTaskTable={class=unknown,parent=scpn8,child_index=0,label=Task Table}
+tblTaskTable={class=table,parent=uknTaskTable,child_index=0,label=Task Table}
+tchType={class=table_column_header,parent=tblTaskTable,child_index=0,label=Type}
+tchComplete={class=table_column_header,parent=tblTaskTable,child_index=1,label=Complete}
+tchSummary={class=table_column_header,parent=tblTaskTable,child_index=2,label=Summary}
+uknClicktoaddatask={class=unknown,parent=uknTaskTable,child_index=1,label=Click to add a task}
+ukn63={class=unknown,parent=uknClicktoaddatask,child_index=0}
+ptab8={class=page_tab,parent=ptl1,child_index=3}
+pnl53={class=panel,parent=ptab8,child_index=0}
+pnl54={class=panel,parent=pnl53,child_index=0}
+pnl55={class=panel,parent=pnl54,child_index=0}
+splt3={class=split_pane,parent=pnl55,child_index=0}
+pnl56={class=panel,parent=splt3,child_index=0}
+scpn9={class=scroll_pane,parent=pnl56,child_index=0}
+uknTaskTable1={class=unknown,parent=scpn9,child_index=0,label=Task Table}
+tblTaskTable1={class=table,parent=uknTaskTable1,child_index=0,label=Task Table}
+tchType1={class=table_column_header,parent=tblTaskTable1,child_index=0,label=Type}
+tchComplete1={class=table_column_header,parent=tblTaskTable1,child_index=1,label=Complete}
+tchSummary1={class=table_column_header,parent=tblTaskTable1,child_index=2,label=Summary}
+uknClicktoaddatask1={class=unknown,parent=uknTaskTable1,child_index=1,label=Click to add a task}
+ukn66={class=unknown,parent=uknClicktoaddatask1,child_index=0}
+pnl57={class=panel,parent=splt3,child_index=1}
+scpn10={class=scroll_pane,parent=pnl57,child_index=0}
+pnlPanelcontainingHTML2={class=panel,parent=scpn10,child_index=0,label=Panel containing HTML}
+pnl59={class=panel,parent=pnlPanelcontainingHTML2,child_index=0}
+txt2={class=text,parent=pnl59,child_index=0}
+flr20={class=filler,parent=pnl55,child_index=1}
+cboSearchType3={class=combo_box,parent=flr20,child_index=0}
+mnu117={class=menu,parent=cboSearchType3,child_index=0}
+flr21={class=filler,parent=flr20,child_index=1}
+cboAnyCategory1={class=combo_box,parent=flr21,child_index=0}
+mnu122={class=menu,parent=cboAnyCategory1,child_index=0}
+pnl60={class=panel,parent=flr20,child_index=2}
+btnFindNow3={class=push_button,parent=pnl60,child_index=0,label=Find _Now}
+pnl61={class=panel,parent=flr20,child_index=3}
+btnClear3={class=push_button,parent=pnl61,child_index=0,label=_Clear}
+flr22={class=filler,parent=flr2,child_index=1}
+btn24={class=push_button,parent=flr22,child_index=0}
+lblChangeEvolution'ssettings={class=label,parent=flr22,child_index=1,label=Change Evolution's settings}
+ptl3={class=page_tab_list,parent=flr22,child_index=2}
+ptab9={class=page_tab,parent=ptl3,child_index=0}
+pnl62={class=panel,parent=ptab9,child_index=0}
+pnl63={class=panel,parent=pnl62,child_index=0}
+flr23={class=filler,parent=pnl63,child_index=0}
+ukn67={class=unknown,parent=flr23,child_index=0}
+flr24={class=filler,parent=flr23,child_index=1}
+ptab10={class=page_tab,parent=ptl3,child_index=1}
+pnl64={class=panel,parent=ptab10,child_index=0}
+pnl65={class=panel,parent=pnl64,child_index=0}
+flr25={class=filler,parent=pnl65,child_index=0}
+ukn68={class=unknown,parent=flr25,child_index=0}
+flr26={class=filler,parent=flr25,child_index=1}
+ptab11={class=page_tab,parent=ptl3,child_index=2}
+pnl66={class=panel,parent=ptab11,child_index=0}
+pnl67={class=panel,parent=pnl66,child_index=0}
+flr27={class=filler,parent=pnl67,child_index=0}
+ukn69={class=unknown,parent=flr27,child_index=0}
+flr28={class=filler,parent=flr27,child_index=1}
+ptab12={class=page_tab,parent=ptl3,child_index=3}
+pnl68={class=panel,parent=ptab12,child_index=0}
+pnl69={class=panel,parent=pnl68,child_index=0}
+flr29={class=filler,parent=pnl69,child_index=0}
+ukn70={class=unknown,parent=flr29,child_index=0}
+flr30={class=filler,parent=flr29,child_index=1}
+flr31={class=filler,parent=flr0,child_index=1}
+
+[frmEvolution-Tasks]
+frmEvolution-Tasks={class=frame,parent=evolution,child_index=0,label=Evolution - Tasks}
+flr0={class=filler,parent=frmEvolution-Tasks,child_index=0}
+pnl0={class=panel,parent=flr0,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+mbr0={class=menu_bar,parent=pnl2,child_index=1}
+mnuFile={class=menu,parent=mbr0,child_index=0,label=_File}
+mnuNew={class=menu,parent=mnuFile,child_index=0,label=_New}
+mnuTask={class=menu_item,parent=mnuNew,child_index=2,label=_Task}
+mnuAssignedTask={class=menu_item,parent=mnuNew,child_index=3,label=Assigne_d Task}
+mnuTasklist={class=menu_item,parent=mnuNew,child_index=4,label=Task l_ist}
+mnuAllDayAppointment={class=menu_item,parent=mnuNew,child_index=6,label=All Day A_ppointment}
+mnuAppointment={class=menu_item,parent=mnuNew,child_index=7,label=_Appointment}
+mnuContact={class=menu_item,parent=mnuNew,child_index=8,label=_Contact}
+mnuContactList={class=menu_item,parent=mnuNew,child_index=9,label=Contact _List}
+mnuMailMessage={class=menu_item,parent=mnuNew,child_index=10,label=_Mail _Message}
+mnuMeeting={class=menu_item,parent=mnuNew,child_index=11,label=M_eeting}
+mnuAddressBook={class=menu_item,parent=mnuNew,child_index=13,label=Address _Book}
+mnuCalendar={class=menu_item,parent=mnuNew,child_index=14,label=Cale_ndar}
+mnuMailFolder={class=menu_item,parent=mnuNew,child_index=15,label=Mail _Folder}
+mnuNewWindow={class=menu_item,parent=mnuFile,child_index=1,label=New _Window}
+mnuSend/Receive={class=menu_item,parent=mnuFile,child_index=3,label=_Send / Receive}
+mnuOpenTask={class=menu_item,parent=mnuFile,child_index=5,label=_Open Task}
+mnuSubscribetoOtherUser'sTasks={class=menu_item,parent=mnuFile,child_index=6,label=Subscribe to Other User's Tasks}
+mnuPermissions={class=menu_item,parent=mnuFile,child_index=7,label=Permissions...}
+mnuImport={class=menu_item,parent=mnuFile,child_index=9,label=_Import...}
+mnuPrintPreview={class=menu_item,parent=mnuFile,child_index=11,label=Print Pre_view}
+mnuPrint={class=menu_item,parent=mnuFile,child_index=12,label=_Print...}
+mnuForgetPasswords={class=menu_item,parent=mnuFile,child_index=15,label=Forget _Passwords}
+mnuWorkOffline={class=menu_item,parent=mnuFile,child_index=16,label=_Work Offline}
+mnuCloseWindow={class=menu_item,parent=mnuFile,child_index=17,label=_Close Window}
+mnuQuit={class=menu_item,parent=mnuFile,child_index=18,label=_Quit}
+mnuEdit={class=menu,parent=mbr0,child_index=1,label=_Edit}
+mnuCut={class=menu_item,parent=mnuEdit,child_index=1,label=C_ut}
+mnuCopy={class=menu_item,parent=mnuEdit,child_index=2,label=_Copy}
+mnuPaste={class=menu_item,parent=mnuEdit,child_index=3,label=_Paste}
+mnuDelete={class=menu_item,parent=mnuEdit,child_index=5,label=_Delete}
+mnuMarkasComplete={class=menu_item,parent=mnuEdit,child_index=7,label=Mar_k as Complete}
+mnuSynchronizationOptions={class=menu_item,parent=mnuEdit,child_index=9,label=_Synchronization Options...}
+mnuPlugins={class=menu_item,parent=mnuEdit,child_index=13,label=Plugins}
+mnuPreferences={class=menu_item,parent=mnuEdit,child_index=14,label=Prefere_nces}
+mnuView={class=menu,parent=mbr0,child_index=2,label=_View}
+mnuCurrentView={class=menu,parent=mnuView,child_index=1,label=_Current View}
+mnuTasks={class=radio_menu_item,parent=mnuCurrentView,child_index=0,label=_Tasks}
+mnuWithDueDate={class=radio_menu_item,parent=mnuCurrentView,child_index=1,label=With _Due _Date}
+mnuWithStatus={class=radio_menu_item,parent=mnuCurrentView,child_index=2,label=With _Status}
+mnuDefineViews={class=menu_item,parent=mnuCurrentView,child_index=4,label=Define Views...}
+mnuWindow={class=menu,parent=mnuView,child_index=2,label=_Window}
+mnuMail={class=menu_item,parent=mnuWindow,child_index=1,label=_Mail}
+mnuContacts={class=menu_item,parent=mnuWindow,child_index=2,label=C_ontacts}
+mnuCalendars={class=menu_item,parent=mnuWindow,child_index=3,label=_Calendars}
+mnuTasks1={class=menu_item,parent=mnuWindow,child_index=4,label=_Tasks}
+mnuToolbar={class=check_menu_item,parent=mnuView,child_index=3,label=Tool_bar}
+mnuSwitcherAppearance={class=menu,parent=mnuView,child_index=5,label=_Switcher Appearance}
+mnuIconsandtext={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=0,label=Icons _and text}
+mnuIconsonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=1,label=_Icons only}
+mnuTextonly={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=2,label=_Text only}
+mnuToolbarstyle={class=radio_menu_item,parent=mnuSwitcherAppearance,child_index=3,label=Tool_bar style}
+mnuHidebuttons={class=check_menu_item,parent=mnuSwitcherAppearance,child_index=5,label=_Hide buttons}
+mnuActions={class=menu,parent=mbr0,child_index=6,label=_Actions}
+mnuPurge={class=menu_item,parent=mnuActions,child_index=0,label=Purg_e}
+mnuAssignTask={class=menu_item,parent=mnuActions,child_index=1,label=_Assign Task}
+mnuForwardasiCalendar={class=menu_item,parent=mnuActions,child_index=2,label=_Forward as iCalendar}
+mnuSearch={class=menu,parent=mbr0,child_index=8,label=_Search}
+mnuFindNow={class=menu_item,parent=mnuSearch,child_index=1,label=_Find Now}
+mnuClear={class=menu_item,parent=mnuSearch,child_index=2,label=_Clear}
+mnuHelp={class=menu,parent=mbr0,child_index=9,label=_Help}
+mnuContents={class=menu_item,parent=mnuHelp,child_index=1,label=_Contents}
+mnuQuickReference={class=menu_item,parent=mnuHelp,child_index=2,label=_Quick Reference}
+mnuSubmitBugReport={class=menu_item,parent=mnuHelp,child_index=4,label=Submit _Bug Report}
+mnuAboutEvolution={class=menu_item,parent=mnuHelp,child_index=6,label=_About Evolution...}
+mnu65={class=menu,parent=mbr0,child_index=10}
+pnl3={class=panel,parent=pnl0,child_index=1}
+pnl4={class=panel,parent=pnl3,child_index=0}
+tbar0={class=tool_bar,parent=pnl4,child_index=1}
+pnl5={class=panel,parent=tbar0,child_index=0}
+flr1={class=filler,parent=pnl5,child_index=0}
+btn0={class=push_button,parent=flr1,child_index=0}
+pnl6={class=panel,parent=flr1,child_index=1}
+pnl7={class=panel,parent=pnl6,child_index=0}
+btnNew={class=push_button,parent=pnl7,child_index=0,label=New}
+pnl8={class=panel,parent=tbar0,child_index=1}
+pnl9={class=panel,parent=tbar0,child_index=2}
+btnSend/Receive={class=push_button,parent=pnl9,child_index=0,label=Send / Receive}
+pnl10={class=panel,parent=tbar0,child_index=3}
+btnCut={class=push_button,parent=pnl10,child_index=0,label=Cut}
+pnl11={class=panel,parent=tbar0,child_index=4}
+btnCopy={class=push_button,parent=pnl11,child_index=0,label=Copy}
+pnl12={class=panel,parent=tbar0,child_index=5}
+btnPaste={class=push_button,parent=pnl12,child_index=0,label=Paste}
+pnl13={class=panel,parent=tbar0,child_index=6}
+pnl14={class=panel,parent=tbar0,child_index=7}
+btnPrint={class=push_button,parent=pnl14,child_index=0,label=Print}
+pnl15={class=panel,parent=tbar0,child_index=8}
+btnDelete={class=push_button,parent=pnl15,child_index=0,label=Delete}
+flr2={class=filler,parent=pnl0,child_index=2}
+splt0={class=split_pane,parent=flr2,child_index=0}
+pnl16={class=panel,parent=splt0,child_index=0}
+ptl0={class=page_tab_list,parent=pnl16,child_index=0}
+ptab0={class=page_tab,parent=ptl0,child_index=0}
+pnl17={class=panel,parent=ptab0,child_index=0}
+pnl18={class=panel,parent=pnl17,child_index=0}
+flr3={class=filler,parent=pnl18,child_index=0}
+flr4={class=filler,parent=flr3,child_index=0}
+ukn2={class=unknown,parent=flr4,child_index=0}
+ukn3={class=unknown,parent=flr4,child_index=1}
+lblWednesday19Oct2005={class=label,parent=flr4,child_index=2,label=Wednesday 19 Oct 2005}
+scpn0={class=scroll_pane,parent=flr3,child_index=1}
+ttblCalendarSourceSelector={class=tree_table,parent=scpn0,child_index=0,label=Calendar Source Selector}
+tch0={class=table_column_header,parent=ttblCalendarSourceSelector,child_index=0}
+scbr0={class=scroll_bar,parent=scpn0,child_index=1}
+scbr1={class=scroll_bar,parent=scpn0,child_index=2}
+ptab1={class=page_tab,parent=ptl0,child_index=1}
+pnl19={class=panel,parent=ptab1,child_index=0}
+pnl20={class=panel,parent=pnl19,child_index=0}
+flr5={class=filler,parent=pnl20,child_index=0}
+flr6={class=filler,parent=flr5,child_index=0}
+ukn4={class=unknown,parent=flr6,child_index=0}
+ukn5={class=unknown,parent=flr6,child_index=1}
+lbl0tasks={class=label,parent=flr6,child_index=2,label=0 tasks}
+scpn1={class=scroll_pane,parent=flr5,child_index=1}
+ttblTaskSourceSelector={class=tree_table,parent=scpn1,child_index=0,label=Task Source Selector}
+tch0={class=table_column_header,parent=ttblTaskSourceSelector,child_index=0}
+tbtnMail={class=toggle_button,parent=pnl16,child_index=1,label=Mail}
+tbtnContacts={class=toggle_button,parent=pnl16,child_index=2,label=Contacts}
+tbtnCalendars={class=toggle_button,parent=pnl16,child_index=3,label=Calendars}
+tbtnTasks={class=toggle_button,parent=pnl16,child_index=4,label=Tasks}
+ptl1={class=page_tab_list,parent=splt0,child_index=1}
+ptab2={class=page_tab,parent=ptl1,child_index=0}
+pnl21={class=panel,parent=ptab2,child_index=0}
+pnl22={class=panel,parent=pnl21,child_index=0}
+flrGnomeCalendar={class=filler,parent=pnl22,child_index=0,label=Gnome Calendar}
+flrsearchbar={class=filler,parent=flrGnomeCalendar,child_index=0,label=search bar}
+cboSearchType={class=combo_box,parent=flrsearchbar,child_index=0}
+mnu66={class=menu,parent=cboSearchType,child_index=0}
+flr9={class=filler,parent=flrsearchbar,child_index=1}
+cboAnyCategory={class=combo_box,parent=flr9,child_index=0}
+mnu72={class=menu,parent=cboAnyCategory,child_index=0}
+pnl23={class=panel,parent=flrsearchbar,child_index=2}
+btnFindNow={class=push_button,parent=pnl23,child_index=0,label=Find _Now}
+pnl24={class=panel,parent=flrsearchbar,child_index=3}
+btnClear={class=push_button,parent=pnl24,child_index=0,label=_Clear}
+uknDayView={class=unknown,parent=flrGnomeCalendar,child_index=1,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+tblDayView={class=table,parent=uknDayView,child_index=0,label=Day View: Wednesday 19 Oct 2005. It has no events.}
+paneMonthCalendar={class=layered_pane,parent=flrGnomeCalendar,child_index=2,label=Month Calendar}
+pnl25={class=panel,parent=paneMonthCalendar,child_index=0}
+calviewCalendar={class=calendar_view,parent=pnl25,child_index=0,label=Calendar: from 26 September 2005 to 06 November 2005}
+pnl26={class=panel,parent=pnl25,child_index=1}
+btnPrevious Button={class=push_button,parent=pnl26,child_index=0,label=Previous Button}
+pnl27={class=panel,parent=pnl25,child_index=2}
+btnPrevious Button1={class=push_button,parent=pnl27,child_index=0,label=Previous Button}
+pnl28={class=panel,parent=flrGnomeCalendar,child_index=3}
+scpn2={class=scroll_pane,parent=pnl28,child_index=0}
+uknTaskTable={class=unknown,parent=scpn2,child_index=0,label=Task Table}
+tblTaskTable={class=table,parent=uknTaskTable,child_index=0,label=Task Table}
+tchType={class=table_column_header,parent=tblTaskTable,child_index=0,label=Type}
+tchComplete={class=table_column_header,parent=tblTaskTable,child_index=1,label=Complete}
+tchSummary={class=table_column_header,parent=tblTaskTable,child_index=2,label=Summary}
+uknClicktoaddatask={class=unknown,parent=uknTaskTable,child_index=1,label=Click to add a task}
+ukn57={class=unknown,parent=uknClicktoaddatask,child_index=0}
+ptab3={class=page_tab,parent=ptl1,child_index=1}
+pnl29={class=panel,parent=ptab3,child_index=0}
+pnl30={class=panel,parent=pnl29,child_index=0}
+pnl31={class=panel,parent=pnl30,child_index=0}
+splt1={class=split_pane,parent=pnl31,child_index=0}
+pnl32={class=panel,parent=splt1,child_index=0}
+scpn3={class=scroll_pane,parent=pnl32,child_index=0}
+uknTaskTable1={class=unknown,parent=scpn3,child_index=0,label=Task Table}
+tblTaskTable1={class=table,parent=uknTaskTable1,child_index=0,label=Task Table}
+tchType1={class=table_column_header,parent=tblTaskTable1,child_index=0,label=Type}
+tchComplete1={class=table_column_header,parent=tblTaskTable1,child_index=1,label=Complete}
+tchSummary1={class=table_column_header,parent=tblTaskTable1,child_index=2,label=Summary}
+uknClicktoaddatask1={class=unknown,parent=uknTaskTable1,child_index=1,label=Click to add a task}
+ukn60={class=unknown,parent=uknClicktoaddatask1,child_index=0}
+pnl33={class=panel,parent=splt1,child_index=1}
+scpn4={class=scroll_pane,parent=pnl33,child_index=0}
+pnlPanelcontainingHTML={class=panel,parent=scpn4,child_index=0,label=Panel containing HTML}
+pnl35={class=panel,parent=pnlPanelcontainingHTML,child_index=0}
+txt0={class=text,parent=pnl35,child_index=0}
+flr10={class=filler,parent=pnl31,child_index=1}
+cboSearchType1={class=combo_box,parent=flr10,child_index=0}
+mnu98={class=menu,parent=cboSearchType1,child_index=0}
+flr11={class=filler,parent=flr10,child_index=1}
+cboAnyCategory1={class=combo_box,parent=flr11,child_index=0}
+mnu103={class=menu,parent=cboAnyCategory1,child_index=0}
+pnl36={class=panel,parent=flr10,child_index=2}
+btnFindNow1={class=push_button,parent=pnl36,child_index=0,label=Find _Now}
+pnl37={class=panel,parent=flr10,child_index=3}
+btnClear1={class=push_button,parent=pnl37,child_index=0,label=_Clear}
+flr12={class=filler,parent=flr2,child_index=1}
+btn14={class=push_button,parent=flr12,child_index=0}
+lbl2={class=label,parent=flr12,child_index=1}
+ptl2={class=page_tab_list,parent=flr12,child_index=2}
+ptab4={class=page_tab,parent=ptl2,child_index=0}
+pnl38={class=panel,parent=ptab4,child_index=0}
+pnl39={class=panel,parent=pnl38,child_index=0}
+flr13={class=filler,parent=pnl39,child_index=0}
+ukn61={class=unknown,parent=flr13,child_index=0}
+flr14={class=filler,parent=flr13,child_index=1}
+ptab5={class=page_tab,parent=ptl2,child_index=1}
+pnl40={class=panel,parent=ptab5,child_index=0}
+pnl41={class=panel,parent=pnl40,child_index=0}
+flr15={class=filler,parent=pnl41,child_index=0}
+ukn62={class=unknown,parent=flr15,child_index=0}
+flr16={class=filler,parent=flr15,child_index=1}
+flr17={class=filler,parent=flr0,child_index=1}
+
+[dlgEvolutionSettings]
+dlgEvolutionSettings={class=dialog,parent=evolution,child_index=1,label=Evolution Settings}
+flr0={class=filler,parent=dlgEvolutionSettings,child_index=0}
+flr1={class=filler,parent=flr0,child_index=0}
+scpn0={class=scroll_pane,parent=flr1,child_index=0}
+ukn0={class=unknown,parent=scpn0,child_index=0}
+tbl0={class=table,parent=ukn0,child_index=0}
+tchCategory={class=table_column_header,parent=tbl0,child_index=0,label=Category}
+ptl0={class=page_tab_list,parent=flr1,child_index=1}
+ptabMail Accounts={class=page_tab,parent=ptl0,child_index=0,label=Mail Accounts}
+flr2={class=filler,parent=ptabMail Accounts,child_index=0}
+pnl0={class=panel,parent=flr2,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+flr3={class=filler,parent=pnl2,child_index=0}
+flr4={class=filler,parent=flr3,child_index=0}
+scpn1={class=scroll_pane,parent=flr4,child_index=0}
+tblMailAccountsTable={class=table,parent=scpn1,child_index=0,label=Mail Accounts Table}
+tchEnabled={class=table_column_header,parent=tblMailAccountsTable,child_index=0,label=Enabled}
+tchAccountname={class=table_column_header,parent=tblMailAccountsTable,child_index=1,label=Account name}
+tchProtocol={class=table_column_header,parent=tblMailAccountsTable,child_index=2,label=Protocol}
+flr5={class=filler,parent=flr4,child_index=1}
+flr6={class=filler,parent=flr5,child_index=0}
+btnAdd={class=push_button,parent=flr6,child_index=0,label=_Add}
+btnEdit={class=push_button,parent=flr6,child_index=1,label=_Edit}
+btnRemove={class=push_button,parent=flr6,child_index=2,label=_Remove}
+flr7={class=filler,parent=flr5,child_index=1}
+btnDefault={class=push_button,parent=flr7,child_index=0,label=De_fault}
+btnEnable={class=push_button,parent=flr7,child_index=1,label=E_nable}
+ptabAutocompletion={class=page_tab,parent=ptl0,child_index=1,label=Autocompletion}
+flr8={class=filler,parent=ptabAutocompletion,child_index=0}
+pnl3={class=panel,parent=flr8,child_index=0}
+pnl4={class=panel,parent=pnl3,child_index=0}
+pnl5={class=panel,parent=pnl4,child_index=0}
+scpn2={class=scroll_pane,parent=pnl5,child_index=0}
+ttbl0={class=tree_table,parent=scpn2,child_index=0}
+tch0={class=table_column_header,parent=ttbl0,child_index=0}
+ptabMail Preferences={class=page_tab,parent=ptl0,child_index=2,label=Mail Preferences}
+flr9={class=filler,parent=ptabMail Preferences,child_index=0}
+pnl6={class=panel,parent=flr9,child_index=0}
+pnl7={class=panel,parent=pnl6,child_index=0}
+pnl8={class=panel,parent=pnl7,child_index=0}
+flr10={class=filler,parent=pnl8,child_index=0}
+ptl1={class=page_tab_list,parent=flr10,child_index=0}
+ptabGeneral={class=page_tab,parent=ptl1,child_index=0,label=General}
+flr11={class=filler,parent=ptabGeneral,child_index=0}
+flr12={class=filler,parent=flr11,child_index=0}
+lblMessageFonts={class=label,parent=flr12,child_index=0,label=Message Fonts}
+flr13={class=filler,parent=flr12,child_index=1}
+lbl1={class=label,parent=flr13,child_index=0}
+pnl9={class=panel,parent=flr13,child_index=1}
+flr14={class=filler,parent=pnl9,child_index=0}
+chkUsethesamefontsasotherapplications={class=check_box,parent=flr14,child_index=0,label=_Use the same fonts as other applications}
+pnl10={class=panel,parent=flr14,child_index=1}
+lblTerminalFont={class=label,parent=pnl10,child_index=0,label=Terminal Font:}
+btnStandardFont={class=push_button,parent=pnl10,child_index=1,label_by=Standard Font:}
+lblSans={class=label,parent=btnStandardFont,child_index=0,label=Sans}
+lbl12={class=label,parent=btnStandardFont,child_index=1,label=12}
+btnTerminalFont={class=push_button,parent=pnl10,child_index=2,label_by=Terminal Font:}
+lblMonospace={class=label,parent=btnTerminalFont,child_index=0,label=Monospace}
+lbl121={class=label,parent=btnTerminalFont,child_index=1,label=12}
+lblStandardFont={class=label,parent=pnl10,child_index=3,label=Standard Font:}
+flr15={class=filler,parent=flr11,child_index=1}
+lblMessageDisplay={class=label,parent=flr15,child_index=0,label=Message Display}
+flr16={class=filler,parent=flr15,child_index=1}
+lbl9={class=label,parent=flr16,child_index=0}
+pnl11={class=panel,parent=flr16,child_index=1}
+flr17={class=filler,parent=pnl11,child_index=0}
+flr18={class=filler,parent=flr17,child_index=0}
+chkMarkmessagesasreadafter={class=check_box,parent=flr18,child_index=0,label=_Mark messages as read after}
+sbtn0={class=spin_button,parent=flr18,child_index=1}
+lblseconds={class=label,parent=flr18,child_index=2,label=seconds}
+flr19={class=filler,parent=flr17,child_index=1}
+chkHighlightquotationswith={class=check_box,parent=flr19,child_index=0,label=Highlight _quotations with}
+btn7={class=push_button,parent=flr19,child_index=1}
+lblcolor={class=label,parent=flr19,child_index=2,label=color}
+flr20={class=filler,parent=flr17,child_index=2}
+lblUnicode(UTF-8)={class=label,parent=flr20,child_index=0,label=Default character encoding:}
+cboDefaultcharacterencoding={class=combo_box,parent=flr20,child_index=1}
+mnu0={class=menu,parent=cboDefaultcharacterencoding,child_index=0}
+chkFallbacktothreadingmessagesbysubject={class=check_box,parent=flr17,child_index=3,label=Fall back to threading messages by sub_ject}
+flr21={class=filler,parent=flr11,child_index=2}
+lblDeleteMail={class=label,parent=flr21,child_index=0,label=Delete Mail}
+flr22={class=filler,parent=flr21,child_index=1}
+lbl14={class=label,parent=flr22,child_index=0}
+pnl12={class=panel,parent=flr22,child_index=1}
+flr23={class=filler,parent=pnl12,child_index=0}
+flr24={class=filler,parent=flr23,child_index=0}
+chkEmptytrashfoldersonexit={class=check_box,parent=flr24,child_index=0,label=Empty trash folders on e_xit}
+cboEverytime={class=combo_box,parent=flr24,child_index=1}
+mnu28={class=menu,parent=cboEverytime,child_index=0}
+chkConfirmwhenexpungingafolder={class=check_box,parent=flr23,child_index=1,label=Confirm _when expunging a folder}
+flr25={class=filler,parent=flr11,child_index=3}
+lblNewMailNotification={class=label,parent=flr25,child_index=0,label=New Mail Notification}
+flr26={class=filler,parent=flr25,child_index=1}
+lbl16={class=label,parent=flr26,child_index=0}
+pnl13={class=panel,parent=flr26,child_index=1}
+flr27={class=filler,parent=pnl13,child_index=0}
+rbtnDonotnotifymewhennewmailarrives={class=radio_button,parent=flr27,child_index=0,label=_Do not notify me when new mail arrives}
+rbtnBeepwhennewmailarrives={class=radio_button,parent=flr27,child_index=1,label=Beep w_hen new mail arrives}
+rbtnPlaysoundfilewhennewmailarrives={class=radio_button,parent=flr27,child_index=2,label=Play sound file when new mail arri_ves}
+flr28={class=filler,parent=flr27,child_index=3}
+lblSpecifyfilename={class=label,parent=flr28,child_index=0,label=Specify filename:}
+flr29={class=filler,parent=flr28,child_index=1}
+flr30={class=filler,parent=flr29,child_index=0}
+cboPath={class=combo_box,parent=flr30,child_index=0}
+scpn3={class=scroll_pane,parent=cboPath,child_index=0}
+ukn1={class=unknown,parent=scpn3,child_index=0}
+ukn2={class=unknown,parent=ukn1,child_index=0}
+txtBrowse={class=text,parent=cboPath,child_index=1,label_by=_Browse...}
+btnBrowse={class=push_button,parent=flr30,child_index=1,label=_Browse...}
+ptabHTMLMail={class=page_tab,parent=ptl1,child_index=1,label=HTML Mail}
+flr31={class=filler,parent=ptabHTMLMail,child_index=0}
+lblGeneral={class=label,parent=flr31,child_index=0,label=General}
+flr32={class=filler,parent=flr31,child_index=1}
+lbl19={class=label,parent=flr32,child_index=0}
+flr33={class=filler,parent=flr32,child_index=1}
+chkShowanimatedimages={class=check_box,parent=flr33,child_index=0,label=_Show animated images}
+chkPromptwhensendingHTMLmessagestocontactsthatdon'twantthem={class=check_box,parent=flr33,child_index=1,label=_Prompt when sending HTML messages to contacts that don't want them}
+flr34={class=filler,parent=flr31,child_index=2}
+lblLoadingImages={class=label,parent=flr34,child_index=0,label=Loading Images}
+flr35={class=filler,parent=flr34,child_index=1}
+lbl21={class=label,parent=flr35,child_index=0}
+flr36={class=filler,parent=flr35,child_index=1}
+rbtnNeverloadimagesfromtheInternet={class=radio_button,parent=flr36,child_index=0,label=_Never load images from the Internet}
+rbtnLoadimagesinmailfromcontacts={class=radio_button,parent=flr36,child_index=1,label=_Load images in mail from contacts}
+rbtnAlwaysloadimagesfromtheInternet={class=radio_button,parent=flr36,child_index=2,label=_Always load images from the Internet}
+ptabColors={class=page_tab,parent=ptl1,child_index=2,label=Colors}
+flr37={class=filler,parent=ptabColors,child_index=0}
+lblLabelsandColors={class=label,parent=flr37,child_index=0,label=Labels and Colors}
+flr38={class=filler,parent=flr37,child_index=1}
+lbl23={class=label,parent=flr38,child_index=0}
+pnl14={class=panel,parent=flr38,child_index=1}
+flr39={class=filler,parent=pnl14,child_index=0}
+btnRevert={class=push_button,parent=flr39,child_index=0,label=_Revert}
+txt1={class=text,parent=pnl14,child_index=1}
+txt2={class=text,parent=pnl14,child_index=2}
+txt3={class=text,parent=pnl14,child_index=3}
+txt4={class=text,parent=pnl14,child_index=4}
+txt5={class=text,parent=pnl14,child_index=5}
+btnLater={class=push_button,parent=pnl14,child_index=6,label=Later}
+btnTo Do={class=push_button,parent=pnl14,child_index=7,label=To Do}
+btnPersonal={class=push_button,parent=pnl14,child_index=8,label=Personal}
+btnWork={class=push_button,parent=pnl14,child_index=9,label=Work}
+btnImportant={class=push_button,parent=pnl14,child_index=10,label=Important}
+ptabHeaders={class=page_tab,parent=ptl1,child_index=3,label=Headers}
+flr40={class=filler,parent=ptabHeaders,child_index=0}
+lblDisplayedMailHeaders={class=label,parent=flr40,child_index=0,label=Displayed Mail Headers}
+flr41={class=filler,parent=flr40,child_index=1}
+lbl25={class=label,parent=flr41,child_index=0}
+flr42={class=filler,parent=flr41,child_index=1}
+txtDisplayedMailHeaders={class=text,parent=flr42,child_index=0,label_by=Displayed Mail Headers}
+scpn4={class=scroll_pane,parent=flr42,child_index=1}
+tblMailHeadersTable={class=table,parent=scpn4,child_index=0,label=Mail Headers Table}
+tchEnabled1={class=table_column_header,parent=tblMailHeadersTable,child_index=0,label=Enabled}
+tchName={class=table_column_header,parent=tblMailHeadersTable,child_index=1,label=Name}
+flr43={class=filler,parent=flr41,child_index=2}
+btnAdd1={class=push_button,parent=flr43,child_index=0,label=_Add}
+btnRemove1={class=push_button,parent=flr43,child_index=1,label=_Remove}
+ptabJunk={class=page_tab,parent=ptl1,child_index=4,label=Junk}
+flr44={class=filler,parent=ptabJunk,child_index=0}
+flr45={class=filler,parent=flr44,child_index=0}
+lblGeneral1={class=label,parent=flr45,child_index=0,label=General}
+flr46={class=filler,parent=flr45,child_index=1}
+lbl27={class=label,parent=flr46,child_index=0}
+flr47={class=filler,parent=flr46,child_index=1}
+lbl={class=label,parent=flr47,child_index=0}
+chkCheckincomingmailforjunk={class=check_box,parent=flr47,child_index=1,label=Check _incoming mail for junk}
+flr48={class=filler,parent=flr44,child_index=1}
+lblFilterOptions={class=label,parent=flr48,child_index=0,label=Filter Options}
+flr49={class=filler,parent=flr48,child_index=1}
+lbl2={class=label,parent=flr49,child_index=0}
+flr50={class=filler,parent=flr49,child_index=1}
+chkIncluderemotetests={class=check_box,parent=flr50,child_index=0,label=I_nclude remote tests}
+flr51={class=filler,parent=flr50,child_index=1}
+lbl3={class=label,parent=flr51,child_index=0}
+lblThiswillmakethethefiltermorereliable,butslower={class=label,parent=flr51,child_index=1,label=This will make the the filter more reliable, but slower}
+ptabAutomaticContacts={class=page_tab,parent=ptl1,child_index=5,label=Automatic Contacts}
+flr52={class=filler,parent=ptabAutomaticContacts,child_index=0}
+flr53={class=filler,parent=flr52,child_index=0}
+lblAutomaticContacts={class=label,parent=flr53,child_index=0,label=Automatic Contacts}
+flr54={class=filler,parent=flr53,child_index=1}
+lbl34={class=label,parent=flr54,child_index=0}
+flr55={class=filler,parent=flr54,child_index=1}
+chkAutomaticallycreateentriesintheaddressbookwhenrespondingtomail={class=check_box,parent=flr55,child_index=0,label=_Automatically create entries in the addressbook when responding to mail}
+cboPersonal={class=combo_box,parent=flr55,child_index=1}
+mnu33={class=menu,parent=cboPersonal,child_index=0}
+flr56={class=filler,parent=flr52,child_index=1}
+lblInstantMessagingContacts={class=label,parent=flr56,child_index=0,label=Instant Messaging Contacts}
+flr57={class=filler,parent=flr56,child_index=1}
+lbl36={class=label,parent=flr57,child_index=0}
+flr58={class=filler,parent=flr57,child_index=1}
+chkPeriodicallysynchronizecontactinformationandimagesfrommyinstantmessenger={class=check_box,parent=flr58,child_index=0,label=Per_iodically synchronize contact information and images from my instant messenger}
+btnSynchronizewithbuddylistnow={class=push_button,parent=flr58,child_index=1,label=Synchronize with _buddy list now}
+ptabMeetingsandTasks={class=page_tab,parent=ptl1,child_index=6,label=Meetings and Tasks}
+flr59={class=filler,parent=ptabMeetingsandTasks,child_index=0}
+flr60={class=filler,parent=flr59,child_index=0}
+lblGeneral2={class=label,parent=flr60,child_index=0,label=General}
+flr61={class=filler,parent=flr60,child_index=1}
+lbl38={class=label,parent=flr61,child_index=0}
+flr62={class=filler,parent=flr61,child_index=1}
+chkDeletemessageafteracting={class=check_box,parent=flr62,child_index=0,label=_Delete message after acting}
+flr63={class=filler,parent=flr59,child_index=1}
+lblConflictSearch={class=label,parent=flr63,child_index=0,label=Conflict Search}
+flr64={class=filler,parent=flr63,child_index=1}
+lbl40={class=label,parent=flr64,child_index=0}
+flr65={class=filler,parent=flr64,child_index=1}
+lblSelectthecalendarstosearchformeetingconflicts={class=label,parent=flr65,child_index=0,label=Select the calendars to search for meeting conflicts}
+scpn5={class=scroll_pane,parent=flr65,child_index=1}
+ttblConflictSearchTable={class=tree_table,parent=scpn5,child_index=0,label=Conflict Search Table}
+tch0={class=table_column_header,parent=ttblConflictSearchTable,child_index=0}
+ptabComposer Preferences={class=page_tab,parent=ptl0,child_index=3,label=Composer Preferences}
+flr66={class=filler,parent=ptabComposer Preferences,child_index=0}
+pnl15={class=panel,parent=flr66,child_index=0}
+pnl16={class=panel,parent=pnl15,child_index=0}
+pnl17={class=panel,parent=pnl16,child_index=0}
+flr67={class=filler,parent=pnl17,child_index=0}
+ptl2={class=page_tab_list,parent=flr67,child_index=0}
+ptabGeneral1={class=page_tab,parent=ptl2,child_index=0,label=General}
+flr68={class=filler,parent=ptabGeneral1,child_index=0}
+flr69={class=filler,parent=flr68,child_index=0}
+lblDefaultBehavior={class=label,parent=flr69,child_index=0,label=Default Behavior}
+flr70={class=filler,parent=flr69,child_index=1}
+lbl43={class=label,parent=flr70,child_index=0}
+pnl18={class=panel,parent=flr70,child_index=1}
+flr71={class=filler,parent=pnl18,child_index=0}
+chkFormatmessagesinHTML={class=check_box,parent=flr71,child_index=0,label=Format messages in _HTML}
+chkAutomaticallyinsertsmileyimages={class=check_box,parent=flr71,child_index=1,label=Automat_ically insert smiley images}
+pnl19={class=panel,parent=flr71,child_index=2}
+lblUnicode(UTF-8)1={class=label,parent=pnl19,child_index=0,label=Character set:}
+lblUnicode(UTF-8)2={class=label,parent=pnl19,child_index=1,label=Forward style:}
+cboUnicode(UTF-8)={class=combo_box,parent=pnl19,child_index=2}
+mnu37={class=menu,parent=cboUnicode(UTF-8),child_index=0}
+flr72={class=filler,parent=pnl19,child_index=3}
+cboAttachment={class=combo_box,parent=flr72,child_index=0}
+mnu65={class=menu,parent=cboAttachment,child_index=0}
+pnl20={class=panel,parent=pnl19,child_index=4}
+flr73={class=filler,parent=pnl20,child_index=0}
+cboQuoteoriginalmessage={class=combo_box,parent=flr73,child_index=0}
+mnu69={class=menu,parent=cboQuoteoriginalmessage,child_index=0}
+lblReplystyle={class=label,parent=pnl19,child_index=5,label=Reply style:}
+lblAlerts={class=label,parent=flr69,child_index=2,label=Alerts}
+flr74={class=filler,parent=flr69,child_index=3}
+lbl48={class=label,parent=flr74,child_index=0}
+pnl21={class=panel,parent=flr74,child_index=1}
+flr75={class=filler,parent=pnl21,child_index=0}
+chkPromptwhensendingmessageswithanemptysubjectline={class=check_box,parent=flr75,child_index=0,label=_Prompt when sending messages with an empty subject line}
+chkPromptwhensendingmessageswithonlyBccrecipientsdefined={class=check_box,parent=flr75,child_index=1,label=Pr_ompt when sending messages with only Bcc recipients defined}
+ptabSignatures={class=page_tab,parent=ptl2,child_index=1,label=Signatures}
+flr76={class=filler,parent=ptabSignatures,child_index=0}
+flr77={class=filler,parent=flr76,child_index=0}
+lblSignaturesTable={class=label,parent=flr77,child_index=0,label=Signatures}
+flr78={class=filler,parent=flr77,child_index=1}
+lbl50={class=label,parent=flr78,child_index=0}
+lbl51={class=label,parent=flr78,child_index=1}
+scpn6={class=scroll_pane,parent=flr78,child_index=2}
+tblSignatures={class=table,parent=scpn6,child_index=0,label=Signatures Table}
+tchSignature(s)={class=table_column_header,parent=tblSignatures,child_index=0,label=Signature(s)}
+flr79={class=filler,parent=flr78,child_index=3}
+flr80={class=filler,parent=flr79,child_index=0}
+btnAdd2={class=push_button,parent=flr80,child_index=0,label=_Add}
+btnAddScript={class=push_button,parent=flr80,child_index=1,label=Add _Script}
+btnEdit1={class=push_button,parent=flr80,child_index=2,label=_Edit}
+btnRemove2={class=push_button,parent=flr80,child_index=3,label=_Remove}
+flr81={class=filler,parent=flr76,child_index=1}
+lblPreview={class=label,parent=flr81,child_index=0,label=Preview}
+flr82={class=filler,parent=flr81,child_index=1}
+lbl53={class=label,parent=flr82,child_index=0}
+scpn7={class=scroll_pane,parent=flr82,child_index=1}
+pnlPanelcontainingHTML={class=panel,parent=scpn7,child_index=0,label=Panel containing HTML}
+scbr0={class=scroll_bar,parent=scpn7,child_index=1}
+scbr1={class=scroll_bar,parent=scpn7,child_index=2}
+ptabSpellChecking={class=page_tab,parent=ptl2,child_index=2,label=Spell Checking}
+flr83={class=filler,parent=ptabSpellChecking,child_index=0}
+flr84={class=filler,parent=flr83,child_index=0}
+lblLanguagesTable={class=label,parent=flr84,child_index=0,label=Languages}
+flr85={class=filler,parent=flr84,child_index=1}
+lbl55={class=label,parent=flr85,child_index=0}
+flr86={class=filler,parent=flr85,child_index=1}
+flr87={class=filler,parent=flr86,child_index=0}
+flr88={class=filler,parent=flr87,child_index=0}
+flr89={class=filler,parent=flr88,child_index=0}
+scpn8={class=scroll_pane,parent=flr89,child_index=0}
+tblLanguages={class=table,parent=scpn8,child_index=0,label=Languages Table}
+tchEnabled2={class=table_column_header,parent=tblLanguages,child_index=0,label=Enabled}
+tchLanguage(s)={class=table_column_header,parent=tblLanguages,child_index=1,label=Language(s)}
+flr90={class=filler,parent=flr87,child_index=1}
+ukndialoginformation={class=unknown,parent=flr90,child_index=0,label=dialog information}
+lblThelistoflanguagesherereflectsonlythelanguagesforwhichyouhaveadictionaryinstalled={class=label,parent=flr90,child_index=1,label=The list of languages here reflects only the languages for which you have a dictionary installed.}
+flr91={class=filler,parent=flr83,child_index=1}
+lblOptions={class=label,parent=flr91,child_index=0,label=Options}
+flr92={class=filler,parent=flr91,child_index=1}
+lbl58={class=label,parent=flr92,child_index=0}
+flr93={class=filler,parent=flr92,child_index=1}
+chkCheckspellingwhileItype={class=check_box,parent=flr93,child_index=0,label=Check spelling while I _type}
+flr94={class=filler,parent=flr93,child_index=1}
+lblColorformisspelledwords={class=label,parent=flr94,child_index=0,label=Color for misspelled words:}
+btnColorformisspelledwords={class=push_button,parent=flr94,child_index=1,label_by=Color for misspelled words:}
+ptabCalendar and Tasks={class=page_tab,parent=ptl0,child_index=4,label=Calendar and Tasks}
+flr95={class=filler,parent=ptabCalendar and Tasks,child_index=0}
+pnl23={class=panel,parent=flr95,child_index=0}
+pnl24={class=panel,parent=pnl23,child_index=0}
+pnl25={class=panel,parent=pnl24,child_index=0}
+ptl3={class=page_tab_list,parent=pnl25,child_index=0}
+ptabGeneral2={class=page_tab,parent=ptl3,child_index=0,label=General}
+flr96={class=filler,parent=ptabGeneral2,child_index=0}
+lblTime={class=label,parent=flr96,child_index=0,label=Time}
+flr97={class=filler,parent=flr96,child_index=1}
+lbl61={class=label,parent=flr97,child_index=0}
+pnl26={class=panel,parent=flr97,child_index=1}
+flr98={class=filler,parent=pnl26,child_index=0}
+txt7={class=text,parent=flr98,child_index=0}
+btnTimezone Button={class=push_button,parent=flr98,child_index=1,label=Timezone Button}
+flr99={class=filler,parent=pnl26,child_index=1}
+pnl27={class=panel,parent=flr99,child_index=0}
+rbtn12hour(AM/PM)={class=radio_button,parent=pnl27,child_index=0,label=_12 hour (AM/PM)}
+rbtn24hour={class=radio_button,parent=flr99,child_index=1,label=_24 hour}
+lblTimeformat={class=label,parent=pnl26,child_index=2,label=Time format:}
+lblTimezone={class=label,parent=pnl26,child_index=3,label=Time zone:}
+lblWorkWeek={class=label,parent=flr96,child_index=2,label=Work Week}
+flr100={class=filler,parent=flr96,child_index=3}
+lbl65={class=label,parent=flr100,child_index=0}
+pnl28={class=panel,parent=flr100,child_index=1}
+flrDayends={class=filler,parent=pnl28,child_index=0,label=Date and Time Entry}
+txtTextDateEntry={class=text,parent=flrDayends,child_index=0,label=Text Date Entry}
+btnDate Button={class=push_button,parent=flrDayends,child_index=1,label=Date Button}
+ukn4={class=unknown,parent=flrDayends,child_index=2}
+cboDayends={class=combo_box,parent=flrDayends,child_index=3}
+scpn9={class=scroll_pane,parent=cboDayends,child_index=0}
+ukn5={class=unknown,parent=scpn9,child_index=0}
+ukn6={class=unknown,parent=ukn5,child_index=0}
+txt9={class=text,parent=cboDayends,child_index=1}
+flrDaybegins={class=filler,parent=pnl28,child_index=1,label=Date and Time Entry}
+txtTextDateEntry1={class=text,parent=flrDaybegins,child_index=0,label=Text Date Entry}
+btnDate Button1={class=push_button,parent=flrDaybegins,child_index=1,label=Date Button}
+ukn7={class=unknown,parent=flrDaybegins,child_index=2}
+cboDaybegins={class=combo_box,parent=flrDaybegins,child_index=3}
+scpn10={class=scroll_pane,parent=cboDaybegins,child_index=0}
+ukn8={class=unknown,parent=scpn10,child_index=0}
+ukn9={class=unknown,parent=ukn8,child_index=0}
+txt11={class=text,parent=cboDaybegins,child_index=1}
+lblDateandTimeEntry={class=label,parent=pnl28,child_index=2,label=Day begins:}
+lblDateandTimeEntry1={class=label,parent=pnl28,child_index=3,label=Day ends:}
+lblWorkdays={class=label,parent=pnl28,child_index=4,label=Work days:}
+lblMonday={class=label,parent=pnl28,child_index=5,label=Week starts:}
+pnl29={class=panel,parent=pnl28,child_index=6}
+cboWeekstarts={class=combo_box,parent=pnl29,child_index=0}
+mnu73={class=menu,parent=cboWeekstarts,child_index=0}
+flr103={class=filler,parent=pnl28,child_index=7}
+chkMonday={class=check_box,parent=flr103,child_index=0,label=_Monday}
+chkTuesday={class=check_box,parent=flr103,child_index=1,label=_Tuesday}
+chkWednesday={class=check_box,parent=flr103,child_index=2,label=_Wednesday}
+chkThursday={class=check_box,parent=flr103,child_index=3,label=T_hursday}
+chkFriday={class=check_box,parent=flr103,child_index=4,label=_Friday}
+chkSaturday={class=check_box,parent=flr103,child_index=5,label=_Saturday}
+chkSunday={class=check_box,parent=flr103,child_index=6,label=S_unday}
+lblAlerts1={class=label,parent=flr96,child_index=4,label=Alerts}
+flr104={class=filler,parent=flr96,child_index=5}
+lbl71={class=label,parent=flr104,child_index=0}
+flr105={class=filler,parent=flr104,child_index=1}
+chkAskforconfirmationwhendeletingitems={class=check_box,parent=flr105,child_index=0,label=_Ask for confirmation when deleting items}
+flr106={class=filler,parent=flr105,child_index=1}
+chkShowareminder={class=check_box,parent=flr106,child_index=0,label=Sh_ow a reminder}
+sbtn1={class=spin_button,parent=flr106,child_index=1}
+pnl30={class=panel,parent=flr106,child_index=2}
+cbooptionmenutochoosereminderunits={class=combo_box,parent=pnl30,child_index=0}
+mnu81={class=menu,parent=cbooptionmenutochoosereminderunits,child_index=0}
+lblbeforeeveryappointment={class=label,parent=flr106,child_index=3,label=before every appointment}
+ptabDisplay={class=page_tab,parent=ptl3,child_index=1,label=Display}
+flr107={class=filler,parent=ptabDisplay,child_index=0}
+lblGeneral3={class=label,parent=flr107,child_index=0,label=General}
+flr108={class=filler,parent=flr107,child_index=1}
+lbl74={class=label,parent=flr108,child_index=0}
+flr109={class=filler,parent=flr108,child_index=1}
+flr110={class=filler,parent=flr109,child_index=0}
+lbl30minutes={class=label,parent=flr110,child_index=0,label=Time divisions:}
+cboTimedivisions={class=combo_box,parent=flr110,child_index=1}
+mnu85={class=menu,parent=cboTimedivisions,child_index=0}
+chkShowappointmentendtimesinweekandmonthviews={class=check_box,parent=flr109,child_index=1,label=_Show appointment end times in week and month views}
+chkCompressweekendsinmonthview={class=check_box,parent=flr109,child_index=2,label=_Compress weekends in month view}
+chkShowweeknumbersindatenavigator={class=check_box,parent=flr109,child_index=3,label=Show week _numbers in date navigator}
+lblTaskList={class=label,parent=flr107,child_index=2,label=Task List}
+flr111={class=filler,parent=flr107,child_index=3}
+lbl77={class=label,parent=flr111,child_index=0}
+flr112={class=filler,parent=flr111,child_index=1}
+pnl31={class=panel,parent=flr112,child_index=0}
+btnTasksduetoday={class=push_button,parent=pnl31,child_index=0,label_by=Tasks due today:}
+btnOverduetasks={class=push_button,parent=pnl31,child_index=1,label_by=Overdue tasks:}
+lblOverduetasks={class=label,parent=pnl31,child_index=2,label=Overdue tasks:}
+lblTasksduetoday={class=label,parent=pnl31,child_index=3,label=Tasks due today:}
+flr113={class=filler,parent=flr112,child_index=1}
+chkHidecompletedtasksafter={class=check_box,parent=flr113,child_index=0,label=_Hide completed tasks after}
+sbtn2={class=spin_button,parent=flr113,child_index=1}
+cbooption menu to choose time units={class=combo_box,parent=flr113,child_index=2}
+mnu91={class=menu,parent=cbooption menu to choose time units,child_index=0}
+ptabFree/Busy={class=page_tab,parent=ptl3,child_index=2,label=Free/Busy}
+flr114={class=filler,parent=ptabFree/Busy,child_index=0}
+pnlPublishing={class=panel,parent=flr114,child_index=0,label=Publishing}
+pnl33={class=panel,parent=pnlPublishing,child_index=0}
+flr115={class=filler,parent=pnl33,child_index=0}
+scpn11={class=scroll_pane,parent=flr115,child_index=0}
+tblPublishingTable={class=table,parent=scpn11,child_index=0,label=Publishing Table}
+tchEnabled3={class=table_column_header,parent=tblPublishingTable,child_index=0,label=Enabled}
+tchLocation={class=table_column_header,parent=tblPublishingTable,child_index=1,label=Location}
+flr116={class=filler,parent=flr115,child_index=1}
+flr117={class=filler,parent=flr116,child_index=0}
+btnAddURL={class=push_button,parent=flr117,child_index=0,label=_Add URL}
+btnEdit2={class=push_button,parent=flr117,child_index=1,label=_Edit}
+btnRemove3={class=push_button,parent=flr117,child_index=2,label=_Remove}
+btnEnable1={class=push_button,parent=flr117,child_index=3,label=E_nable}
+flr118={class=filler,parent=flr116,child_index=1}
+lbl80={class=label,parent=flr116,child_index=2}
+lblPublishing={class=label,parent=pnlPublishing,child_index=1,label=Publishing}
+pnlDefaultFree/BusyServer={class=panel,parent=flr114,child_index=1,label=Default Free/Busy Server}
+pnl35={class=panel,parent=pnlDefaultFree/BusyServer,child_index=0}
+flr119={class=filler,parent=pnl35,child_index=0}
+flr120={class=filler,parent=flr119,child_index=0}
+lblTemplate={class=label,parent=flr120,child_index=0,label=Template:}
+txt12={class=text,parent=flr120,child_index=1}
+lbl%uand%dwillbereplacedbyuseranddomainfromtheemailaddress={class=label,parent=flr119,child_index=1,label=%u and %d will be replaced by user and domain from the email address.}
+lblDefaultFree/BusyServer={class=label,parent=pnlDefaultFree/BusyServer,child_index=1,label=Default Free/Busy Server}
+ptabCertificates={class=page_tab,parent=ptl0,child_index=5,label=Certificates}
+flr121={class=filler,parent=ptabCertificates,child_index=0}
+pnl36={class=panel,parent=flr121,child_index=0}
+pnl37={class=panel,parent=pnl36,child_index=0}
+pnl38={class=panel,parent=pnl37,child_index=0}
+ptl4={class=page_tab_list,parent=pnl38,child_index=0}
+ptabYourCertificates={class=page_tab,parent=ptl4,child_index=0,label=Your Certificates}
+flr122={class=filler,parent=ptabYourCertificates,child_index=0}
+lblYouhavecertificatesfromtheseorganizationsthatidentifyyou={class=label,parent=flr122,child_index=0,label=You have certificates from these organizations that identify you:}
+flr123={class=filler,parent=flr122,child_index=1}
+scpn12={class=scroll_pane,parent=flr123,child_index=0}
+tblCertificatesTable={class=table,parent=scpn12,child_index=0,label=Certificates Table}
+tchCertificateName={class=table_column_header,parent=tblCertificatesTable,child_index=0,label=Certificate Name}
+tchPurposes={class=table_column_header,parent=tblCertificatesTable,child_index=1,label=Purposes}
+tchSerialNumber={class=table_column_header,parent=tblCertificatesTable,child_index=2,label=Serial Number}
+tchExpires={class=table_column_header,parent=tblCertificatesTable,child_index=3,label=Expires}
+flr124={class=filler,parent=flr123,child_index=1}
+btnView={class=push_button,parent=flr124,child_index=0,label=View}
+btnBackup={class=push_button,parent=flr124,child_index=1,label=Backup}
+btnBackupAll={class=push_button,parent=flr124,child_index=2,label=Backup All}
+btnImport={class=push_button,parent=flr124,child_index=3,label=Import}
+btnDelete={class=push_button,parent=flr124,child_index=4,label=_Delete}
+ptabContactCertificates={class=page_tab,parent=ptl4,child_index=1,label=Contact Certificates}
+flr125={class=filler,parent=ptabContactCertificates,child_index=0}
+lblYouhavecertificatesonfilethatidentifythesepeople={class=label,parent=flr125,child_index=0,label=You have certificates on file that identify these people:}
+flr126={class=filler,parent=flr125,child_index=1}
+scpn13={class=scroll_pane,parent=flr126,child_index=0}
+tblCertificatesTable1={class=table,parent=scpn13,child_index=0,label=Certificates Table}
+tchCertificateName1={class=table_column_header,parent=tblCertificatesTable1,child_index=0,label=Certificate Name}
+tchE-MailAddress={class=table_column_header,parent=tblCertificatesTable1,child_index=1,label=E-Mail Address}
+tchPurposes1={class=table_column_header,parent=tblCertificatesTable1,child_index=2,label=Purposes}
+flr127={class=filler,parent=flr126,child_index=1}
+btnView1={class=push_button,parent=flr127,child_index=0,label=View}
+btnEdit3={class=push_button,parent=flr127,child_index=1,label=Edit}
+btnImport1={class=push_button,parent=flr127,child_index=2,label=Import}
+btnDelete1={class=push_button,parent=flr127,child_index=3,label=_Delete}
+ptabAuthorities={class=page_tab,parent=ptl4,child_index=2,label=Authorities}
+flr128={class=filler,parent=ptabAuthorities,child_index=0}
+lblYouhavecertificatesonfilethatidentifythesecertificateauthorities={class=label,parent=flr128,child_index=0,label=You have certificates on file that identify these certificate authorities:}
+flr129={class=filler,parent=flr128,child_index=1}
+scpn14={class=scroll_pane,parent=flr129,child_index=0}
+tbl8={class=table,parent=scpn14,child_index=0}
+tchCertificateName2={class=table_column_header,parent=tbl8,child_index=0,label=Certificate Name}
+flr130={class=filler,parent=flr129,child_index=1}
+btnView2={class=push_button,parent=flr130,child_index=0,label=View}
+btnEdit4={class=push_button,parent=flr130,child_index=1,label=Edit}
+btnImport2={class=push_button,parent=flr130,child_index=2,label=Import}
+btnDelete2={class=push_button,parent=flr130,child_index=3,label=_Delete}
+flr131={class=filler,parent=flr0,child_index=1}
+btnClose={class=push_button,parent=flr131,child_index=0,label=_Close}
+btnHelp={class=push_button,parent=flr131,child_index=1,label=_Help}
+
+[frmEvolutionAccountAssistant]
+frmEvolutionAccountAssistant={class=frame,parent=evolution,child_index=2,label=Evolution Account Assistant}
+pnl0={class=panel,parent=frmEvolutionAccountAssistant,child_index=0}
+pnl1={class=panel,parent=pnl0,child_index=0}
+pnl2={class=panel,parent=pnl1,child_index=0}
+pnl3={class=panel,parent=pnl2,child_index=0}
+flr0={class=filler,parent=pnl3,child_index=0}
+ukn0={class=unknown,parent=flr0,child_index=0}
+pnl4={class=panel,parent=flr0,child_index=1}
+lblWelcometotheEvolutionMailConfigurationAssistant={class=label,parent=pnl4,child_index=0,label=Welcome to the Evolution Mail Configuration Assistant.
+
+Click "Forward" to begin. }
+ukn1={class=unknown,parent=pnl3,child_index=1}
+lblMailConfiguration={class=label,parent=pnl3,child_index=2,label=Mail Configuration}
+ukn2={class=unknown,parent=pnl3,child_index=3}
+pnl5={class=panel,parent=pnl0,child_index=1}
+pnl6={class=panel,parent=pnl5,child_index=0}
+pnl7={class=panel,parent=pnl6,child_index=0}
+pnl8={class=panel,parent=pnl7,child_index=0}
+flr1={class=filler,parent=pnl8,child_index=0}
+lblPleaseenteryournameandemailaddressbelow={class=label,parent=flr1,child_index=0,label=Please enter your name and email address below. The "optional" fields below do not need to be filled in, unless you wish to include this information in email you send.}
+flr2={class=filler,parent=flr1,child_index=1}
+flr3={class=filler,parent=flr2,child_index=0}
+lblRequiredInformation={class=label,parent=flr3,child_index=0,label=Required Information}
+flr4={class=filler,parent=flr3,child_index=1}
+lbl4={class=label,parent=flr4,child_index=0}
+pnl9={class=panel,parent=flr4,child_index=1}
+pnl10={class=panel,parent=pnl9,child_index=0}
+txtFullName={class=text,parent=pnl10,child_index=0,label_by=Full Name:}
+lblFullName={class=label,parent=pnl10,child_index=1,label=Full Name:}
+lblEmailAddress={class=label,parent=pnl10,child_index=2,label=Email Address:}
+txtEmailAddress={class=text,parent=pnl10,child_index=3,label_by=Email Address:}
+flr5={class=filler,parent=flr2,child_index=1}
+lblOptionalInformation={class=label,parent=flr5,child_index=0,label=Optional Information}
+flr6={class=filler,parent=flr5,child_index=1}
+lbl8={class=label,parent=flr6,child_index=0}
+pnl11={class=panel,parent=flr6,child_index=1}
+chkMakethismydefaultaccount={class=check_box,parent=pnl11,child_index=0,label=_Make this my default account}
+lblReply-To={class=label,parent=pnl11,child_index=1,label=Reply-To:}
+txtReply-To={class=text,parent=pnl11,child_index=2,label_by=Reply-To:}
+lblOrganization={class=label,parent=pnl11,child_index=3,label=Organization:}
+txtOrganization={class=text,parent=pnl11,child_index=4,label_by=Organization:}
+flr7={class=filler,parent=pnl11,child_index=5}
+cboSignature={class=combo_box,parent=flr7,child_index=0,label_by=Signature:}
+btnAddNewSignature={class=push_button,parent=flr7,child_index=1,label=Add Ne_w Signature...}
+lblSignature={class=label,parent=pnl11,child_index=6,label=Signature:}
+ukn3={class=unknown,parent=pnl7,child_index=1}
+lblIdentity={class=label,parent=pnl7,child_index=2,label=Identity}
+ukn4={class=unknown,parent=pnl7,child_index=3}
+pnl12={class=panel,parent=pnl0,child_index=2}
+pnl13={class=panel,parent=pnl12,child_index=0}
+pnl14={class=panel,parent=pnl13,child_index=0}
+pnl15={class=panel,parent=pnl14,child_index=0}
+flr8={class=filler,parent=pnl15,child_index=0}
+lblPleaseselectamongthefollowingoptions={class=label,parent=flr8,child_index=0,label=Please select among the following options}
+flr9={class=filler,parent=flr8,child_index=1}
+flr10={class=filler,parent=flr9,child_index=0}
+pnl16={class=panel,parent=flr10,child_index=0}
+cboServerType={class=combo_box,parent=pnl16,child_index=0}
+mnu0={class=menu,parent=cboServerType,child_index=0}
+lbl14={class=label,parent=pnl16,child_index=1}
+lblDescription={class=label,parent=pnl16,child_index=2,label=Description:}
+lblNone={class=label,parent=pnl16,child_index=3,label=Server Type: }
+flr11={class=filler,parent=flr10,child_index=2}
+lblConfiguration={class=label,parent=flr11,child_index=0,label=Configuration}
+flr12={class=filler,parent=flr11,child_index=1}
+lbl18={class=label,parent=flr12,child_index=0}
+pnl17={class=panel,parent=flr12,child_index=1}
+pnl18={class=panel,parent=pnl17,child_index=0}
+flr13={class=filler,parent=pnl18,child_index=0}
+flr14={class=filler,parent=flr13,child_index=0}
+cboPath={class=combo_box,parent=flr14,child_index=0}
+scpn0={class=scroll_pane,parent=cboPath,child_index=0}
+ukn5={class=unknown,parent=scpn0,child_index=0}
+ukn6={class=unknown,parent=ukn5,child_index=0}
+txtBrowse={class=text,parent=cboPath,child_index=1,label_by=_Browse...}
+btnBrowse={class=push_button,parent=flr14,child_index=1,label=_Browse...}
+lblPath={class=label,parent=pnl18,child_index=1,label=Path:}
+txtUsername={class=text,parent=pnl18,child_index=2,label_by=Username:}
+txtServer={class=text,parent=pnl18,child_index=3,label_by=Server:}
+lblUsername={class=label,parent=pnl18,child_index=4,label=Username:}
+lblServer={class=label,parent=pnl18,child_index=5,label=Server:}
+flr15={class=filler,parent=flr10,child_index=3}
+lblSecurity={class=label,parent=flr15,child_index=0,label=Security}
+flr16={class=filler,parent=flr15,child_index=1}
+lbl23={class=label,parent=flr16,child_index=0}
+flr17={class=filler,parent=flr16,child_index=1}
+flr18={class=filler,parent=flr17,child_index=0}
+lblNever={class=label,parent=flr18,child_index=0,label=Use Secure Connection:}
+cboUseSecureConnection={class=combo_box,parent=flr18,child_index=1}
+flr19={class=filler,parent=flr17,child_index=1}
+ukndialogwarning={class=unknown,parent=flr19,child_index=0,label=dialog warning}
+lblSSLisnotsupportedinthisbuildofEvolution={class=label,parent=flr19,child_index=1,label=SSL is not supported in this build of Evolution}
+flr20={class=filler,parent=flr10,child_index=4}
+lblAuthenticationType={class=label,parent=flr20,child_index=0,label=Authentication Type}
+flr21={class=filler,parent=flr20,child_index=1}
+lbl27={class=label,parent=flr21,child_index=0}
+flr22={class=filler,parent=flr21,child_index=1}
+flr23={class=filler,parent=flr22,child_index=0}
+cbo4={class=combo_box,parent=flr23,child_index=0}
+btnCheckforSupportedTypes={class=push_button,parent=flr23,child_index=1,label= Ch_eck for Supported Types }
+chkRememberpassword={class=check_box,parent=flr22,child_index=1,label=Re_member password}
+ukn8={class=unknown,parent=pnl14,child_index=1}
+lblReceivingEmail={class=label,parent=pnl14,child_index=2,label=Receiving Email}
+ukn9={class=unknown,parent=pnl14,child_index=3}
+pnl19={class=panel,parent=pnl0,child_index=3}
+pnl20={class=panel,parent=pnl19,child_index=0}
+pnl21={class=panel,parent=pnl20,child_index=0}
+pnl22={class=panel,parent=pnl21,child_index=0}
+flr24={class=filler,parent=pnl22,child_index=0}
+pnlCheckingforNewMail={class=panel,parent=flr24,child_index=0,label=Checking for New Mail}
+pnl24={class=panel,parent=pnlCheckingforNewMail,child_index=0}
+pnl25={class=panel,parent=pnl24,child_index=0}
+lblCheckingforNewMail={class=label,parent=pnlCheckingforNewMail,child_index=1,label=Checking for New Mail}
+pnlCheckingforNewMail1={class=panel,parent=flr24,child_index=1,label=Checking for New Mail}
+pnl27={class=panel,parent=pnlCheckingforNewMail1,child_index=0}
+pnl28={class=panel,parent=pnl27,child_index=0}
+lblCheckingforNewMail1={class=label,parent=pnlCheckingforNewMail1,child_index=1,label=Checking for New Mail}
+pnlConnectiontoServer={class=panel,parent=flr24,child_index=2,label=Connection to Server}
+pnl30={class=panel,parent=pnlConnectiontoServer,child_index=0}
+pnl31={class=panel,parent=pnl30,child_index=0}
+lblConnectiontoServer={class=label,parent=pnlConnectiontoServer,child_index=1,label=Connection to Server}
+pnlFolders={class=panel,parent=flr24,child_index=3,label=Folders}
+pnl33={class=panel,parent=pnlFolders,child_index=0}
+pnl34={class=panel,parent=pnl33,child_index=0}
+lblFolders={class=label,parent=pnlFolders,child_index=1,label=Folders}
+pnlOptions={class=panel,parent=flr24,child_index=4,label=Options}
+pnl36={class=panel,parent=pnlOptions,child_index=0}
+pnl37={class=panel,parent=pnl36,child_index=0}
+lblOptions={class=label,parent=pnlOptions,child_index=1,label=Options}
+pnlGlobalAddressList/ActiveDirectory={class=panel,parent=flr24,child_index=5,label=Global Address List / Active Directory}
+pnl39={class=panel,parent=pnlGlobalAddressList/ActiveDirectory,child_index=0}
+pnl40={class=panel,parent=pnl39,child_index=0}
+lblGlobalAddressList/ActiveDirectory={class=label,parent=pnlGlobalAddressList/ActiveDirectory,child_index=1,label=Global Address List / Active Directory}
+pnlOptions1={class=panel,parent=flr24,child_index=6,label=Options}
+pnl42={class=panel,parent=pnlOptions1,child_index=0}
+pnl43={class=panel,parent=pnl42,child_index=0}
+lblOptions1={class=label,parent=pnlOptions1,child_index=1,label=Options}
+pnlSOAPSettings={class=panel,parent=flr24,child_index=7,label=SOAP Settings}
+pnl45={class=panel,parent=pnlSOAPSettings,child_index=0}
+pnl46={class=panel,parent=pnl45,child_index=0}
+lblSOAPSettings={class=label,parent=pnlSOAPSettings,child_index=1,label=SOAP Settings}
+pnlMessagestorage={class=panel,parent=flr24,child_index=8,label=Message storage}
+pnl48={class=panel,parent=pnlMessagestorage,child_index=0}
+pnl49={class=panel,parent=pnl48,child_index=0}
+lblMessagestorage={class=label,parent=pnlMessagestorage,child_index=1,label=Message storage}
+ukn10={class=unknown,parent=pnl21,child_index=1}
+lblReceivingOptions={class=label,parent=pnl21,child_index=2,label=Receiving Options}
+ukn11={class=unknown,parent=pnl21,child_index=3}
+pnl50={class=panel,parent=pnl0,child_index=4}
+pnl51={class=panel,parent=pnl50,child_index=0}
+pnl52={class=panel,parent=pnl51,child_index=0}
+pnl53={class=panel,parent=pnl52,child_index=0}
+flr25={class=filler,parent=pnl53,child_index=0}
+lblPleaseenterinformationaboutthewayyouwillsendmail={class=label,parent=flr25,child_index=0,label=Please enter information about the way you will send mail. If you are not sure, ask your system administrator or Internet Service Provider.}
+flr26={class=filler,parent=flr25,child_index=1}
+flr27={class=filler,parent=flr26,child_index=0}
+pnl54={class=panel,parent=flr27,child_index=0}
+lblFordeliveringmailbyconnectingtoaremotemailhubusingSMTP={class=label,parent=pnl54,child_index=0,label=For delivering mail by connecting to a remote mailhub using SMTP.}
+cboServerType1={class=combo_box,parent=pnl54,child_index=1}
+mnu12={class=menu,parent=cboServerType1,child_index=0}
+lblDescription1={class=label,parent=pnl54,child_index=2,label=Description:}
+lblSMTP={class=label,parent=pnl54,child_index=3,label=Server Type: }
+flr28={class=filler,parent=flr27,child_index=2}
+flr29={class=filler,parent=flr28,child_index=0}
+lblServerConfiguration={class=label,parent=flr29,child_index=0,label=Server Configuration}
+flr30={class=filler,parent=flr29,child_index=1}
+lbl44={class=label,parent=flr30,child_index=0}
+pnl55={class=panel,parent=flr30,child_index=1}
+flr31={class=filler,parent=pnl55,child_index=0}
+pnl56={class=panel,parent=flr31,child_index=0}
+txtServer1={class=text,parent=pnl56,child_index=0,label_by=Server:}
+lblServer1={class=label,parent=pnl56,child_index=1,label=Server:}
+chkServerrequiresauthentication={class=check_box,parent=flr31,child_index=1,label=Ser_ver requires authentication}
+flr32={class=filler,parent=flr28,child_index=1}
+lblSecurity1={class=label,parent=flr32,child_index=0,label=Security}
+flr33={class=filler,parent=flr32,child_index=1}
+lbl47={class=label,parent=flr33,child_index=0}
+flr34={class=filler,parent=flr33,child_index=1}
+flr35={class=filler,parent=flr34,child_index=0}
+lblNever1={class=label,parent=flr35,child_index=0,label=Use Secure Connection:}
+cboUseSecureConnection1={class=combo_box,parent=flr35,child_index=1}
+mnu15={class=menu,parent=cboUseSecureConnection1,child_index=0}
+flr36={class=filler,parent=flr34,child_index=1}
+ukndialogwarning1={class=unknown,parent=flr36,child_index=0,label=dialog warning}
+lblSSLisnotsupportedinthisbuildofEvolution1={class=label,parent=flr36,child_index=1,label=SSL is not supported in this build of Evolution}
+flr37={class=filler,parent=flr28,child_index=2}
+lblAuthentication={class=label,parent=flr37,child_index=0,label=Authentication}
+flr38={class=filler,parent=flr37,child_index=1}
+lbl51={class=label,parent=flr38,child_index=0}
+pnl57={class=panel,parent=flr38,child_index=1}
+flr39={class=filler,parent=pnl57,child_index=0}
+pnl58={class=panel,parent=flr39,child_index=0}
+flr40={class=filler,parent=pnl58,child_index=0}
+cboType={class=combo_box,parent=flr40,child_index=0}
+mnu19={class=menu,parent=cboType,child_index=0}
+btnCheckforSupportedTypes1={class=push_button,parent=flr40,child_index=1,label=Ch_eck for Supported Types }
+pnl59={class=panel,parent=flr40,child_index=2}
+txtUsername1={class=text,parent=pnl58,child_index=1,label_by=Username:}
+lblUsername1={class=label,parent=pnl58,child_index=2,label=Username:}
+lblPLAIN={class=label,parent=pnl58,child_index=3,label=Type: }
+chkRememberpassword1={class=check_box,parent=flr39,child_index=1,label=Remember _password}
+ukn13={class=unknown,parent=pnl52,child_index=1}
+lblSendingEmail={class=label,parent=pnl52,child_index=2,label=Sending Email}
+ukn14={class=unknown,parent=pnl52,child_index=3}
+pnl60={class=panel,parent=pnl0,child_index=5}
+pnl61={class=panel,parent=pnl60,child_index=0}
+pnl62={class=panel,parent=pnl61,child_index=0}
+pnl63={class=panel,parent=pnl62,child_index=0}
+flr41={class=filler,parent=pnl63,child_index=0}
+lblPleaseenteradescriptivenameforthisaccountinthespacebelow={class=label,parent=flr41,child_index=0,label=Please enter a descriptive name for this account in the space below.
+This name will be used for display purposes only.}
+flr42={class=filler,parent=flr41,child_index=1}
+lblAccountInformation={class=label,parent=flr42,child_index=0,label=Account Information}
+flr43={class=filler,parent=flr42,child_index=1}
+lbl57={class=label,parent=flr43,child_index=0}
+pnl64={class=panel,parent=flr43,child_index=1}
+flr44={class=filler,parent=pnl64,child_index=0}
+lblTypethenamebywhichyouwouldliketorefertothisaccount={class=label,parent=flr44,child_index=0,label=Type the name by which you would like to refer to this account.
+For example: "Work" or "Personal"}
+flr45={class=filler,parent=flr44,child_index=1}
+lblName={class=label,parent=flr45,child_index=0,label=Name:}
+txtName={class=text,parent=flr45,child_index=1,label_by=Name:}
+ukn15={class=unknown,parent=pnl62,child_index=1}
+lblAccountManagement={class=label,parent=pnl62,child_index=2,label=Account Management}
+ukn16={class=unknown,parent=pnl62,child_index=3}
+pnl65={class=panel,parent=pnl0,child_index=6}
+pnl66={class=panel,parent=pnl65,child_index=0}
+pnl67={class=panel,parent=pnl66,child_index=0}
+flr46={class=filler,parent=pnl67,child_index=0}
+ukn17={class=unknown,parent=flr46,child_index=0}
+pnl68={class=panel,parent=flr46,child_index=1}
+lblCongratulations,yourmailconfigurationiscomplete={class=label,parent=pnl68,child_index=0,label=Congratulations, your mail configuration is complete.
+
+You are now ready to send and receive email 
+using Evolution. 
+
+Click "Apply" to save your settings.}
+ukn18={class=unknown,parent=pnl67,child_index=1}
+lblDone={class=label,parent=pnl67,child_index=2,label=Done}
+ukn19={class=unknown,parent=pnl67,child_index=3}
+flr47={class=filler,parent=pnl0,child_index=7}
+btnApply={class=push_button,parent=flr47,child_index=0,label=_Apply}
+btnForward={class=push_button,parent=flr47,child_index=1,label=_Forward}
+btnBack={class=push_button,parent=flr47,child_index=2,label=_Back}
+btnCancel={class=push_button,parent=flr47,child_index=3,label=_Cancel}
+btnHelp={class=push_button,parent=flr47,child_index=4,label=_Help}
+
+[dlgEnterpassword]
+dlgEnterpassword={class=alert,parent=evolution,child_index=3,label=Enter password}
+flr0={class=filler,parent=dlgEnterpassword,child_index=0}
+flr1={class=filler,parent=flr0,child_index=0}
+ukndialogquestion={class=unknown,parent=flr1,child_index=0,label=dialog question}
+flr2={class=filler,parent=flr1,child_index=1}
+lblEnterpasswordfornags={class=label,parent=flr2,child_index=0,label=Enter password for nags}
+lbl1={class=label,parent=flr2,child_index=1}
+flr3={class=filler,parent=flr0,child_index=1}
+txt0={class=password_text,parent=flr3,child_index=0}
+chkRememberthispassword={class=check_box,parent=flr3,child_index=1,label=_Remember this password}
+flr4={class=filler,parent=flr0,child_index=2}
+btnOK={class=push_button,parent=flr4,child_index=0,label=_OK}
+btnCancel={class=push_button,parent=flr4,child_index=1,label=_Cancel}
+

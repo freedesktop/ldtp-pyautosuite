@@ -1,0 +1,21 @@
+Dependency
+  - PyLDTP - http://gnomebangalore.org/ldtp/index.php/Main_Page
+  
+All these scripts have been tested with Evolution-2.5.1 on SuSE 10.0. The data xml files
+provided for testing IMAP configured account. These scripts will execute following test cases,
+	- Compose mail with/without attachment
+	- Copy/Delete/Move mail
+	- Forward mail mail in different styles (Attachment/Inline/Quoted)
+	- Search for mail based on
+		- Subject or sender contains
+		- Subject contains
+		- Sender contains
+	- Create/Rename/Delete mail folder
+	- Create vfolder from message sender/message subject
+	- Creating an user account
+
+Please refer http://gnomebangalore.org/ldtp/index.php/Release_notes_for_Evolution-2.5.1_Sanity_suite
+for more details.
+
+Please do post your comments/queries to "ldtp-dev@lists.freedesktop.org".
+

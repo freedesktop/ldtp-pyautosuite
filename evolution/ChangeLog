@@ -1,0 +1,12 @@
+2005-10-26 Shaheed <sshaik@novell.com>, Patrick <patrick.gu@sun.com>,
+Premkumar <jpremkumar@novell.com>, Nagappan <anagappan@novell.com>
+	* Compose mail with/without attachment
+	* Copy/Delete/Move mail
+	* Forward mail mail in different styles (Attachment/Inline/Quoted)
+	* Search for mail based on
+	         - Subject or sender contains
+	         - Subject contains
+	         - Sender contains
+	* Create/Rename/Delete mail folder
+	* Create vfolder from message sender/message subject
+	* Creating an user account

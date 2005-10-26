@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<data>
+  <to>shaheed@dell.net</to>
+  <cc>shaheed@dell.net</cc>
+  <subject>this is subject</subject>
+  <body>this is body</body>
+  <attachment>simple.txt</attachment>
+  <refimg>IMAGES/attachmentmail_refimg.png</refimg>
+</data>
+

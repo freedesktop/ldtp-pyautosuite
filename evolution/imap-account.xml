@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<data>
+  <email>nags@dell.net</email>
+  <name>Nagappan</name>
+  <replyto>nags@dell.net</replyto>
+  <organization>Linux Desktop Testing Project</organization>
+  <defaultaccount>1</defaultaccount>
+  <recvservertype>IMAP</recvservertype>
+  <imapserver>164.99.169.177</imapserver>
+  <imapusername>nags</imapusername>
+  <checkmail>1</checkmail>
+  <mailcheckinterval>5</mailcheckinterval>
+  <checkallfolders>1</checkallfolders>
+  <applyfilters>1</applyfilters>
+  <syncremotemail>1</syncremotemail>
+  <sendservertype>SMTP</sendservertype>
+  <smtpserver>164.99.169.177</smtpserver>
+  <serverrequiresauth>0</serverrequiresauth>
+  <accountname>IMAP Account</accountname>
+  <timezone>Asia/Calcutta</timezone>
+</data>
