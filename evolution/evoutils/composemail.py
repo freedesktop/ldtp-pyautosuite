@@ -4,7 +4,7 @@
 #  Authors:
 #     Bhargavi       <kbhargavi_83@yahoo.co.in>
 #     Premkumarr     <jpremkumar@novell.com>
-#     Khasim Shaheed <sshaik@novell.com>
+#     Khasim Shaheed <khasim.shaheed@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #

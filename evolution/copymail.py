@@ -5,7 +5,7 @@
 #  Authors:
 #     Nagashree <mnagashree@novell.com>
 #     Premkumar <jpremkumar@novell.com>
-#     Khasim Shaheed <sshaik@novell.com>
+#     Khasim Shaheed <khasim.shaheed@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
