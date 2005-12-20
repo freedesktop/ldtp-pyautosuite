@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<data>
+  <addrbook>Personal</addrbook>
+  <summary>test summary</summary>
+  <location>test location</location>
+  <description>test dec</description>
+  <from_date>12/05/2005</from_date>
+  <to_date>12/20/2005</to_date>
+  <from_time>10:00 AM</from_time>
+  <to_time>11:00 AM</to_time>
+  <calendar>Personal</calendar>
+  <classification>Public</classification>
+  <categories>Personal</categories>
+  <attendee>asd asda</attendee>
+  <email>asd@asdfa.com</email>
+  <duration>month(s)</duration>
+  <durvalue>1st</durvalue>
+  <durday>Saturday</durday>
+  <count>3</count>
+  <fortype>until</fortype>
+  <nooftimes>12/12/2005</nooftimes>
+</data>

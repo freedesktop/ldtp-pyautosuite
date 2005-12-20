@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data>
+  <AddrBook>Personal</AddrBook>
+  <FullName>Test Name</FullName>
+  <NickName>Nick</NickName>
+  <WorkEmail>work@work.com</WorkEmail>
+  <HomeEmail>home@home.com</HomeEmail>
+  <BusinessPhone>11111111</BusinessPhone>
+  <Notes>more Notes</Notes>
+  <HomeAddress>Home add</HomeAddress>
+  <WorkAddress>Work add</WorkAddress>
+  <OtherAddress>Other add</OtherAddress>
+</data>

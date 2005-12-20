@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ldtp>
+ <logfileoverwrite>1</logfileoverwrite>
+ <logfile>evo-testing.xml</logfile>
+ <appmapfile>evolution.map</appmapfile>
+ <group>
+  <script>
+   <name>addcontactlist.py</name>
+   <data>addcontactlist.xml</data>
+  </script>
+ </group>
+ <group>
+  <script>
+   <name>modifycontactlist.py</name>
+   <data>modifycontactlist.xml</data>
+  </script>
+ </group>
+ <group>
+  <script>
+   <name>deletecontactlist.py</name>
+   <data>deletecontactlist.xml</data>
+  </script>
+ </group>
+</ldtp>

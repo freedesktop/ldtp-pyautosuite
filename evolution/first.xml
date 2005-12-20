@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ldtp>
+ <logfileoverwrite>1</logfileoverwrite>
+ <logfile>evo-testing.xml</logfile>
+ <appmapfile>evolution.map</appmapfile>
+ <group>
+  <script>
+   <name>template.py</name>
+   <data>template.xml</data>
+  </script>
+  <script>
+   <name>backgroundimage.py</name>
+   <data>backgroundimage.xml</data>
+  </script>
+  <script>
+   <name>newmail.py</name>
+   <data>compose-mail.xml</data>
+  </script>
+ </group>
+</ldtp>

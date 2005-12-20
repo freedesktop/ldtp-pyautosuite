@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<data>
+  <summary>This is just a sample</summary>
+  <desc>This is the sample description about the task.</desc>
+  <start_date>12/20/2005</start_date>
+  <start_time>1:00 AM</start_time>
+  <end_date>12/22/2005</end_date>
+  <end_time>1:00 AM</end_time>
+  <time_zone>Asia/Calcutta</time_zone>
+  <group>Personal</group>
+  <Categories>Holiday</Categories>
+</data>

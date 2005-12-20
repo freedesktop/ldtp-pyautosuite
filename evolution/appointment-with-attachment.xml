@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<data>
+  <filename>sample.txt</filename>	
+  <summary>Appointment with attachment</summary>
+  <location>Conference room</location>
+  <description>A new appointment for testing appointment creation</description>
+  <classification>Confidential</classification>
+  <calendar>Personal</calendar>
+  <categories>Business</categories>
+  <from_date>12/12/2005</from_date>
+  <to_date>12/20/2005</to_date>
+  <from_time>11:00 AM</from_time>
+  <to_time>11:00 AM</to_time>
+</data>

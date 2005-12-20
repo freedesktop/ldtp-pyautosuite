@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<data>
+  <addrbook>Personal</addrbook>
+  <summary>dddd</summary>
+  <location>Conference room</location>
+  <description>A new appointment for testing appointment creation</description>
+  <classification>Confidential</classification>
+  <calendar>Personal</calendar>
+  <categories>Business</categories>
+  <from_date>10/26/2005</from_date>
+  <to_date>10/29/2005</to_date>
+  <attendee>asd asda</attendee>
+  <email>asd@asdfa.com</email>
+  <exception>10/28/2005</exception>
+  <duration>month(s)</duration>
+  <durvalue>second</durvalue>
+  <durday>Saturday</durday>
+  <count>5</count>
+  <fortype>until</fortype>
+  <nooftimes>12/12/05</nooftimes>
+</data>

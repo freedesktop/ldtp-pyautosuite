@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- XML Logging -->
+<ldtp>
+<info>appmap file name evolution.map</info>
+<group name="Executing-group1">
+<script name="addcontact.py">
+<datafilename>addcontact.xml</datafilename>
+<test name="Add-New-Contact">
+<test name="Open-Evolution-Contacts-Pane">
+</test>
+<test name="Selecting-a-given-Address-book">
+<test name="Open-Evolution-Contacts-Pane">
+</test>
+</test>
+<warning>Page tab name already in selected state</warning>
+<debug>Contact Editor</debug>
+<debug>Contact Editor - Name, Test</debug>
+<test name="Verify-Added-Contact">
+<test name="Selecting-a-given-Address-book">
+<test name="Open-Evolution-Contacts-Pane">
+</test>
+</test>
+<test name="Select-Contact">
+</test>
+<debug>Contact Editor</debug>
+<debug>Contact Editor - Name, Test</debug>
+</test>
+</test>
+</script>
+<script name="modifycontact.py">
+<datafilename>modifycontact.xml</datafilename>
+<test name="Contact-Modificaton">
+<test name="Getting-values-for-Contact-Modification">
+</test>
+<test name="Selecting-a-given-Address-book">
+<test name="Open-Evolution-Contacts-Pane">
+<error>Unable to find object name: frmEvolution-Mail in appmap</error>
+</test>
+</test>
+<test name="Select-Contact">
+</test>
+<debug>Contact Editor</debug>
+<debug>Contact Editor - Name, Test</debug>
+<test name="Verify-Modified-Contact">
+<test name="Selecting-a-given-Address-book">
+<test name="Open-Evolution-Contacts-Pane">
+<error>Unable to find object name: frmEvolution-Mail in appmap</error>
+</test>
+</test>
+<test name="Select-Contact">
+</test>
+<debug>Contact Editor</debug>
+<debug>Contact Editor - Name, Test</debug>
+</test>
+</test>
+</script>
+</group>
+<group name="Executing-group2">
+<script name="deletecontact.py">
+<datafilename>deletecontact.xml</datafilename>
+<test name="Deleting-a-contact">
+</test>
+</script>
+</group>
+<group name="Executing-group3">
+<script name="addcontactlist.py">
+<datafilename>addcontactlist.xml</datafilename>
+<test name="Add-New-List">
+<test name="Get-Contact-List-values">
+</test>
+<test name="Open-Evolution-Contacts-Pane">
+<error>Unable to find object name: frmEvolution-Mail in appmap</error>
+</test>
+<debug>Contact List Editor</debug>
+<debug>Test List</debug>
+<test name="checking-if-List-added-successfully">
+<test name="Select-Contact">
+</test>
+</test>
+</test>
+</script>
+<script name="modifycontactlist.py">
+<datafilename>modifycontactlist.xml</datafilename>
+<test name="Modify-Contact-List">
+<test name="Get-Modify-Contact-List-values">
+</test>
+<test name="Open-Contact-List">
+<test name="Select-Contact">
+</test>
+<debug>Contact List Editor</debug>
+<debug>Test List</debug>
+</test>
+<test name="Add-to-Contact-List">
+</test>
+<test name="Remove-from-Contact-List">
+</test>
+<test name="Verification-for-Contact-List-modification">
+<test name="Open-Contact-List">
+<test name="Select-Contact">
+</test>
+<debug>Contact List Editor</debug>
+<debug>Test List</debug>
+</test>
+<debug>Contact List Editor</debug>
+<debug>Test List</debug>
+</test>
+</test>
+</script>
+<script name="deletecontactlist.py">
+<datafilename>deletecontactlist.xml</datafilename>
+<test name="Delete-Contact-List">
+<test name="Deleting-a-contact">
+</test>
+</test>
+</script>
+</group>
+<group name="Executing-group4">
+<script name="createaddrbook.py">
+<datafilename>createaddrbook.xml</datafilename>
+<test name="Create-New-Address-Book">
+<error>Unable to find object name: frmEvolution-Mail in appmap</error>
+</test>
+</script>
+</group>
+<group name="Executing-group5">
+<script name="createmeeting.py">
+<datafilename>create-meeting.xml</datafilename>
+<test name="Open-Evolution-Calendars-Pane">
+<error>Unable to find object name: frmEvolution-Mail in appmap</error>
+</test>
+<test name="Add-New-Meeting">
+<test name="Getting-Values-for-New-Meeting">
+</test>
+<test name="Define-meeting-values">
+<warning>Check Menu Item is not checked</warning>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - new summary</debug>
+<warning>Check Menu Item is already checked</warning>
+</test>
+<test name="Add-Attendees">
+</test>
+<test name="Verify-Added-Meeting">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - new summary</debug>
+</test>
+</test>
+</script>
+<script name="createrecurmeet.py">
+<datafilename>create-meeting-recur.xml</datafilename>
+<test name="Add-New-Meeting">
+<test name="Getting-Values-for-New-Meeting">
+</test>
+<test name="Define-meeting-values">
+<warning>Check Menu Item is not checked</warning>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - dddd</debug>
+<warning>Check Menu Item is already checked</warning>
+</test>
+<test name="Add-Attendees">
+</test>
+<info>Recurrence details set successfully</info>
+<test name="Verify-Added-Meeting">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - dddd</debug>
+</test>
+</test>
+</script>
+<script name="modifythisinstmeet.py">
+<datafilename>modify-meeting.xml</datafilename>
+<test name="Modify-Meeting">
+<test name="Getting-Values-for-New-Meeting">
+</test>
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - new summary</debug>
+<test name="Define-meeting-values">
+<warning>Check Menu Item is not checked</warning>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - new summary</debug>
+<warning>Check Menu Item is already checked</warning>
+</test>
+<test name="Add-Attendees">
+</test>
+<test name="Verify-modified-Meeting">
+<test name="Verify-Added-Meeting">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - new summary</debug>
+</test>
+</test>
+</script>
+<script name="modifyallinstmeet.py">
+<datafilename>modify-meeting-recur.xml</datafilename>
+<test name="Modify-Meeting">
+<test name="Getting-Values-for-New-Meeting">
+</test>
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - dddd</debug>
+<test name="Define-meeting-values">
+<warning>Check Menu Item is not checked</warning>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - dddd</debug>
+<warning>Check Menu Item is already checked</warning>
+</test>
+<test name="Add-Attendees">
+</test>
+<test name="Verify-modified-Meeting">
+<test name="Verify-Added-Meeting">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+<debug>Meeting - No summary</debug>
+<debug>Meeting - dddd</debug>
+</test>
+</test>
+</script>
+<script name="deletesingleinstmeeting.py">
+<datafilename>deletemeetingone.xml</datafilename>
+<test name="Delete-Meeting/Appointment">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+</test>
+</script>
+<script name="deletesingleinstmeeting.py">
+<datafilename>deletemeetingall.xml</datafilename>
+<test name="Delete-Meeting/Appointment">
+<test name="Selecting-a-Meeting">
+<test name="Selecting-the-Date">
+</test>
+</test>
+</test>
+</script>
+</group>
+</ldtp>

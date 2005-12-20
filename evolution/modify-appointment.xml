@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<data>
+  <summary>modified summary</summary>
+  <location>Conference room</location>
+  <description>A modified appointment for testing appointment creation</description>
+  <classification>Confidential</classification>
+  <calendar>Personal</calendar>
+  <categories>Business</categories>
+  <from_date>12/12/2005</from_date>
+  <to_date>12/27/2005</to_date>
+  <from_time>11:00 AM</from_time>
+  <to_time>11:00 AM</to_time>
+  <date>12/20/2005</date>
+  <old_summary>Recursive appointment</old_summary>
+</data>

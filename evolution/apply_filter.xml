@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<data>
+  <filter_on>Subject</filter_on>
+  <rule_name>Sample111</rule_name>
+  <if_components>Sender:Subject:Message Body</if_components>
+  <if_properties>is:contains:contains</if_properties>
+  <if_values>Welcolution!:Prashanth Mohan:asdf</if_values>
+  <then_actions>Move to Folder:Copy to Folder:Copy to Folder</then_actions>
+  <then_values>venkat:filter:filter1</then_values>
+  <execute_action>if all criteria are met</execute_action>
+  <fldr>Inbox</fldr>
+</data>

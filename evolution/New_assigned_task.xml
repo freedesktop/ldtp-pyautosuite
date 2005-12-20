@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<data>
+  <organizer>venkateswaran</organizer>
+  <email>wenkat.s@gmail.com</email>
+  <group>Personal</group>
+  <Attendees>venkat:ashwin</Attendees>
+  <Att_emails>wenkat.s@gmail.com:wenkat.s@gmail.com</Att_emails>
+  <addr_book>Personal</addr_book>
+  <summary>This is just a summary for assigned task</summary>
+  <start_date>12/12/2005</start_date>
+  <start_time>12:00 AM</start_time>
+  <due_date>12/20/2005</due_date>
+  <due_time>11:00 AM</due_time>
+  <time_zone>Asia/Calcutta</time_zone>
+  <Desc>This is a sample description</Desc>
+</data>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<data>
+  <fldr>Inbox</fldr>
+  <subject>Welcome to Evolution!</subject>
+  <status>unread</status>
+  <importance>important</importance>
+  <junk_status>junk</junk_status>
+  <follow_up_flag>Call</follow_up_flag>
+  <due_date>12/15/2005</due_date>
+  <time>11:00 AM</time>
+  <progress>completed</progress>
+</data>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ldtp>
+ <logfileoverwrite>1</logfileoverwrite>
+ <logfile>evo-testing.xml</logfile>
+ <appmapfile>evolution.map</appmapfile>
+ <group>
+  <script>
+   <name>folderopswhenoffline.py</name>
+   <data>folderopswhenoffline.xml</data>
+  </script>
+ </group>
+</ldtp>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<data>
+  <summary>Recursive appointment</summary>
+  <location>ceg</location>
+  <description>sample desc</description>
+  <from_date>12/24/2005</from_date>
+  <to_date>12/28/2005</to_date>
+  <from_time>11:00 AM</from_time>
+  <to_time>12:00 AM</to_time>
+  <calendar>Personal</calendar>
+  <filename>sample.txt</filename>
+  <repeat_every>3</repeat_every>
+  <duration>month(s)</duration>
+  <no_of_times>12/30/2005</no_of_times>
+  <repeat_method>until</repeat_method>
+  <exceptions>12/25/2005 12/27/2005</exceptions>
+  <dur_value>third</dur_value>
+  <dur_day>Saturday</dur_day>
+</data>

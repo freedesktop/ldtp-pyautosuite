@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- XML Logging -->
+<ldtp>
+<info>appmap file name evolution.map</info>
+<group name="Executing-group1">
+<script name="new_task.py">
+<datafilename>new_task.xml</datafilename>
+<test name="Open-Evolution-Tasks-Pane">
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Mail</debug>
+</test>
+<test name="Create-New-Task">
+<info>New task window opened</info>
+<debug>Task - No summary</debug>
+<debug>Task - This is just a sample</debug>
+<info>User Details entered</info>
+<info>Task Creation Completed and verified</info>
+</test>
+</script>
+<script name="modify_task.py">
+<datafilename>modify_task.xml</datafilename>
+<test name="Modify-a-task">
+<test name="read-user-data">
+<info>User data read successfull</info>
+</test>
+<debug>Task - No summary</debug>
+<debug>Task - This is just a sample</debug>
+<debug>Task - No summary</debug>
+<debug>Task - This is the modified summary</debug>
+<info>User data Loaded</info>
+<info>The required task list has been modified</info>
+<info>Task has been modified successfully</info>
+<info>progress of the task has been modified</info>
+</test>
+</script>
+<script name="del_task.py">
+<datafilename>del_task.xml</datafilename>
+<test name="Delete-a-task">
+<test name="read-user-data">
+<info>User data read successfull</info>
+</test>
+<info>The specified task has been deleted</info>
+<info>the task has been deleted</info>
+</test>
+</script>
+<script name="New_assigned_task.py">
+<datafilename>New_assigned_task.xml</datafilename>
+<test name="Create-new-assigned-task">
+<test name="read-user-data">
+<info>User data read successfull</info>
+</test>
+<info>Dlgbox new assigned task appeared</info>
+<debug>Assigned Task - No summary</debug>
+<debug>Assigned Task - This is just a summary for assigned task</debug>
+<test name="Add-Attendees">
+<cause>Unable to find venkat <wenkat.s@gmail.com> in table</cause>
+<cause>Unable to find ashwin <wenkat.s@gmail.com> in table</cause>
+</test>
+<info>User data Loaded</info>
+<info>Assigned Task Creation Completed</info>
+</test>
+</script>
+<script name="Assigned_Task_modify.py">
+<datafilename>Assigned_Task_modify.xml</datafilename>
+<test name="Modify-an-assigned-task">
+<debug>Assigned Task - No summary</debug>
+<debug>Assigned Task - This is just a summary for assigned task</debug>
+<info>The window opened</info>
+<debug>Assigned Task - No summary</debug>
+<debug>Assigned Task - This is the modified summary</debug>
+<info>User data Loaded</info>
+<info>The required task list has been modified</info>
+<info>Task has been modified successfully</info>
+<info>progress of the task has been modified</info>
+</test>
+</script>
+<script name="del_assigned_task.py">
+<datafilename>del_assigned_task.xml</datafilename>
+<test name="Delete-a-task">
+<test name="read-user-data">
+<info>User data read successfull</info>
+</test>
+<info>the task has been deleted</info>
+</test>
+</script>
+<script name="cr_task_list.py">
+<datafilename>cr_task_list.xml</datafilename>
+<test name="create-a-task-list">
+<info>The window has been modified</info>
+<info>The requested color has been set</info>
+<info>The required task list has been created</info>
+</test>
+</script>
+<script name="verify_readonly_tasklist.py">
+<datafilename>verify_readonly_tasklist.xml</datafilename>
+<test name="Verify-readonly">
+<cause>Unable to find Task on the server in table</cause>
+<error>Unable to verify</error>
+</test>
+<error>stopping this group execution</error>
+</script>
+</group>
+<group name="Executing-group2">
+<script name="create-appointment.py">
+<datafilename>create-appointment.xml</datafilename>
+<test name="Open-Evolution-Contacts-Pane">
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Mail</debug>
+<info>Present Window now Mail pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Contacts</debug>
+<info>Present Window now Contacts pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Calendars</debug>
+<info>Present Window now Calendars pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Memos</debug>
+<info>Present Window now Memos pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Tasks</debug>
+<info>Present Window has to be Taskspane</info>
+</test>
+<test name="Appointment-Creation">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - Ordinary Appointment</debug>
+<info>Entered all the data in their fields</info>
+<info>The user details have been entered in the appointment</info>
+<info>Appointment created</info>
+</test>
+</script>
+<script name="appointment-with-attachment.py">
+<datafilename>appointment-with-attachment.xml</datafilename>
+<test name="Create-appoinment-with-attachment">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - Appointment with attachment</debug>
+<info>Entered all the data in their fields</info>
+</test>
+</script>
+<script name="create-recursive-app.py">
+<datafilename>create-recursive-app.xml</datafilename>
+<test name="Create-appoinment-with-attachment">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - Recursive appointment</debug>
+<info>Entered all the data in their fields</info>
+<test name="Insert-Recurrance">
+<info>Recurrence details set successfully</info>
+</test>
+<info>Recurrence value entered</info>
+<info>Recursive Appointment created</info>
+</test>
+</script>
+<script name="recursive-app-with-attachment.py">
+<datafilename>recursive-app-with-attachment.xml</datafilename>
+<test name="Create-recursive-appoinment-with-attachment">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - Recursive appointment</debug>
+<info>Entered all the data in their fields</info>
+<test name="Insert-Recurrance">
+<info>Recurrence details set successfully</info>
+</test>
+<info>Recursive appointment with attachment created</info>
+</test>
+</script>
+<script name="all-day-event.py">
+<datafilename>all-day-event.xml</datafilename>
+<test name="Create-Appointment">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - All Day event</debug>
+<info>Entered all the data in their fields</info>
+<info>All day Appointment created</info>
+</test>
+</script>
+<script name="rec-all-day-event.py">
+<datafilename>rec-all-day-event.xml</datafilename>
+<test name="Recursive-All-day-event">
+<debug>Appointment - No summary</debug>
+<debug>Appointment - All day recursive</debug>
+<info>Entered all the data in their fields</info>
+<test name="Insert-Recurrance">
+<info>Recurrence details set successfully</info>
+</test>
+<info>Recursive all day event Created</info>
+</test>
+</script>
+<script name="modify-appointment.py">
+<datafilename>modify-appointment.xml</datafilename>
+<test name="Modify-all-instance-of-an-appointment">
+<test name="Modify-Appointment">
+<test name="Selecting-a-Cal-event">
+</test>
+<info>Appointment opened</info>
+<debug>Appointment - No summary</debug>
+<debug>Appointment - Recursive appointment</debug>
+<debug>Appointment - No summary</debug>
+<debug>Appointment - modified summary</debug>
+<info>Entered all the data in their fields</info>
+<info>Appointment modified</info>
+</test>
+</test>
+</script>
+</group>
+<group name="Executing-group3">
+<script name="create-folder.py">
+<datafilename>create-folder.xml</datafilename>
+<test name="creation-of-a-folder">
+<test name="Open-Evolution-Mail-Pane">
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Mail</debug>
+<info>Present Window now Mail pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Mail</debug>
+<info>Present Window now Mail pane</info>
+<debug>Evolution - Mail</debug>
+<debug>Evolution - Calendars</debug>
+</test>
+<info>User data read</info>
+<test name="Create-a-new-folder">
+<info>User Value Entered</info>
+<info>Folder created</info>
+<test name="Verify-Folder-Exists">
+<debug>Verify succeeded</debug>
+</test>
+<info>Folder Verified</info>
+</test>
+<info>Folder created</info>
+</test>
+</script>
+<script name="copy-to.py">
+<datafilename>copy-to.xml</datafilename>
+<test name="Copy-a-folder">
+<info>From folder selected</info>
+<test name="Selecting-a-given-folder">
+<cause>Unable to find test_copy in table</cause>
+<info>Required folder selected</info>
+</test>
+<debug>Destionation folder selected</debug>
+<info>folder copied</info>
+</test>
+</script>
+<script name="move-to.py">
+<datafilename>move-to.xml</datafilename>
+<test name="move-a-folder">
+<info>From folder selected</info>
+<test name="Selecting-a-given-folder">
+<cause>Unable to find move_test in table</cause>
+<info>Required folder selected</info>
+</test>
+<debug>Destionation folder selected</debug>
+</test>
+</script>
+<script name="select_all.py">
+<datafilename>select_all.xml</datafilename>
+<test name="select-all-mails-in-a-folder">
+<info>From folder selected</info>
+<info>All items have been selected</info>
+</test>
+<info>All mails selected</info>
+</script>
+<script name="mark_read.py">
+<datafilename>mark_read.xml</datafilename>
+<test name="Mark-all-as-read">
+<test name="select-all-mails-in-a-folder">
+<info>From folder selected</info>
+<info>All items have been selected</info>
+</test>
+<info>All items have been selected</info>
+</test>
+<debug>Unable to select</debug>
+</script>
+<debug>Data file maynot be present</debug>
+<script name="expunge.py">
+<warning>data xml tag missing</warning>
+<test name="Expunge-mails">
+<info>fldr has been selected</info>
+<info>Expunge successfull</info>
+</test>
+</script>
+<script name="rename_folder.py">
+<datafilename>rename_folder.xml</datafilename>
+<test name="Rename-a-folder">
+<info>From folder selected</info>
+<info>Rename sucessfull</info>
+</test>
+<info>Fldr has been renamed</info>
+</script>
+<script name="del-non-sys-folder.py">
+<datafilename>del-non-sys-folder.xml</datafilename>
+<test name="delete-a-non-system-folder">
+<debug>Delete "Inbox/ashwin"?</debug>
+<debug>Delete "test"?</debug>
+<info>the folder has been deleted</info>
+</test>
+</script>
+</group>
+<group name="Executing-group4">
+<script name="change-view.py">
+<datafilename>change-view.xml</datafilename>
+<test name="Change-Properties">
+<cause>Unable to find abacd in table</cause>
+<error>Unable to modify the properties of the folderabacd</error>
+</test>
+<error>stopping this group execution</error>
+</script>
+</group>
+<group name="Executing-group5">
+<script name="change_status.py">
+<datafilename>change_status.xml</datafilename>
+<test name="Change-status-of-mails">
+<info>Folder identified</info>
+<error>Unable to get index of message</error>
+<error>Unable to change the status of the message</error>
+</test>
+<error>stopping this group execution</error>
+</script>
+</group>
+<group name="Executing-group6">
+<script name="openmsg_window.py">
+<datafilename>openmsg_window.xml</datafilename>
+<test name="Open-in-a-new-window">
+<info>Folder identified</info>
+<debug>Welcome to Evolution!</debug>
+<debug>sample</debug>
+<info>Message opened in a new window</info>
+</test>
+</script>
+<script name="traverse-mail.py">
+<datafilename>traverse-mail.xml</datafilename>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+</test>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+</test>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+</test>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+</test>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+<error>Less than 1 mail in the specified folder, Unable to traverse</error>
+</test>
+<test name="Traverse-Mail">
+<info>Folder identified</info>
+<error>Less than 1 mail in the specified folder, Unable to traverse</error>
+</test>
+</script>
+<script name="reply_toall.py">
+<datafilename>reply_toall.xml</datafilename>
+<test name="Reply-to-all">
+<info>Folder identified</info>
+<info>Message selected</info>
+<debug>Compose a message</debug>
+<debug>Re: sample</debug>
+<info>Reply to all verified</info>
+</test>
+</script>
+<script name="redirect-mail.py">
+<datafilename>redirect-mail.xml</datafilename>
+<test name="redirect-a-mail">
+<info>Folder identified</info>
+<info>Message selected</info>
+<debug>Compose a message</debug>
+<debug>sample</debug>
+<cause>verify Combo box select action failed</cause>
+<error>Unable to find object name: dlgWarning:ModifiedMessage in appmap</error>
+</test>
+</script>
+</group>
+<group name="Executing-group7">
+<debug>Data file maynot be present</debug>
+<script name="chk_file_new.py">
+<warning>data xml tag missing</warning>
+<test name="Verify-all-items-in-the-mnuNew">
+<info>Mail Message Working</info>
+<info>Mail Folder Working</info>
+<info>All Day Appointment Working</info>
+<info>Appointment Working</info>
+<info>Assigned Task Working</info>
+<info>Contact Working</info>
+<info>Contact List Working</info>
+<info>Meeting Working</info>
+<info>Memo Working</info>
+<info>Task Working</info>
+<info>Address Book Working</info>
+<debug>Task List Properties</debug>
+<debug>New Calendar</debug>
+<debug>Task List Properties</debug>
+<debug>New Calendar</debug>
+<info>Calendar Working</info>
+<debug>Task List Properties</debug>
+<debug>New Memo List</debug>
+<info>Memo List Working</info>
+<info>Task List Working</info>
+</test>
+</script>
+<script name="save_msg.py">
+<datafilename>save_msg.xml</datafilename>
+<test name="Save-a-message">
+<test name="select-mail-in-a-folder">
+<info>Folder selected</info>
+<info>Mail selected</info>
+</test>
+<cause>File Already exists</cause>
+</test>
+</script>
+<script name="work_offline.py">
+<datafilename>work_offline.xml</datafilename>
+<test name="Work-Offline">
+<info>Work offline verified</info>
+</test>
+</script>
+</group>
+<group name="Executing-group8">
+<script name="apply_filter.py">
+<datafilename>apply_filter.xml</datafilename>
+<test name="Create-and-apply-filter">
+<test name="Create-a-filter">
+<info>Rule name has been set</info>
+<info>type of execution set</info>
+<debug>Select folder</debug>
+<debug>Select Folder</debug>

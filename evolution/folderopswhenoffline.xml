@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<data>
+  <delfolder>abacd</delfolder>
+  <crefolder>abc</crefolder>
+  <to_folder>backup</to_folder>
+  <from_folder>345</from_folder>
+  <oldfolder>345</oldfolder>
+  <newfolder>567</newfolder>
+  <location>abacd</location>
+</data>
