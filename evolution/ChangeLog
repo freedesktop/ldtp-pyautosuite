@@ -1,3 +1,17 @@
+2005-12-20 Venkateswaran S <wenkat.s@gmail.com>
+	* Basic Sanity test Cases for Tasks, Appointments
+	* Menu-Reorganization
+	         - Folders
+	         - Messages
+	         - Files
+	
+2005-12-20 Prashanth Mohan <prashmohan@gmail.com>
+	* Basic Sanity Test Cases for Contacts, Meetings
+	* Mailer Test Cases (Different styles, Backgrounds, Find and
+	replace, Spell Check, Undo/Redo)
+	* Offline Test Cases (Message and Folder operations when offline)
+	* Preferences (Mail and Composer - accounts, signature)
+	
 2005-10-26 Shaheed <khasim.shaheed@gmail.com>, Patrick <patrick.gu@sun.com>,
 Premkumar <jpremkumar@novell.com>, Nagappan <anagappan@novell.com>
 	* Compose mail with/without attachment

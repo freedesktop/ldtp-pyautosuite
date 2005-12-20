@@ -476,8 +476,6 @@ try:
         # Undo remap
         undoremap ('evolution', 'frmEvolutionAccountAssistant')
 
-        log ('Account setup', 'pass')
-        log ('Account setup', 'testend')
         if first_time_acct_setup == True:
             releasecontext ()
         else:
@@ -495,6 +493,24 @@ try:
         except error, msg:
             log ('' + str (msg), 'error')
             raise LdtpExecutionError (0)
+
+    acct_name = config_acct_xml.gettagvalue ('accountname')
+    setcontext ('Enter password','Enter Password for '+acct_name[0])
+    if waittillguiexist ('dlgEnterpassword')!=1:
+        log ('Password remainder window did not come up','warning')
+        #raise LdtpExecutionError (0)
+    else:
+        password = config_acct_xml.gettagvalue ('password')
+        if password != []:
+            settextvalue ('dlgEnterpassword','txt0',password[0])
+            check ('dlgEnterpassword','chkRememberthispassword')
+            click ('dlgEnterpassword','btnOK')
+        else:
+            click ('dlgEnterpassword','btnCancel')
+            time.sleep (2)
+            if guiexist ('dlgEnterpassword')==1:
+                click ('dlgEnterpassword','btnCancel')
+    releasecontext()
 except LdtpExecutionError:
     if first_time_acct_setup == True:
         releasecontext ()
@@ -503,3 +519,5 @@ except LdtpExecutionError:
     log ('Account setup', 'fail')
     log ('Account setup', 'testend')
     raise LdtpExecutionError (0)
+log ('Account setup', 'pass')
+log ('Account setup', 'testend')

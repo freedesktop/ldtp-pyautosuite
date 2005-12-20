@@ -28,7 +28,7 @@
 from evoutils.mail import *
 
 # Section to compose a new mail through File menu
-def compose (to, subject, body, cc=[], attachment=[]):
+def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
     try:
         selectmenuitem ('frmEvolution-Mail', 'mnuFile;mnuNew;mnuMailMessage')
 	time.sleep (2)
@@ -36,26 +36,80 @@ def compose (to, subject, body, cc=[], attachment=[]):
             log('Compose message window does not appear', 'error')
             raise LdtpExecutionError (0)
         else:
-            populate_mail_header (to, subject, body, cc)
+            populate_mail_header (to, subject, body, cc,bcc)
+            if len(format)>0:
+                try:
+                    if format[0]=='HTML':
+                        check ('frmComposeamessage','mnuHTML')
+                    elif format[0]=='Plain Text':
+                        uncheck ('frmComposeamessage','mnuHTML')
+                    else:
+                        log ('Format not proper','warning')
+                except:
+                    log ('Error while setting Format of mail','error')
+                    raise LdtpExecutionError (0)                        
 	    if attachment:
 		    attach_files (attachment)
-            click ('frmComposeamessage', 'btnSend')
-            if waittillguinotexist ('frmComposeamessage') == 0:
-                log ('Failed during clicking the send button', 'error')
-                raise LdtpExecutionError (0)
-	    if guiexist ('dlgEvolutionError'):
-		    log ('Error while sending mail', 'error')
-		    click ('dlgEvolutionError', 'btnOK')
-		    raise LdtpExecutionError (0)
-            else:
-                releasecontext();
-                click ('frmEvolution-Mail', 'btnSend/Receive')
-		time.sleep (2)
     except ldtp.error, msg:
         log ('Compose message failed ' + str (msg), 'cause')
         log ('Compose message failed', 'Fail' );
         raise LdtpExecutionError (0)
 
+
+def sendmail(subject):
+    try:
+        click ('frmComposeamessage', 'btnSend')
+        time.sleep (3)
+        if len(subject)==0 and  guiexist ('dlgEvolutionQuery')==1:
+            remap ('evolution','dlgEvolutionQuery')
+            click ('dlgEvolutionQuery','btnSend')
+            undoremap ('evolution','dlgEvolutionQuery')
+        if waittillguinotexist ('frmComposeamessage') == 0:
+            log ('Failed during clicking the send button', 'error')
+            raise LdtpExecutionError (0)
+        if guiexist ('dlgEvolutionError'):
+            log ('Error while sending mail', 'error')
+            click ('dlgEvolutionError', 'btnOK')
+            raise LdtpExecutionError (0)
+        else:
+            releasecontext()
+            time.sleep (2)
+    except:
+        log ('Could not send message','error')
+        raise LdtpExecutionError (0)
+
+
+def savethismail (savemethod):
+    """savemethod == 0 --> Save Draft
+       savemethod == 1 --> save in FS"""
+    try:
+        if savemethod==0:
+            selectmenuitem ('frmComposeamessage','mnuFile;mnuSaveDraft')
+            time.sleep (1)
+            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+        elif savemethod==1:
+            selectmenuitem ('frmComposeamessage','mnuFile;mnuSaveAs')
+            waittillguiexist ('dlgSaveas')
+            settextvalue ('dlgSaveas','txtName','testfile')
+            click ('dlgSaveas','btnSave')
+            time.sleep (2)
+            if guiexist ('dlgOverwritefile?')==1:
+                click ('dlgOverwritefile?','btnOverwrite')
+                log ('testfile already exists','warning')
+            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+            waittillguiexist ('dlgWarning')
+            click ('dlgWarning','btnDiscardChanges')
+        else:
+            log ('invalid save method','cause')
+            raise LdtpExecutionError (0)
+
+    except:
+        log ('Saving Mail Failed!','error')
+        raise LdtpExecutionError (0)
+
+            
+        
+                    
 # Attach files
 def attach_files (attachment):
 	try:
@@ -84,10 +138,11 @@ def read_maildata (datafile):
 	data_object = LdtpDataFileParser (datafile)
 	to = data_object.gettagvalue ('to')
 	cc = data_object.gettagvalue ('cc')
+        bcc = data_object.gettagvalue ('bcc')
 	subject = data_object.gettagvalue ('subject')
 	body = data_object.gettagvalue ('body')
 	attachment = data_object.gettagvalue ('attachment')
 	sentitemsfolder = data_object.gettagvalue ('sentitemsfolder')
 	refimg = data_object.gettagvalue ('refimg')
-	return [to, subject, body, cc, attachment, sentitemsfolder, refimg]
+	return [to, subject, body, cc, bcc, attachment, sentitemsfolder, refimg]
    
