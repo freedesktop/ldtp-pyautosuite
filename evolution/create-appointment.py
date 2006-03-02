@@ -49,20 +49,21 @@ categories = data_object.gettagvalue ('categories')[0]
 log ('Appointment Creation', 'teststart')
 
 try:
-    windowname = 'dlgAppointment-Nosummary'
+    windowname = 'frmAppointment-Nosummary'
     ptlistname = 'ptl0'
     flag = 0
-    selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
-    time.sleep (2)
+    #selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
     selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuFile;mnuAppointment')
-    time.sleep (2)
+    time.sleep(2)
+    #click ('frmEvolution-Calendars', 'btnNew')
+    waittillguiexist (windowname) 
     if guiexist (windowname) == 0:
         log ('Failed to open new appointment window', 'cause')
         raise LdtpExecutionError (0)
     else:
         log ('Insertion of Appointment values', 'teststart')
-        i = insert_appointment (windowname, ptlistname, summary, location, description, from_date,
-                            from_time, to_date, to_time, calendar, classification, categories)
+        #i = insert_appointment (windowname, ptlistname, summary, location, description, from_date,from_time, to_date, to_time, calendar, classification, categories) 
+        i = insert_appointment (windowname, summary, location, description, from_date, from_time, to_date, to_time, calendar, 'No') 
         if i == 1:
             flag = 1
         log ('Insertion of Appointment values', 'testend')
@@ -85,18 +86,18 @@ try:
             log ('Failed to close appointment dialog' ,'cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
-        releasecontext ()
+        #releasecontext ()
         if flag == 1:
             log ('Appointment creation succeeded', 'fail')
         else:
             log ('Appointment creation succeeded', 'pass')
 except LdtpExecutionError:
-    releasecontext ()
+    #releasecontext ()
     print 'Creation of appointment failed' + str(msg)
     log ('Creation of appointment failed', 'error')
     log ('Appointment Creation', 'testend')
 except error, msg:
-    releasecontext ()
+    #releasecontext ()
     print 'Creation of appointment failed' + str(msg)
     log ('Creation of appointment failed', 'error')
     log ('Appointment Creation', 'testend')

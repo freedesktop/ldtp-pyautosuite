@@ -39,7 +39,7 @@ def create_tasklist(Type, Name, Color, Default):
 
 	try:
 		log('create a task list','teststart')
-		remap('evolution','frmEvolution-Tasks')
+		#remap('evolution','frmEvolution-Tasks')
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuNew;mnuTasklist')
 		time.sleep(3)
 		waittillguiexist('dlgTaskListProperties')
@@ -52,7 +52,7 @@ def create_tasklist(Type, Name, Color, Default):
 		log('The window has been modified','info')
 	except:	
 		log('Unable to see the window','error')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
 
@@ -67,7 +67,7 @@ def create_tasklist(Type, Name, Color, Default):
 		log('The requested color has been set','info')
 	except:
 		log('Unable to set the requested color','error')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
 
@@ -82,11 +82,11 @@ def create_tasklist(Type, Name, Color, Default):
 			log('The required task list cannot be created','error')			
 	except:
 		log('Unable to create the required task list','error')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
 
-	undoremap('evolution','frmEvolution-Tasks')
+	#undoremap('evolution','frmEvolution-Tasks')
 	log('create a task list','testend')
 	
 Type, Name, Color, Default = read_data()	

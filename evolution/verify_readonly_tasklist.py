@@ -39,14 +39,15 @@ def verify_readonly():
 	try:
 		log('Verify readonly','teststart')
 		summary = read_data()
-		windowname = 'frmTask-Nosummary'
-	        remap('evolution','frmEvolution-Tasks')
+		windowname = 'frmTask-*'
+	        #remap('evolution','frmEvolution-Tasks')
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuWorkOffline')
 
-		selectrowpartialmatch ('frmEvolution-Tasks', 'tblTaskTable', summary)
+		#selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary)
+                selectrow ('frmEvolution-Tasks', 'tblTasks', summary)
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuOpenTask')
 		time.sleep(3)
-		setcontext('Task - No summary','Task - ' + summary)
+		#setcontext('Task - No summary','Task - ' + summary)
 		waittillguiexist(windowname)		
 	        time.sleep(3)
                 print 'here'
@@ -57,16 +58,16 @@ def verify_readonly():
 			print 'Verify failed'
 			log('Verify Failed','error')
 		click(windowname,'btnClose')
-		undoremap('evolution','frmEvolution-Tasks')
-	        remap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
+	        #remap('evolution','frmEvolution-Tasks')
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuWorkOnline')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		time.sleep(3)
 	except:
 		print 'Unable to verify'
 		log('Unable to verify','error')
-		undoremap('evolution','frmEvolution-Tasks')
-	        remap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
+	        #remap('evolution','frmEvolution-Tasks')
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuWorkOnline')
 		log('verify readonly','testend')
 		raise LdtpExecutionError (0)
