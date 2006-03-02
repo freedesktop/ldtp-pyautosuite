@@ -28,9 +28,9 @@ from ldtputils import *
 #from evoutils.Task import getrowindex
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Tasks','tblTaskTable')
+       noofchild=getrowcount ('frmEvolution-Tasks','tblTasks')
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Tasks','tblTaskTable',ind,2) == subject:
+           if getcellvalue('frmEvolution-Tasks','tblTasks',ind,2) == subject:
                return ind
        if ind == noofchild-1:
            log ('Message not present','cause')
@@ -64,14 +64,14 @@ def read_data ():
 try:	
 	log('Modify a task','teststart')
 	waittillguiexist('frmEvolution-Tasks')
-	remap('evolution','frmEvolution-Tasks')
+	#remap('evolution','frmEvolution-Tasks')
 	Row_no, Due_date, Progress, Summary, old_summary = read_data()
-	selectrow ('frmEvolution-Tasks', 'tblTaskTable', old_summary[0])
+	selectrow ('frmEvolution-Tasks', 'tblTasks', old_summary[0])
 	selectmenuitem('frmEvolution-Tasks', 'mnuFile;mnuOpenTask')
 	time.sleep(2)
-	setcontext('Task - No summary','Task - ' + old_summary[0])
-	waittillguiexist('frmTask-Nosummary')
-	remap('evolution','frmTask-Nosummary')
+	#setcontext('Task - No summary','Task - ' + old_summary[0])
+	waittillguiexist('frmTask-*')
+	#remap('evolution','frmTask-Nosummary')
 
 except:
 	log('Unable to open Task window','error')
@@ -80,25 +80,25 @@ except:
 
 # Modifies the task according to users wish.
 try:
-	settextvalue ('frmTask-Nosummary', 'txtTextDateEntry',Due_date[0])
-	settextvalue ('frmTask-Nosummary', 'txtSummary',Summary[0])
-	setcontext('Task - No summary','Task - ' + Summary[0])
+	settextvalue ('frmTask-*', 'txtDate',Due_date[0])
+	settextvalue ('frmTask-*', 'txtSummary',Summary[0])
+	#setcontext('Task - No summary','Task - ' + Summary[0])
 	log('User data Loaded','info')
 	time.sleep(3)
-	if stateenabled ('frmTask-Nosummary','btnSave')==1:
-		click('frmTask-Nosummary','btnSave')
+	if stateenabled ('frmTask-*','btnSave')==1:
+		click('frmTask-*','btnSave')
 		time.sleep(3)
 		log('The required task list has been modified','info')
 	else:
 		log('The Task list already exists','info')
-		click('frmTask-Nosummary','btnClose')
+		click('frmTask-*','btnClose')
 
 	time.sleep(3)
 	if guiexist('dlgEvolutionQuery'):
-		remap('evolution','dlgEvolutionQuery')
+		#remap('evolution','dlgEvolutionQuery')
 		click('dlgEvolutionQuery','btnSend')
 		time.sleep(3)
-		undoremap('evolution','dlgEvolutionQuery')
+		#undoremap('evolution','dlgEvolutionQuery')
 	log('Task has been modified successfully','info')
 
 except:
@@ -110,9 +110,9 @@ except:
 try:
 	Row_no = getrowindex(Summary[0])
 	if Progress[0] == 'complete':
-		checkrow ('frmEvolution-Tasks', 'tblTaskTable', int(Row_no), 1)
+		checkrow ('frmEvolution-Tasks', 'tblTasks', int(Row_no), 1)
 	elif Progress[0] == 'Not started':
-		uncheckrow ('frmEvolution-Tasks', 'tblTaskTable', int(Row_no), 1)
+		uncheckrow ('frmEvolution-Tasks', 'tblTasks', int(Row_no), 1)
 	print 'The Task has been modified successfully'
 	log('progress of the task has been modified','info')
 except:
