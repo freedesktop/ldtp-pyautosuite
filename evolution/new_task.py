@@ -31,24 +31,24 @@ import string, sys, os, commands, time, filecmp
 def selectTasksPane():
    """Selects the Tasks Pane in Evolution"""
    log ('Open Evolution Tasks Pane','teststart')
-   setcontext ('Evolution - Mail','Evolution - Mail')
+   #setcontext ('Evolution - Mail','Evolution - Mail')
    #code to find the present window and revert back to the Tasks Pane
    if guiexist('frmEvolution-Mail')!=1:
         log ('Present Window now Mail pane','info')
-        setcontext ('Evolution - Mail','Evolution - Contacts')
+        #setcontext ('Evolution - Mail','Evolution - Contacts')
         if guiexist('frmEvolution-Mail')!=1:
              log ('Present Window now Tasks pane','info')
-             setcontext ('Evolution - Mail','Evolution - Calendars')
+             #setcontext ('Evolution - Mail','Evolution - Calendars')
              if guiexist('frmEvolution-Mail')!=1:
                   log ('Present Window now Calendars pane','info')
-                  setcontext ('Evolution - Mail','Evolution - Memos')
+                  #setcontext ('Evolution - Mail','Evolution - Memos')
                   if guiexist('frmEvolution-Mail')!=1:
                        log ('Present Window now Memos pane','info')
-                       setcontext ('Evolution - Mail','Evolution - Tasks')
+                       #setcontext ('Evolution - Mail','Evolution - Tasks')
                        log ('Present Window has to be Taskspane','info')
    time.sleep (1)
    try:
-       click ('frmEvolution-Mail','tbtnTasks')
+       click ('frmEvolution-*','tbtnTasks')
        time.sleep(3)
        waittillguiexist ('frmEvolution-Tasks')
 
@@ -62,8 +62,8 @@ def selectTasksPane():
 def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories):
 	log('Create New Task','teststart')
 	try:
-		remap('evolution','frmEvolution-Tasks')
-		no_rows_b4creat = getrowcount ('frmEvolution-Tasks', 'tblTaskTable') 
+		#remap('evolution','frmEvolution-Tasks')
+		no_rows_b4creat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 		click('frmEvolution-Tasks','btnNew')
 		if waittillguiexist('frmTask-Nosummary'):
 			log('New task window opened','info')
@@ -72,19 +72,19 @@ def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time
 		comboselect ('frmTask-Nosummary', 'cboPersonal', Group[0])
 		time.sleep(3)
 		settextvalue ('frmTask-Nosummary', 'txtSummary', Summary[0])
-		setcontext('Task - No summary','Task - '+Summary[0])
-		settextvalue ('frmTask-Nosummary', 'txtDescription', Desc[0])
-		settextvalue ('frmTask-Nosummary', 'txtTextDateEntry1',Start_date[0])
-		settextvalue ('frmTask-Nosummary', 'txtTextDateEntry',End_date[0])
-		settextvalue ('frmTask-Nosummary', 'txt5',Start_time[0])
-		settextvalue ('frmTask-Nosummary', 'txt3',End_time[0])
-		settextvalue ('frmTask-Nosummary', 'txt7',Time_zone[0])
-		settextvalue ('frmTask-Nosummary', 'txt1',Categories[0])
+		#setcontext('Task - No summary','Task - '+Summary[0])
+		settextvalue ('frmTask-*', 'txtDescription', Desc[0])
+		settextvalue ('frmTask-*', 'txtDate1',Start_date[0])
+		settextvalue ('frmTask-*', 'txtDate',End_date[0])
+		settextvalue ('frmTask-*', 'txt8',Start_time[0])
+		settextvalue ('frmTask-*', 'txt6',End_time[0])
+		settextvalue ('frmTask-*', 'txt4',Time_zone[0])
+		settextvalue ('frmTask-*', 'txt1',Categories[0])
 		time.sleep(2)
 		log('User Details entered','info')
 	except:
 		print 'Error in entering the values'
-		releasecontext()		
+		#releasecontext()		
 		log('Error in entering the values','error')
 		log('Create New Task','testend')
 	        raise LdtpExecutionError(0)
@@ -92,9 +92,9 @@ def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time
 	try:
 		click('frmTask-Nosummary','btnSave')
 		time.sleep(3)
-		no_rows_aftercreat = getrowcount ('frmEvolution-Tasks', 'tblTaskTable') 
+		no_rows_aftercreat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 		if no_rows_aftercreat == no_rows_b4creat + 1:
-			if selectrow('frmEvolution-Tasks','tblTaskTable',Summary[0]) == 1:
+			if selectrow('frmEvolution-Tasks','tblTasks',Summary[0]) == 1:
 				log('Task Creation Completed and verified','info')
 				print 'Task Creation completed and verified.'
 		else:
@@ -103,11 +103,11 @@ def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time
 		print 'Unable to verify the task :'+Summary[0]
 		log('Unable to save the task')
 		log('Create New Task','testend')
-		releasecontext()
+		#releasecontext()
 	        raise LdtpExecutionError(0)	
 
-	undoremap('evolution','frmEvolution-Tasks')
-	releasecontext()
+	#undoremap('evolution','frmEvolution-Tasks')
+	#releasecontext()
 	log('Create New Task','testend')
 	
 
