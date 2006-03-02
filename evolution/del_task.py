@@ -57,7 +57,6 @@ try:
 
 	#remap('evolution','frmEvolution-Tasks')
 	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
-
 	#if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
         # selectrowpartialmatch doesn't work: 333090
 
@@ -70,6 +69,7 @@ try:
 		click('dlgEvolutionQuery','btnDelete')
 		#undoremap('evolution','dlgEvolutionQuery')
 		#remap('evolution','frmEvolution-Tasks')
+                time.sleep(2)
 		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTasks')
 		if no_rows_afterdeleting == no_rows_b4deleting -1:
 			print 'The task has been deleted'

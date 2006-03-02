@@ -53,20 +53,22 @@ try:
 	waittillguiexist('frmEvolution-Tasks')
 	summary = read_data()
 
-	remap('evolution','frmEvolution-Tasks')
-	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTaskTable') 
+	#remap('evolution','frmEvolution-Tasks')
+	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 
-	if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTaskTable', summary[0]) == 1:
+	#if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
+        if selectrow ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
 
 		click('frmEvolution-Tasks', 'btnDelete')
 		waittillguiexist('dlgEvolutionQuery')
-		undoremap('evolution','frmEvolution-Tasks')
-		remap('evolution','dlgEvolutionQuery')
+		#undoremap('evolution','frmEvolution-Tasks')
+		#remap('evolution','dlgEvolutionQuery')
 		time.sleep(3)
 		click('dlgEvolutionQuery','btnDelete')
-		undoremap('evolution','dlgEvolutionQuery')
-		remap('evolution','frmEvolution-Tasks')
-		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTaskTable') 
+		#undoremap('evolution','dlgEvolutionQuery')
+		#remap('evolution','frmEvolution-Tasks')
+                time.sleep(2)
+		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 		if no_rows_afterdeleting == no_rows_b4deleting -1:
 			print 'The task has been deleted'
 			log('the task has been deleted','info')	
