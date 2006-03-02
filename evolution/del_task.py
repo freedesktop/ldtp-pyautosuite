@@ -55,19 +55,22 @@ try:
 	waittillguiexist('frmEvolution-Tasks')
 	summary = read_data()
 
-	remap('evolution','frmEvolution-Tasks')
-	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTaskTable') 
+	#remap('evolution','frmEvolution-Tasks')
+	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 
-	if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTaskTable', summary[0]) == 1:
+	#if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
+        # selectrowpartialmatch doesn't work: 333090
+
+        if selectrow ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
 		log('The specified task has been deleted','info')
 		click('frmEvolution-Tasks', 'btnDelete')
 		waittillguiexist('dlgEvolutionQuery')
-		remap('evolution','dlgEvolutionQuery')
+		#remap('evolution','dlgEvolutionQuery')
 		time.sleep(3)
 		click('dlgEvolutionQuery','btnDelete')
-		undoremap('evolution','dlgEvolutionQuery')
-		remap('evolution','frmEvolution-Tasks')
-		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTaskTable')
+		#undoremap('evolution','dlgEvolutionQuery')
+		#remap('evolution','frmEvolution-Tasks')
+		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTasks')
 		if no_rows_afterdeleting == no_rows_b4deleting -1:
 			print 'The task has been deleted'
 			time.sleep(3)
@@ -78,7 +81,7 @@ try:
 	else:
 		print 'Unable to select a task with the given summary'
 		log('unable to select the task','error')
-	undoremap('evolution','frmEvolution-Tasks')
+	#undoremap('evolution','frmEvolution-Tasks')
 except:
 	log('Unable to delete a Task','error')
 	log('Delete a task','testend')
