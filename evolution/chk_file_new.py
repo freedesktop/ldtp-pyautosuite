@@ -38,7 +38,7 @@ def chk_new_items():
 		for i in range(0, noofitems-1):
 
 			mnuitem,windowname = assign_var(i)
-			if selectmenuitem('frmEvolution-Mail','mnuFile;mnuNew;mnu'+mnuitem) == 1:
+			if selectmenuitem('frmEvolution-*','mnuFile;mnuNew;mnu'+mnuitem) == 1:
 				time.sleep(3)
 			close_win(i,windowname)
 	except:
@@ -53,7 +53,7 @@ def assign_var(i):
 
 	if new_items[i] == 'Mail Message':
 		mnuitem = 'MailMessage'
-		windowname = 'frmComposeamessage'
+		windowname = 'frmComposeMessage'
 	elif new_items[i] == 'Mail Folder':
 		mnuitem = 'MailFolder'
 		windowname = 'dlgCreatefolder'
@@ -86,11 +86,11 @@ def assign_var(i):
 		windowname = 'dlgNewAddressBook'
 	elif new_items[i] == 'Calendar':
 		mnuitem = 'Calendar'
-		windowname = 'dlgTaskListProperties'
-		setcontext('Task List Properties','New Calendar')
+		windowname = 'dlgNewCalendar'
+		#setcontext('Task List Properties','New Calendar')
 	elif new_items[i] == 'Memo List':
 		mnuitem = 'Memolist'
-		windowname = 'dlgTaskListProperties'
+		windowname = 'dlgNewMemoList'
 	elif new_items[i] == 'Task List':
 		mnuitem = 'Tasklist'
 		windowname = 'dlgTaskListProperties'
