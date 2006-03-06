@@ -269,16 +269,16 @@ def rename (old_name,new_name):
 	try:
 		log('Rename a folder','teststart')
 		windowname = 'dlgRenameFolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',old_name) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',old_name) == 1:
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuRename')
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuRename')
 
 			time.sleep(3)
 			waittillguiexist(windowname)
 			settextvalue(windowname,'txt0',new_name)
 			time.sleep(3)
-			undoremap('evolution','frmEvolution-Mail')
+			#undoremap('evolution','frmEvolution-Mail')
 			click(windowname,'btnOK')
                         time.sleep(3)
 			if guiexist('dlgEvolutionError'):
@@ -319,13 +319,15 @@ def delete_nonsys_folder (fldr):
 			log ('A system folder has been selected','error')
 			print 'You cannot delete a system folder'
 		else:
-			remap('evolution','frmEvolution-Mail')
-			selectrow ('frmEvolution-Mail', 'ttblMailFolderTree', fldr)
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuDelete')
-			setcontext ('Delete \"Inbox/ashwin\"?','Delete \"' + fldr + '\"?')
+			#remap('evolution','frmEvolution-Mail')
+			selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr)
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuDelete')
+			#setcontext ('Delete \"Inbox/ashwin\"?','Delete \"' + fldr + '\"?')
 			time.sleep(2)
-			if waittillguiexist (windowname + defaultname) == 1:
-				click(windowname + defaultname, 'btnDelete')
+			#if waittillguiexist (windowname + defaultname) == 1:
+                        print windowname + '\"'+fldr+'\"?'
+                        if waittillguiexist (windowname + '*') == 1:
+				click(windowname + '*', 'btnDelete')
 				time.sleep(2)
 				if guiexist('dlgEvolutionError') ==1:
 					click('dlgEvolutionError','btnOK')
@@ -339,7 +341,7 @@ def delete_nonsys_folder (fldr):
 				log('unable to find the delete window','error')
 				log('delete a non system folder','testend')
 				raise LdtpExecutionError (0)
-			undoremap('evolution','frmEvolution-Mail')
+			#undoremap('evolution','frmEvolution-Mail')
 			log('delete a non system folder','testend')
 			return 1
 	except :
