@@ -29,7 +29,7 @@ from ldtputils import *
 
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Mail','ttblMessageList')
+       noofchild=getrowcount ('frmEvolution-*','ttblMessageList')
        for ind in range (noofchild):
            if getcellvalue('frmEvolution-Mail','ttblMessageList',ind,4) == subject:
                return ind
@@ -53,9 +53,9 @@ def read_data():
 def redirect(fldr, subject, redirect_to):
 	try:
 		log('redirect a mail','teststart')
-		windowname = 'frmComposeamessage'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		windowname = 'frmComposeMessage'
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			time.sleep(2)
 			log('Folder identified','info')
 			Row_index = getrowindex(subject)
@@ -63,9 +63,9 @@ def redirect(fldr, subject, redirect_to):
 				log('Message selected','info')
 				
 				from_id = getcellvalue('frmEvolution-Mail','ttblMessageList',int(Row_index),3)
-				selectmenuitem('frmEvolution-Mail','mnuMessage;mnuRedirect')
+				selectmenuitem('frmEvolution-*','mnuMessage;mnuRedirect')
 				time.sleep(2)
-				setcontext('Compose a message',subject)	
+				#setcontext('Compose a message',subject)	
 				if waittillguiexist(windowname) == 1:
 					print 'Redirect Window opened, hence verified'
 
@@ -91,7 +91,7 @@ def redirect(fldr, subject, redirect_to):
 		else:		
 			print 'Unable to find the folder'
 			log('Unable to find the folder','error')
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		log('Reply to all','testend')
 	except:
 		log('Unable to reply','error')

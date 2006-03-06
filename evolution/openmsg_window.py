@@ -29,9 +29,9 @@ from ldtputils import *
 
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Mail','ttblMessageList')
+       noofchild=getrowcount ('frmEvolution-*','ttblMessages')
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Mail','ttblMessageList',ind,4) == subject:
+           if getcellvalue('frmEvolution-*','ttblMessages',ind,4) == subject:
                return ind
        if ind == noofchild-1:
            log ('Message not present','cause')
@@ -54,14 +54,14 @@ def openmsg(fldr, subject):
 	try:
 		log('Open in a new window','teststart')
 		windowname = 'frmWelcometoEvolution!'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			time.sleep(2)
 			log('Folder identified','info')
-			selectrow('frmEvolution-Mail','ttblMessageList',subject)
+			selectrow('frmEvolution-*','ttblMessages',subject)
 			Row_index = getrowindex(subject)
-			selectrowindex('frmEvolution-Mail','ttblMessageList',int(Row_index))
-			selectmenuitem('frmEvolution-Mail','mnuMessage;mnuOpeninNewWindow')
+			selectrowindex('frmEvolution-*','ttblMessages',int(Row_index))
+			selectmenuitem('frmEvolution-*','mnuMessage;mnuOpeninNewWindow')
 			time.sleep(3)
 			setcontext('Welcome to Evolution!',subject)	
 			if waittillguiexist(windowname) == 1:
@@ -72,7 +72,7 @@ def openmsg(fldr, subject):
 			else:
 				print 'Verification failed'
 				log('verify failed','error') 
-			undoremap('evolution','frmEvolution-Mail')
+			#undoremap('evolution','frmEvolution-Mail')
 		else:
 			log('The folder cannot be identified','error')
 	

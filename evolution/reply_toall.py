@@ -29,9 +29,9 @@ from ldtputils import *
 
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Mail','ttblMessageList')
+       noofchild=getrowcount ('frmEvolution-*','ttblMessages')
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Mail','ttblMessageList',ind,4) == subject:
+           if getcellvalue('frmEvolution-*','ttblMessages',ind,4) == subject:
                return ind
        if ind == noofchild-1:
            log ('Message not present','cause')
@@ -55,15 +55,15 @@ def reply_toall(fldr, subject, expected_to_names, expected_to_emails):
 	try:
 		log('Reply to all','teststart')
 		windowname = 'frmComposeamessage'
-		remap('evolution','frmEvolution-Mail')
+		#remap('evolution','frmEvolution-Mail')
 		print fldr,subject
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			time.sleep(2)
 			log('Folder identified','info')
 			Row_index = getrowindex(subject)
-			if selectrowindex('frmEvolution-Mail','ttblMessageList',int(Row_index)) == 1:
+			if selectrowindex('frmEvolution-*','ttblMessageList',int(Row_index)) == 1:
 				log('Message selected','info')
-				selectmenuitem('frmEvolution-Mail','mnuMessage;mnuReply')
+				selectmenuitem('frmEvolution-*','mnuMessage;mnuReply')
 				time.sleep(2)
 				setcontext('Compose a message','Re: '+subject)	
 				if waittillguiexist(windowname) == 1:
@@ -97,7 +97,7 @@ def reply_toall(fldr, subject, expected_to_names, expected_to_emails):
 		else:		
 			print 'Unable to find the folder'
 			log('Unable to find the folder','error')
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		log('Reply to all','testend')
 	except:
 		log('Unable to reply','error')

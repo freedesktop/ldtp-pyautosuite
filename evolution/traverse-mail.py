@@ -31,7 +31,7 @@ def getrowct_based_properties(property_val):
    try:
        ct = 0
        colmn = 4
-       noofchild = getrowcount ('frmEvolution-Mail','ttblMessageList')
+       noofchild = getrowcount ('frmEvolution-*','ttblMessages')
        if property_val == 'Important':
 	    colmn = 2
        elif property_val == 'Unread':
@@ -40,7 +40,7 @@ def getrowct_based_properties(property_val):
 	    ct = noofchild - 1
 
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Mail','ttblMessageList',ind,colmn) == '1':
+           if getcellvalue('frmEvolution-*','ttblMessages',ind,colmn) == '1':
                ct = ct + 1
        if colmn == 0:
 	   ct = noofchild - ct
@@ -63,11 +63,11 @@ def Traverse(fldr, subject, traverse_method):
 	try:
 		log('Traverse Mail','teststart')
 		windowname = 'frmWelcometoEvolution!'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			time.sleep(3)
 			log('Folder identified','info')
-			selectrow('frmEvolution-Mail','ttblMessageList',subject)
+			selectrow('frmEvolution-*','ttblMessages',subject)
 			if traverse_method == 'NextUnread' or traverse_method == 'PreviousUnread':
 				property_val = 'Unread'
 			elif traverse_method == 'NextImportant' or traverse_method == 'PreviousImportant':

@@ -31,16 +31,16 @@ from ldtputils import *
 def work_offline():
 	try:
 		log('Work Offline','teststart')
-		remap('evolution','frmEvolution-Mail')
-		if doesmenuitemexist ('frmEvolution-Mail', 'mnuFile;mnuWorkOffline') == 1:
-			if selectmenuitem('frmEvolution-Mail','mnuFile;mnuWorkOffline') == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if doesmenuitemexist ('frmEvolution-*', 'mnuFile;mnuWorkOffline') == 1:
+			if selectmenuitem('frmEvolution-*','mnuFile;mnuWorkOffline') == 1:
 				time.sleep(3)
-				undoremap('evolution','frmEvolution-Mail')
-				remap('evolution','frmEvolution-Mail')
-				if doesmenuitemexist ('frmEvolution-Mail', 'mnuFile;mnuWorkOnline') == 1:
+				#undoremap('evolution','frmEvolution-Mail')
+				#remap('evolution','frmEvolution-Mail')
+				if doesmenuitemexist ('frmEvolution-*', 'mnuFile;mnuWorkOnline') == 1:
 					print 'Work Offline in the File menu works fine'
 					log('Work offline verified','info')
-					selectmenuitem('frmEvolution-Mail','mnuFile;mnuWorkOnline')
+					selectmenuitem('frmEvolution-*','mnuFile;mnuWorkOnline')
 				else:
 					print 'Unable to see the work online in the file menu after selecting woek offline'
 					log('Unable to see the work online in the file menu after selecting woek offline','cause')
@@ -50,12 +50,12 @@ def work_offline():
 		else:
 			print 'Already working offline/ evolution-mail is not opened'
 			log('Already working offline/ evolution-mail is not opened','cause')
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		log('Work Offline','testend')
 	except:
 		log('Unable to go offline','error')
 		log('Work Offline','testend')		
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		raise LdtpExecutionError (0)
 		
 work_offline()
