@@ -29,9 +29,9 @@ from ldtputils import *
 
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Mail','ttblMessageList')
+       noofchild=getrowcount ('frmEvolution-*','ttblMessages')
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Mail','ttblMessageList',ind,4) == subject:
+           if getcellvalue('frmEvolution-*','ttblMessages',ind,4) == subject:
                return ind
        if ind == noofchild-1:
            log ('Message not present','cause')
@@ -84,16 +84,16 @@ def change_status(fldr, subject, status, importance, junk_status, follow_up_flag
 	try:
 		log('Change status of mails','teststart')
 		windowname = 'dlgFlagtoFollowUp'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 #			time.sleep(2)
 			log('Folder identified','info')
 			Row_index = getrowindex(subject)
 			print Row_index
 			# 0,2 are the colmn no.s denote the status, importance of the mails.
-			cur_status = getcellvalue('frmEvolution-Mail','ttblMessageList',int(Row_index),0)
-			cur_importance = getcellvalue('frmEvolution-Mail','ttblMessageList',int(Row_index),2)
-			if selectrowindex('frmEvolution-Mail','ttblMessageList',int(Row_index)) == 1:
+			cur_status = getcellvalue('frmEvolution-*','ttblMessages',int(Row_index),0)
+			cur_importance = getcellvalue('frmEvolution-*','ttblMessages',int(Row_index),2)
+			if selectrowindex('frmEvolution-*','ttblMessages',int(Row_index)) == 1:
 				print status,cur_status
 				if status == 'read' and  int(cur_status) == 0:
 					selectmenuitem('frmEvolution-Mail','mnuMessage;mnuMarkas;mnuRead')
