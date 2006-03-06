@@ -33,39 +33,39 @@ def print_msg(fldr, subject, printer):
 		log('Print a message','teststart')
 		windowname = 'dlgPrintMessage'
 		if select_mail (fldr,subject) == 1:
-			remap('evolution','frmEvolution-Mail')
-			selectmenuitem('frmEvolution-Mail','mnuFile;mnuPrint')
+			#remap('evolution','frmEvolution-Mail')
+			selectmenuitem('frmEvolution-*','mnuFile;mnuPrint')
 			if waittillguiexist(windowname)	== 1:
 				time.sleep(3)
 				if selectrow(windowname,'tbl0',printer): 
 					print 'Printing message : '+fldr+' -> '+subject
 					
 					log('The print window has emerged, hence verified','info')
-					remap('evolution',windowname)
+					#remap('evolution',windowname)
 					time.sleep(3)
 					click(windowname,'btnCancel')
 #					click(windowname,'btnPrint')
-					undoremap('evolution',windowname)
+					#undoremap('evolution',windowname)
 				else:
 					log('Unable to find the print window','cause')
 					log('Print a message','testend')		
-					undoremap('evolution','frmEvolution-Mail')
+					#undoremap('evolution','frmEvolution-Mail')
 					raise LdtpExecutionError (0)
 			else:
 				log('Unable to find the print window','cause')
 				log('Print a message','testend')		
-				undoremap('evolution','frmEvolution-Mail')
+				#undoremap('evolution','frmEvolution-Mail')
 				raise LdtpExecutionError (0)
 		else:
 			log('Unable to find the fldr/mail','cause')
 			log('Print a message','testend')		
-			undoremap('evolution','frmEvolution-Mail')
+			#undoremap('evolution','frmEvolution-Mail')
 			raise LdtpExecutionError (0)
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 	except:
 		log('Unable to print the message','error')
 		log('Print a message','testend')		
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		raise LdtpExecutionError (0)
 		
 # Read data from xml file.

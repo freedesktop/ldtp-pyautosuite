@@ -32,28 +32,28 @@ def print_preview(fldr, subject):
 		log('Print preview','teststart')
 		windowname = 'frmPrintPreview'
 		if select_mail (fldr,subject) == 1:
-			remap('evolution','frmEvolution-Mail')
-			selectmenuitem('frmEvolution-Mail','mnuFile;mnuPrintPreview')
+			#remap('evolution','frmEvolution-Mail')
+			selectmenuitem('frmEvolution-*','mnuFile;mnuPrintPreview')
 			if waittillguiexist(windowname)	== 1:
 				time.sleep(3)
 				print 'Previewing message : '+fldr+' -> '+subject
 				log('The print Preview window has emerged, hence verified','info')
-				remap('evolution',windowname)
+				#remap('evolution',windowname)
 				click(windowname,'btnclose')
-				undoremap('evolution',windowname)
+				#undoremap('evolution',windowname)
 			else:
 				log('Unable to find the print preview window','cause')
 				log('Print preview','testend')		
-				undoremap('evolution','frmEvolution-Mail')
+				#undoremap('evolution','frmEvolution-Mail')
 		else:
 			log('Unable to find the fldr/mail','cause')
 			log('Print preview','testend')		
-			undoremap('evolution','frmEvolution-Mail')
-		undoremap('evolution','frmEvolution-Mail')
+			#undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 	except:
 		log('Unable to preview the message','error')
 		log('Print preview','testend')		
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		
 	log('Print preview','testend')
 # Read data from xml file.

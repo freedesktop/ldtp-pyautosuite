@@ -28,17 +28,17 @@ from ldtputils import *
 def select_mail(fldr,subject):
 	try:
 		log('select mail in a folder','teststart')
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			log('Folder selected','info')
-			if selectrow('frmEvolution-Mail','ttblMessageList',subject) == 1:
+			if selectrow('frmEvolution-*','ttblMessages',subject) == 1:
 				log('Mail selected','info')
-				undoremap('evolution','frmEvolution-Mail')
+				#undoremap('evolution','frmEvolution-Mail')
 				log('select mail in a folder','testend')
 				return 1
 			else:
 				log('Unable to select the mail','error')
-				undoremap('evolution','frmEvolution-Mail')
+				#undoremap('evolution','frmEvolution-Mail')
 				log('select mail in a folder','testend')
 				return 0
 	except:
