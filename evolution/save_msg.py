@@ -30,9 +30,9 @@ def save_msg(fldr, subject, file_name):
 
 	try:
 		log('Save a message','teststart')
-		windowname = 'dlgSaveMessage'
+		windowname = 'dlgSaveMessage...'
 		if select_mail (fldr,subject) == 1:
-			selectmenuitem('frmEvolution-Mail','mnuFile;mnuSaveMessage')
+			selectmenuitem('frmEvolution-*','mnuFile;mnuSaveMessage')
 			if waittillguiexist(windowname)	== 1:
 				settextvalue(windowname,'txtName',file_name)
 				time.sleep(3)
