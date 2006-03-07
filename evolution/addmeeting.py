@@ -56,9 +56,9 @@ def addmeeting(datafilename,recur):
         click ('frmMeeting-Nosummary','btnSave')
         releasecontext()
         waittillguiexist ('dlgEvolutionQuery')
-        remap ('evolution','dlgEvolutionQuery')
+        #remap ('evolution','dlgEvolutionQuery')
         click ('dlgEvolutionQuery','btnDon\'tSend')
-        undoremap ('evolution','dlgEvolutionQuery')
+        #undoremap ('evolution','dlgEvolutionQuery')
         time.sleep (3)
     except:
         log ('Could not add New meeting','error')
@@ -111,7 +111,7 @@ def addattendees(attendee,email,addrbook):
         waittillguiexist ('dlgRequiredParticipants')
         time.sleep (1)
         comboselect ('dlgRequiredParticipants','cboAddressBook',addrbook[0])
-        remap ('evolution','dlgRequiredParticipants')
+        #remap ('evolution','dlgRequiredParticipants')
         attendee=attendee[0].split (':')
         email=email[0].split (':')
         if len(attendee)!=len(email):
@@ -131,7 +131,7 @@ def addattendees(attendee,email,addrbook):
                 log ('User not found','cause')
                 raise LdtpExceptionError(0)
         click ('dlgRequiredParticipants', 'btnClose')
-        undoremap ('evolution','dlgRequiredParticipants')
+        #undoremap ('evolution','dlgRequiredParticipants')
     except:
         log ('Attendee Addition failed','error')
         log ('Add Attendees','testend')
@@ -143,7 +143,7 @@ def verimeetattendees(attendee,email):
     try:
         click ('frmMeeting-Nosummary','btnAttendees')
         waittillguiexist ('dlgRequiredParticipants')
-        remap ('evolution','dlgRequiredParticipants')
+        #remap ('evolution','dlgRequiredParticipants')
         attendee=attendee.split (' ')
         email=email.split (' ')
         for ind in len(attendee):
@@ -152,7 +152,7 @@ def verimeetattendees(attendee,email):
                 log ('User Not found','cause')
                 raise LdtpExceptionError(0)
         click ('dlgRequiredParticipants', 'btnClose')
-        undoremap ('evolution','dlgRequiredParticipants')
+        #undoremap ('evolution','dlgRequiredParticipants')
     except:
         raise LdtpExecutionError (0)
 
@@ -176,12 +176,12 @@ def selectmeeting(fromdate,summary):
         log ('Selecting a Meeting','testend')
         raise LdtpExecutionError(0)
     try:
-        remap ('evolution','frmEvolution-Calendars')
+        #remap ('evolution','frmEvolution-Calendars')
         #objects=getobjectlist('frmEvolution-Calendars')
         activatewin ('frmEvolution-Calendars')
         selectevent ('frmEvolution-Calendars','calDayView',summary)
         selectevent ('frmEvolution-Calendars','calDayView',summary)
-        undoremap ('evolution','frmEvolution-Calendars')
+        #undoremap ('evolution','frmEvolution-Calendars')
         time.sleep (3)
     except:
         log ('Unable to select event','error')
@@ -237,11 +237,11 @@ def verimeetmainwindow(summary,location,description,from_date,to_date,from_time,
         if len(to_time)>0 and verifysettext ('frmMeeting-Nosummary','txt5',to_time[0])==0:
             log ('To-Time not set properly','cause')
             raise LdtpExecutionError(0)
-        remap ('evolution','frmMeeting-Nosummary')
+        #remap ('evolution','frmMeeting-Nosummary')
         if len(categories)>0 and  verifysettext ('frmMeeting-Nosummary','txt0',categories[0])==0:
             log ('Categories not set properly','cause')
             raise LdtpExecutionError(0)
-        undoremap ('evolution','frmMeeting-Nosummary')
+        #undoremap ('evolution','frmMeeting-Nosummary')
     except:
         raise LdtpExecutionError(0)
 
@@ -251,7 +251,7 @@ def definemeeting(summary,location,description,from_date,to_date,from_time,to_ti
     try:
         time.sleep (2)
         try:
-            uncheck ('frmMeeting-Nosummary','mnuAlldayEvent')
+            #uncheck ('frmMeeting-Nosummary','mnuOptions;mnuAllDayEvent')
             comboselect ('frmMeeting-Nosummary','cboCalendar',calendar[0])
         except:
             log ('Calendar not present','cause')
@@ -266,10 +266,10 @@ def definemeeting(summary,location,description,from_date,to_date,from_time,to_ti
             settextvalue ('frmMeeting-Nosummary','txtDescription',description[0])
         print "Setting Desc Over"
         if len(from_date)>0:
-            settextvalue ('frmMeeting-Nosummary','txtTextDateEntry',from_date[0])
+            settextvalue ('frmMeeting-Nosummary','txtDate',from_date[0])
         print "Setting from date Over"
         if len (to_date)>0:
-            settextvalue ('frmMeeting-Nosummary','txtTextDateEntry1',to_date[0])
+            settextvalue ('frmMeeting-Nosummary','txtDate1',to_date[0])
         print "Setting TO DATE Over"
         if len(from_time)>0:
             settextvalue ('frmMeeting-Nosummary','txt3',from_time[0])
@@ -278,15 +278,16 @@ def definemeeting(summary,location,description,from_date,to_date,from_time,to_ti
             settextvalue ('frmMeeting-Nosummary','txt5',to_time[0])
         print "Setting to time  Over"
         try:
-            selectmenuitem ('frmMeeting-Nosummary','mnuOptions;mnuClassification;mnu'+classification[0])
+            #selectmenuitem ('frmMeeting-*','mnuOptions;mnuClassification;mnu'+classification[0])
+            print "Classification menu is special"
         except:
             log ('Classification incorrectly specified','cause')
             raise LdtpExecutionError(0)
         if len (categories)>0:
-            check ('frmMeeting-Nosummary','mnuCategories')
-            remap ('evolution','frmMeeting-Nosummary')
-            settextvalue ('frmMeeting-Nosummary','txt0',categories[0])
-            undoremap ('evolution','frmMeeting-Nosummary')
+            check ('frmMeeting-*','mnuCategories')
+            #remap ('evolution','frmMeeting-Nosummary')
+            #settextvalue ('frmMeeting-Nosummary','txt0',categories[0])
+            #undoremap ('evolution','frmMeeting-Nosummary')
         print "Setting Categories Over"
     except:
         log ('Define Meeting values failed','error')
@@ -374,10 +375,10 @@ def insert_recurrence (windowname,duration,dur_value,dur_day,count,for_type,no_o
             else:
                 setvalue (windowname, 'sbtn0', count)
                 time.sleep(2)
-                remap ('evolution',windowname)
+                #remap ('evolution',windowname)
                 comboselect (windowname,'cboday(s)',duration)
-                undoremap ('evolution',windowname)
-                remap ('evolution',windowname)
+                #undoremap ('evolution',windowname)
+                #remap ('evolution',windowname)
                 time.sleep (2)
                 
                 if duration == 'day(s)':
@@ -393,8 +394,8 @@ def insert_recurrence (windowname,duration,dur_value,dur_day,count,for_type,no_o
 			
                 time.sleep(2)
                 comboselect (windowname,'cbofor',for_type)
-                undoremap ('evolution',windowname)
-                remap ('evolution',windowname)
+                #undoremap ('evolution',windowname)
+                #remap ('evolution',windowname)
                 time.sleep(2)
                 print no_of_times
                 if for_type == 'for':
@@ -405,8 +406,8 @@ def insert_recurrence (windowname,duration,dur_value,dur_day,count,for_type,no_o
                     time.sleep(2)
                 elif for_type == 'forever':
                     pass  	
-                undoremap ('evolution',windowname)
-                remap ('evolution',windowname)
+                #undoremap ('evolution',windowname)
+                #remap ('evolution',windowname)
                 time.sleep(3)
                 
                 exception=exception.split(' ')	
@@ -425,11 +426,11 @@ def insert_recurrence (windowname,duration,dur_value,dur_day,count,for_type,no_o
                                 raise LdtpExecutionError (0)
                             
                 time.sleep(3)
-                undoremap ('evolution',windowname)
-                remap('evolution',windowname)
+                #undoremap ('evolution',windowname)
+                #remap('evolution',windowname)
                 click(windowname, 'btnClose')
                 log ('Recurrence details set successfully','info')
-                undoremap ('evolution',windowname)
+                #undoremap ('evolution',windowname)
                 return flag
     except ldtp.error,msg:
         print "Problem in inserting recurrence tab details " + str (msg)

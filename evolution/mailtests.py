@@ -38,26 +38,26 @@ def htmlformatting():
         #window_id=getcurwindow()
         window_id='frmEvolution-Mail'
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
+        waittillguiexist ('frmComposeMessage')
         time.sleep (1)
-        uncheck ('frmComposeamessage','mnuHTML')
-        if verifycheck ('frmComposeamessage','mnuHTML')==0:
-            if stateenabled ('frmComposeamessage','tbtnTypewriter')==1 or stateenabled ('frmComposeamessage','tbtnBold')==1 or stateenabled ('frmComposeamessage','tbtnItalic')==1 or stateenabled ('frmComposeamessage','tbtnStrikeout')==1:
+        uncheck ('frmComposeMessage','mnuHTML')
+        if verifycheck ('frmComposeMessage','mnuHTML')==0:
+            if stateenabled ('frmComposeMessage','tbtnTypewriter')==1 or stateenabled ('frmComposeMessage','tbtnBold')==1 or stateenabled ('frmComposeMessage','tbtnItalic')==1 or stateenabled ('frmComposeMessage','tbtnStrikeout')==1:
                 log ('text formatting is enabled','cause')
                 raise LdtpExecutionError(0)
-            elif stateenabled ('frmComposeamessage','btnImage') == 1 or stateenabled ('frmComposeamessage','btnRule') == 1 or stateenabled ('frmComposeamessage','btnLink') == 1 or stateenabled ('frmComposeamessage','btnTable') == 1:
+            elif stateenabled ('frmComposeMessage','btnImage') == 1 or stateenabled ('frmComposeMessage','btnRule') == 1 or stateenabled ('frmComposeMessage','btnLink') == 1 or stateenabled ('frmComposeMessage','btnTable') == 1:
                 log ('Inserting Objects is enabled','cause')
                 raise LdtpExecutionError(0)
-#             elif stateenabled ('frmComposeamessage','rbtnLeftalign')==1 or stateenabled ('frmComposeamessage','rbtnRightalign')==1 or stateenabled ('frmComposeamessage','rbtnCenter')==1:
+#             elif stateenabled ('frmComposeMessage','rbtnLeftalign')==1 or stateenabled ('frmComposeMessage','rbtnRightalign')==1 or stateenabled ('frmComposeMessage','rbtnCenter')==1:
 #                  log ('aligning buttons enabled','cause')
 #                  raise LdtpExecutionError (0)
-#             elif stateenabled ('frmComposeamessage','btnUnindent')==1 or stateenabled ('frmComposeamessage','btnIndent')==1:
+#             elif stateenabled ('frmComposeMessage','btnUnindent')==1 or stateenabled ('frmComposeMessage','btnIndent')==1:
 #                 log ('indentation buttons enabled','cause')
 #                 raise LdtpExecutionError (0)
         else:
             log ('UnChecking HTML menu failed','error')
             raise LdtpExecutionError (0)
-        selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+        selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
     except:
         log ('Menus are enabled when HTML is not selected','error')
         log ('Check if formatting elements get disabled when HTML setting is off','testend')
@@ -74,7 +74,7 @@ def savemail(savemethod,to, subject=[], body=[], cc=[], bcc=[], attachment=[], d
         time.sleep (2)
         undoremap ('evolution','frmEvolution-Mail')
         remap ('evolution','frmEvolution-Mail')
-        draft_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+        draft_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessages')
         print "Draft count:",draft_mail_count
         undoremap ('evolution','frmEvolution-Mail')
         compose (to, subject, body, cc,bcc, attachment)
@@ -91,7 +91,7 @@ def testsavemail(draft_count,savemethod):
     log ('Verification for save mail','teststart')
     try:
         if savemethod==0:
-            new_draft_count=getrowcount ('frmEvolution-Mail','ttblMessageList')
+            new_draft_count=getrowcount ('frmEvolution-Mail','ttblMessages')
             print "new count:",new_draft_count
             if new_draft_count>=draft_count+1:
                 log ('Save Mail','pass')
@@ -125,16 +125,16 @@ def sendmailwhenoffline (to=[], subject=[], body=[], cc=[], bcc=[], attachment=[
         remap ('evolution','frmEvolution-Mail')		
         selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', 'Outbox')
         time.sleep (2)
-        outbox_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+        outbox_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessages')
         selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', 'Sent')
         time.sleep (2)
-        sent_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+        sent_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessages')
         compose (to, subject, body, cc,bcc, attachment)
         sendmail (subject)
         selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', 'Outbox')
         undoremap ('evolution','frmEvolution-Mail')        
         remap ('evolution','frmEvolution-Mail')
-        new_outbox_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+        new_outbox_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessages')
         if new_outbox_mail_count==outbox_mail_count+1:
             log ('Message has been put in OutBox Folder','info')
         else:
@@ -152,7 +152,7 @@ def sendmailwhenoffline (to=[], subject=[], body=[], cc=[], bcc=[], attachment=[
         selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', 'Sent')
         undoremap ('evolution','frmEvolution-Mail')        
         remap ('evolution','frmEvolution-Mail')
-        new_sent_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+        new_sent_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessages')
         if new_sent_mail_count==sent_mail_count+new_outbox_mail_count:
             log ('Message sent','info')
             log ('Send Mail while offline Succeeded','info')
@@ -174,7 +174,7 @@ def closecomposewindow(state):
         state == 2 --> Save Message"""
     log ('Close compose window','teststart')
     try:
-        if guiexist ('frmComposeamessage') == 0:
+        if guiexist ('frmComposeMessage') == 0:
             log ('Compose window not open','cause')
             raise LdtpExecutionError (0)
     except:
@@ -182,7 +182,7 @@ def closecomposewindow(state):
         raise LdtpExecutionError (0)
     
     try:
-        selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+        selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
         time.sleep (2)
         if guiexist ('dlgWarning')==1:
             if state==0:
@@ -202,7 +202,7 @@ def closecomposewindow(state):
         log ('Close compose window','fail')
         log ('Close compose window','testend')
         raise LdtpExecutionError (0)
-    waittillguinotexist ('frmComposeamessage')
+    waittillguinotexist ('frmComposeMessage')
     time.sleep (2)
     log ('Close compose window','pass')
     log ('Close compose window','testend')
@@ -213,18 +213,18 @@ def checkheaders(ref_image):
     try:
         window_id=getcurwindow()
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
+        waittillguiexist ('frmComposeMessage')
     except:
         log ('could not open Mail Editor','cause')
         log ('Check Compose window header boxes','testend')
         raise LdtpExecutionError (0)
 
     try:
-        check ('frmComposeamessage','mnuFromField')
-        check ('frmComposeamessage','mnuPost-ToField')
-        check ('frmComposeamessage','mnuReply-ToField')
-        check ('frmComposeamessage','mnuCcField')
-        check ('frmComposeamessage','mnuBccField')
+        check ('frmComposeMessage','mnuFromField')
+        check ('frmComposeMessage','mnuPost-ToField')
+        check ('frmComposeMessage','mnuReply-ToField')
+        check ('frmComposeMessage','mnuCcField')
+        check ('frmComposeMessage','mnuBccField')
     except:
         log ('error while selecting fields','cause')
         log ('Check Compose window header boxes','testend')
@@ -247,7 +247,7 @@ def checkheaders(ref_image):
         log ('Header fields do not match','warning')
         log ('Check Compose window header boxes','testend')
         raise LdtpExecutionError (0)
-    selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+    selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
     log ('Check Compose window header boxes','testend')
 
 
@@ -255,41 +255,41 @@ def add_to_replytofield(replyto,to):
     log ('Add to reply-to field','teststart')
     try:
         #selectMailPane()
-        window_id='frmEvolution-Mail'
+        window_id='frmEvolution-*'
         subject =['test for reply to']
         body=subject
-        remap ('evolution',window_id)
+        #remap ('evolution',window_id)
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
-        undoremap ('evolution',window_id)
-        remap ('evolution',window_id)
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        #undoremap ('evolution',window_id)
+        #remap ('evolution',window_id)
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
+        waittillguiexist ('frmComposeMessage')
         populate_mail_header ([to],subject,body)
-        check ('frmComposeamessage','mnuReply-ToField')
-        settextvalue ('frmComposeamessage','txtReply-To',replyto)
+        check ('frmComposeMessage','mnuReply-ToField')
+        settextvalue ('frmComposeMessage','txtReply-To',replyto)
         sendmail (subject)
         click ('frmEvolution-Mail', 'btnSend/Receive')
         waittillguinotexist ('dlgSend&ReceiveMail')
         time.sleep (5)
-        #click ('frmComposeamessage','btnSend')
+        #click ('frmComposeMessage','btnSend')
         releasecontext ()
-        undoremap ('evolution',window_id)
-        remap ('evolution',window_id)
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        #undoremap ('evolution',window_id)
+        #remap ('evolution',window_id)
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count!=sent_mail_count+1:
             log ('Message not sent','cause')
             raise LdtpExecutionError (0)
-        selectrowindex(window_id,'ttblMessageList',sent_mail_count)
+        selectrowindex(window_id,'ttblMessages',sent_mail_count)
         selectmenuitem (window_id,'mnuMessage;mnuReply')
         setcontext ('Compose a message','Re: '+subject[0])
-        waittillguiexist ('frmComposeamessage')
-        if gettextvalue ('frmComposeamessage','txtTo') != replyto:
+        waittillguiexist ('frmComposeMessage')
+        if gettextvalue ('frmComposeMessage','txtTo') != replyto:
             log ('To field does not have replyto address','cause')
             raise LdtpExecutionError (0)
-        selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+        selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
         log ('Reply to Field','pass')
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
     except:
         log ('Reply to Field','fail')
         log ('Add to reply-to field','testend')
@@ -307,16 +307,16 @@ def background_image_test (to,bgimage,ref_image):
         time.sleep (2)
         #remap ('evolution',window_id)
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
+        waittillguiexist ('frmComposeMessage')
         populate_mail_header ([to],subject,body)
         insert_bgimage (bgimage)
         sendmail (subject)
         click (window_id, 'btnSend/Receive')
         waittillguinotexist ('dlgSend&ReceiveMail')
         #remap ('evolution',window_id)
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count < sent_mail_count+1:
             log ('Could not send mail','cause')
             raise LdtpExecutiontionError (0)
@@ -349,9 +349,9 @@ def template_test(to,template,ref_image):
         window_id='frmEvolution-Mail'
         #remap ('evolution',window_id)
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
+        waittillguiexist ('frmComposeMessage')
         populate_mail_header ([to],subject,body)
         apply_template (template)
         sendmail (subject)
@@ -361,7 +361,7 @@ def template_test(to,template,ref_image):
         releasecontext()
         #undoremap ('evolution',window_id)
         #remap ('evolution',window_id)
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count < sent_mail_count+1:
             log ('Could not send mail','cause')
             raise LdtpExecutiontionError (0)
@@ -389,10 +389,10 @@ def find_and_replace_test(replace,with):
         #selectMailPane()
         #window_id='frmEvolution-Mail'
         #selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        #waittillguiexist ('frmComposeamessage')
+        #waittillguiexist ('frmComposeMessage')
         text = getmailtext()
-        grabfocus ('frmComposeamessage','txt6')
-        selectmenuitem ('frmComposeamessage','mnuEdit;mnuReplace')
+        grabfocus ('frmComposeMessage','txt6')
+        selectmenuitem ('frmComposeMessage','mnuEdit;mnuReplace')
         waittillguiexist ('dlgReplace')
         settextvalue ('dlgReplace','txtReplace',replace)
         settextvalue ('dlgReplace','txtWith',with)
@@ -415,7 +415,7 @@ def find_and_replace_test(replace,with):
 def undo_redo_test():
     log ('Undo and Redo','teststart')
     try:
-        window_id='frmComposeamessage'
+        window_id='frmComposeMessage'
         numchild=getpanelchildcount(window_id,'pnlPanelcontainingHTML')
         present_text=getmailtext()
         
@@ -470,7 +470,7 @@ def spell_check_test(method):
     log ('Spell Check','teststart')
     try:
         window_id='dlgSpellchecker'
-        selectmenuitem ('frmComposeamessage','mnuEdit;mnuSpellCheckDocument')
+        selectmenuitem ('frmComposeMessage','mnuEdit;mnuSpellCheckDocument')
         time.sleep (2)
         addwords=[]
         if guiexist ('dlgInformation')==1:
@@ -511,7 +511,7 @@ def spell_check_test(method):
             #verification of the above code
 
             if method == 3:
-                present_text=gettextvalue ('frmComposeamessage','txt6')
+                present_text=gettextvalue ('frmComposeMessage','txt6')
                 text=''
 
                 for value in addwords:
@@ -519,11 +519,11 @@ def spell_check_test(method):
                     text+=' '
 
                 text=text[:-1]
-                settextvalue ('frmComposeamessage','txt6',text)
+                settextvalue ('frmComposeMessage','txt6',text)
 
             #verification for all 3 methods
             
-            selectmenuitem ('frmComposeamessage','mnuEdit;mnuSpellCheckDocument')
+            selectmenuitem ('frmComposeMessage','mnuEdit;mnuSpellCheckDocument')
             time.sleep (2)
 
             if guiexist ('dlgInformation')==1 and method in [0,1,3]:
@@ -538,7 +538,7 @@ def spell_check_test(method):
                 raise LdtpExecutionError (0)
 
             if method==3:
-                settextvalue ('frmComposeamessage','txt6',present_text)
+                settextvalue ('frmComposeMessage','txt6',present_text)
 
         elif guiexist (window_id) == 1 and method == 4:
             click (window_id,'btnClose')
@@ -611,35 +611,35 @@ def text_formatting_test(to,ref_image):
         window_id='frmEvolution-Mail'
         #remap ('evolution',window_id)
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-        waittillguiexist ('frmComposeamessage')
-        check ('frmComposeamessage','mnuHTML')
+        waittillguiexist ('frmComposeMessage')
+        check ('frmComposeMessage','mnuHTML')
         time.sleep (1)
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuStyle;mnuBold')
-        settextvalue ('frmComposeamessage','txt6','Hello\n')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuStyle;mnuItalic')
-        settextvalue ('frmComposeamessage','txt7','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuStyle;mnuItalic')
-        settextvalue ('frmComposeamessage','txt8','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuStyle;mnuStrikeout')
-        settextvalue ('frmComposeamessage','txt9','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        settextvalue ('frmComposeamessage','txt10','Hello')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuAlignment;mnuCenter')
-        settextvalue ('frmComposeamessage','txt10','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        settextvalue ('frmComposeamessage','txt11','Hello')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuAlignment;mnuRight')
-        settextvalue ('frmComposeamessage','txt11','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuStyle;mnuBold')
+        settextvalue ('frmComposeMessage','txt6','Hello\n')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuStyle;mnuItalic')
+        settextvalue ('frmComposeMessage','txt7','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuStyle;mnuItalic')
+        settextvalue ('frmComposeMessage','txt8','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuStyle;mnuStrikeout')
+        settextvalue ('frmComposeMessage','txt9','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        settextvalue ('frmComposeMessage','txt10','Hello')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuAlignment;mnuCenter')
+        settextvalue ('frmComposeMessage','txt10','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        settextvalue ('frmComposeMessage','txt11','Hello')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuAlignment;mnuRight')
+        settextvalue ('frmComposeMessage','txt11','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
         populate_mail_header ([to],subject)
         #undoremap ('evolution',window_id)
         sendmail (subject)
@@ -649,7 +649,7 @@ def text_formatting_test(to,ref_image):
         releasecontext()
         #undoremap ('evolution',window_id)
         #remap ('evolution',window_id)
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count < sent_mail_count+1:
             log ('Could not send mail','cause')
             raise LdtpExecutiontionError (0)
@@ -680,24 +680,24 @@ def lists_test(to,ref_image):
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
         #remap ('evolution',window_id)
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
-        waittillguiexist ('frmComposeamessage')
-        check ('frmComposeamessage','mnuHTML')
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
+        waittillguiexist ('frmComposeMessage')
+        check ('frmComposeMessage','mnuHTML')
         time.sleep (1)
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuHeading;mnuBulletedList')
-        settextvalue ('frmComposeamessage','txt6','Hello\nHello\nHello\n')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuHeading;mnuNumberedList')
-        settextvalue ('frmComposeamessage','txt9','Hello\nHello\nHello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuHeading;mnuAlphabeticalList')
-        settextvalue ('frmComposeamessage','txt12','Hello\nHello\nHello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuHeading;mnuRomanNumeralList')
-        settextvalue ('frmComposeamessage','txt15','Hello\nHello\nHello\n')
-        undoremap ('evolution','frmComposeamessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuHeading;mnuBulletedList')
+        settextvalue ('frmComposeMessage','txt6','Hello\nHello\nHello\n')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuHeading;mnuNumberedList')
+        settextvalue ('frmComposeMessage','txt9','Hello\nHello\nHello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuHeading;mnuAlphabeticalList')
+        settextvalue ('frmComposeMessage','txt12','Hello\nHello\nHello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuHeading;mnuRomanNumeralList')
+        settextvalue ('frmComposeMessage','txt15','Hello\nHello\nHello\n')
+        undoremap ('evolution','frmComposeMessage')
         populate_mail_header ([to],subject)
         sendmail (subject)
         click ('frmEvolution-Mail', 'btnSend/Receive')
@@ -705,7 +705,7 @@ def lists_test(to,ref_image):
         #remap ('evolution',window_id)
         time.sleep (5)
         releasecontext()
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count < sent_mail_count+1:
             log ('Could not send mail','cause')
             raise LdtpExecutiontionError (0)
@@ -737,23 +737,23 @@ def fonts_test(to,ref_image):
         #remap ('evolution',window_id)
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
         #remap ('evolution',window_id)
-        sent_mail_count=getrowcount (window_id,'ttblMessageList')
-        waittillguiexist ('frmComposeamessage')
-        check ('frmComposeamessage','mnuHTML')
+        sent_mail_count=getrowcount (window_id,'ttblMessages')
+        waittillguiexist ('frmComposeMessage')
+        check ('frmComposeMessage','mnuHTML')
         time.sleep (1)
-        settextvalue ('frmComposeamessage','txt6','Hello\n')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuFontSize;mnu+1')
-        settextvalue ('frmComposeamessage','txt7','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuFontSize;mnu+2')
-        settextvalue ('frmComposeamessage','txt8','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
-        remap ('evolution','frmComposeamessage')
-        selectmenuitem ('frmComposeamessage','mnuFormat;mnuFontSize;mnu+3')
-        settextvalue ('frmComposeamessage','txt9','Hello\n')
-        undoremap ('evolution','frmComposeamessage')
+        settextvalue ('frmComposeMessage','txt6','Hello\n')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuFontSize;mnu+1')
+        settextvalue ('frmComposeMessage','txt7','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuFontSize;mnu+2')
+        settextvalue ('frmComposeMessage','txt8','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
+        remap ('evolution','frmComposeMessage')
+        selectmenuitem ('frmComposeMessage','mnuFormat;mnuFontSize;mnu+3')
+        settextvalue ('frmComposeMessage','txt9','Hello\n')
+        undoremap ('evolution','frmComposeMessage')
         populate_mail_header ([to],subject)
         sendmail (subject)
         click ('frmEvolution-Mail', 'btnSend/Receive')
@@ -761,7 +761,7 @@ def fonts_test(to,ref_image):
         #remap ('evolution',window_id)
         time.sleep (5)
         releasecontext()
-        new_sent_mail_count=getrowcount (window_id,'ttblMessageList')
+        new_sent_mail_count=getrowcount (window_id,'ttblMessages')
         if new_sent_mail_count < sent_mail_count+1:
             log ('Could not send mail','cause')
             raise LdtpExecutiontionError (0)

@@ -47,9 +47,9 @@ def create_appoinment():
 		more_items_todo = 'yes'
 		summary, location, description, from_date, to_date, calendar = read_data()
 
-	    	selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
+	    	#selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
 	    	time.sleep (2)
-	    	selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuFile;mnuAppointment')
+	    	selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuNew;mnuAppointment')
 	    	time.sleep (2)
 
 	    	if guiexist (windowname) == 0:
@@ -58,7 +58,7 @@ def create_appoinment():
 	    	else:
 
 			try:
-				click(windowname,'tbtnAlldayEvent')
+				click(windowname,'tbtnAllDayEvent')
 				from_time=0
 				to_time=0
 			except:

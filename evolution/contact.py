@@ -29,7 +29,7 @@ from ldtputils import *
 def deletecontact(name):
      log ('Deleting a contact','teststart')
      try:
-         #selectcontact (titleappend(name)[1:])
+         selectcontact (titleappend(name)[1:])
          selectmenuitem ('frmEvolution-Contacts','mnuEdit;mnuDelete')
          waittillguiexist ('dlgQuestion')
          time.sleep (2)

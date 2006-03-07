@@ -34,14 +34,14 @@ def addnewsignature(name,text):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
-            selecttab ('dlgEvolutionSettings', 'ptl0', 'Composer Preferences')
+            selecttab ('dlgEvolutionPreferences', 'ptl0', 'Composer Preferences')
             time.sleep (1)
             #remap ('evolution',window_id)
-            selecttab ('dlgEvolutionSettings', 'ptl2','Signatures')
+            selecttab ('dlgEvolutionPreferences', 'ptl2','Signatures')
             #undoremap ('evolution',window_id)
             time.sleep (1)
             #remap ('evolution',window_id)
