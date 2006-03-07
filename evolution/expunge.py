@@ -33,11 +33,11 @@ try:
 
 	# Assuming that only the mails in the trash can be expunged.
 	fldr = 'Trash'
-	remap('evolution','frmEvolution-Mail')
-	if selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', fldr):
+	#remap('evolution','frmEvolution-Mail')
+	if selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', fldr):
 		log('fldr has been selected','info')
 		time.sleep(2)
-		if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuExpunge') == 1:
+		if selectmenuitem('frmEvolution-*','mnuFolder;mnuExpunge') == 1:
 			log('Expunge successfull','info')
 			print 'All Mails have been permanently removed from trash'
 		else:

@@ -83,10 +83,10 @@ def verify_folder_exist(Folder_name):
 
 	try:
 		log('Verify Folder Exists','teststart')
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',Folder_name) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',Folder_name) == 1:
 			log('Verify succeeded')
-		undoremap('evolution','frmEvolution-Mail')
+		#undoremap('evolution','frmEvolution-Mail')
 		log('Verify Folder Exists','testend')
 		return 1
 	except:
@@ -139,10 +139,10 @@ def copy_to (from_fldr,to_fldr):
 	try:
 		log('Copy a folder','teststart')
 		windowname = 'dlgSelectfolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',from_fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuCopyFolderTo')
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuCopyFolderTo*')
 			time.sleep(3)
 			if selectfolder(windowname,to_fldr) == 1:
 				log('Destionation folder selected')
@@ -163,7 +163,7 @@ def copy_to (from_fldr,to_fldr):
 			log('Unable to find the source folder','cause')
 			log('Copy a folder','testend')
 			return 0
-		undoremap('evolution','frmEvolution-Mail')	
+		#undoremap('evolution','frmEvolution-Mail')	
 		print from_fldr+ ' has been copied to '+ to_fldr
 		log('folder copied','info')
 		log('Copy a folder','testend')
@@ -179,10 +179,10 @@ def move_to (from_fldr,to_fldr):
 	try:
 		log('move a folder','teststart')
 		windowname = 'dlgSelectfolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',from_fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuMoveFolderTo')
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuMoveFolderTo')
 			time.sleep(3)
 			if selectfolder(windowname,to_fldr) == 1:
 				log('Destionation folder selected')
@@ -191,23 +191,23 @@ def move_to (from_fldr,to_fldr):
 				log('Move a folder','testend')
 				return 0
 			time.sleep(2)
-			remap('evolution',windowname)
+			#remap('evolution',windowname)
 			click(windowname,'btnMove')
 			time.sleep (1)
 			if guiexist ('dlgEvolutionError') == 1:
 				log ('Evolution is offline','cause')
-				undoremap('evolution',windowname)
+				#undoremap('evolution',windowname)
 				click('dlgEvolutionError','btnOK')
 				log('Move a folder','testend')
 				raise LdtpExecutionError (0)
-			undoremap('evolution',windowname)
+			#undoremap('evolution',windowname)
 		else:
 			print 'Unable to find the source folder'
 			log('Unable to find the source folder','cause')
 			log('Move a folder','testend')
 			return 0
 
-		undoremap('evolution',windowname)
+		#undoremap('evolution',windowname)
 		log('Move a folder','testend')
 		return 1
 	except :
@@ -222,11 +222,11 @@ def select_all (fldrname):
 
 	try:
 		log('select all mails in a folder','teststart')
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldrname) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldrname) == 1:
 			log('From folder selected','info')
 			time.sleep (3)
-			if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuSelectAllMessages') == 1:
+			if selectmenuitem('frmEvolution-*','mnuFolder;mnuSelectAllMessages') == 1:
 				log('All items have been selected','info')	
 				log('select all mails in a folder','testend')
 				return 1
@@ -250,7 +250,7 @@ def mark_all_read(fldrname):
 	try:
 		log('Mark all as read','teststart')
 		select_all(fldrname)
-		if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuMarkMessagesasRead') == 1:
+		if selectmenuitem('frmEvolution-*','mnuFolder;mnuMarkAllMessagesasRead') == 1:
 			print 'All messages has been marked read'
 			log('All items have been selected','info')	
 		else:

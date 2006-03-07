@@ -46,9 +46,9 @@ def selectMailPane():
                        log ('Present Window has to be Taskspane','info')
    time.sleep (1)
    try:
-       click ('frmEvolution-Mail','tbtnMail')
+       click ('frmEvolution-*','tbtnMail')
        time.sleep(3)
-       waittillguiexist ('frmEvolution-Mail')
+       waittillguiexist ('frmEvolution-*')
 
    except:
        log ('error selecting Mail pane','error')
@@ -67,7 +67,7 @@ try:
 	Folder_name = data_object.gettagvalue ('folder_name')[0]
 	location = data_object.gettagvalue ('location')[0]
 	log('User data read','info')	
-	selectmenuitem('frmEvolution-Mail','mnuFolder;mnuNew1')
+	selectmenuitem('frmEvolution-*','mnuFile;mnuNew;mnuMailFolder')
 	if create_folder(Folder_name, location) == 1:
 		log('Folder created','info')
 		log('creation of a folder','testend')
