@@ -41,6 +41,7 @@ def get_window (component=None):
             	window_id = 'frmEvolution-Contacts'
 	elif guiexist ('frmEvolution-Memos') == 1:
             	window_id = 'frmEvolution-Memos'
+        window_id = 'frmEvolution-*'
 	if component:
 		if window_id:
 			selectmenuitem (window_id, 'mnuView;mnuWindow;mnu' + component)
@@ -55,7 +56,9 @@ def get_window (component=None):
 def setandverify (win_name, box_name, value):
 	try:
 		text = ''
-		if type (value) == types.StringType:
+                print type (value)
+		if type (value) is types.StringType:
+                #if isinstance(value,types.StringType):
 			text = value
 		else:	
 			length = len (value)
@@ -78,26 +81,26 @@ def setandverify (win_name, box_name, value):
 #To populate mail header
 def populate_mail_header (to=[], subject=[], body=[], cc = [], bcc = []):
     try:
-        if to and setandverify ('frmComposeamessage', 'txtTo', to) == 0:
+        if to and setandverify ('frmComposeMessage', 'txtTo', to) == 0:
             log ('Failed to insert text into To field','error')
             raise LdtpExecutionError (0)
-	    
+	print "HERE"    
         if cc:
-	    check ('frmComposeamessage','mnuCcField')
-	    if setandverify ('frmComposeamessage', 'txtCc', cc) == 0:
+	    check ('frmComposeMessage','mnuCcField')
+	    if setandverify ('frmComposeMessage', 'txtCc', cc) == 0:
 		    log ('Failed to insert text into Cc field','error')
 		    raise LdtpExecutionError (0)
         if bcc:
-	    check ('frmComposeamessage','mnuBccField')
-	    if setandverify ('frmComposeamessage', 'txtBcc', bcc) == 0:
+	    check ('frmComposeMessage','mnuBccField')
+	    if setandverify ('frmComposeMessage', 'txtBcc', bcc) == 0:
 		    log ('Failed to insert text into Bcc field','error')
 		    raise LdtpExecutionError (0)
 
         #cant use set and verify since context switching is involved
         if subject:
-            settextvalue ('frmComposeamessage', 'txtSubject', subject[0])
-            setcontext ('Compose a message', subject[0])
-            if verifysettext ('frmComposeamessage', 'txtSubject',
+            settextvalue ('frmComposeMessage', 'txtSubject', subject[0])
+            setcontext ('Compose Message', subject[0])
+            if verifysettext ('frmComposeMessage', 'txtSubject',
                               subject[0]) == 0:
                 log ('Failed to insert text into subject Field','error')
                 raise LdtpExecutionError (0)
@@ -105,15 +108,15 @@ def populate_mail_header (to=[], subject=[], body=[], cc = [], bcc = []):
 	        
         #TODO: Change 'txt6' to some meaningful name in
         #evolution.map also in the following code
-        if body and setandverify ('frmComposeamessage', 'txt6', str(body[0])) == 0:
+        if body and setandverify ('frmComposeMessage', 'txt6', str(body[0])) == 0:
             log ('Failed to insert text into Body field','error')
             raise LdtpExecutionError (0)
         #TODO: Check bcc field
         return 1
     except:
 	log ('Compose mail failed', 'error')
-	if guiexist ('frmComposeamessage'):
-		selectmenuitem ('frmComposeamessage', 'mnuFile;mnuClose')
+	if guiexist ('frmComposeMessage'):
+		selectmenuitem ('frmComposeMessage', 'mnuFile;mnuClose')
 		time.sleep (2)
         raise LdtpExecutionError (0)
 

@@ -37,28 +37,28 @@ from ldtputils import *
 # Section to perform search for mail based on above search condition
 def search (search_type, search_folder, search_text):
 	try:
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', search_folder)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', search_folder)
 		time.sleep (2)
 		search_mail_count = 0
-		total_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+		total_mail_count = getrowcount ('frmEvolution-*', 'ttblMessages')
 		
 		print 'Counting the number of mails which satisfy the condition...'
 		regexp = re.compile (re.escape (search_text), re.I)
 
 		if (search_type == 'Subject or Sender contains'):
 			for i in range (total_mail_count):
-				subject = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 4)
-				sender = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 3)
+				subject = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 4)
+				sender = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 3)
 				if (regexp.search (subject) or regexp.search (sender)):
 					search_mail_count = search_mail_count + 1
 		elif (search_type == 'Subject contains'):			
 			for i in range (total_mail_count):
-				subject = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 4)
+				subject = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 4)
 				if (regexp.search (subject)): 
 					search_mail_count = search_mail_count + 1
 		elif (search_type == 'Sender contains'):	
 			for i in range (total_mail_count):
-				sender = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 3)
+				sender = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 3)
 				if (regexp.search (sender)):
 					search_mail_count = search_mail_count + 1
 		else:
@@ -67,12 +67,12 @@ def search (search_type, search_folder, search_text):
 			return
 		
 		print '...done'
-		comboselect ('frmEvolution-Mail', 'cboSearchType', search_type)
-		settextvalue ('frmEvolution-Mail', 'txtSearchTextEntry', search_text)
-		click ('frmEvolution-Mail', 'btnFindNow')
+		comboselect ('frmEvolution-*', 'cboSearchType', search_type)
+		settextvalue ('frmEvolution-*', 'txtSearchTextEntry', search_text)
+		click ('frmEvolution-*', 'btnFindNow')
 		time.sleep (2)
-		filter_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
-		click ('frmEvolution-Mail', 'btnClear')
+		filter_mail_count = getrowcount ('frmEvolution-*', 'ttblMessages')
+		click ('frmEvolution-*', 'btnClear')
 		time.sleep (2)
 
 		if search_mail_count == filter_mail_count:

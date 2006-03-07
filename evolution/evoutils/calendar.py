@@ -75,7 +75,8 @@ def selectdate (new_date):
 	  else:
 		  month='December'
 	  	  
-	  comboselect ('dlgSelectDate', 'cboDecember', month)
+          click ('dlgSelectDate', 'cbo*')
+	  comboselect ('dlgSelectDate', 'cbo*', month)
           time.sleep (3)
           day = int (date_components[0])
           if day < 1 or day > 31:
@@ -99,9 +100,10 @@ def insert_appointment (windowname, summary, location, description, from_date, f
           flag = 0
           time.sleep (2)
           settextvalue (windowname, 'txtSummary', summary)
-          setcontext ('Appointment - No summary', 'Appointment - ' + summary)
+          #setcontext ('Appointment - No summary', 'Appointment - ' + summary)
           time.sleep (2)
 	  if setandverify (windowname, 'txtLocation', location) == 0:
+          #if settextvalue (windowname, 'txtLocation', location) == 0:
                log ('Failed to set value in location field', 'cause')
                raise LdtpExecutionError (0)
 	  else:
@@ -244,10 +246,10 @@ def selectcalevent(fromdate,summary):
        log ('Selecting a  Cal event','testend')
        raise LdtpExecutionError (0)
    try:
-       remap ('evolution','frmEvolution-Calendars')
+       #remap ('evolution','frmEvolution-Calendars')
        activatewin ('frmEvolution-Calendars')
        selectevent ('frmEvolution-Calendars','calDayView',summary)
-       undoremap ('evolution','frmEvolution-Calendars')
+       #undoremap ('evolution','frmEvolution-Calendars')
        time.sleep (3)
    except:
        log ('Unable to select event','error')

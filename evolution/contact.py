@@ -170,9 +170,9 @@ def selectaddrbook (name):
      log ('Selecting a given Address book','teststart')
      try:
           selectContactPane()
-          remap ('evoltion','frmEvolution-Contacts')
+          #remap ('evoltion','frmEvolution-Contacts')
           selectrow ('frmEvolution-Contacts','ttblContactSourceSelector',name)
-          undoremap ('evolution','frmEvolution-Contacts')
+          #undoremap ('evolution','frmEvolution-Contacts')
      except:
           log ('Unable to Select AddressBook','error')
           log ('Selecting a given Address book','testend')
@@ -235,7 +235,10 @@ def selectcontact(name):
      if guiexist ('frmEvolution-Contacts')!=1:
           selectContactPane()          
      try:
-          remap ('evolution','frmEvolution-Contacts')
+          #remap ('evolution','frmEvolution-Contacts')
+          print "HERE"
+          print getobjectlist ('frmEvolution-Contacts')
+          print "AFTER"
           for obj in getobjectlist ('frmEvolution-Contacts'):
                if obj.startswith ('pnlcurrentaddressbook'):
                     panel_name=obj
@@ -374,7 +377,8 @@ def addcontact(AddrBook,FullName,Nick,WorkEmail,HomeMail,BusPhone,Yahoo,HomePage
         #=getcontactvals(datafilename)
         selectContactPane()
         selectaddrbook (AddrBook[0])
-        selectmenuitem ('frmEvolution-Contacts','mnuNew;mnuFile;mnuContact')
+        selectmenuitem ('frmEvolution-Contacts','mnuFile;mnuNew;mnuContact')
+        time.sleep(2)
         waittillguiexist ('dlgContactEditor')
     except:
         log ('Could Not select Contacts Button','error')

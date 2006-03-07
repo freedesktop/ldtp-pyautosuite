@@ -54,15 +54,16 @@ def change_style (type, style):
 # To Change default Sent Items folder
 def change_sentfolder (accountname, folder):
 	try:
-		selectmenuitem ('frmEvolution-Mail', 'mnuEdit;mnuPreferences')
-		if waittillguiexist ('dlgEvolutionSettings') == 0:
+		selectmenuitem ('frmEvolution-*', 'mnuEdit;mnuPreferences')
+		if waittillguiexist ('dlgEvolutionPreferences') == 0:
 			log ('Evolution Settings dialog not opened', 'error')
 			raise LdtpExecutionError (0)
 		time.sleep (3)
-		selecttab ('dlgEvolutionSettings', 'ptl0', 'Mail Accounts')
+		selecttab ('dlgEvolutionPreferences', 'ptl0', 'Mail Accounts')
 		time.sleep (2)
-		selectrow ('dlgEvolutionSettings', 'tblMailAccountsTable', accountname)
-		click ('dlgEvolutionSettings', 'btnEdit')
+		selectrowpartialmatch ('dlgEvolutionPreferences', 'tblMailAccounts', accountname)
+		click ('dlgEvolutionPreferences', 'btnEdit')
+                time.sleep (2)
 		if waittillguiexist ('dlgAccountEditor') == 0:
 			log ('Account Editor dialog not opened', 'error')
 			raise LdtpExecutionError (0)
@@ -82,8 +83,8 @@ def change_sentfolder (accountname, folder):
 		if waittillguinotexist ('dlgAccountEditor') == 0:
 			log ('Account Editor dialog not closed', 'error')
 			raise LdtpExecutionError (0)
-		click ('dlgEvolutionSettings', 'btnClose')
-		if waittillguinotexist ('dlgEvolutionSettings') == 0:
+		click ('dlgEvolutionPreferences', 'btnClose')
+		if waittillguinotexist ('dlgEvolutionPreferences') == 0:
 			log ('Evolution Settings dialog not closed', 'error')
 			raise LdtpExecutionError (0)
 	except ldtp.error, msg:
@@ -92,8 +93,8 @@ def change_sentfolder (accountname, folder):
 			click ('dlgSelectFolder', 'btnCancel')
 		if guiexist ('dlgAccountEditor'):
 			click ('dlgAccountEditor', 'btnCancel')
-		if guiexist ('dlgEvolutionSettings'):
-			click ('dlgEvolutionSettings', 'btnClose')
+		if guiexist ('dlgEvolutionPreferences'):
+			click ('dlgEvolutionPreferences', 'btnClose')
 		time.sleep (3)
 		raise LdtpExecutionError (0)
 

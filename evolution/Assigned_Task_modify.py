@@ -29,9 +29,9 @@ from ldtputils import *
 #from evoutils.Task import getrowindex
 def getrowindex(subject):
    try:
-       noofchild=getrowcount ('frmEvolution-Tasks','tblTaskTable')
+       noofchild=getrowcount ('frmEvolution-Tasks','tblTasks')
        for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Tasks','tblTaskTable',ind,2) == subject:
+           if getcellvalue('frmEvolution-Tasks','tblTasks',ind,2) == subject:
                return ind
        if ind == noofchild-1:
            log ('Message not present','cause')
@@ -47,44 +47,44 @@ def modify_task(Due_date, Progress, Summary, old_Summary):
 	# read the row index from the user and delete that particular task.
 	try:
 		log('Modify an assigned task','teststart')
-		remap('evolution','frmEvolution-Tasks')
-		selectrow ('frmEvolution-Tasks', 'tblTaskTable', old_Summary[0])
+		#remap('evolution','frmEvolution-Tasks')
+		selectrow ('frmEvolution-Tasks', 'tblTasks', old_Summary[0])
 		selectmenuitem('frmEvolution-Tasks', 'mnuFile;mnuOpenTask')
-		setcontext('Assigned Task - No summary','Assigned Task - ' + old_Summary[0])
-		waittillguiexist('frmAssignedTask-Nosummary')
-		remap('evolution','frmAssignedTask-Nosummary')
+		#setcontext('Assigned Task - No summary','Assigned Task - ' + old_Summary[0])
+		waittillguiexist('frmAssignedTask-*')
+		#remap('evolution','frmAssignedTask-Nosummary')
 		log('The window opened' ,'info')
 
 	except:	
 		log('unable to read the data','error')
 		log('Modify an assigned task','testend')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		raise LdtpExecutionError(0)
 
 	# Modifies the task according to users wish.
 	try:
-		settextvalue ('frmAssignedTask-Nosummary', 'txtTextDateEntry',Due_date[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txtSummary',Summary[0])
-		setcontext('Assigned Task - No summary','Assigned Task - ' + Summary[0])
+		settextvalue ('frmAssignedTask-*', 'txtDate',Due_date[0])
+		settextvalue ('frmAssignedTask-*', 'txtSummary',Summary[0])
+		#setcontext('Assigned Task - No summary','Assigned Task - ' + Summary[0])
 		log('User data Loaded','info')
 		time.sleep(2)
-		if stateenabled ('frmAssignedTask-Nosummary','btnSave')==1:
-			click('frmAssignedTask-Nosummary','btnSave')
+		if stateenabled ('frmAssignedTask-*','btnSave')==1:
+			click('frmAssignedTask-*','btnSave')
 			log('The required task list has been modified','info')
 		else:
 			log('The Task is not modified because of no change in summary','info')
-			click('frmAssignedTask-Nosummary','btnClose')
+			click('frmAssignedTask-*','btnClose')
 		time.sleep(2)
 	
 		if guiexist('dlgEvolutionQuery'):
-			click('dlgEvolutionQuery','btnDon\'tSend')
+			click('dlgEvolutionQuery','btnDonotSend')
 			log('Task has been modified successfully','info')
 		print 'The Assigned task has been modifed'
 
 	except:
 		log('Unable to load the user data','error')
 		log('Modify an assigned task','testend')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		raise LdtpExecutionError(0)
 
 	#Change the Progress of the task.
@@ -100,7 +100,7 @@ def modify_task(Due_date, Progress, Summary, old_Summary):
 	except:
 		log('unable to change the progress of the task','error')
 		log('Modify an assigned task','testend')
-		undoremap('evolution','frmEvolution-Tasks')
+		#undoremap('evolution','frmEvolution-Tasks')
 		raise LdtpExecutionError(0)
 
 	log('modify an assigned task','testend')

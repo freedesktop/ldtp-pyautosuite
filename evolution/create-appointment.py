@@ -49,11 +49,11 @@ categories = data_object.gettagvalue ('categories')[0]
 log ('Appointment Creation', 'teststart')
 
 try:
-    windowname = 'frmAppointment-Nosummary'
+    windowname = 'frmAppointment-*'
     ptlistname = 'ptl0'
     flag = 0
     #selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
-    selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuFile;mnuAppointment')
+    selectmenuitem ('frmEvolution-*', 'mnuFile;mnuFile;mnuAppointment')
     time.sleep(2)
     #click ('frmEvolution-Calendars', 'btnNew')
     waittillguiexist (windowname) 
@@ -91,7 +91,7 @@ try:
             log ('Appointment creation succeeded', 'fail')
         else:
             log ('Appointment creation succeeded', 'pass')
-except LdtpExecutionError:
+except LdtpExecutionError,msg:
     #releasecontext ()
     print 'Creation of appointment failed' + str(msg)
     log ('Creation of appointment failed', 'error')

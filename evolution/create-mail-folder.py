@@ -38,15 +38,15 @@ def create_mail_folder (parent, folder_name):
 			log ('Can not create vFolder using this script', 'fail')
 			return
 		else:	
-			selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', parent)
+			selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', parent)
 
-		selectmenuitem ('frmEvolution-Mail', 'mnuFolder;mnuNew1')
+		selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuMailFolder')
 		if waittillguiexist ('dlgCreatefolder') == 0:
 			log ('Create folder dialog not opened', 'error')
 			raise LdtpExecutionError (0)
 			
 		selectrowpartialmatch ('dlgCreatefolder', 'ttblMailFolderTree', parent)
-		settextvalue ('dlgCreatefolder', 'txtFoldername', folder_name)
+		settextvalue ('dlgCreatefolder', 'txtFoldername:', folder_name)
 		click ('dlgCreatefolder', 'btnCreate')
 		if waittillguinotexist ('dlgCreatefolder') == 0:
 			log ('Create folder dialog not closed', 'error')

@@ -33,16 +33,16 @@ from ldtputils import *
 def create_search_folder (source_folder, message_index, search_condition, search_folder):
 	try:
 		search_mail_count = 0	
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', source_folder)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_folder)
 		time.sleep (2)
-		total_messages = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
-		selectrowindex ('frmEvolution-Mail', 'ttblMessageList', message_index)
+		total_messages = getrowcount ('frmEvolution-*', 'ttblMessages')
+		selectrowindex ('frmEvolution-*', 'ttblMessages', message_index)
 		time.sleep (1)
 
 		if (search_condition == 'Subject'): 
-			search_text = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', message_index, 4)
+			search_text = getcellvalue ('frmEvolution-*', 'ttblMessages', message_index, 4)
 		elif (search_condition == 'Sender'):	
-			search_text = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', message_index, 3)
+			search_text = getcellvalue ('frmEvolution-*', 'ttblMessages', message_index, 3)
 		else:
 			log (search_condition + ' condition is not handled by this script', 'cause')
 			log ('Create Search folder failed', 'fail')
@@ -66,7 +66,7 @@ def create_search_folder (source_folder, message_index, search_condition, search
 			regexp[1] = re.compile (re.escape (sub_strings[1]), re.I)	
 				
 			for i in range (total_messages):
-				subject = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 4)
+				subject = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 4)
 				if regexp[1].search (subject):
 					search_mail_count = search_mail_count + 1
 					continue
@@ -83,7 +83,7 @@ def create_search_folder (source_folder, message_index, search_condition, search
 
 			regexp = re.compile (re.escape (search_string))
 			for i in range (total_messages):
-				sender = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', i, 3)
+				sender = getcellvalue ('frmEvolution-*', 'ttblMessages', i, 3)
 				if regexp.search (sender):
 					search_mail_count = search_mail_count + 1
 

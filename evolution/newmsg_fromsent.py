@@ -41,17 +41,17 @@ def read_data():
 def create_fromsent():
 	try:
 		log('create a message from sent mails','teststart')
-		windowname = 'frmComposeamessage'
+		windowname = 'frmComposeMessage'
 		fldr = 'Sent'
 		Row_index, summary_to_append, subject, to = read_data()
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+		#remap('evolution','frmEvolution-Mail')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 			time.sleep(3)
 			log('Folder identified','info')
 			print Row_index
-			selectrowindex('frmEvolution-Mail','ttblMessageList',int(Row_index))
-			summary = getcellvalue('frmEvolution-Mail','ttblMessageList',int(Row_index),4)
-			selectmenuitem('frmEvolution-Mail','mnuMessage;mnuEditasNewMessage')
+			selectrowindex('frmEvolution-*','ttblMessageList',int(Row_index))
+			summary = getcellvalue('frmEvolution-*','ttblMessageList',int(Row_index),4)
+			selectmenuitem('frmEvolution-*','mnuMessage;mnuEditasNewMessage')
 			time.sleep(3)
 			setcontext('Compose a message',summary)	
 			if waittillguiexist(windowname) == 1:
@@ -69,7 +69,7 @@ def create_fromsent():
 				else:
 					print 'Unable to modify the existing messsage'
 					log('Unable to edit the existing message','error')
-				undoremap('evolution','frmEvolution-Mail')
+				#undoremap('evolution','frmEvolution-Mail')
 				log('Message created from an existing mail','info')
 				print 'Message created from an exixting mail'
 			else:

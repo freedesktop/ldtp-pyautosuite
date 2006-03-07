@@ -41,20 +41,20 @@ def forward_mail (source_fldr, mail_index, to, body, subject_new, cc, refimg):
 		# Change the forward style
 		change_style ('Forward', style)
 		# forward mail section
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', sentitems)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', sentitems)
 		time.sleep (2)
-		n_sentitems = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', source_fldr)
+		n_sentitems = getrowcount ('frmEvolution-*', 'ttblMessages')
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
 		time.sleep (2)
 		if mail_index == -1:
-			mail_index = getrowcount ('frmEvolution-Mail', 'ttblMessageList') - 1
+			mail_index = getrowcount ('frmEvolution-*', 'ttblMessages') - 1
 		
-		selectrowindex ('frmEvolution-Mail', 'ttblMessageList', mail_index)
-		subject = getcellvalue ('frmEvolution-Mail', 'ttblMessageList', mail_index, 4)
-		click ('frmEvolution-Mail','btnForward')
+		selectrowindex ('frmEvolution-*', 'ttblMessages', mail_index)
+		subject = getcellvalue ('frmEvolution-*', 'ttblMessages', mail_index, 4)
+		click ('frmEvolution-*','btnForward')
 		time.sleep (2)
-		setcontext ('Compose a message', '[Fwd: '+subject+']')
-		if waittillguiexist ('frmComposeamessage') == 0:
+		setcontext ('Compose Message', '[Fwd: '+subject+']')
+		if waittillguiexist ('frmComposeMessage') == 0:
 			log ('Failed to open forward frame', 'error')
 			raise LdtpExecutionError(0)
 
@@ -63,15 +63,15 @@ def forward_mail (source_fldr, mail_index, to, body, subject_new, cc, refimg):
 			raise LdtpExecutionError (0)
 		else:
 			if subject_new:
-				setcontext ('Compose a message', subject_new[0])
+				setcontext ('Compose Message', subject_new[0])
 
-			click ('frmComposeamessage', 'btnSend')
-			if waittillguinotexist ('frmComposeamessage') == 0:
+			click ('frmComposeMessage', 'btnSend')
+			if waittillguinotexist ('frmComposeMessage') == 0:
 				log ('Failed to close Compose dialog after sending','error')
 				raise LdtpExecutionError(0)
 				
 			releasecontext ()
-			click ('frmEvolution-Mail', 'btnSend/Receive')
+			click ('frmEvolution-*', 'btnSend/Receive')
 			time.sleep (3)
 			if verifymailwithimage (sentitems, n_sentitems, refimg) == 1:
 				log ('Forward message Success', 'pass')

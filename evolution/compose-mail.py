@@ -35,9 +35,9 @@ def compose_mail (to, subject, body, cc, attachment, sentitemsfolder, refimg):
 		else:
 			sent_folder = 'Sent Items'
 		
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', sent_folder)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', sent_folder)
 		time.sleep (2)
-		sent_mail_count = getrowcount ('frmEvolution-Mail', 'ttblMessageList')
+		sent_mail_count = getrowcount ('frmEvolution-*', 'ttblMessages')
 		compose (to, subject, body, cc, attachment)
 		if verifymailwithimage (sent_folder, sent_mail_count, refimg) == 1:
 			log ('Compose new message', 'pass')
@@ -49,7 +49,20 @@ def compose_mail (to, subject, body, cc, attachment, sentitemsfolder, refimg):
 		raise LdtpExecutionError (0)
 	
 # Reading Input from File
-to, subject, body, cc, attachment, sentitemsfolder, refimg = read_maildata (datafilename)
+#to, subject, body, cc, attachment, sentitemsfolder, refimg = read_maildata (datafilename)
+try:
+        data_object = LdtpDataFileParser (datafilename)
+        to = data_object.gettagvalue ('to')
+        cc = data_object.gettagvalue ('cc')
+        subject = data_object.gettagvalue ('subject')
+        body = data_object.gettagvalue ('body')
+        sentitemsfolder = data_object.gettagvalue ('sentitemsfolder')
+        refimg = data_object.gettagvalue ('refimg')
+        attachment = data_object.gettagvalue ('attachment')
+        log('User data read successfull','info')
+except:
+        log('Unable to read the user data or data file missing','error')
+        raise LdtpExecutionError(0)
 
 # Call the functions
 compose_mail (to, subject, body, cc, attachment, sentitemsfolder, refimg)

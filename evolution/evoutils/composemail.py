@@ -30,9 +30,9 @@ from evoutils.mail import *
 # Section to compose a new mail through File menu
 def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
     try:
-        selectmenuitem ('frmEvolution-Mail', 'mnuFile;mnuNew;mnuMailMessage')
+        selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuMailMessage')
 	time.sleep (2)
-        if waittillguiexist ('frmComposeamessage') == 0:
+        if waittillguiexist ('frmComposeMessage') == 0:
             log('Compose message window does not appear', 'error')
             raise LdtpExecutionError (0)
         else:
@@ -40,9 +40,9 @@ def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
             if len(format)>0:
                 try:
                     if format[0]=='HTML':
-                        check ('frmComposeamessage','mnuHTML')
+                        check ('frmComposeMessage','mnuHTML')
                     elif format[0]=='Plain Text':
-                        uncheck ('frmComposeamessage','mnuHTML')
+                        uncheck ('frmComposeMessage','mnuHTML')
                     else:
                         log ('Format not proper','warning')
                 except:
@@ -58,13 +58,13 @@ def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
 
 def sendmail(subject):
     try:
-        click ('frmComposeamessage', 'btnSend')
+        click ('frmComposeMessage', 'btnSend')
         time.sleep (3)
         if len(subject)==0 and  guiexist ('dlgEvolutionQuery')==1:
             remap ('evolution','dlgEvolutionQuery')
             click ('dlgEvolutionQuery','btnSend')
             undoremap ('evolution','dlgEvolutionQuery')
-        if waittillguinotexist ('frmComposeamessage') == 0:
+        if waittillguinotexist ('frmComposeMessage') == 0:
             log ('Failed during clicking the send button', 'error')
             raise LdtpExecutionError (0)
         if guiexist ('dlgEvolutionError'):
@@ -84,11 +84,11 @@ def savethismail (savemethod):
        savemethod == 1 --> save in FS"""
     try:
         if savemethod==0:
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuSaveDraft')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuSaveDraft')
             time.sleep (1)
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
         elif savemethod==1:
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuSaveAs')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuSaveAs')
             waittillguiexist ('dlgSaveas')
             settextvalue ('dlgSaveas','txtName','testfile')
             click ('dlgSaveas','btnSave')
@@ -96,7 +96,7 @@ def savethismail (savemethod):
             if guiexist ('dlgOverwritefile?')==1:
                 click ('dlgOverwritefile?','btnOverwrite')
                 log ('testfile already exists','warning')
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
             waittillguiexist ('dlgWarning')
             click ('dlgWarning','btnDiscardChanges')
         else:
@@ -115,7 +115,7 @@ def attach_files (attachment):
 	try:
 		n_attachments = len (attachment)
 		for i in range(n_attachments):
-			selectmenuitem ('frmComposeamessage', 'mnuInsert;mnuAttachment')
+			selectmenuitem ('frmComposeMessage', 'mnuInsert;mnuAttachment')
 		        if waittillguiexist ('dlgAttachfile(s)') == 0:
                 		log ('Select file dialog does not appear','error')
 		                raise LdtpExecutionError (0)
@@ -144,5 +144,6 @@ def read_maildata (datafile):
 	attachment = data_object.gettagvalue ('attachment')
 	sentitemsfolder = data_object.gettagvalue ('sentitemsfolder')
 	refimg = data_object.gettagvalue ('refimg')
-	return [to, subject, body, cc, bcc, attachment, sentitemsfolder, refimg]
+	#return [to, subject, body, cc, bcc, attachment, sentitemsfolder, refimg]
+        return to, cc, bcc, subject, body, attachment, sentitemsfolder, refimg 
    

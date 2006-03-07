@@ -33,19 +33,19 @@ from evoutils.mail import *
 # Section to delete a mail
 def delete_mail (source_fldr, mail_index):
 	try:
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', source_fldr)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
 		time.sleep (2)
-		rowcount = getrowcount('frmEvolution-Mail', 'ttblMessageList') 
+		rowcount = getrowcount('frmEvolution-*', 'ttblMessages') 
 		if rowcount > 0:
 			if mail_index == -1:
 				mail_index = rowcount-1
-			selectrowindex ('frmEvolution-Mail', 'ttblMessageList', mail_index)
+			selectrowindex ('frmEvolution-*', 'ttblMessages', mail_index)
 			time.sleep (1)
-			selectmenuitem ('frmEvolution-Mail', 'mnuEdit;mnuDeleteMessage')
+			selectmenuitem ('frmEvolution-*', 'mnuEdit;mnuDeleteMessage')
 			time.sleep (1)
-			selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', source_fldr)
+			selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
 			time.sleep (2)
-			row_after = getrowcount('frmEvolution-Mail','ttblMessageList')
+			row_after = getrowcount('frmEvolution-*','ttblMessages')
 			if row_after == (rowcount-1):
 				log ('Deleting a mail passed successfully', 'pass') 
 			else:

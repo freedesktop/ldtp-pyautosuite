@@ -35,7 +35,7 @@ def addattendees(attendee,email,addrbook):
        waittillguiexist ('dlgRequiredParticipants')
        time.sleep (1)
        comboselect ('dlgRequiredParticipants','cboAddressBook',addrbook)
-       remap ('evolution','dlgRequiredParticipants')
+       #remap ('evolution','dlgRequiredParticipants')
        attendee=attendee[0].split (':')
        email=email[0].split (':')
        if len(attendee)!=len(email):
@@ -55,7 +55,7 @@ def addattendees(attendee,email,addrbook):
                log ('User not found','cause')
                raise LdtpExceptionError(0)
        click ('dlgRequiredParticipants', 'btnClose')
-       undoremap ('evolution','dlgRequiredParticipants')
+       #undoremap ('evolution','dlgRequiredParticipants')
    except:
        log ('Attendee Addition failed','error')
        log ('Add Attendees','testend')
@@ -107,11 +107,12 @@ def new_task():
 		setcontext('Assigned Task - No summary','Assigned Task - ' + Summary[0])
 		time.sleep(3)
 		settextvalue ('frmAssignedTask-Nosummary', 'txtDescription', Desc[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txtTextDateEntry1',Start_date[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txtTextDateEntry',End_date[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txt5',Start_time[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txt3',End_time[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txt7',Organizer[0]+ ' <'+Email[0]+'>')
+		settextvalue ('frmAssignedTask-Nosummary', 'txtDate1',Start_date[0])
+		settextvalue ('frmAssignedTask-Nosummary', 'txtDate',End_date[0])
+		settextvalue ('frmAssignedTask-Nosummary', 'txt8',Start_time[0])
+		settextvalue ('frmAssignedTask-Nosummary', 'txt6',End_time[0])
+		#settextvalue ('frmAssignedTask-Nosummary', 'txt7',Organizer[0]+ ' <'+Email[0]+'>')
+                # Organizer is not text. It's a noname combo. Need file bug 
 		comboselect ('frmAssignedTask-Nosummary', 'cboPersonal', Group[0])
 		time.sleep(2)
 		addattendees(Attendees,Att_emails,addr_book[0])	
@@ -128,9 +129,9 @@ def new_task():
 		click('frmAssignedTask-Nosummary','btnSave')
 		time.sleep(3)
 		if guiexist('dlgEvolutionQuery') == 1:
-			remap('evolution','dlgEvolutionQuery')
+			#remap('evolution','dlgEvolutionQuery')
 			click('dlgEvolutionQuery','btnDon\'tSend')
-			undoremap('evolution','dlgEvolutionQuery')
+			#undoremap('evolution','dlgEvolutionQuery')
 		log('Assigned Task Creation Completed','info')
 		print 'Task has been created'
 	except:

@@ -39,16 +39,16 @@ def delete_mail_folder (folder_to_delete):
 		else:	
 			folder_name = folder_to_delete
 	
-		selectrow ('frmEvolution-Mail', 'ttblMailFolderTree', folder_name)
-		selectmenuitem ('frmEvolution-Mail', 'mnuFolder;mnuDelete')
+		selectrow ('frmEvolution-*', 'ttblMailFolderTree', folder_name)
+		selectmenuitem ('frmEvolution-*', 'mnuFolder;mnuDelete')
 		dialog_title = 'Delete \"' + folder_to_delete + '\"?'
-		setcontext ('folder label', dialog_title)
-		if waittillguiexist ('dlgDeleteFolder') == 0:
+		#setcontext ('folder label', dialog_title)
+		if waittillguiexist ('dlgDelete*') == 0:
 			log ('Delete folder dialog not opened', 'error')
 			raise LdtpExecutionError (0)
 		
-		click ('dlgDeleteFolder', 'btnDelete')
-		if waittillguinotexist ('dlgDeleteFolder') == 0:
+		click ('dlgDelete*', 'btnDelete')
+		if waittillguinotexist ('dlgDelete*') == 0:
 			log ('Delete folder dialog not closed', 'error')
 			raise LdtpExecutionError (0)
 
@@ -60,7 +60,7 @@ def delete_mail_folder (folder_to_delete):
 			# Pass/Fail condition has to be changed in case of system folders
 			log ('Delete mail folder', 'fail')
 		else:
-			if (doesrowexist ('frmEvolution-Mail', 'ttblMailFolderTree', folder_name)):
+			if (doesrowexist ('frmEvolution-*', 'ttblMailFolderTree', folder_name)):
 				log ('Mail folder not deleted', 'cause')
 				log ('Delete mail folder failed', 'fail')
 			else:	

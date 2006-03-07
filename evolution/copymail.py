@@ -34,19 +34,19 @@ from evoutils.mail import *
 # Section to select and copy mail
 def copy_mail (from_fldr, to_fldr, mail_index):
 	try:
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', to_fldr)
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', to_fldr)
 		time.sleep (2)
-		row_before = getrowcount('frmEvolution-Mail', 'ttblMessageList')
-		selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', from_fldr)
+		row_before = getrowcount('frmEvolution-*', 'ttblMessages')
+		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', from_fldr)
 		time.sleep (2)
-		rowcount = getrowcount('frmEvolution-Mail', 'ttblMessageList') 
+		rowcount = getrowcount('frmEvolution-*', 'ttblMessages') 
 		if rowcount > 0:
 			if mail_index == -1:
 				mail_index = rowcount-1
 				
-			selectrowindex ('frmEvolution-Mail', 'ttblMessageList', mail_index)
+			selectrowindex ('frmEvolution-*', 'ttblMessages', mail_index)
 			time.sleep (1)
-			selectmenuitem ('frmEvolution-Mail', 'mnuMessage;mnuCopytoFolder')
+			selectmenuitem ('frmEvolution-*', 'mnuMessage;mnuCopytoFolder')
 			if waittillguiexist ('dlgSelectfolder') == 0:
 				log ('Select folder dialog not opened', 'error')
 				raise LdtpExecutionError (0)
@@ -60,12 +60,12 @@ def copy_mail (from_fldr, to_fldr, mail_index):
 				raise LdtpExecutionError (0)
 			else:
 				# TODO: Copying a duplicate message has to be handled 
-				selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', to_fldr)
+				selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', to_fldr)
 				time.sleep (2)
-				row_after = getrowcount('frmEvolution-Mail', 'ttblMessageList')
-				selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', from_fldr)
+				row_after = getrowcount('frmEvolution-*', 'ttblMessages')
+				selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', from_fldr)
 				time.sleep (2)
-				rowcount_after_copy = getrowcount('frmEvolution-Mail', 'ttblMessageList')
+				rowcount_after_copy = getrowcount('frmEvolution-*', 'ttblMessages')
 				if row_after == (row_before+1) and rowcount == rowcount_after_copy:
 					log ('Copying a mail passed successfully','pass') 
 				else:

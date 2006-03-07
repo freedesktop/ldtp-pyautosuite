@@ -57,10 +57,12 @@ try:
 
 	#remap('evolution','frmEvolution-Tasks')
 	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
-	#if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
+        print summary[0]
+        print summary
+	if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
         # selectrowpartialmatch doesn't work: 333090
 
-        if selectrow ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
+        #if selectrow ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
 		log('The specified task has been deleted','info')
 		click('frmEvolution-Tasks', 'btnDelete')
 		waittillguiexist('dlgEvolutionQuery')

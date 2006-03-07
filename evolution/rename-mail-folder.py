@@ -33,8 +33,8 @@ from ldtputils import *
 # Section to rename a mail folder
 def rename_mail_folder (prev_label, new_label):
 	try:
-		selectrow ('frmEvolution-Mail', 'ttblMailFolderTree', prev_label)
-		selectmenuitem ('frmEvolution-Mail', 'mnuFolder;mnuRename')
+		selectrow ('frmEvolution-*', 'ttblMailFolderTree', prev_label)
+		selectmenuitem ('frmEvolution-*', 'mnuFolder;mnuRename*')
 		if waittillguiexist ('dlgRenameFolder') == 0:
 			log ('Rename Folder dialog not opened', 'error')
 			raise LdtpExecutionError (0)
@@ -56,10 +56,10 @@ def rename_mail_folder (prev_label, new_label):
 			log ('Renaming folder failed', 'cause')
 			log ('Renaming folder failed', 'fail')
 		else:
-			if doesrowexist ('frmEvolution-Mail', 'ttblMailFolderTree', prev_label):
+			if doesrowexist ('frmEvolution-*', 'ttblMailFolderTree', prev_label):
 				log ('Renaming a folder failed, renaming not done properly', 'cause')
 				log ('Renaming a folder failed, renaming not done properly', 'fail')
-			elif doesrowexist ('frmEvolution-Mail', 'ttblMailFolderTree', new_label):
+			elif doesrowexist ('frmEvolution-*', 'ttblMailFolderTree', new_label):
 				log ('Renaming a folder passed successfully', 'pass')
 			else:
 				log ('Renaming a folder failed', 'cause')
