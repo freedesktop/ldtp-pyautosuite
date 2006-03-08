@@ -277,30 +277,30 @@ def changelanginspellcheck():
         time.sleep (3)
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             selecttab (window_id, 'ptl2','Spell Checking')
-            noofrows=getrowcount ('dlgEvolutionSettings','tblLanguages')
+            noofrows=getrowcount ('dlgEvolutionPreferences','tblLanguages')
             langs = []
             for x in range (noofrows):
-                checkrow ('dlgEvolutionSettings','tblLanguages',x,0)
-                langs.append (getcellvalue ('dlgEvolutionSettings','tblLanguages',x,1))
-            click ('dlgEvolutionSettings','btnClose')
+                checkrow ('dlgEvolutionPreferences','tblLanguages',x,0)
+                langs.append (getcellvalue ('dlgEvolutionPreferences','tblLanguages',x,1))
+            click ('dlgEvolutionPreferences','btnClose')
         except:
             log ('Unable to select languages','cause')
             raise LdtpExecutionError (0)
 
         #verification
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailMessage')
-            waittillguiexist ('frmComposeamessage')
-            settextvalue ('frmComposeamessage','txt6','\nHelo ande wlcme')
-            selectmenuitem ('frmComposeamessage','mnuEdit;mnuSpellCheckDocument')
+            selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
+            waittillguiexist ('frmComposeMessage')
+            settextvalue ('frmComposeMessage','txt6','\nHelo ande wlcme')
+            selectmenuitem ('frmComposeMessage','mnuEdit;mnuSpellCheckDocument')
             waittillguiexist ('dlgSpellchecker')
             for lang in langs:
                 try:
