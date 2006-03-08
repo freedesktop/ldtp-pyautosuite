@@ -77,10 +77,10 @@ log('Change Properties','teststart')
 try:
 	read_msg_body_data, fldr, share_type, addr_book, contacts, emails = read_data()
 	windowname = 'dlgFolderProperties'
-	remap('evolution','frmEvolution-Mail')
-	if selectrow ('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+	#remap('evolution','frmEvolution-Mail')
+	if selectrow ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
 		time.sleep (3)
-		selectmenuitem('frmEvolution-Mail','mnuFolder;mnuProperties')
+		selectmenuitem('frmEvolution-*','mnuFolder;mnuProperties')
 		time.sleep(3)
 		waittillguiexist (windowname)	
 	
