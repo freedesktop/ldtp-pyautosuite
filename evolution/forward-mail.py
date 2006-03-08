@@ -80,8 +80,8 @@ def forward_mail (source_fldr, mail_index, to, body, subject_new, cc, refimg):
 	except ldtp.error, msg:
 		log ('Forward messsage Failed ' + str (msg), 'cause')
 		log ('Forward Mail Failed', 'fail')
-		if guiexist ('frmComposeamessage'):
-			selectmenuitem ('frmComposeamessage', 'mnuFile;mnuClose')
+		if guiexist ('frmComposeMessage'):
+			selectmenuitem ('frmComposeMessage', 'mnuFile;mnuClose')
 		raise LdtpExecutionError (0)
 
 # Reading Input from File

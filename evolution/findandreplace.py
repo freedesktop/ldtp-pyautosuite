@@ -36,11 +36,11 @@ except:
     raise LdtpExecutionError (0)
 
 try:
-    selectMailPane()
-    window_id='frmEvolution-Mail'
+    #selectMailPane()
+    window_id='frmEvolution-*'
     selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-    waittillguiexist ('frmComposeamessage')
-    settextvalue ('frmComposeamessage','txt6',text[0])
+    waittillguiexist ('frmComposeMessage')
+    settextvalue ('frmComposeMessage','txt6',text[0])
 except:
     log ('Unable to set text','cause')
     raise LdtpExecutionError (0)

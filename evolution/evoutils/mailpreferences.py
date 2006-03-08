@@ -29,22 +29,22 @@ from ldtputils import *
 def change_style (type, style):
 	try:
 		if type == 'Forward':
-			component = 'cboAttachment'
+			component = 'cboForwardstyle'
 		else:
 			style = style + ' original message'
 			component = 'cboQuoteoriginalmessage'
 	
-		selectmenuitem ('frmEvolution-Mail', 'mnuEdit;mnuPreferences')
+		selectmenuitem ('frmEvolution-*', 'mnuEdit;mnuPreferences')
 		time.sleep (3)
-		if waittillguiexist ('dlgEvolutionSettings') == 0:
+		if waittillguiexist ('dlgEvolutionPreferences') == 0:
 			log ('Evolution Settings dialog not opened', 'error')
 			raise LdtpExecutionError (0)
 	
-		selecttab ('dlgEvolutionSettings', 'ptl0', 'Composer Preferences')	
-		selecttab ('dlgEvolutionSettings', 'ptl2', 'General')
-		comboselect ('dlgEvolutionSettings', component, style)
-		click ('dlgEvolutionSettings', 'btnClose')
-		if waittillguinotexist ('dlgEvolutionSettings') == 0:
+		selecttab ('dlgEvolutionPreferences', 'ptl0', 'Composer Preferences')	
+		selecttab ('dlgEvolutionPreferences', 'ptl2', 'General')
+		comboselect ('dlgEvolutionPreferences', component, style)
+		click ('dlgEvolutionPreferences', 'btnClose')
+		if waittillguinotexist ('dlgEvolutionPreferences') == 0:
 			log ('Evolution Settings dialog not closed', 'error')
 			raise LdtpExecutionError (0)
 	except ldtp.error, msg:

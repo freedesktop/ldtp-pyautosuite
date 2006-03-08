@@ -65,9 +65,9 @@ def deletemailaccount (account_name):
 def verifyaccountexist (account_name):
     try:
         print account_name
-        numofchild=getrowcount ('dlgEvolutionSettings','tblMailAccountsTable')
+        numofchild=getrowcount ('dlgEvolutionPreferences','tblMailAccounts')
         for num in range (numofchild):
-            if getcellvalue ('dlgEvolutionSettings','tblMailAccountsTable',num,1).startswith (account_name):
+            if getcellvalue ('dlgEvolutionPreferences','tblMailAccounts',num,1).startswith (account_name):
                 print num
                 return num
 
@@ -81,21 +81,21 @@ def enablemailaccount (account_name):
     log ('Enable Mail Account','teststart')
     try:
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            waittillguiexist ('dlgEvolutionSettings')
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            waittillguiexist ('dlgEvolutionPreferences')
             index=verifyaccountexist (account_name)
             if index==-1:                                 
                 raise LdtpExecutionError (0)
-            selectrowpartialmatch ('dlgEvolutionSettings','tblMailAccountsTable',account_name)
+            selectrowpartialmatch ('dlgEvolutionPreferences','tblMailAccounts',account_name)
         except:
             log ('Account not present','cause')
             raise LdtpExecutionError (0)
 
         try:
-            selectrow ('dlgEvolutionSettings','tblMailAccountsTable',name)
+            selectrow ('dlgEvolutionPreferences','tblMailAccounts',name)
             time.sleep (2)
-            checkrow ('dlgEvolutionSettings','tblMailAccountsTable',index,0)
-            checkrow ('dlgEvolutionSettings','tblMailAccountsTable',index,0)
+            checkrow ('dlgEvolutionPreferences','tblMailAccounts',index,0)
+            checkrow ('dlgEvolutionPreferences','tblMailAccounts',index,0)
         except:
             log ('Unable to enable Mail Account','cause')
             raise LdtpExecutionError (0)
@@ -103,7 +103,7 @@ def enablemailaccount (account_name):
         #verification
 
         try:
-            selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',account_name)
+            selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',account_name)
         except:
             log ('Enable Account','fail')
             raise LdtpExecutionError (0)
@@ -120,20 +120,20 @@ def disablemailaccount (account_name):
     log ('Disable Mail Account','teststart')
     try:
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            waittillguiexist ('dlgEvolutionSettings')
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            waittillguiexist ('dlgEvolutionPreferences')
             index=verifyaccountexist (account_name)
             if index==-1:                                 
                 raise LdtpExecutionError (0)
-            selectrowpartialmatch ('dlgEvolutionSettings','tblMailAccountsTable',account_name)
+            selectrowpartialmatch ('dlgEvolutionPreferences','tblMailAccounts',account_name)
             time.sleep (2)
         except:
             log ('Account not present','cause')
             raise LdtpExecutionError (0)
 
         try:
-            uncheckrow ('dlgEvolutionSettings','tblMailAccountsTable',index,0)
-            uncheckrow ('dlgEvolutionSettings','tblMailAccountsTable',index,0)
+            uncheckrow ('dlgEvolutionPreferences','tblMailAccounts',index,0)
+            uncheckrow ('dlgEvolutionPreferences','tblMailAccounts',index,0)
         except:
             log ('Unable to disable Mail Account','cause')
             raise LdtpExecutionError (0)
@@ -142,11 +142,11 @@ def disablemailaccount (account_name):
 
         try:
             print account_name
-            selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',account_name)
+            selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',account_name)
         except:
             log ('Disable Account','pass')
             log ('Disable Mail Account','testend')
-            click ('dlgEvolutionSettings','btnClose')
+            click ('dlgEvolutionPreferences','btnClose')
             return
         log ('Disable Account','fail')
         raise LdtpExecutionError (0)
@@ -161,21 +161,21 @@ def makedefault (account_name):
     try:
         time.sleep (3)
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            waittillguiexist ('dlgEvolutionSettings')
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            waittillguiexist ('dlgEvolutionPreferences')
             index=verifyaccountexist (account_name)
             if index==-1:                                 
                 raise LdtpExecutionError (0)
-            selectrowpartialmatch ('dlgEvolutionSettings','tblMailAccountsTable',account_name)
+            selectrowpartialmatch ('dlgEvolutionPreferences','tblMailAccounts',account_name)
             time.sleep (2)
         except:
             log ('Account not present','cause')
             raise LdtpExecutionError (0)
 
         try:
-            click ('dlgEvolutionSettings','btnDefault')
+            click ('dlgEvolutionPreferences','btnDefault')
             time.sleep (2)
-            name=getcellvalue ('dlgEvolutionSettings','tblMailAccountsTable',index,1)
+            name=getcellvalue ('dlgEvolutionPreferences','tblMailAccounts',index,1)
             desired_name=account_name+' '+'[Default]'
             if name == desired_name:
                 log ('Set Default','pass')
@@ -188,7 +188,7 @@ def makedefault (account_name):
         log ('Make Account default failed','error')
         log ('Make Mail account default','testend')
         raise LdtpExecutionError (0)
-    click ('dlgEvolutionSettings','btnClose')
+    click ('dlgEvolutionPreferences','btnClose')
     log ('Make Mail account default','testend')
 
 

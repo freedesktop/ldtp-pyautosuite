@@ -84,7 +84,6 @@ def populate_mail_header (to=[], subject=[], body=[], cc = [], bcc = []):
         if to and setandverify ('frmComposeMessage', 'txtTo', to) == 0:
             log ('Failed to insert text into To field','error')
             raise LdtpExecutionError (0)
-	print "HERE"    
         if cc:
 	    check ('frmComposeMessage','mnuCcField')
 	    if setandverify ('frmComposeMessage', 'txtCc', cc) == 0:
@@ -254,17 +253,17 @@ def apply_template(template):
 
 def getmailtext():
     try:
-        window_id='frmComposeamessage'
+        window_id='frmComposeMessage'
         if guiexist (window_id) != 1:
 	    log ('Compose window not open','cause')
 	    raise LdtpExecutionError (0)
         numchild=getpanelchildcount(window_id,'pnlPanelcontainingHTML')
-	remap ('evolution',window_id)
+	#remap ('evolution',window_id)
 	text=''
 	for val in range (6,6+numchild):
 	    text+=gettextvalue(window_id,'txt'+str(val))
 	    text+='\n'
-	undoremap ('evolution',window_id)
+	#undoremap ('evolution',window_id)
     except:
         log ('could not get text from Compose Window','error')
 	raise LdtpExecutionError (0)
@@ -276,9 +275,9 @@ def getmailtext():
 
 def getrowindex(subject):
     try:
-        noofchild=getrowcount ('frmEvolution-Mail','ttblMessageList')
+        noofchild=getrowcount ('frmEvolution-*','ttblMessages')
 	for ind in range (noofchild):
-	    if getcellvalue ('frmEvolution-Mail','ttblMessageList',ind,4) == subject:
+	    if getcellvalue ('frmEvolution-*','ttblMessages',ind,4) == subject:
 	        return ind
 	if ind == noofchild-1:
 	    log ('Message not present','cause')
@@ -291,8 +290,9 @@ def getrowindex(subject):
 def go_offline():
     log ('Go Offline','teststart')
     try:
-        window_id=getcurwindow()
-        remap ('evolultion',window_id)
+        #window_id=getcurwindow()
+        window_id = 'frmEvolution-*'
+        #remap ('evolultion',window_id)
         flag=False
         for x in getobjectlist(window_id):
             if x == 'mnuWorkOffline':
@@ -306,10 +306,10 @@ def go_offline():
             log ('already offline','info')
             log ('Go Offline','testend')
             return
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
 	time.sleep (1)
         flag=False
-        remap ('evolution',window_id)
+        #remap ('evolution',window_id)
         for x in getobjectlist (window_id):
             if x == 'mnuWorkOnline':
                 flag=True
@@ -317,7 +317,7 @@ def go_offline():
         if flag == False:
             log ('Work Online not available','cause')
             raise LdtpExecutionError (0)
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
     except:
         log ('Could not go offline','error')
         log ('Go Offline','testend')
@@ -328,8 +328,9 @@ def go_offline():
 def go_online ():
     log ('Go Online','teststart')
     try:
-        window_id=getcurwindow()
-        remap ('evolultion',window_id)
+        #window_id=getcurwindow()
+        window_id = 'frmEvolution-*'
+        #remap ('evolultion',window_id)
         flag=False
         for x in getobjectlist(window_id):
             if x == 'mnuWorkOnline':
@@ -343,10 +344,10 @@ def go_online ():
             log ('already online','info')
             log ('Go Online','testend')
             return
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
 	time.sleep (1)
         flag=False
-        remap ('evolution',window_id)
+        #remap ('evolution',window_id)
         for x in getobjectlist (window_id):
             if x == 'mnuWorkOffline':
                 flag=True
@@ -354,7 +355,7 @@ def go_online ():
         if flag == False:
             log ('Work Offline not available','cause')
             raise LdtpExecutionError (0)
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
     except:
         log ('Could not go Online','error')
         log ('Go Online','testend')

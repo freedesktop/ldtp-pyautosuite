@@ -365,7 +365,7 @@ def create_folder_when_offline (fldr,location=''):
     log ('create folder while offline','teststart')
     try:
         go_offline ()
-        selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailFolder')
+        selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailFolder')
         #selectMailPane()
     except:
         log ('unable to select Mailpane','error')

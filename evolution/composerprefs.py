@@ -45,7 +45,7 @@ def addnewsignature(name,text):
             #undoremap ('evolution',window_id)
             time.sleep (1)
             #remap ('evolution',window_id)
-            click (window_id,'btnAdd2')
+            click (window_id,'btnAdd1')
             waittillguiexist ('frmEditsignature')
             time.sleep (1)
         except:
@@ -88,7 +88,7 @@ def fillinsignaturevalues (name,text):
         raise LdtpExecutionError (0)
 
 def verifysignature (name,text):
-    window_id='dlgEvolutionSettings'
+    window_id='dlgEvolutionPreferences'
     try:
         selectrow (window_id,'tblSignatures',name)
     except:
@@ -96,7 +96,7 @@ def verifysignature (name,text):
         raise LdtpExecutionError (0)
     try:
         time.sleep (1)
-        click (window_id,'btnEdit2')
+        click (window_id,'btnEdit1')
         waittillguiexist ('frmEditsignature')
         if verifysettext ('frmEditSignature','txt0',name) ==0:
             log ('Name not set properly','cause')
@@ -114,23 +114,24 @@ def edit_signature (name,text,newname=''):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
-            selecttab ('dlgEvolutionSettings', 'ptl0', 'Composer Preferences')
+            selecttab ('dlgEvolutionPreferences', 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
-            selecttab ('dlgEvolutionSettings', 'ptl2','Signatures')
-            undoremap ('evolution',window_id)
+            #remap ('evolution',window_id)
+            selecttab ('dlgEvolutionPreferences', 'ptl2','Signatures')
+            #undoremap ('evolution',window_id)
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             try:
-                selectrow ('dlgEvolutionSettings','tblSignatures',name)
+                selectrow ('dlgEvolutionPreferences','tblSignatures',name)
             except:
                 log ('signature not present','cause')
                 raise LdtpExecutionError (0)
-            click (window_id,'btnEdit2')
+            time.sleep (1)
+            click (window_id,'btnEdit1')
             waittillguiexist ('frmEditsignature')
             time.sleep (1)
         except:
@@ -145,7 +146,7 @@ def edit_signature (name,text,newname=''):
         log ('Edit Signature failed','error')
         log ('Edit Signature','testend')
         raise LdtpExecutionError (0)
-    undoremap ('evolution',window_id)
+    #undoremap ('evolution',window_id)
     log ('Edit Signature','testend')
 
 
@@ -206,13 +207,13 @@ def format_in_HTML ():
         text='aaaa'
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             #selecttab (window_id, 'ptl2','General')
             check (window_id,'chkFormatmessagesinHTML')
             time.sleep (1)
@@ -224,22 +225,22 @@ def format_in_HTML ():
             raise LdtpExecutionError (0)
 
         click (window_id,'btnClose')
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
         #verification
         
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailMessage')
-            waittillguiexist ('frmComposeamessage')
-            settextvalue ('frmComposeamessage','txtTo',to)
-            settextvalue ('frmComposeamessage','txt6',text)
+            selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
+            waittillguiexist ('frmComposeMessage')
+            settextvalue ('frmComposeMessage','txtTo',to)
+            settextvalue ('frmComposeMessage','txt6',text)
             settextvalue ('frmComposeamessage','txtSubject','Test for HTML formatting')
             setcontext ('Compose a message','Test for HTML formatting')
-            click ('frmComposeamessage','btnSend')
+            click ('frmComposeMessage','btnSend')
             time.sleep (2)
             if guiexist ('dlgEvolutionQuery') != 1:
                 log ('Warning for HTML formatting did not come up','cause')
                 raise LdtpExecutionError (0)
-            remap ('evolution','dlgEvolutionQuery')
+            #remap ('evolution','dlgEvolutionQuery')
             click ('dlgEvolutionQuery','btnCancel')
             closecomposewindow (0)
         except:
@@ -249,13 +250,13 @@ def format_in_HTML ():
         #undo setting HTML formatting
         try:
             
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             #selecttab (window_id, 'ptl2','General')
             uncheck (window_id,'chkFormatmessagesinHTML')
         except:
@@ -263,7 +264,7 @@ def format_in_HTML ():
             raise LdtpExecutionError (0)
 
         click (window_id,'btnClose')
-        undoremap ('evolution',window_id)
+        #undoremap ('evolution',window_id)
     except:
         log ('setting default HTML formatting failed','error')
         log ('format messages in HTML','testend')
@@ -328,13 +329,13 @@ def forwardstyle(fldr,subject):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             for combo in getobjectlist (window_id):
                 if combo in ['cboQuoted','cboAttachment','cboInline']:
                     break
@@ -344,9 +345,9 @@ def forwardstyle(fldr,subject):
             time.sleep (2)
             selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr)
             time.sleep (2)
-            selectrow ('frmEvolution-Mail','ttblMessageList',subject)
+            selectrow ('frmEvolution-*','ttblMessages',subject)
             setcontext ('Readonlyframe',subject)
-            selectmenuitem ('frmEvolution-Mail','mnuMessage;mnuOpeninNewWindow')
+            selectmenuitem ('frmEvolution-*','mnuMessage;mnuOpeninNewWindow')
             waittillguiexist ('frmReadonly')
             time.sleep (2)
             text = getsentmailtext ()
@@ -355,7 +356,7 @@ def forwardstyle(fldr,subject):
             releasecontext ()
             click ('frmEvolution-Mail','btnForward')                        
             setcontext ('Compose a message','[Fwd: '+subject+']')
-            waittillguiexist ('frmComposeamessage')
+            waittillguiexist ('frmComposeMessage')
             time.sleep (2)
             fwdtext=getmailtext ()
             if fwdtext == '':
@@ -364,31 +365,31 @@ def forwardstyle(fldr,subject):
                 log ('Forward style - Attachment not proper','cause')
                 raise LdtpExecutionError (0)
 
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
-            waittillguinotexist ('frmComposeamessage')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
+            waittillguinotexist ('frmComposeMessage')
             #undoremap ('evolution',window_id)
         except:
             log ('Forward style Attachment failed','error')
             raise LdtpExecutionError (0)
 
         try:            
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             remap ('evolution',window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
             #undoremap ('evolution',window_id)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             for combo in getobjectlist (window_id):
                 if combo in ['cboQuoted','cboAttachment','cboInline']:
                     break
 
             comboselect (window_id,combo,'Inline')
             click (window_id,'btnClose')
-            click ('frmEvolution-Mail','btnForward')
-            waittillguiexist ('frmComposeamessage')
+            click ('frmEvolution-*','btnForward')
+            waittillguiexist ('frmComposeMessage')
             time.sleep (2)
             fwdtext=getmailtext ()
 #             if len (fwdtext)<36:
@@ -408,8 +409,8 @@ def forwardstyle(fldr,subject):
                 raise LdtpExecutionError (0)
             else:
                 log ('Forward style - Inline works fine','info')
-            selectmenuitem ('frmComposeamessage','mnuFile;mnuClose')
-            waittillguinotexist ('frmComposeamessage')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
+            waittillguinotexist ('frmComposeMessage')
             releasecontext()
             #undoremap ('evolution',window_id)
         except:
@@ -428,13 +429,13 @@ def prompt_for_empty_subject(to):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             check (window_id,'chkPromptwhensendingmessageswithanemptysubjectline')
             time.sleep (1)
             if verifycheck (window_id,'chkPromptwhensendingmessageswithanemptysubjectline') == 0:
@@ -442,20 +443,20 @@ def prompt_for_empty_subject(to):
                 raise LdtpExecutionError (0)
             click (window_id,'btnClose')
             waittillguinotexist (window_id)
-            undoremap ('evolution',window_id)
+            #undoremap ('evolution',window_id)
         except:
             log ('Unable to Enable prompt for empty subject line','cause')
             raise LdtpExecutionError (0)
 
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailMessage')
-            waittillguiexist ('frmComposeamessage')
-            settextvalue ('frmComposeamessage','txtTo',to)
-            click ('frmComposeamessage','btnSend')
+            selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
+            waittillguiexist ('frmComposeMessage')
+            settextvalue ('frmComposeMessage','txtTo',to)
+            click ('frmComposeMessage','btnSend')
             if waittillguiexist ('dlgEvolutionQuery') == 0:
                 log ('Prompt did not appear','cause')
                 raise LdtpExecutionError (0)
-            remap ('evolution','dlgEvolutionQuery')
+            #remap ('evolution','dlgEvolutionQuery')
             time.sleep (1)
             click ('dlgEvolutionQuery','btnSend')
             #undoremap ('evolution','dlgEvolutionQuery')
