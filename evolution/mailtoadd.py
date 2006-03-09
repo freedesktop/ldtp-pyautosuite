@@ -36,19 +36,19 @@ def mailtoaddbook(datafilename):
         selectMailPane()
         time.sleep (2)
         try:
-            remap ('evolution','frmEvolution-Mail')
-            selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree','Inbox')
+            #remap ('evolution','frmEvolution-Mail')
+            selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree','Inbox')
             time.sleep (2)
-            selectrow ('frmEvolution-Mail','ttblMessageList',subject[0])
+            selectrow ('frmEvolution-*','ttblMessages',subject[0])
             time.sleep (1)
             row=getrowindex (subject[0])
-            name=getcellvalue ('frmEvolution-Mail','ttblMessageList',row,3)
+            name=getcellvalue ('frmEvolution-*','ttblMessages',row,3)
             name=name[:name.find('<')]
             name=name[:-1]
         except:
             log ('Row not found in list','error')
             raise LdtpExecutionError(0)
-        selectmenuitem ('frmEvolution-Mail','mnuMessage;mnuAddSendertoAddressBook')
+        selectmenuitem ('frmEvolution-*','mnuMessage;mnuAddSendertoAddressBook')
         print name
         time.sleep (5)
         print name.find(' ')
@@ -61,7 +61,7 @@ def mailtoaddbook(datafilename):
             click ('dlgContactQuick-Add','btnOK')
         elif guiexist ('dlgContactEditor')==1:
             click ('dlgContactEditor','btnCancel')
-        undoremap ('evolution','frmEvolution-Mail')
+        #undoremap ('evolution','frmEvolution-Mail')
     except:
         log ('Adding mail sender to Address Book failed','error')
         log ('Add Mail Sender to Address Book','testend')

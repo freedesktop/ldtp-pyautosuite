@@ -65,13 +65,16 @@ def move_mail (from_fldr, to_fldr, mail_index):
 				time.sleep (2)
 				rowcount_after_move = getrowcount('frmEvolution-*', 'ttblMessages')
 				if row_after == (row_before+1) and rowcount == (rowcount_after_move+1):
-					log ('Moving a mail passed successfully', 'pass') 
+					log ('Moving a mail passed successfully', 'info') 
+					return 1
 				else:
 					log ('Row count does not match after moving', 'cause')
-					log ('Moving a mail failed', 'fail')
+					log ('Moving a mail failed', 'info')
+					return 0
 		else:
 			log ('From folder empty!', 'Warning')
-			log ('Did not move any mails to other folder', 'Pass')
+			log ('Did not move any mails to other folder', 'info')
+			return 0
 	except ldtp.error,msg:
 		log ('Moving mail between folders failed ' + str(msg), 'cause')
 		log ('Moving mail failed', 'fail')
@@ -84,14 +87,17 @@ to_fldr = data_object.gettagvalue ('to_fldr')
 mail_index = data_object.gettagvalue ('mail_index')
 		
 # Call the function
-if from_fldr and to_fldr and mail_index:
-	move_mail (from_fldr[0], to_fldr[0], int (mail_index[0]))
-else:
-	if not(from_fldr): 
-		log ('from_fldr is not provided in data xml file', 'error')
-	if not(to_fldr):	
-		log ('to_fldr is not provided in data xml file', 'error')
-	if not(mail_index):	
-		log ('mail_index is not provided in data xml file', 'error')
-	log ('Move mail', 'fail')	
-                                                                   
+try:
+        log ('Move a message', 'teststart')
+        result = move_mail (from_fldr[0], to_fldr[0], int (mail_index[0]))
+        if result == 1:
+                log ('Move a message', 'pass')
+        else:
+                log ('Move a message', 'fail')
+        log ('Move a message', 'testend')
+
+except:
+        log ('Move a message', 'error')
+        log ('Move a message', 'testend')
+        raise LdtpExecutionError(0)
+

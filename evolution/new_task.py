@@ -27,6 +27,7 @@
 from ldtp import *
 from ldtputils import *
 import string, sys, os, commands, time, filecmp
+from contact import *
 
 def selectTasksPane():
    """Selects the Tasks Pane in Evolution"""
@@ -90,15 +91,17 @@ def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time
 	        raise LdtpExecutionError(0)
 	
 	try:
-		click('frmTask-Nosummary','btnSave')
+		click('frmTask-*','btnSave')
 		time.sleep(3)
 		no_rows_aftercreat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 		if no_rows_aftercreat == no_rows_b4creat + 1:
 			if selectrow('frmEvolution-Tasks','tblTasks',Summary[0]) == 1:
 				log('Task Creation Completed and verified','info')
 				print 'Task Creation completed and verified.'
+                                log('Task Creation Completed and verified','pass') 
 		else:
 			raise LdtpExecutionError(0)	
+                        log('Task Creation Completed and verified','fail')
 	except:
 		print 'Unable to verify the task :'+Summary[0]
 		log('Unable to save the task')
@@ -126,6 +129,7 @@ Categories = data_object.gettagvalue ('Categories')
 
 # Call the function
 
-selectTasksPane()
+#selectTasksPane()
+selectPanel('Tasks')
 create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories)
 

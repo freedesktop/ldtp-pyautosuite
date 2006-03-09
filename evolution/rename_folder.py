@@ -31,8 +31,21 @@ data_object = LdtpDataFileParser (datafilename)
 
 old_name = data_object.gettagvalue ('old_name')[0]
 new_name = data_object.gettagvalue ('new_name')[0]
-if rename(old_name,new_name) == 1:
-	print old_name + ' has been renamed as '+new_name
-	log('Fldr has been renamed','info')	
-else:
-	log('probs in renaming the fldr','info')		
+
+try:
+	log('Rename a folder','teststart')
+	if rename(old_name,new_name) == 1:
+		print old_name + ' has been renamed as '+new_name
+		log('Fldr has been renamed','info')	
+        	log('Fldr has been renamed','pass')
+	else:
+		log('probs in renaming the fldr','info')		
+        	log('Fldr has been renamed','fail')
+
+        log('Rename a folder','testend')
+
+except:
+        log('cannot rename a folder','error')
+        log('Rename a folder','testend')
+        raise LdtpExecutionError(0)
+

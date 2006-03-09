@@ -25,6 +25,8 @@
 # To print a message. 
 # Note Actually it clicks the cancel btn instead of print button.
 
+from ldtp import *
+from ldtputils import *
 from menu_reorganization import *
 	
 def print_msg(fldr, subject, printer):
@@ -34,7 +36,8 @@ def print_msg(fldr, subject, printer):
 		windowname = 'dlgPrintMessage'
 		if select_mail (fldr,subject) == 1:
 			#remap('evolution','frmEvolution-Mail')
-			selectmenuitem('frmEvolution-*','mnuFile;mnuPrint')
+			selectmenuitem('frmEvolution-*','mnuFile;mnuPrint...')
+                        #typekey ('<ctrl>p')
 			if waittillguiexist(windowname)	== 1:
 				time.sleep(3)
 				if selectrow(windowname,'tbl0',printer): 

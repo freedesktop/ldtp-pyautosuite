@@ -25,6 +25,7 @@
 #To create a folder.
 from menu_reorganization import *
 #from evoutils.menu_reorganization import *
+from contact import *
 
 def selectMailPane():
    """Selects the Mail Pane in Evolution"""
@@ -60,7 +61,8 @@ def selectMailPane():
 
 try:
 	log('creation of a folder','teststart')
-	selectMailPane()
+	#selectMailPane()
+        selectPanel('Mail')
 	data_object = LdtpDataFileParser (datafilename)
 
 	#Extracting imput data from xml file
@@ -70,11 +72,13 @@ try:
 	selectmenuitem('frmEvolution-*','mnuFile;mnuNew;mnuMailFolder')
 	if create_folder(Folder_name, location) == 1:
 		log('Folder created','info')
-		log('creation of a folder','testend')
+                #log('Folder created','pass')
+		#log('creation of a folder','testend')
 	else:
 		log('Folder not created','error')
-		log('creation of a folder','testend')
+                #log('Folder created','fail')
+		#log('creation of a folder','testend')
 except:
 	log('cannot create a folder','error')
-	log('creation of a folder','testend')
+	#log('creation of a folder','testend')
 	raise LdtpExecutionError(0)

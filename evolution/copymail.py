@@ -67,13 +67,16 @@ def copy_mail (from_fldr, to_fldr, mail_index):
 				time.sleep (2)
 				rowcount_after_copy = getrowcount('frmEvolution-*', 'ttblMessages')
 				if row_after == (row_before+1) and rowcount == rowcount_after_copy:
-					log ('Copying a mail passed successfully','pass') 
+					log ('Copying a mail passed successfully','info') 
+                                        return 1
 				else:
 					log ('Row count does not match after copying', 'cause')
-					log ('Copying a mail failed', 'fail')
+					log ('Copying a mail failed', 'info')
+                                        return 0
 		else:
 			log ('From folder empty!', 'Warning')
-			log ('Did not move any mails to other folder', 'Pass')
+			log ('Did not move any mails to other folder', 'info')
+                        return 0
 	except ldtp.error,msg:
 		log ('Copying mail between folders failed ' + str(msg), 'cause')
 		log ('Copying mail failed','fail')
@@ -86,14 +89,16 @@ to_fldr = data_object.gettagvalue ('to_fldr')
 mail_index = data_object.gettagvalue ('mail_index')
 
 # Call the function
-if from_fldr and to_fldr and mail_index:
-	copy_mail (from_fldr[0], to_fldr[0], int (mail_index[0]))
-else:
-	if not(from_fldr): 
-		log ('from_fldr is not provided in data xml file', 'error')
-	if not(to_fldr):	
-		log ('to_fldr is not provided in data xml file', 'error')
-	if not(mail_index):	
-		log ('mail_index is not provided in data xml file', 'error')
-	log ('Copy mail', 'fail')	
+try:
+	log ('Copy a message', 'teststart')
+        result = copy_mail (from_fldr[0], to_fldr[0], int (mail_index[0]))
+	if result == 1:
+		log ('Copy a message', 'pass') 
+	else:
+		log ('Copy a message', 'fail')
+	log ('Copy a message', 'testend')
 
+except:
+	log ('Copy a message', 'error')
+	log ('Copy a message', 'testend')
+        raise LdtpExecutionError(0)

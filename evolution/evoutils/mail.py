@@ -41,10 +41,12 @@ def get_window (component=None):
             	window_id = 'frmEvolution-Contacts'
 	elif guiexist ('frmEvolution-Memos') == 1:
             	window_id = 'frmEvolution-Memos'
+
         window_id = 'frmEvolution-*'
 	if component:
 		if window_id:
-			selectmenuitem (window_id, 'mnuView;mnuWindow;mnu' + component)
+			#selectmenuitem (window_id, 'mnuView;mnuWindow;mnu' + component)
+                        click (window_id, str('tbtn'+ component))
 			time.sleep (3)
 			return 1
 		else:	

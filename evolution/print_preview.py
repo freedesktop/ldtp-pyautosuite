@@ -41,8 +41,10 @@ def print_preview(fldr, subject):
 				#remap('evolution',windowname)
 				click(windowname,'btnclose')
 				#undoremap('evolution',windowname)
+                                log ('Print preview', 'pass')
 			else:
 				log('Unable to find the print preview window','cause')
+                                log ('Print preview', 'fail')
 				log('Print preview','testend')		
 				#undoremap('evolution','frmEvolution-Mail')
 		else:
@@ -70,4 +72,4 @@ else:
 		log ('fldr not provided in data xml file', 'error')
 	if not (subject):
 		log ('subject not provided in data xml file', 'error')
-	log ('print preview', 'fail')
+	#log ('print preview', 'fail')

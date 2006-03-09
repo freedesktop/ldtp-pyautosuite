@@ -34,9 +34,9 @@ except:
     raise LdtpExecutionError (0)
 try:
     time.sleep (3)
-    selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailMessage')
-    waittillguiexist ('frmComposeamessage')
-    settextvalue ('frmComposeamessage','txt6','abc')
+    selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
+    waittillguiexist ('frmComposeMessage')
+    settextvalue ('frmComposeMessage','txt6','abc')
     closecomposewindow (int(state[0]))
 except:
     log ('Close compose window failed','error')

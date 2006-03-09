@@ -31,9 +31,20 @@ data_object = LdtpDataFileParser (datafilename)
 #Extracting imput data from xml file
 fldr = data_object.gettagvalue ('fldr')[0]
 
-if select_all(fldr) == 1:
-	print 'All Mails in '+fldr+' has been selected'
-	log('All mails selected','info')
-else:
-	log('Unable to select','error')
+try:
+	log ('Select all message','teststart')
+	if select_all(fldr) == 1:
+		print 'All Mails in '+fldr+' has been selected'
+		log('All mails selected','info')
+                log ('Select all message', 'pass')
+	else:
+		log('Unable to select','error')
+		log ('Select all message', 'fail')
+
+	log ('Select all message', 'testend')
+
+except:
+	log ('Select all message', 'error')
+	log ('Select all message', 'testend') 
+        raise LdtpExecutionError(0)
 

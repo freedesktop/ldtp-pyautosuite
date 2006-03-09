@@ -28,7 +28,7 @@ from ldtputils import *
 
 def verify_filter(rule_name):
 	windowname = 'dlgFilters'
-	selectmenuitem('frmEvolution-Mail','mnuEdit;mnuMessageFilters')
+	selectmenuitem('frmEvolution-*','mnuEdit;mnuMessageFilters')
 	waittillguiexist(windowname)
 	if gettablerowindex (windowname,'tblFilterRules',rule_name) == -1:
 		print 'rule not found in the table filter rules'
@@ -43,7 +43,7 @@ def selectfolder(fldr,dest=''):
 	
 	windowname = 'dlgSelectfolder'
 	waittillguiexist(windowname)
-	remap('evolution',windowname)
+	#remap('evolution',windowname)
 	if gettreetablerowindex (windowname, 'ttblMailFolderTree', fldr) == -1:
 		click(windowname,'btnNew')
 		time.sleep(3)
@@ -81,12 +81,13 @@ def filter_from_msg(fldr,filter_on,details,then_actions,then_values):
 	try:
 		windowname = 'dlgAddFilterRule'
 		log('create a filter from the existing message','teststart')
-		selectrowpartialmatch('frmEvolution-Mail','ttblMailFolderTree',fldr)
+		selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr)
 		time.sleep(2)
-		selectrow('frmEvolution-Mail','ttblMessageList',details)
-		selectmenuitem('frmEvolution-Mail','mnuMessage;mnuCreateRule;mnuFilteron'+filter_on)
+		selectrow('frmEvolution-*','ttblMessages',details)
+                print 'mnuMessage;mnuCreateRule;mnuFilteron'+filter_on+'*'
+		selectmenuitem('frmEvolution-*','mnuMessage;mnuCreateRule;mnuFilteron'+filter_on+'...')
 		waittillguiexist(windowname)
-		remap('evolution',windowname)
+		#remap('evolution',windowname)
 		
 		if verifyselect (windowname, 'cbo' + filter_on, filter_on) == 1 and gettextvalue (windowname,'txt1') == details:
 			log('the details has been correctly entered','info')
@@ -98,7 +99,7 @@ def filter_from_msg(fldr,filter_on,details,then_actions,then_values):
 			length_actions = len(then_actions)
 			for i in range(0,length_actions):
 				time.sleep(2)
-#				remap('evolution',windowname)	
+#				#remap('evolution',windowname)	
 				time.sleep(2)
 				comboselect(windowname,'cboMovetoFolder',then_actions[i])
 				if then_actions[i] == 'Move to Folder' or then_actions[i] == 'Copy to Folder':
@@ -115,7 +116,7 @@ def filter_from_msg(fldr,filter_on,details,then_actions,then_values):
 				time.sleep(2)
 				if i < length_actions-1:
 					click(windowname,'btnAdd1')
-#				undoremap('evolution',windowname)
+#				#undoremap('evolution',windowname)
 			rule_name = gettextvalue(windowname,'txtRulename')
 			click(windowname,'btnOK')
 			time.sleep(3)

@@ -184,13 +184,13 @@ def closecomposewindow(state):
     try:
         selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
         time.sleep (2)
-        if guiexist ('dlgWarning')==1:
+        if guiexist ('dlgWarning*')==1:
             if state==0:
-                click ('dlgWarning','btnDiscardChanges')
+                click ('dlgWarning*','btnDiscardChanges')
             elif state==1:
-                click ('dlgWarning','btnCancel')
+                click ('dlgWarning*','btnCancel')
             elif state==2:
-                click ('dlgWarning','btnSaveMessage')
+                click ('dlgWarning*','btnSaveMessage')
             else:
                 log ('Invalid option to choose','cause')
                 raise LdtpExecutionError (0)
@@ -211,8 +211,8 @@ def closecomposewindow(state):
 def checkheaders(ref_image):
     log ('Check Compose window header boxes','teststart')
     try:
-        window_id=getcurwindow()
-        selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
+        #window_id=getcurwindow()
+        selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
         waittillguiexist ('frmComposeMessage')
     except:
         log ('could not open Mail Editor','cause')
@@ -231,7 +231,7 @@ def checkheaders(ref_image):
         raise LdtpExecutionError (0)
 
     try:
-        imagecapture('Compose a message','IMAGES/cur_mail.png')
+        imagecapture('Compose Message','IMAGES/cur_mail.png')
     except:
         log ('Error while capturing image of window','cause')
         log ('Check Compose window header boxes','testend')
@@ -240,14 +240,16 @@ def checkheaders(ref_image):
     try:
         if imagecompare (ref_image,'IMAGES/cur_mail.png') < 1.0:
             log ('Header fields ','pass')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
         else:
             log ('Header fields ','fail')
+            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
             raise LdtpExecutionError(0)
     except:
         log ('Header fields do not match','warning')
         log ('Check Compose window header boxes','testend')
         raise LdtpExecutionError (0)
-    selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
+    #selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
     log ('Check Compose window header boxes','testend')
 
 
@@ -677,10 +679,11 @@ def lists_test(to,ref_image):
         subject=['Compose editor List test']
         #selectMailPane()
         window_id='frmEvolution-*'
-        selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
+        #selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
         selectrowpartialmatch (window_id,'ttblMailFolderTree','Sent')
         #remap ('evolution',window_id)
         sent_mail_count=getrowcount (window_id,'ttblMessages')
+        selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
         waittillguiexist ('frmComposeMessage')
         check ('frmComposeMessage','mnuHTML')
         time.sleep (1)

@@ -53,6 +53,7 @@ def newaddrbook(datafilename):
         raise LdtpExecutionError (0)
     log ('Create New Address Book','testend')
 
+selectPanel ('Contacts') 
 newaddrbook (datafilename)
 
     

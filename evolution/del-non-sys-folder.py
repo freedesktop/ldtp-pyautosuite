@@ -29,8 +29,20 @@ data_object = LdtpDataFileParser (datafilename)
 #Extracting imput data from xml file
 
 fldr = data_object.gettagvalue ('folder_name')[0]
-if delete_nonsys_folder(fldr) == 1:
-	print fldr + ' has been Deleted'
-else:
-	print 'Unable to delete'
+
+try:
+	log('Delete a non-sys folder','teststart')
+	if delete_nonsys_folder(fldr) == 1:
+		print fldr + ' has been Deleted'
+                log('Delete a non-sys folder','pass')
+	else:
+		print 'Unable to delete'
+                log('Delete a non-sys folder','pass')
+        log ('Delete a non-sys folder','testend')
+
+except:
+        log('cannot delete a folder','error')
+        log('Delete a non-sys folder','testend')
+        raise LdtpExecutionError(0)
+
 

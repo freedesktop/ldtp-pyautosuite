@@ -47,13 +47,16 @@ def delete_mail (source_fldr, mail_index):
 			time.sleep (2)
 			row_after = getrowcount('frmEvolution-*','ttblMessages')
 			if row_after == (rowcount-1):
-				log ('Deleting a mail passed successfully', 'pass') 
+				log ('Deleting a mail passed successfully', 'info') 
+				return 1
 			else:
 				log ('Row count does not match after delete mail', 'cause')
-				log ('Deleting a mail failed', 'fail')
+				log ('Deleting a mail failed', 'info')
+				return 0
 		else:
 			log ('From folder empty!', 'Warning')
-			log ('Did not Delete any mail from source folder', 'Pass')
+			log ('Did not Delete any mail from source folder', 'info')
+			return 0
 	except ldtp.error,msg:
 		log ('Deleting mail failed' + str(msg), 'cause')
 		log ('delete mail failed', 'fail')
@@ -65,12 +68,18 @@ source_fldr = data_object.gettagvalue ('source_fldr')
 mail_index = data_object.gettagvalue ('mail_index')
 
 # Call the function
-if source_fldr and mail_index:
-	delete_mail (source_fldr[0], int (mail_index[0]))
-else:
-	if not(source_fldr):
-		log ('source_fldr not provided in data xml file', 'error')
-        if not(mail_index):
-		log ('mail_index not provided in data xml file', 'error')
-        log ('Delete mail', 'fail')            
+try:
+	log ('Delete a message', 'teststart')
+	result = delete_mail (source_fldr[0], int (mail_index[0]))
+        if result == 1:
+                log ('Delete a message', 'pass')
+        else:
+                log ('Delete a message', 'fail')
+        log ('Delete a message', 'testend')
+
+except:
+        log ('Delete a message', 'error')
+        log ('Delete a message', 'testend')
+        raise LdtpExecutionError(0)
+
 

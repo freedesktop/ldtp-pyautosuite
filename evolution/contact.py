@@ -98,9 +98,10 @@ def selectMailPane():
     try:
          print "b4 getcurinwdow"
          window_id=getcurwindow()
+         window_id = 'frmEvolution-*'
          print "after getcurinwdow"
          click (window_id,'tbtnMail')
-         waittillguiexist ('frmEvolution-Mail')
+         waittillguiexist ('frmEvolution-*')
     except:
         log ('error selecting Mail pane','error')
         log ('Open Evolution Mail Pane','testend')
@@ -164,6 +165,18 @@ def selectCalendarPane():
         raise LdtpExecutionError(0)
     
     log ('Open Evolution Calendars Pane','testend')
+
+def selectPanel(components='Mail'):
+    """Selects Pane in Evolution"""
+    try:
+         window_id = 'frmEvolution-*'
+         click (window_id, 'tbtn' + components)
+         if components != 'Mail':
+         	waittillguiexist ('frmEvolution-' + components)
+    except:
+        log ('error selecting pane','error')
+        raise LdtpExecutionError(0)
+
 
 
 def selectaddrbook (name):

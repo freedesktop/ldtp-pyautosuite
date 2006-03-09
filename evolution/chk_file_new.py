@@ -41,10 +41,12 @@ def chk_new_items():
 			if selectmenuitem('frmEvolution-*','mnuFile;mnuNew;mnu'+mnuitem) == 1:
 				time.sleep(3)
 			close_win(i,windowname)
+                log('Verify all items in the mnuNew', 'pass')
 	except:
 		print 'Must be problem with ' + new_items[i]
 		log('Must be problem with ' + new_items[i] , 'cause')
 		print 'Some windows failed to open in menu file;new'
+                log('Verify all items in the mnuNew','fail')
 		log('Verify all items in the mnuNew','testend')			
 		raise LdtpExecutionError (0)
 	log('Verify all items in the mnuNew','testend')			
@@ -198,7 +200,7 @@ def close_win(i,windowname):
 			log(new_items[i] + 'Not Working','info')
 			raise LdtpExecutionError (0)
 	elif new_items[i] == 'Calendar':
-		setcontext('Task List Properties','New Calendar')
+		#setcontext('New Calendar','New Calendar')
 		if waittillguiexist(windowname) == 1:
 			print new_items[i] + ' Working'
 			log(new_items[i] + ' Working','info')
@@ -207,9 +209,9 @@ def close_win(i,windowname):
 			print new_items[i] + ' Not Working'
 			log(new_items[i] + 'Not Working','info')
 			raise LdtpExecutionError (0)
-		releasecontext()
+		#releasecontext()
 	elif new_items[i] == 'Memo List':
-		setcontext('Task List Properties','New Memo List')
+		#setcontext('Task List Properties','New Memo List')
 		if waittillguiexist(windowname) == 1:
 			print new_items[i] + ' Working'
 			log(new_items[i] + ' Working','info')
@@ -218,7 +220,7 @@ def close_win(i,windowname):
 			print new_items[i] + ' Not Working'
 			log(new_items[i] + 'Not Working','info')
 			raise LdtpExecutionError (0)
-		releasecontext()
+		#releasecontext()
 	elif new_items[i] == 'Task List':
 		if waittillguiexist(windowname) == 1:
 			print new_items[i] + ' Working'
