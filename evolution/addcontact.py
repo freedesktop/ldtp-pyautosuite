@@ -23,6 +23,7 @@
 #  Boston, MA 02111-1307, USA.
 #
 
-from contact import addcontact,getcontactvals
+from contact import addcontact,getcontactvals,selectPanel
 
+selectPanel ('Contacts')
 addcontact (*getcontactvals(datafilename))

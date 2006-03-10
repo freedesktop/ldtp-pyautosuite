@@ -29,8 +29,8 @@ def select_mail(fldr,subject):
 	try:
 		#log('select mail in a folder','teststart')
 		#remap('evolution','frmEvolution-Mail')
-		#if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
-                if selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr) == 1:
+		if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
+                #if selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr) == 1:
 			log('Folder selected','info')
 			if selectrow('frmEvolution-*','ttblMessages',subject) == 1:
 				log('Mail selected','info')

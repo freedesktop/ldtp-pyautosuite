@@ -202,7 +202,7 @@ def closecomposewindow(state):
         log ('Close compose window','fail')
         log ('Close compose window','testend')
         raise LdtpExecutionError (0)
-    waittillguinotexist ('frmComposeMessage')
+    #waittillguinotexist ('frmComposeMessage')
     time.sleep (2)
     log ('Close compose window','pass')
     log ('Close compose window','testend')
