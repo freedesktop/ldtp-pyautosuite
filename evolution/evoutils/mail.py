@@ -58,9 +58,7 @@ def get_window (component=None):
 def setandverify (win_name, box_name, value):
 	try:
 		text = ''
-                print type (value)
-		if type (value) is types.StringType:
-                #if isinstance(value,types.StringType):
+		if type (value) == types.StringType or types.UnicodeType:
 			text = value
 		else:	
 			length = len (value)
