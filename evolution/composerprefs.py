@@ -30,7 +30,7 @@ from contact import *
 from evoutils.mail import *
 
 def addnewsignature(name,text):
-    log ('Add New Signature','teststart')
+    #log ('Add New Signature','teststart')
     try:
         #selectMailPane()
         try:
@@ -45,7 +45,7 @@ def addnewsignature(name,text):
             #undoremap ('evolution',window_id)
             time.sleep (1)
             #remap ('evolution',window_id)
-            click (window_id,'btnAdd1')
+            click (window_id,'btnAdd2')
             waittillguiexist ('frmEditsignature')
             time.sleep (1)
         except:
@@ -62,17 +62,19 @@ def addnewsignature(name,text):
                 flag=1
                 break
         if flag==1:
-            log ('Signature added successfully','info')
+            #log ('Signature added successfully','info')
+            return 1
         else:
-            log ('Signature not added succcessfully','cause')
+            #log ('Signature not added succcessfully','cause')
+            return 0
             raise LdtpExecutionError (0)
                 #        except:
                 #undoremap ('evolution',window_id)
     except:
         log ('Add New Signature failed','error')
-        log ('Add New Signature','testend')
+        #log ('Add New Signature','testend')
         raise LdtpExecutionError (0)
-    log ('Add New Signature','testend')
+    #log ('Add New Signature','testend')
 
 
 def fillinsignaturevalues (name,text):
