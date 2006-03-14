@@ -103,7 +103,6 @@ def insert_appointment (windowname, summary, location, description, from_date, f
           #setcontext ('Appointment - No summary', 'Appointment - ' + summary)
           time.sleep (2)
 	  if setandverify (windowname, 'txtLocation', location) == 0:
-          #if settextvalue (windowname, 'txtLocation', location) == 0:
                log ('Failed to set value in location field', 'cause')
                raise LdtpExecutionError (0)
 	  else:
@@ -117,7 +116,7 @@ def insert_appointment (windowname, summary, location, description, from_date, f
 		    #	 log ('Verification of calendar combo box failed!!', 'warning')
                     #     flag = 1
           if from_date != '0':
-               if setandverify (windowname, 'txtTextDateEntry1', from_date) == 0:
+               if setandverify (windowname, 'txtDate1', from_date) == 0:
                	    log ('Failed to set value in From date entry', 'cause')
                     raise LdtpExecutionError (0)
           if str(from_time) != '0':
@@ -125,7 +124,7 @@ def insert_appointment (windowname, summary, location, description, from_date, f
                     log ('Failed to set value in From time entry', 'cause')
                     raise LdtpExecutionError (0)
           if to_date != '0':
-               if setandverify (windowname, 'txtTextDateEntry1', to_date) == 0:
+               if setandverify (windowname, 'txtDate1', to_date) == 0:
                     log ('Failed to set value in To date entry', 'cause')
                     raise LdtpExecutionError (0)
           if str(to_time) != '0':

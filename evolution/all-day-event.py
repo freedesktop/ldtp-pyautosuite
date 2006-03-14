@@ -42,7 +42,7 @@ def read_data():
 def create_appoinment():
 	log ('Create Appointment', 'teststart')
 	try:
-		windowname = 'frmAppointment-Nosummary'
+		windowname = 'frmAppointment-*'
 	    	flag = 0
 		more_items_todo = 'yes'
 		summary, location, description, from_date, to_date, calendar = read_data()
@@ -80,4 +80,5 @@ def create_appoinment():
 	log ('All day Appointment created','info')
 	log ('Create Appointment', 'testend')
 
+selectPanel ('Calendars')
 create_appoinment()
