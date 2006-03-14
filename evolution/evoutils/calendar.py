@@ -99,7 +99,7 @@ def insert_appointment (windowname, summary, location, description, from_date, f
      try:
           flag = 0
           time.sleep (2)
-          settextvalue (windowname, 'txtSummary', summary)
+          setandverify (windowname, 'txtSummary', summary)
           #setcontext ('Appointment - No summary', 'Appointment - ' + summary)
           time.sleep (2)
 	  if setandverify (windowname, 'txtLocation', location) == 0:
@@ -119,10 +119,10 @@ def insert_appointment (windowname, summary, location, description, from_date, f
                if setandverify (windowname, 'txtDate1', from_date) == 0:
                	    log ('Failed to set value in From date entry', 'cause')
                     raise LdtpExecutionError (0)
-          if str(from_time) != '0':
-               if setandverify (windowname, 'txt3', from_time) == 0:
-                    log ('Failed to set value in From time entry', 'cause')
-                    raise LdtpExecutionError (0)
+          #if str(from_time) != '0':
+          #     if setandverify (windowname, 'txt3', from_time) == 0:
+          #          log ('Failed to set value in From time entry', 'cause')
+          #          raise LdtpExecutionError (0)
           if to_date != '0':
                if setandverify (windowname, 'txtDate1', to_date) == 0:
                     log ('Failed to set value in To date entry', 'cause')

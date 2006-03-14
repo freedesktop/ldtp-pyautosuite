@@ -49,7 +49,7 @@ def appointment_withattachment():
 
 	try:
 		log('Create appoinment with attachment','teststart')
-		windowname = 'frmAppointment-Nosummary'
+		windowname = 'frmAppointment-*'
 		filename, summary, location, description, from_date, to_date, from_time, to_time, calendar = read_data()
 		more_items_todo = 'yes'
 		
@@ -67,7 +67,7 @@ def appointment_withattachment():
             		flag = 1
 	        else:
 			try:
-				click(windowname,'btnAttachments')
+				click(windowname,'btnAttach')
 				waittillguiexist('dlgAttachfile(s)')
 				time.sleep(3)
 				selectrow ('dlgAttachfile(s)', 'tblFiles', filename)
