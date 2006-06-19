@@ -1,0 +1,18 @@
+
+Application: gnome-dictionary 2.14 (part of gnome-utils)
+Scripts Author: Prashanth Mohan <prashmohan@gmail.com>
+Requirements: ldtp 0.5+
+
+The scripts can be run by issuing the command `gldap.py run.xml'. The
+running of the scripts might require versions of ldtp (0.5+)
+
+The following test cases have been automated:
+* Check Meaning
+* New Window
+* Close Window
+* Find, Find Next, Find Prev
+* Save a Copy
+
+
+
+

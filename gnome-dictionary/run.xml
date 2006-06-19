@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ldtp>
+ <logfileoverwrite>1</logfileoverwrite>
+ <logfile>/home/prash/src/gd/log.xml</logfile>
+ <group>
+  <script>
+   <name>check_meaning.py</name>
+   <data>data.xml</data>
+  </script>
+  <script>
+   <name>save_a_copy.py</name>
+   <data>data.xml</data>
+  </script>
+  <script>
+   <name>close.py</name>
+   <data>data.xml</data>
+  </script>
+  <script>
+   <name>new.py</name>
+   <data>data.xml</data>
+  </script>
+ </group> 
+ <group>
+  <script>
+   <name>find.py</name>
+   <data>data.xml</data>
+  </script>
+ </group>
+</ldtp>
