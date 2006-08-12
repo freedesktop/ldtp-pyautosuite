@@ -48,9 +48,7 @@ try:
     except error:
         log ('There maybe no documents opened', 'info')
 
-    #setcontext ('Unsaved Document 1 - gedit', 'gedit')
     selectmenuitem ('*gedit', 'mnuFile;mnuNew')
-    #releasecontext ()
     # TODO
     # - Verify new document window is opened
     # - Get text from pre-defined file maybe from default_doc_dir and use it in settextvalue function
@@ -58,7 +56,6 @@ try:
 
     # TODO
     # - Verify text content placed properly
-    #setcontext ('Unsaved Document 1 - gedit', '*Unsaved Document 1 - gedit')
     selectmenuitem ('*gedit', 'mnuFile;mnuSaveAs')
 
     # Wait for 3 seconds, so that save as dialog window will appear
@@ -66,7 +63,6 @@ try:
 
     # Check for dialog window
     if waittillguiexist ('dlgSaveAs...') == 1:
-        #remap ('gedit','dlgSaveas')
         settextvalue ('dlgSaveAs...', 'txtName', default_tmp_dir + '/sample.txt')
         click ('dlgSaveAs...', 'tbtnBrowseforotherfolders')
         selectrowindex ('dlgSaveAs...', 'tblShortcuts', 0)
@@ -74,8 +70,6 @@ try:
         time.sleep (3)
         if guiexist ('*Question') == 1:
             click ('*Question', 'btnReplace')
-        #undoremap ('gedit','dlgSaveas')
-        #releasecontext ()
         mo = re.match (os.path.expandvars ('$HOME'), default_tmp_dir)
         if str(mo) != "<type 'NoneType'>":
             newcontext = '~' + default_tmp_dir [mo.end():]
@@ -84,20 +78,16 @@ try:
         waittillguinotexist ('dlgQuestion')
         waittillguinotexist ('dlgSaveAs...')
         time.sleep (5)
-        #setcontext ('Unsaved Document 1 - gedit', 'sample.txt ' + '(' + newcontext  + ') - gedit')
         selectmenuitem ('*gedit', 'mnuDocuments;mnuCloseAll')
         # TODO
         # - Verify saved text file content using compare function
         log ('Create New Document', 'pass')
-        #releasecontext ()
-        #setcontext ('Unsaved Document 1 - gedit', 'gedit')
     else:
         log ('Save dialog does not appear', 'error')
         log ('Create New Document', 'fail')
 except error, msg:
-    #releasecontext ()
-    #setcontext ('Unsaved Document 1 - gedit', 'gedit')
     log (str (msg), 'error')
     log ('Create New Document', 'fail')
+    log ('Create New Document', 'testend')
 
 log ('Create New Document', 'testend')
