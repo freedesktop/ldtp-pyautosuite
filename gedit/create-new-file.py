@@ -85,9 +85,8 @@ try:
     else:
         log ('Save dialog does not appear', 'error')
         log ('Create New Document', 'fail')
-except error, msg:
-    log (str (msg), 'error')
+except:
     log ('Create New Document', 'fail')
     log ('Create New Document', 'testend')
-
+    raise LdtpExecutionError (0)
 log ('Create New Document', 'testend')
