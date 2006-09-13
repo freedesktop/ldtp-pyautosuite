@@ -1,0 +1,23 @@
+Requirements : Gedit v.2.14.x, LDTP (>=0.5.0)
+
+This directory contains test automation scripts for gedit v.2.14. Most of the gedit functions have been automated. Some examples :
+* Saving documents
+* Help
+* Searching
+* Editing functions like cut, copy, paste, undo & redo, etc..,
+
+Note :
+* User name (Full name) should be entered (mandatory), for testing the Username plugin. (File to modify: gedit31-data.xml)
+* Some scripts attempt to create files (if not already existing) in the current directory, for testing editing/saving functionalities on existing files. If some files already exist, and should be used instead of default ones, please modify appropriate data xml files to specify the file names(Eg : gedit-data.xml)
+
+Run the following command prior to executing the scripts. This will set the LDTP command delay environment variable to 5 seconds (Necessary for some cases):
+
+	export LDTP_DELAY_CMD=5
+
+Then, to run the scripts, use the following command:
+
+	ldtprunner gedit-main.xml
+
+after changing into the ldtp_final directory.
+
+This will run the tests, starting from the test to launch gedit.

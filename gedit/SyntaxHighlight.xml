@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<data>
+	<lang0>C</lang0>
+	<keyw0>struct</keyw0>
+	<nonkeyw0>elif</nonkeyw0>
+	<langtype0>Sources</langtype0>
+
+	<lang1>Python</lang1>
+	<keyw1>elif</keyw1>
+	<nonkeyw1>define</nonkeyw1>
+	<langtype1>Scripts</langtype1>
+
+	<lang2>HTML</lang2>
+	<keyw2>&lt;html&gt;</keyw2>
+	<nonkeyw2>&lt;color&gt; </nonkeyw2>
+	<langtype2>Markup</langtype2>
+</data>
