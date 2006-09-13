@@ -1,21 +1,46 @@
-Dependency
-  - PyLDTP - http://gnomebangalore.org/ldtp/index.php/Main_Page
-  
-All these scripts have been tested with Evolution-2.5.1 on SuSE 10.0. The data xml files
-provided for testing IMAP configured account. These scripts will execute following test cases,
-	- Compose mail with/without attachment
-	- Copy/Delete/Move mail
-	- Forward mail mail in different styles (Attachment/Inline/Quoted)
-	- Search for mail based on
-		- Subject or sender contains
-		- Subject contains
-		- Sender contains
-	- Create/Rename/Delete mail folder
-	- Create vfolder from message sender/message subject
-	- Creating an user account
+Requirements: Evolution 2.6.2, LDTP (>= 0.5.0)
 
-Please refer http://gnomebangalore.org/ldtp/index.php/Release_notes_for_Evolution-2.5.1_Sanity_suite
-for more details.
+This directory contains the source code for the automation scripts for
+Evolution 2.6. The following features of Evolution are automated:
+* Mailer
+* AddressBook
+* Calendars
+* Tasks
 
-Please do post your comments/queries to "ldtp-dev@lists.freedesktop.org".
+There are some pre-requisites for running the scripts:
+For Tasks:
+----------
+The ``Personal'' Task list should be present.
+
+
+For Calendars:
+--------------
+Make sure that the attendees that you have put in the
+Data XML files are indeed present in the Contacs Address Book. Currently
+there is a bug () which does not get the main evolution window the
+active status, so it might be necessary for the window to be given the
+focus (i.e. by clicking on the window) manually.
+BUGS :: http://bugzilla.gnome.org/show_bug.cgi?id=347476
+
+
+For AddressBook:
+----------------
+Make sure that you move the scroll bar once through the
+entire window i.e. such that all the contacts come into view at least
+once before you select the contacts through the script. It is unable to
+select it otherwise.
+
+
+For Mailer:
+-----------
+The Reference Images for the Image comparision tests *have* to be remade
+for your environment. They will not under most possibility match with
+your evironment.
+
+The Subject, To, From fields in some of the data fields will need to be
+modified to suit the environment of yours.
+
+Make Sure that you have 1 account configured with a saved password for
+an SMTP server (if it is used). An ``Enter Password'' dialog box will
+not be handled.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -22,6 +22,14 @@
 #  Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 #  Boston, MA 02111-1307, USA.
 #
-from modifymeeting import *
+from meeting import *
 
-modifymeeting (datafilename,1)
+try:
+    log ('Modify All Instance recursive meeting','teststart')
+    modifymeeting (datafilename, 1)
+except:
+    log ('Modify All Instance recursive meeting','fail')
+    log ('Modify All Instance recursive meeting','testend')
+    raise LdtpExecutionError (0)
+log ('Modify All Instance recursive meeting','pass')    
+log ('Modify All Instance recursive meeting','testend')

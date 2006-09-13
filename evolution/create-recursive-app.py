@@ -1,8 +1,8 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
-#     Venkateswaran S <wenkat.s@gmail.com>
+#       Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -25,71 +25,26 @@
 # To create an appoinment with attachment.
 
 #from create-appointment import *
-from evoutils.calendar import *
-from ldtp import *
-from ldtputils import *
+from evoutils import *
+from appointment import *
 
-def read_data():
-	#Initialising XML parser with data file
-	data_object = LdtpDataFileParser (datafilename)
 
-	#Extracting imput data from xml file
-	summary = data_object.gettagvalue ('summary')[0]
-	location = data_object.gettagvalue ('location')[0]
-	description = data_object.gettagvalue ('description')[0]
-	from_date = data_object.gettagvalue ('start_date')[0]
-	to_date = data_object.gettagvalue ('due_date')[0]
-	from_time = data_object.gettagvalue ('start_time')[0]
-	to_time = data_object.gettagvalue ('due_time')[0]
-	calendar = data_object.gettagvalue ('calendar')[0]
-	
-	repeat_every = data_object.gettagvalue ('repeat_every')[0]
-	duration = data_object.gettagvalue ('duration')[0]
-	no_of_times = data_object.gettagvalue ('no_of_times')[0]
-	repeat_method = data_object.gettagvalue ('repeat_method')[0]
-	exceptions = data_object.gettagvalue ('exceptions')[0]
-	dur_value = data_object.gettagvalue ('dur_value')[0]
-	dur_day = data_object.gettagvalue ('dur_day')[0]
-	return dur_value, dur_day, repeat_every, duration, no_of_times, repeat_method, exceptions, summary, location, description, from_date, to_date, from_time, to_time, calendar
+try:
+    log ('Create Recursive Appointment','teststart')
+    selectCalendarPane ()
+    windowname = 'frmAppointment-*'
+    selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuAppointment')
 
-def appointment_withrecurrence():
+    waittillguiexist (windowname) 
+    if guiexist (windowname) == 0:
+        log ('Failed to open new appointment window', 'cause')
+        raise LdtpExecutionError (0)
 
-	try:
-		log('Create appoinment with attachment','teststart')
-		windowname = 'frmAppointment-Nosummary'
-		dur_value, dur_day, repeat_every, duration, no_of_times, repeat_method, exceptions, summary, location, description, from_date, to_date, from_time, to_time, calendar = read_data()
-
-		time.sleep(5)
-		more_items_todo = 'yes'
-		
-	    	selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuFile;mnuAppointment')
-	    	time.sleep (2)
-	
-	    	if guiexist (windowname) == 0:
-	        	log ('Failed to open new appointment window', 'cause')
-			log('Create appoinment with attachment','testend')
-	        	raise LdtpExecutionError (0)
-	    	else:
-			i = insert_appointment (windowname, summary, location, description, from_date, from_time, to_date, to_time, calendar, more_items_todo)
-		if i == 1:
-            		flag = 1
-	        else:
-			try:
-				click(windowname,'btnRecurrence')
-				waittillguiexist('dlgRecurrence')
-				insert_recurrence ('dlgRecurrence',duration, dur_value, dur_day, repeat_every, repeat_method, no_of_times, exceptions)
-				log('Recurrence value entered','info')
-				time.sleep(3)
-				click(windowname, 'btnSave')
-			except:
-				print 'unable to create the recursive appoinment'
-				log('Create appoinment with attachment','testend')
-				raise LdtpExecutionError (0)
-		
-	except:
-		log('unable to create the recursive appoinment','error')
-		log('Create appoinment with attachment','testend')
-		raise LdtpExecutionError (0)
-	log('Recursive Appointment created','info')
-	log('Create appoinment with attachment','testend')
-appointment_withrecurrence()
+    menuuncheck (windowname, 'mnuOptions;mnuAllDayEvent')
+    create_appointment (datafilename, 'yes')
+except:
+    log ('Create Recursive Appointment','fail')
+    log ('Create Recursive Appointment','testend')
+    raise LdtpExecutionError (0)
+log ('Create Recursive Appointment','pass')
+log ('Create Recursive Appointment','testend')    

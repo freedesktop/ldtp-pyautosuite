@@ -1,5 +1,6 @@
+#!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -23,121 +24,70 @@
 #
 # This script will create a new assigned task.
 
-#!/usr/bin/env python
-
 from ldtp import *
 from ldtputils import *
+from task import *
+from meeting import *
 
-def addattendees(attendee,email,addrbook):
-   log ('Add Attendees','teststart')
-   try:
-       click ('frmAssignedTask-Nosummary','btnAttendees')
-       waittillguiexist ('dlgRequiredParticipants')
-       time.sleep (1)
-       comboselect ('dlgRequiredParticipants','cboAddressBook',addrbook)
-       #remap ('evolution','dlgRequiredParticipants')
-       attendee=attendee[0].split (':')
-       email=email[0].split (':')
-       if len(attendee)!=len(email):
-           log ('Mismatch in Attendee name and email','error')
-           raise LdtpExecutionError (0)
-       for ind in range(len(attendee)):
-           try:
-	       att=attendee[ind] + ' <'+ email[ind] + '>'
-               print att,"Inside for loop"
-               if gettablerowindex('dlgRequiredParticipants','tblRequiredParticipants',att)==-1:
-                   print "inside if"
-                   selectrow ('dlgRequiredParticipants','tblContacts',att)
-                   print "row selected"
-                   click ('dlgRequiredParticipants', 'btnAdd1')
-                   time.sleep (1)
-           except:
-               log ('User not found','cause')
-               raise LdtpExceptionError(0)
-       click ('dlgRequiredParticipants', 'btnClose')
-       #undoremap ('evolution','dlgRequiredParticipants')
-   except:
-       log ('Attendee Addition failed','error')
-       log ('Add Attendees','testend')
-       raise LdtpExecutionError (0)
-   log ('Add Attendees','testend')
 
-def read_new_taskdata():
-
-	try:
-		log('read user data','teststart')
-		data_object = LdtpDataFileParser (datafilename)
-		Email = data_object.gettagvalue ('email')
-		Organizer = data_object.gettagvalue ('organizer')
-		Attendees = data_object.gettagvalue ('Attendees')
-		Att_emails = data_object.gettagvalue ('Att_emails')
-		addr_book = data_object.gettagvalue ('addr_book')
-		Group = data_object.gettagvalue ('group')
-		Summary = data_object.gettagvalue ('summary')
-		Desc = data_object.gettagvalue ('Desc')
-		Start_date = data_object.gettagvalue ('start_date')
-		Start_time = data_object.gettagvalue ('start_time')
-		End_date = data_object.gettagvalue ('due_date')
-		End_time = data_object.gettagvalue ('due_time')
-		Time_zone = data_object.gettagvalue ('time_zone')
-		log('User data read successfull','info')
-		log('read user data','testend')
-		return [Email, Organizer, Attendees, Att_emails, addr_book, Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone]
-
-	except:
-		log('Unable to read the user data or data file missing','error')
- 		log('read user data','testend')
-		raise LDTPexecutionerror(0)
-
-	log('read user data','testend')
 
 def new_task():
+   """ Routine to add a new task """ 	
+   try:
+      log('Create new assigned task','teststart')
+      Group, Summary, Desc, Start_date, Start_time, \
+             End_date, End_time, Time_zone, Categories, \
+             addr_book, attendee, email = read_assignedtask_data (datafilename)
+      window_id = 'frmAssignedTask-*' 
+      
+      selectmenuitem('frmEvolution-Tasks','mnuFile;mnuNew;mnuAssignedTask')
+      waittillguiexist('frmAssignedTask-Nosummary')
+      no_rows_b4creat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
+      fill_task (Group, Summary, Desc, Start_date, Start_time,
+                 End_date, End_time, Time_zone, Categories,
+                 window_id)
+      print 'Filled in the details'
+      time.sleep(2)
+      addattendees (attendee, email, addr_book, window_id)
+      time.sleep(2)
+      log('User data Loaded','info')
 
-	""" Routine to add a new task """ 	
-	#Verify: This script fails to set the group combo box.
+   except:
+      log('Unable to enter the values','error')
+      log('Create a new assigned task','fail')
+      log('Create a new assigned task','testend')
+      raise LdtpExecutionError(0)
 
-	try:
-		log('Create new assigned task','teststart')
-		Email, Organizer, Attendees, Att_emails, addr_book, Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone = read_new_taskdata()
+   # Click Save and then exit.
+   try:
+      click(window_id,'btnSave')
+      time.sleep(3)
+      if guiexist('dlgEvolutionQuery') == 1:
+         click('dlgEvolutionQuery','btnDonotSend')
+         log('Assigned Task Creation Completed','info')
+         print 'Task has been created'
+   except:
+      log('Unable to save the task', 'cause')
+      log('Create a new assigned task','fail')
+      log('Create a new assigned task','testend')
+      raise LdtpExecutionError(0)
 
-		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuNew;mnuAssignedTask')
-		waittillguiexist('frmAssignedTask-Nosummary')
-		log('Dlgbox new assigned task appeared','info')
-		settextvalue ('frmAssignedTask-Nosummary', 'txtSummary', Summary[0])
-		setcontext('Assigned Task - No summary','Assigned Task - ' + Summary[0])
-		time.sleep(3)
-		settextvalue ('frmAssignedTask-Nosummary', 'txtDescription', Desc[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txtDate1',Start_date[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txtDate',End_date[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txt8',Start_time[0])
-		settextvalue ('frmAssignedTask-Nosummary', 'txt6',End_time[0])
-		#settextvalue ('frmAssignedTask-Nosummary', 'txt7',Organizer[0]+ ' <'+Email[0]+'>')
-                # Organizer is not text. It's a noname combo. Need file bug 
-		comboselect ('frmAssignedTask-Nosummary', 'cboPersonal', Group[0])
-		time.sleep(2)
-		addattendees(Attendees,Att_emails,addr_book[0])	
-		time.sleep(2)
-		log('User data Loaded','info')
+   try:
+      no_rows_aftercreat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
+      if no_rows_aftercreat == no_rows_b4creat + 1 \
+         and selectrow('frmEvolution-Tasks','tblTasks',Summary[0]) == 1:
+         
+         verify_task (Group, Summary, Desc, Start_date, Start_time,
+                      End_date,End_time, Time_zone, Categories, window_id)
+         click (window_id,'btnClose')
+      else:
+         click (window_id,'btnClose')
+         raise LdtpExecutionError (0)
+   except:
+      log ('Verification Failed','cause')
+      log('Create a new assigned task','fail')
+      log('Create a new assigned task','testend')
+   log('Create a new assigned task','pass')
+   log('Create a new assigned task','testend')
 
-	except:
-		log('Unable to enter the values','error')
-		log('Create a new assigned task','testend')
-		raise LdtpExecutionError(0)
-
-# Click Save and then exit.
-	try:
-		click('frmAssignedTask-Nosummary','btnSave')
-		time.sleep(3)
-		if guiexist('dlgEvolutionQuery') == 1:
-			#remap('evolution','dlgEvolutionQuery')
-			click('dlgEvolutionQuery','btnDon\'tSend')
-			#undoremap('evolution','dlgEvolutionQuery')
-		log('Assigned Task Creation Completed','info')
-		print 'Task has been created'
-	except:
-		log('Unable to save the task')
-		log('Create a new assigned task','testend')
-		raise LdtpExecutionError(0)
-
-	log('Create a new assigned task','testend')
 new_task()

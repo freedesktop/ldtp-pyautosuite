@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<data>
+  <email>ldtproj1@gmail.com</email>
+  <name>LDTP1</name>
+  <replyto>ldtproj1@gmail.com</replyto>
+  <organization>Linux Desktop Testing Project</organization>
+  <defaultaccount>1</defaultaccount>
+  <recvservertype>POP</recvservertype>
+  <mailserver>pop.gmail.com</mailserver>
+  <username>ldtproj1</username>
+  <secureconnection>SSL encryption</secureconnection>
+  <authtype>Password</authtype>
+  <rememberpassword>1</rememberpassword>
+  <checkmail>1</checkmail>
+  <mailcheckinterval>5</mailcheckinterval>
+  <leavemessageonserver>0</leavemessageonserver>
+  <disablesupportforextn>0</disablesupportforextn>
+  <sendservertype>SMTP</sendservertype>
+  <smtpserver>smtp.gmail.com</smtpserver>
+  <serverrequiresauth>1</serverrequiresauth>
+  <smtpsecureconnection>TLS encryption</smtpsecureconnection>
+  <smtpauthtype>Login</smtpauthtype>
+  <smtpusername>ldtproj</smtpusername>
+  <smtprememberpassword>1</smtprememberpassword>
+  <accountname>Test Account</accountname>
+  <timezone>Asia/Calcutta</timezone>
+</data>

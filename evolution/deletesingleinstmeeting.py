@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -23,25 +23,28 @@
 #  Boston, MA 02111-1307, USA.
 #
 
-from modifymeeting import *
-
-
+from meeting import *
 
 try:
+    log ('Delete single instance of recursive Meeting','teststart')
     try:
         data_object = LdtpDataFileParser (datafilename)
         fromdate=data_object.gettagvalue ('fromdate')
         summary=data_object.gettagvalue ('summary')
-        occurance=data_object.gettagvalue ('occurance')
     except:
         log ('Error while reading values for delete meeting','cause')
+        log ('Delete single instance of recursive Meeting','fail')
         raise LdtpExecutionError (0)
 
     try:
-        deletemeeting (fromdate[0],summary[0],int(occurance[0]))
+        deletemeeting (fromdate[0],summary[0],1)
     except:
         log ('Unable to delete meeting','error')
+        log ('Delete single instance of recursive Meeting','fail')
         raise LdtpExecutionError (0)
+    log ('Delete single instance of recursive Meeting','pass')
 
 except:
+    log ('Delete single instance of recursive Meeting','testend')
     raise LdtpExecutionError (0)
+log ('Delete single instance of recursive Meeting','testend')

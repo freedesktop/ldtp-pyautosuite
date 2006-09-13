@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -58,6 +58,7 @@ def reply_toall(fldr, subject, expected_to_names, expected_to_emails):
 		#remap('evolution','frmEvolution-Mail')
 		print fldr,subject
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
+                        waittillguiexist ('frmEvolution-'+fldr+'*')
 			time.sleep(2)
 			log('Folder identified','info')
 			Row_index = getrowindex(subject)

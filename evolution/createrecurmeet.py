@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -24,7 +24,15 @@
 #
 
 
-from addmeeting import *
+from meeting import *
 
+selectCalendarPane ()
 
-addmeeting (datafilename,1)
+log ('Add Recurring  Meeting','teststart')
+try:
+    addmeeting (datafilename, 1)
+except:
+    log ('Add Recurring  Meeting','fail')
+    log ('Add Recurring  Meeting','testend')
+log ('Add Recurring  Meeting','testend')
+

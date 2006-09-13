@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Nagashree <mnagashree@novell.com>
@@ -42,9 +42,11 @@ def forward_mail (source_fldr, mail_index, to, body, subject_new, cc, refimg):
 		change_style ('Forward', style)
 		# forward mail section
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', sentitems)
+		waittillguiexist ('frmEvolution-'+sent_items+'*')
 		time.sleep (2)
 		n_sentitems = getrowcount ('frmEvolution-*', 'ttblMessages')
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
+		waittillguiexist ('frmEvolution-'+source_fldr+'*')
 		time.sleep (2)
 		if mail_index == -1:
 			mail_index = getrowcount ('frmEvolution-*', 'ttblMessages') - 1

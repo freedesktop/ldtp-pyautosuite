@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Khasim Shaheed <khasim.shaheed@gmail.com>
@@ -39,6 +39,7 @@ def create_mail_folder (parent, folder_name):
 			return
 		else:	
 			selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', parent)
+			waittillguiexist ('frmEvolution-'+parent+'*')
 
 		selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuMailFolder')
 		if waittillguiexist ('dlgCreatefolder') == 0:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -27,7 +27,7 @@
 from mailtests import *
 from evoutils.composemail import *
 
-to, subject, body, cc,bcc, attachment, sentitemsfolder, refimg = read_maildata (datafilename)
+to, cc, bcc, subject, body, attachment, sentitemsfolder, refimg = read_maildata (datafilename)
 
 sendmailwhenoffline (to, subject, body, cc, bcc, attachment)
      

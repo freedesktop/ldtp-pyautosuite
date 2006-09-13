@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -32,42 +32,39 @@ def read_data ():
 	Type = data_object.gettagvalue ('Type')
 	Name = data_object.gettagvalue ('Name')
 	Color = data_object.gettagvalue ('Color')
-	Default = data_object.gettagvalue ('Default')
-	return Type, Name, Color, Default
+	return Type, Name, Color
 
-def create_tasklist(Type, Name, Color, Default):
-
+def create_tasklist(Type, Name, Color):
 	try:
 		log('create a task list','teststart')
-		#remap('evolution','frmEvolution-Tasks')
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuNew;mnuTasklist')
 		time.sleep(3)
 		waittillguiexist('dlgTaskListProperties')
-		settextvalue ('dlgTaskListProperties', 'txtName', 'bug')
-			
-		if Default[0] == 'check':
-			check ('dlgTaskListProperties', 'chkMarkasdefaultfolder')
-		elif Default[0] == 'uncheck':
-			uncheck ('dlgTaskListProperties', 'chkMarkasdefaultfolder')
+		settextvalue ('dlgTaskListProperties', 'txtName', Name[0])
+		for obj in getobjectlist ('dlgTaskListProperties'):
+			if obj.startswith ('cbo'):
+				type_obj = obj
+				break
+		comboselect ('dlgTaskListProperties', type_obj, Type[0])
+# 		if Default[0] == 'check':
+# 			check ('dlgTaskListProperties', 'chkMarkasdefaultfolder')
+# 		elif Default[0] == 'uncheck':
+# 			uncheck ('dlgTaskListProperties', 'chkMarkasdefaultfolder')
 		log('The window has been modified','info')
 	except:	
 		log('Unable to see the window','error')
-		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
 
 	try:
 		click('dlgTaskListProperties','btnColor')
-		waittillguiexist('uknPickacolor')
-		settextvalue ('uknPickacolor', 'txtColorName', Color[0])
+		waittillguiexist('*Pickacolor')
+		settextvalue ('*Pickacolor', 'txtColorName', Color[0])
 		time.sleep(2)
-		click('uknPickacolor','btnOK')
-		settextvalue ('dlgTaskListProperties', 'txtName', Name[0])
-		time.sleep(3)
+		click('*Pickacolor','btnOK')
 		log('The requested color has been set','info')
 	except:
 		log('Unable to set the requested color','error')
-		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
 
@@ -79,15 +76,23 @@ def create_tasklist(Type, Name, Color, Default):
 		else:
 			print 'The task list already exists'
 			click('dlgTaskListProperties','btnCancel')
-			log('The required task list cannot be created','error')			
+			log('The required task list cannot be created','error')
 	except:
 		log('Unable to create the required task list','error')
-		#undoremap('evolution','frmEvolution-Tasks')
 		log('create a task list','testend')
 		raise LdtpExecutionError(0)
+	try:
+		selectrow ('frmEvolution-Tasks','ttblTaskSourceSelector',Name[0])
+		try:
+			selectrow ('frmEvolution-Tasks','ttblTaskSourceSelector',
+				   'Personal')
+		except:
+			pass
 
-	#undoremap('evolution','frmEvolution-Tasks')
+	except:
+		log ('Task List not created','cause')
+		raise LdtpExecutionError (0)
 	log('create a task list','testend')
 	
-Type, Name, Color, Default = read_data()	
-create_tasklist(Type, Name, Color, Default)
+Type, Name, Color = read_data()	
+create_tasklist(Type, Name, Color)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -38,6 +38,8 @@ try:
         log ('Error while reading values for folder tests','cause')
         raise LdtpExecutionError (0)
     try:
+        go_offline ()
+        selectMailPane ()
         create_folder_when_offline (crefolder[0],location[0])
         delete_folder_when_offline (delfolder[0])
         move_folder_when_offline (from_folder[0],to_folder[0])

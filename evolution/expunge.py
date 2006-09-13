@@ -1,8 +1,9 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan  <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -35,6 +36,7 @@ try:
 	fldr = 'Trash'
 	#remap('evolution','frmEvolution-Mail')
 	if selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', fldr):
+		waittillguiexist ('frmEvolution-'+fldr+'*')
 		log('fldr has been selected','info')
 		time.sleep(2)
 		if selectmenuitem('frmEvolution-*','mnuFolder;mnuExpunge') == 1:

@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Bhargavi  <kbhargavi_83@yahoo.co.in>
@@ -34,6 +34,7 @@ from evoutils.mail import *
 def delete_mail (source_fldr, mail_index):
 	try:
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
+		waittillguiexist ('frmEvolution-'+source_fldr+'*')
 		time.sleep (2)
 		rowcount = getrowcount('frmEvolution-*', 'ttblMessages') 
 		if rowcount > 0:
@@ -44,6 +45,7 @@ def delete_mail (source_fldr, mail_index):
 			selectmenuitem ('frmEvolution-*', 'mnuEdit;mnuDeleteMessage')
 			time.sleep (1)
 			selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_fldr)
+			waittillguiexist ('frmEvolution-'+source_fldr+'*')
 			time.sleep (2)
 			row_after = getrowcount('frmEvolution-*','ttblMessages')
 			if row_after == (rowcount-1):

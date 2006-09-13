@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data>
-  <from_folder>Inbox</from_folder>
-  <to_folder>backup</to_folder>
-  <subject>asd</subject>
+  <from_folder>Inbox</from_folder> <!-- Make sure both folders exist -->
+  <to_folder>BSD</to_folder>
+  <subject>Happy New Year</subject> <!-- Make sure that at least 1 message containing this subject exists in the source folder -->
 </data>

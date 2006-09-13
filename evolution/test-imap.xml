@@ -4,7 +4,7 @@
  <logfile>imap-log.xml</logfile>
  <appmapfile>evolution.map</appmapfile>
  <group>
-  <script>
+<!--  <script>
    <name>changecomponent.py</name>
   </script>
   <script>
@@ -12,12 +12,12 @@
    <data>changesentfolder.xml</data>
   </script>
  </group> 
- <group>
+ <group>-->
   <script>
    <name>compose-mail.py</name>
    <data>compose-mail.xml</data>
   </script>
-  <script>
+<!--  <script>
    <name>compose-mail.py</name>
    <data>compose-mail-w-attachment.xml</data>
   </script>
@@ -86,6 +86,6 @@
   <script>
    <name>create-search-folder-from-message.py</name>
    <data>search-folder-on-subject.xml</data>
-  </script>
+  </script>-->
  </group>
 </ldtp>

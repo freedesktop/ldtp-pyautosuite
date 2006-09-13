@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data>
   <folder>Inbox</folder>
-  <subject>smtp mail failed</subject>
-  <save_location>Desktop</save_location>
+  <subject>apt tst</subject> <!-- Make sure that at least 1 message containing this subject exists in the source folder -->
+  <save_location>Desktop</save_location> <!-- Make sure that the save location is a folder within the home directory -->
 </data>

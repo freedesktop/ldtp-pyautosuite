@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <data>
-  <delfolder>abacd</delfolder>
+  <delfolder>Big Files</delfolder>
   <crefolder>abc</crefolder>
-  <to_folder>backup</to_folder>
-  <from_folder>345</from_folder>
-  <oldfolder>345</oldfolder>
-  <newfolder>567</newfolder>
-  <location>abacd</location>
+  <to_folder>Old Mails</to_folder>
+  <from_folder>Big Files</from_folder>
+  <oldfolder>Big Files</oldfolder>
+  <newfolder>Small Files</newfolder>
+  <location>Big Files</location>
 </data>

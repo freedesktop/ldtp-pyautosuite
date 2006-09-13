@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<data>
+ <name>Advanced Search 1</name>
+ <field1>Subject</field1>
+ <query1>contains</query1>
+ <value1>Happy</value1>
+</data>

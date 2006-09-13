@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Authors:
 #     Khasim Shaheed <khasim.shaheed@gmail.com>
@@ -29,16 +29,21 @@ from evoutils.mailpreferences import *
 
 # Section to compose a new mail through File menu
 def compose_mail (to, subject, body, cc, attachment, sentitemsfolder, refimg):
+	print to, subject, body, cc, attachment, sentitemsfolder, refimg
+	raw_input()	
 	try:
 		if sentitemsfolder:
 			sent_folder = sentitemsfolder[0]
 		else:
-			sent_folder = 'Sent Items'
+			sent_folder = 'Sent'
 		
-		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', sent_folder)
-		time.sleep (2)
-		sent_mail_count = getrowcount ('frmEvolution-*', 'ttblMessages')
+		selectrowpartialmatch ('*Evolution*', 'ttblMailFolderTree', sent_folder)
+		waittillguiexist ('frmEvolution-'+sent_folder+'*')
+		time.sleep (5)
+		sent_mail_count = getrowcount ('*Evolution*', 'ttblMessages')
 		compose (to, subject, body, cc, attachment)
+		print 'compose over'
+		raw_input()
 		if verifymailwithimage (sent_folder, sent_mail_count, refimg) == 1:
 			log ('Compose new message', 'pass')
 		else:
@@ -50,6 +55,7 @@ def compose_mail (to, subject, body, cc, attachment, sentitemsfolder, refimg):
 	
 # Reading Input from File
 #to, subject, body, cc, attachment, sentitemsfolder, refimg = read_maildata (datafilename)
+datafilename = 'compose-mail.xml'
 try:
         data_object = LdtpDataFileParser (datafilename)
         to = data_object.gettagvalue ('to')

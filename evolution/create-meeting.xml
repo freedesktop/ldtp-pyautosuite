@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <data>
   <addrbook>Personal</addrbook>
-  <summary>new summary</summary>
+  <summary>new summary</summary> 
   <location>Conference room</location>
   <description>A new appointment for testing appointment creation</description>
   <classification>Confidential</classification>
   <calendar>Personal</calendar>
   <categories>Business</categories>
-  <from_date>10/24/2005</from_date>
-  <to_date>10/24/2005</to_date>
-  <attendee>asd asda</attendee>
-  <email>asd@asdfa.com</email>
-  <duration>month(s)</duration>
-  <durvalue>second</durvalue>
-  <durday>Saturday</durday>
-  <count>5</count>
-  <fortype>until</fortype>
-  <nooftimes>12/12/05</nooftimes>
+  <from_date>07/15/06</from_date>
+  <to_date>07/15/06</to_date>
+  <attendee1>cray III</attendee1>
+  <email1>cray30@gmail.com</email1>
+  <attendee2>Rave Hanker</attendee2>
+  <email2>ravehanker@gmail.com</email2>
+  <attendee3>sankar</attendee3>
+  <email3>sankar_16@yahoo.com</email3>
 </data>

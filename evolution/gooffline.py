@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -24,6 +24,14 @@
 #
 
 
-from evoutils.mail import *
+from evoutils import *
 
-go_offline()
+log ('Go Offline','teststart')
+try:
+    go_offline()
+except:
+    log ('Go Offline','fail')
+    log ('Go Offline','testend')
+    raise LdtpExecutionError (0)
+log ('Go Offline','pass')
+log ('Go Offline','testend')

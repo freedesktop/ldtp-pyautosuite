@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -23,101 +23,45 @@
 #
 # This script will modify a particular task.
 
-from ldtp import *
-from ldtputils import *
-#from evoutils.Task import getrowindex
-def getrowindex(subject):
-   try:
-       noofchild=getrowcount ('frmEvolution-Tasks','tblTasks')
-       for ind in range (noofchild):
-           if getcellvalue('frmEvolution-Tasks','tblTasks',ind,2) == subject:
-               return ind
-       if ind == noofchild-1:
-           log ('Message not present','cause')
-           raise LdtpExecutionError (0)
-   except:
-       log ('Unable to get index of message','error')
-       raise LdtpExecutionError (0)
-
-def read_data ():
-
-	log('read user data','teststart')
-	try:
- 		data_object = LdtpDataFileParser (datafilename)
-		Row_no = data_object.gettagvalue ('row_no')
-		Due_date = data_object.gettagvalue ('due_date')
-		Progress = data_object.gettagvalue ('progress')
-		Summary = data_object.gettagvalue ('summary')
-		old_summary = data_object.gettagvalue ('old_summary')
-		log('User data read successfull','info')
-		log('read user data','testend')
-
-		return Row_no, Due_date, Progress, Summary, old_summary
-	except:
-		log('Unable to read the user data or data file missing','error')
- 		log('read user data','testend')
-		raise LdtpExecutionError(0)
+from task import *
 
 
 # The script begins here.
 # Modifying the task , by doubleclicking the task in the table.
 try:	
-	log('Modify a task','teststart')
-	waittillguiexist('frmEvolution-Tasks')
-	#remap('evolution','frmEvolution-Tasks')
-	Row_no, Due_date, Progress, Summary, old_summary = read_data()
-	selectrow ('frmEvolution-Tasks', 'tblTasks', old_summary[0])
-	selectmenuitem('frmEvolution-Tasks', 'mnuFile;mnuOpenTask')
-	time.sleep(2)
-	#setcontext('Task - No summary','Task - ' + old_summary[0])
-	waittillguiexist('frmTask-*')
-	#remap('evolution','frmTask-Nosummary')
-
+   log('Modify a task','teststart')
+   selectTaskPane()
+   Group, Summary, Desc, Start_date, Start_time, \
+          End_date, End_time, Time_zone, \
+          Categories = gettaskdata (datafilename)
+   selectrow ('frmEvolution-Tasks', 'tblTasks', Summary[0])
+   selectmenuitem('frmEvolution-Tasks', 'mnuFile;mnuOpenTask')
+   time.sleep(2)
+   waittillguiexist('frmTask-*')
 except:
-	log('Unable to open Task window','error')
-	log('Modify a task','testend')
-	raise LdtpExecutionError(0)
+   log('Unable to open Task window','error')
+   log('Modify a task','fail')
+   log('Modify a task','testend')
+   raise LdtpExecutionError(0)
 
 # Modifies the task according to users wish.
 try:
-	settextvalue ('frmTask-*', 'txtDate',Due_date[0])
-	settextvalue ('frmTask-*', 'txtSummary',Summary[0])
-	#setcontext('Task - No summary','Task - ' + Summary[0])
-	log('User data Loaded','info')
-	time.sleep(3)
-	if stateenabled ('frmTask-*','btnSave')==1:
-		click('frmTask-*','btnSave')
-		time.sleep(3)
-		log('The required task list has been modified','info')
-	else:
-		log('The Task list already exists','info')
-		click('frmTask-*','btnClose')
-
-	time.sleep(3)
-	if guiexist('dlgEvolutionQuery'):
-		#remap('evolution','dlgEvolutionQuery')
-		click('dlgEvolutionQuery','btnSend')
-		time.sleep(3)
-		#undoremap('evolution','dlgEvolutionQuery')
-	log('Task has been modified successfully','info')
-
+   fill_task (Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories)
+   click('frmTask-*','btnSave')
+   waittillguinotexist ('frmTask-*')
+   selectrow ('frmEvolution-Tasks', 'tblTasks', Summary[0])
+   selectmenuitem('frmEvolution-Tasks', 'mnuFile;mnuOpenTask')
+   time.sleep(2)
+   waittillguiexist('frmTask-*')
+   verify_task (Group, Summary, Desc, Start_date,
+                Start_time, End_date, End_time,
+                Time_zone, Categories)
+   click ('frmTask-*','btnClose')		
 except:
-	log('Unable to load the user data','error')
-	log('modify a task','testend')
-	raise LdtpExecutionError(0)
-
-#Change the Progress of the task.
-try:
-	Row_no = getrowindex(Summary[0])
-	if Progress[0] == 'complete':
-		checkrow ('frmEvolution-Tasks', 'tblTasks', int(Row_no), 1)
-	elif Progress[0] == 'Not started':
-		uncheckrow ('frmEvolution-Tasks', 'tblTasks', int(Row_no), 1)
-	print 'The Task has been modified successfully'
-	log('progress of the task has been modified','info')
-except:
-	log('unable to change the progress of the task','error')
-	log('modify a task','testend')
-	raise LdtpExecutionError(0)
-
+   log ('Verification of Modified Task failed','cause')
+   log('Modify a task','fail')
+   log('Modify a task','testend')
+   click ('frmTask-*','btnClose')		
+   raise LdtpExecutionError(0)
+log('Modify a task','pass')
 log('Modify a task','testend')

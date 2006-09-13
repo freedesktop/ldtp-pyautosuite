@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -59,7 +59,7 @@ def selectfolder(fldr,dest=''):
 			click('dlgCreatefolder','btnCancel')
 			print 'Folder Name already exist'
 			log('Folder Already exists','error')
-	selectrowpartialmatch (windowname, 'ttblMailFolderTree',fldr)
+		selectrowpartialmatch (windowname, 'ttblMailFolderTree',fldr)
 	log('Dest fldr selected','info')
 	click(windowname,'btnOK')
 	return 1
@@ -80,6 +80,7 @@ def read_data():
 	execute_action = data_object.gettagvalue ('execute_action')[0]
 	print filter_on, rule_name, if_components, if_properties, if_values, then_actions, then_values, execute_action
 	return filter_on, rule_name, if_components, if_properties, if_values, then_actions, then_values, execute_action
+
 
 def create_filter(filter_on, rule_name, if_components, if_properties, if_values, then_actions, then_values, execute_action):
 	try:

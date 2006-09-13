@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <data>
-  <fromdate>10/24/2005</fromdate>
-  <summary>new summary</summary>
-  <occurance>0</occurance>
+  <fromdate>07/14/06</fromdate>
+  <summary>Recursive Meeting</summary> <!-- Make sure that this Meeting is present on the given date -->
 </data>

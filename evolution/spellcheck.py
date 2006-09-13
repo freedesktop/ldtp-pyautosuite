@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -36,10 +36,10 @@ except:
 
 try:
     selectMailPane()
-    window_id='frmEvolution-Mail'
+    window_id='frmEvolution-*'
     selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-    waittillguiexist ('frmComposeamessage')
-    settextvalue ('frmComposeamessage','txt6',text[0])
+    waittillguiexist ('frmComposeMessage')
+    settextvalue ('frmComposeMessage','txt6',text[0])
 except:
     log ('Unable to set text','cause')
     raise LdtpExecutionError (0)

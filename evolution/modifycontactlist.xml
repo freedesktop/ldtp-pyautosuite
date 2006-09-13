@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <data>
-  <ListName>Test List</ListName>
+  <ListName>Test List</ListName> <!-- Make sure that this Contact List is present -->
   <AddEmail1>asodha@sodfh.com</AddEmail1>
   <AddEmail2>aspdapsjdpa@pasihfdpa.com</AddEmail2>
-  <DelEmail1>asda@asd.com</DelEmail1>
+  <DelEmail1>asda@asd.com</DelEmail1> <!-- Make sure that this Contact is present in the list  -->
 </data>

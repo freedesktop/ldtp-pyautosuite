@@ -1,7 +1,16 @@
 <?xml version="1.0"?>
 <data>
-  <old_summary>This is just a summary for assigned task</old_summary>
-  <due_date>10/10/2005</due_date>
-  <progress>complete</progress>
-  <summary>This is the modified summary</summary>
+  <group>Personal</group>
+  <addr_book>Personal</addr_book>
+  <summary>This is just a summary for assigned task</summary>
+  <start_date>12/12/05</start_date>
+  <start_time>01:00 AM</start_time>
+  <attendee1>cray III</attendee1>
+  <email1>cray30@gmail.com</email1>
+  <attendee2>Rave Hanker</attendee2>
+  <email2>ravehanker@gmail.com</email2>
+  <due_date>12/20/05</due_date>
+  <due_time>03:00 AM</due_time>
+  <time_zone>Asia/Calcutta</time_zone>
+  <Desc>new description</Desc>
 </data>

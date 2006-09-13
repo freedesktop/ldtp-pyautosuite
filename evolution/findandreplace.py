@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -24,7 +24,7 @@
 #
 
 from mailtests import *
-
+import time
 
 try:
     data_object = LdtpDataFileParser (datafilename)
@@ -39,7 +39,8 @@ try:
     #selectMailPane()
     window_id='frmEvolution-*'
     selectmenuitem (window_id,'mnuFile;mnuNew;mnuMailMessage')
-    waittillguiexist ('frmComposeMessage')
+    waittillguiexist ('*Compose*')
+    time.sleep (2)
     settextvalue ('frmComposeMessage','txt6',text[0])
 except:
     log ('Unable to set text','cause')

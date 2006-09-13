@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -28,11 +28,12 @@ from ldtputils import *
 from mailtests import closecomposewindow
 from contact import *
 from evoutils.mail import *
+from evoutils import *
 
 def addnewsignature(name,text):
-    #log ('Add New Signature','teststart')
+    log ('Add New Signature','teststart')
     try:
-        #selectMailPane()
+        selectMailPane()
         try:
             selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionPreferences'
@@ -40,11 +41,8 @@ def addnewsignature(name,text):
             time.sleep (1)
             selecttab ('dlgEvolutionPreferences', 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
             selecttab ('dlgEvolutionPreferences', 'ptl2','Signatures')
-            #undoremap ('evolution',window_id)
             time.sleep (1)
-            #remap ('evolution',window_id)
             click (window_id,'btnAdd2')
             waittillguiexist ('frmEditsignature')
             time.sleep (1)
@@ -54,27 +52,26 @@ def addnewsignature(name,text):
         fillinsignaturevalues(name,text)
         time.sleep (2)
         #verification code
-        #verifysignature (name,text)
+        # verifysignature (name,text) http://bugzilla.gnome.org/show_bug.cgi?id=324241
         num=getrowcount (window_id,'tblSignatures')
-        flag=0
+        flag=False
         for x in range (num):
             if getcellvalue (window_id,'tblSignatures',x,0) == name:
-                flag=1
+                flag=True
                 break
-        if flag==1:
-            #log ('Signature added successfully','info')
+        click (window_id,'btnClose')
+        if flag==True:
+            log ('Signature added successfully','info')
             return 1
         else:
-            #log ('Signature not added succcessfully','cause')
+            log ('Signature not added succcessfully','cause')
             return 0
             raise LdtpExecutionError (0)
-                #        except:
-                #undoremap ('evolution',window_id)
     except:
         log ('Add New Signature failed','error')
-        #log ('Add New Signature','testend')
+        log ('Add New Signature','testend')
         raise LdtpExecutionError (0)
-    #log ('Add New Signature','testend')
+    log ('Add New Signature','testend')
 
 
 def fillinsignaturevalues (name,text):
@@ -84,6 +81,9 @@ def fillinsignaturevalues (name,text):
         settextvalue (window_id,'txt1',text)
         time.sleep (1)
         click (window_id,'btnSaveandClose')
+        time.sleep (5)
+        if guiexist ('*EvolutionError'):
+            click ('*EvolutionError','btnOK')
         waittillguinotexist (window_id)
     except:
         log ('Unable to fill in values for signature','cause')
@@ -111,10 +111,10 @@ def verifysignature (name,text):
         raise LdtpExecutionError (0)
             
 
-def edit_signature (name,text,newname=''):
+def edit_signature (name,text,newname=''): #http://bugzilla.gnome.org/show_bug.cgi?id=324241
     log ('Edit Signature','teststart')
     try:
-        #selectMailPane()
+        selectMailPane()
         try:
             selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionPreferences'
@@ -122,11 +122,8 @@ def edit_signature (name,text,newname=''):
             time.sleep (1)
             selecttab ('dlgEvolutionPreferences', 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
             selecttab ('dlgEvolutionPreferences', 'ptl2','Signatures')
-            #undoremap ('evolution',window_id)
             time.sleep (1)
-            #remap ('evolution',window_id)
             try:
                 selectrow ('dlgEvolutionPreferences','tblSignatures',name)
             except:
@@ -143,7 +140,7 @@ def edit_signature (name,text,newname=''):
             name=newname
         fillinsignaturevalues(name,text)
         
-        verifysignature (name,text)
+        #verifysignature (name,text)
     except:
         log ('Edit Signature failed','error')
         log ('Edit Signature','testend')
@@ -155,19 +152,16 @@ def edit_signature (name,text,newname=''):
 def removesignature(name):
     log ('Remove Signature','teststart')
     try:
-        #selectMailPane()
+        selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionSettings'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
             selecttab (window_id, 'ptl2','Signatures')
-            undoremap ('evolution',window_id)
             time.sleep (1)
-            remap ('evolution',window_id)
             try:
                 selectrow (window_id,'tblSignatures',name)
             except:
@@ -181,13 +175,13 @@ def removesignature(name):
 
         try:
             #verification
-            num=getrowcount (window_id,'tblSignatures')
-            flag=0
+            num = getrowcount (window_id,'tblSignatures')
+            flag = 0
             for x in range (num):
                 if getcellvalue (window_id,'tblSignatures',x,0) == name:
                     flag=1
                     break
-            if flag==1:
+            if flag == 1:
                 log ('Signature not removed','cause')
                 raise LdtpExecutionError (0)
             else:
@@ -199,15 +193,19 @@ def removesignature(name):
         log ('Remove signature failed','error')
         log ('Remove Signature','testend')
         raise LdtpExecutionError (0)
-    undoremap ('evolution',window_id)
     log ('Remove Signature','testend')
+    
 
-def format_in_HTML ():
+def format_in_HTML (to, text):
     log ('format messages in HTML','teststart')
     try:
-        to='abc@abc.com'
-        text='aaaa'
-        #selectMailPane()
+        if to == [] or text == []:
+            log ('Not enough input available','cause')
+            raise LdtpExecutionError (0)
+        to = to[0]
+        text = text[0]
+        subject = 'Test for HTML formatting'
+        selectMailPane()
         try:
             selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionPreferences'
@@ -215,8 +213,7 @@ def format_in_HTML ():
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
-            #selecttab (window_id, 'ptl2','General')
+            selecttab (window_id, 'ptl2','General')
             check (window_id,'chkFormatmessagesinHTML')
             time.sleep (1)
             if verifycheck (window_id,'chkFormatmessagesinHTML')==0:
@@ -227,24 +224,21 @@ def format_in_HTML ():
             raise LdtpExecutionError (0)
 
         click (window_id,'btnClose')
-        #undoremap ('evolution',window_id)
-        #verification
         
         try:
             selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
             waittillguiexist ('frmComposeMessage')
             settextvalue ('frmComposeMessage','txtTo',to)
             settextvalue ('frmComposeMessage','txt6',text)
-            settextvalue ('frmComposeamessage','txtSubject','Test for HTML formatting')
-            setcontext ('Compose a message','Test for HTML formatting')
-            click ('frmComposeMessage','btnSend')
+            settextvalue ('frmComposeMessage','txtSubject',subject)
+            compose_window = get_mail_name (subject)
+            click (compose_window,'btnSend')
             time.sleep (2)
             if guiexist ('dlgEvolutionQuery') != 1:
                 log ('Warning for HTML formatting did not come up','cause')
                 raise LdtpExecutionError (0)
-            #remap ('evolution','dlgEvolutionQuery')
             click ('dlgEvolutionQuery','btnCancel')
-            closecomposewindow (0)
+            closecomposewindow (0, compose_window)
         except:
             log ('Verification Failed','error')
             raise LdtpExecutionError (0)
@@ -258,15 +252,12 @@ def format_in_HTML ():
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
-            #selecttab (window_id, 'ptl2','General')
             uncheck (window_id,'chkFormatmessagesinHTML')
         except:
             log ('Unable to unselect HTML formatting','error')
             raise LdtpExecutionError (0)
 
         click (window_id,'btnClose')
-        #undoremap ('evolution',window_id)
     except:
         log ('setting default HTML formatting failed','error')
         log ('format messages in HTML','testend')
@@ -329,7 +320,7 @@ def changelanginspellcheck():
 def forwardstyle(fldr,subject):
     log ('Changing forward styles','teststart')
     try:
-        #selectMailPane()
+        selectMailPane()
         try:
             selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionPreferences'
@@ -337,39 +328,38 @@ def forwardstyle(fldr,subject):
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
-            for combo in getobjectlist (window_id):
-                if combo in ['cboQuoted','cboAttachment','cboInline']:
-                    break
+#             for combo in getobjectlist (window_id):
+#                 if combo in ['cboQuoted','cboAttachment','cboInline']:
+#                     break
 
-            comboselect (window_id,combo,'Attachment')
+            comboselect (window_id,'cboForwardstyle','Attachment')
             click (window_id,'btnClose')
             time.sleep (2)
-            selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr)
+            selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr)
+            waittillguiexist ('frmEvolution-'+fldr+'*')
             time.sleep (2)
             selectrow ('frmEvolution-*','ttblMessages',subject)
-            setcontext ('Readonlyframe',subject)
+            message_id = get_mail_name (subject)
             selectmenuitem ('frmEvolution-*','mnuMessage;mnuOpeninNewWindow')
-            waittillguiexist ('frmReadonly')
+            waittillguiexist (message_id)
             time.sleep (2)
-            text = getsentmailtext ()
-            selectmenuitem ('frmReadonly','mnuFile;mnuClose')
-            waittillguinotexist ('frmReadonly')
-            releasecontext ()
-            click ('frmEvolution-Mail','btnForward')                        
-            setcontext ('Compose a message','[Fwd: '+subject+']')
-            waittillguiexist ('frmComposeMessage')
+            text = getsentmailtext (message_id)
+            print text
+            selectmenuitem (message_id,'mnuFile;mnuClose')
+            waittillguinotexist (message_id)
+            click ('frmEvolution-*','btnForward')                        
+            message_id = get_mail_name('[Fwd: '+subject+']')
+            waittillguiexist (message_id)
             time.sleep (2)
-            fwdtext=getmailtext ()
+            fwdtext = getmailtext (message_id)
             if fwdtext == '':
                 log ('Forward style - Attachment works fine','info')
             else:
                 log ('Forward style - Attachment not proper','cause')
                 raise LdtpExecutionError (0)
 
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
-            waittillguinotexist ('frmComposeMessage')
-            #undoremap ('evolution',window_id)
+            selectmenuitem (message_id,'mnuFile;mnuClose')
+            waittillguinotexist (message_id)
         except:
             log ('Forward style Attachment failed','error')
             raise LdtpExecutionError (0)
@@ -378,47 +368,34 @@ def forwardstyle(fldr,subject):
             selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
             window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
-            remap ('evolution',window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #undoremap ('evolution',window_id)
-            #remap ('evolution',window_id)
-            for combo in getobjectlist (window_id):
-                if combo in ['cboQuoted','cboAttachment','cboInline']:
-                    break
+#             for combo in getobjectlist (window_id):
+#                 if combo in ['cboQuoted','cboAttachment','cboInline']:
+#                     break
 
-            comboselect (window_id,combo,'Inline')
+            comboselect (window_id,'cboForwardstyle','Inline')
             click (window_id,'btnClose')
             click ('frmEvolution-*','btnForward')
-            waittillguiexist ('frmComposeMessage')
+            waittillguiexist (message_id)
             time.sleep (2)
-            fwdtext=getmailtext ()
-#             if len (fwdtext)<36:
-#                 if fwdtext == '-------- Forwarded Message --------'):
-#                     log ('Forward style - Inline works fine','info')
-#                 else:
-#                     log ('Forward style - Inline not proper','cause')
-#                     raise LdtpExecutionError (0)
-#             else:
-#                 if fwdtext[36:]==text:
-#                     log ('Forward style - Inline works fine','info')
-#                 else:
-#                     log ('Forward style - Inline not proper','cause')
-#                     raise LdtpExecutionError (0)
+            fwdtext = getmailtext (message_id)
+            print 'FWD TEXT: ',fwdtext,'TEXT: ',text
+            fwdtext.find (text)
+            if not fwdtext.startswith ('-------- Forwarded Message --------'):
+                    log ('Forward style - Inline not proper','cause')
+                    raise LdtpExecutionError (0)
             if fwdtext.find (text) == -1:
                 log ('Forward style - Inline not proper','cause')
                 raise LdtpExecutionError (0)
             else:
                 log ('Forward style - Inline works fine','info')
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
-            waittillguinotexist ('frmComposeMessage')
-            releasecontext()
-            #undoremap ('evolution',window_id)
+            selectmenuitem (message_id,'mnuFile;mnuClose')
+            waittillguinotexist (message_id)
         except:
             log ('Forward style Inline failed','error')
             raise LdtpExecutionError (0)
-
     except:
         log ('Attachement style selection failed','error')
         log ('Changing forward styles','testend')
@@ -437,7 +414,6 @@ def prompt_for_empty_subject(to):
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
             time.sleep (1)
-            #remap ('evolution',window_id)
             check (window_id,'chkPromptwhensendingmessageswithanemptysubjectline')
             time.sleep (1)
             if verifycheck (window_id,'chkPromptwhensendingmessageswithanemptysubjectline') == 0:
@@ -445,7 +421,6 @@ def prompt_for_empty_subject(to):
                 raise LdtpExecutionError (0)
             click (window_id,'btnClose')
             waittillguinotexist (window_id)
-            #undoremap ('evolution',window_id)
         except:
             log ('Unable to Enable prompt for empty subject line','cause')
             raise LdtpExecutionError (0)
@@ -458,10 +433,9 @@ def prompt_for_empty_subject(to):
             if waittillguiexist ('dlgEvolutionQuery') == 0:
                 log ('Prompt did not appear','cause')
                 raise LdtpExecutionError (0)
-            #remap ('evolution','dlgEvolutionQuery')
             time.sleep (1)
             click ('dlgEvolutionQuery','btnSend')
-            #undoremap ('evolution','dlgEvolutionQuery')
+            waittillguinotexist ('frmComposeMessage')
         except:
             log ('Prompting for empty subject line failed for verification','cause')
             raise LdtpExecutionError (0)
@@ -477,8 +451,8 @@ def prompt_for_only_bcc (to):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Composer Preferences')
@@ -491,25 +465,25 @@ def prompt_for_only_bcc (to):
                 raise LdtpExecutionError (0)
             click (window_id,'btnClose')
             waittillguinotexist (window_id)
-            undoremap ('evolution',window_id)
         except:
             log ('Unable to Enable prompt for only bcc recepients','cause')
             raise LdtpExecutionError (0)
 
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuFile;mnuNew;mnuMailMessage')
-            waittillguiexist ('frmComposeamessage')
-            settextvalue ('frmComposeamessage','txtBcc',to)
-            settextvalue ('frmComposeamessage','txtSubject','Test for prompt for only bcc recepients')
-            setcontext ('Compose a message','Test for prompt for only bcc recepients')
-            click ('frmComposeamessage','btnSend')
+            selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailMessage')
+            compose_id = 'frmComposeMessage'
+            waittillguiexist (compose_id)
+            settextvalue (compose_id,'txtBcc',to)
+            settextvalue (compose_id,'txtSubject','Test for prompt for only bcc recepients')
+            #setcontext ('Compose a message','Test for prompt for only bcc recepients')
+            compose_id = get_mail_name ('Test for prompt for only bcc recepients')
+            click (compose_id,'btnSend')
+            time.sleep (5)
             if waittillguiexist ('dlgEvolutionWarning') == 0:
                 log ('Prompt did not appear','cause')
                 raise LdtpExecutionError (0)
             remap ('evolution','dlgEvolutionWarning')
             click ('dlgEvolutionWarning','btnSend')
-            undoremap ('evolution','dlgEvolutionWarning')
-            releasecontext ()
         except:
             log ('Prompting for only bcc recepients failed for verification','cause')
             raise LdtpExecutionError (0)
@@ -526,41 +500,40 @@ def prompt_when_expunging(fldr):
     try:
         #selectMailPane()
         try:
-            selectmenuitem ('frmEvolution-Mail','mnuEdit;mnuPreferences')
-            window_id='dlgEvolutionSettings'
+            selectmenuitem ('frmEvolution-*','mnuEdit;mnuPreferences')
+            window_id='dlgEvolutionPreferences'
             waittillguiexist (window_id)
             time.sleep (1)
             selecttab (window_id, 'ptl0', 'Mail Preferences')
             time.sleep (1)
-            remap ('evolution',window_id)
+            #remap ('evolution',window_id)
             check (window_id,'chkConfirmwhenexpungingafolder')
             time.sleep (1)
             if verifycheck (window_id,'chkConfirmwhenexpungingafolder') == 0:
                 log ('Unable to check checkbox','cause')
                 raise LdtpExecutionError (0)
             click (window_id,'btnClose')
-            undoremap ('evolution',window_id)
-
         except:
             log ('Unable to enable prompting before expunging','cause')
             raise LdtpExecutionError (0)
         #verification for prompt
         try:
-            selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldr)
+            selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldr)
+            waittillguiexist ('frmEvolution-'+fldr+'*')
             time.sleep (1)
-            selectmenuitem ('frmEvolution-Mail','mnuFolder;mnuExpunge')
+            selectmenuitem ('frmEvolution-*','mnuFolder;mnuExpunge')
             if waittillguiexist ('dlgEvolutionQuery') == 0:
                 log ('Prompt did not show','cause')
                 raise LdtpExecutionError (0)
             remap ('evolution','dlgEvolutionQuery')
-            click ('dlgEvolutionQuery','btnExpunge')
+            click ('dlgEvolutionQuery','btnCancel')
         except:
             raise LdtpExecutionError (0)
         #verification for expunging
 
-        if getrowcount ('frmEvolution-Mail','ttblMessageList') != 0:
-            log ('Expunging failed','cause')
-            raise LdtpExecutionError (0)
+#         if getrowcount ('frmEvolution-*','ttblMessageList') != 0:
+#             log ('Expunging failed','cause')
+#             raise LdtpExecutionError (0)
 
     except:
         log ('Enabling prompt while expunging failed','error')

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <data>
   <AddrBook>Personal</AddrBook>
-  <Name>Test Name</Name>
+  <FullName>Test Name</FullName> <!-- Make sure that this Contact is present -->
   <WorkEmail>work1@work1.com</WorkEmail>
   <WorkAddress>work1</WorkAddress>
   <OtherAddress>other1</OtherAddress>

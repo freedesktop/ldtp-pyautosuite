@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -82,6 +82,7 @@ def filter_from_msg(fldr,filter_on,details,then_actions,then_values):
 		windowname = 'dlgAddFilterRule'
 		log('create a filter from the existing message','teststart')
 		selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr)
+		waittillguiexist ('frmEvolution-'+fldr+'*')
 		time.sleep(2)
 		selectrow('frmEvolution-*','ttblMessages',details)
                 print 'mnuMessage;mnuCreateRule;mnuFilteron'+filter_on+'*'

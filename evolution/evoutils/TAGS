@@ -1,0 +1,62 @@
+
+calendar.py,209
+def getrecentrowindex 31,1033
+def selectdate 41,1441
+def insert_appointment 97,3167
+def insert_recurrence 149,5541
+def selectcalevent(233,9045
+def selectCalendarPane(259,9888
+def getcurwindow(273,10370
+
+composemail.py,124
+def compose 32,1143
+def sendmail(61,2344
+def savethismail 83,3134
+def attach_files 114,4288
+def read_maildata 137,5211
+
+__init__.py,305
+def get_window 4,21
+def selectContactPane(26,720
+def selectMailPane(36,1036
+def selectContactPane(46,1311
+def selectMemoPane(57,1628
+def selectTaskPane(68,1934
+def selectCalendarPane(80,2243
+def go_offline(91,2562
+def go_online 122,3488
+def get_mail_name 154,4418
+def restartevolution(160,4550
+
+mailpreferences.py,56
+def change_style 29,974
+def change_sentfolder 55,1916
+
+mail.py,292
+def setandverify 33,1096
+def populate_mail_header 56,1728
+def capturemailimage 92,3342
+def verifymailwithimage 131,4886
+def get_HTML_pref(165,6028
+def insert_bgimage 190,6745
+def apply_template(212,7521
+def getmailtext(229,8059
+def getrowindex(252,8677
+def getsentmailtext(267,9100
+
+menu_reorganization.py,301
+def selectfolder(29,1017
+def verify_folder_exist(53,1860
+def create_folder(71,2421
+def copy_to 111,3741
+def move_to 148,4952
+def select_all 185,6131
+def mark_all_read(212,6970
+def rename 231,7510
+def delete_nonsys_folder 271,8775
+def insert_followup_details 311,10096
+def expunge(332,10846
+
+password.py,57
+class EvoPassword:30,988
+    def EnterPassword 31,1007

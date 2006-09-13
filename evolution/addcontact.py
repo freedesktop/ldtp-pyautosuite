@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -23,7 +23,18 @@
 #  Boston, MA 02111-1307, USA.
 #
 
-from contact import addcontact,getcontactvals,selectPanel
+from contact import *
 
-selectPanel ('Contacts')
-addcontact (*getcontactvals(datafilename))
+AddrBook,FullName,Nick,WorkEmail,HomeMail,BusPhone,Yahoo,HomePage,Profession,Notes,HomeAdd,WorkAdd,OtherAdd = getcontactvals(datafilename)
+try:
+    log ('Add New Contact','teststart')
+    opennewcontact (AddrBook)
+    addcontact (AddrBook,FullName,Nick,WorkEmail,HomeMail,\
+                BusPhone,Yahoo,HomePage,Profession,Notes,\
+                HomeAdd,WorkAdd,OtherAdd)
+    log ('Add New Contact','pass')
+except:
+    log ('Add New Contact','fail')
+    log ('Add New Contact','testend')
+    raise LdtpExecutionError (0)
+log ('Add New Contact','testend')

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ldtp>
+ <logfileoverwrite>1</logfileoverwrite>
+ <logfile>evo-testing.xml</logfile>
+ <group>
+  <script>
+   <name>createrecurmeet.py</name>
+   <data>create-meeting-recur.xml</data>
+  </script>
+ </group>
+</ldtp>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -59,6 +59,7 @@ def emptytrashonexit():
         restartevolution()
         time.sleep (3)
         selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree','Trash')
+        waittillguiexist ('frmEvolution-Trash*)
         msgs_in_trash = getrowcount ('frmEvolution-Mail','ttblMessageList')
         if msgs_in_trash != 0:
             log ('trash stil has some messages','cause')

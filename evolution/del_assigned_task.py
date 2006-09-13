@@ -1,8 +1,9 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan  <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -26,6 +26,7 @@
 from ldtp import *
 from ldtputils import *
 from contact import *
+from evoutils import *
 
 def newaddrbook(datafilename):
 
@@ -33,10 +34,8 @@ def newaddrbook(datafilename):
     try:
         data_object = LdtpDataFileParser (datafilename)
         Name=data_object.gettagvalue ('Name')
-        #print Name
-        #time.sleep (10)
-        #selectContactPane()
-        window_id=getcurwindow()
+        selectContactPane()
+        window_id = 'frmEvolution-Contacts'
         selectmenuitem (window_id,'mnuFile;mnuNew;mnuAddressBook')
         waittillguiexist ('dlgNewAddressBook')
         time.sleep (3)
@@ -53,7 +52,6 @@ def newaddrbook(datafilename):
         raise LdtpExecutionError (0)
     log ('Create New Address Book','testend')
 
-selectPanel ('Contacts') 
 newaddrbook (datafilename)
 
     

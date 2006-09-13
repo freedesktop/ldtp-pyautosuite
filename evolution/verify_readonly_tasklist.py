@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -44,6 +44,7 @@ def verify_readonly():
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuWorkOffline')
 
 		#selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary)
+		
                 selectrow ('frmEvolution-Tasks', 'tblTasks', summary)
 		selectmenuitem('frmEvolution-Tasks','mnuFile;mnuOpenTask')
 		time.sleep(3)

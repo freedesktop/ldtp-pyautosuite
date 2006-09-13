@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -56,6 +56,7 @@ def openmsg(fldr, subject):
 		windowname = 'frmWelcometoEvolution!'
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
+                        waittillguiexist ('frmEvolution-'+fldr+'*')
 			time.sleep(2)
 			log('Folder identified','info')
 			selectrow('frmEvolution-*','ttblMessages',subject)

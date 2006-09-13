@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -25,19 +25,19 @@
 
 from ldtp import *
 from ldtputils import *
-from contact import titleappend
 from evoutils.mail import *
+from evoutils import *
 
 def mailtoaddbook(datafilename):
     log ('Add Mail Sender to Address Book','teststart')
     try:
         data_object = LdtpDataFileParser (datafilename)
-        subject=data_object.gettagvalue ('subject')
+        subject = data_object.gettagvalue ('subject')
         selectMailPane()
         time.sleep (2)
         try:
-            #remap ('evolution','frmEvolution-Mail')
             selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree','Inbox')
+            waittillguiexist ('frmEvolution-Inbox*')
             time.sleep (2)
             selectrow ('frmEvolution-*','ttblMessages',subject[0])
             time.sleep (1)
@@ -51,17 +51,17 @@ def mailtoaddbook(datafilename):
         selectmenuitem ('frmEvolution-*','mnuMessage;mnuAddSendertoAddressBook')
         print name
         time.sleep (5)
-        print name.find(' ')
-        if name.find (' ') >-1:
-            setcontext ('Contact Editor','Contact Editor -'+titleappend(name))
-        else:
-            setcontext ('Contact Editor','Contact Editor - '+name)
-        print 'Contact Editor -'+titleappend(name)
         if guiexist ('dlgContactQuick-Add')==1:
             click ('dlgContactQuick-Add','btnOK')
         elif guiexist ('dlgContactEditor')==1:
             click ('dlgContactEditor','btnCancel')
-        #undoremap ('evolution','frmEvolution-Mail')
+
+        time.sleep (3)
+        if guiexist ('*DuplicateContactDetected*') == 1:
+            click ('*DuplicateContactDetected*', 'btnAdd');
+            waittillguinotexist ('*DuplicateContactDetected*')
+        else:
+            waittillguinotexist ('dlgContactQuick-Add')
     except:
         log ('Adding mail sender to Address Book failed','error')
         log ('Add Mail Sender to Address Book','testend')

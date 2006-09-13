@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Khasim Shaheed <khasim.shaheed@gmail.com>
@@ -34,6 +34,7 @@ def create_search_folder (source_folder, message_index, search_condition, search
 	try:
 		search_mail_count = 0	
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', source_folder)
+		waittillguiexist ('frmEvolution-'+source_folder+'*')
 		time.sleep (2)
 		total_messages = getrowcount ('frmEvolution-*', 'ttblMessages')
 		selectrowindex ('frmEvolution-*', 'ttblMessages', message_index)
@@ -111,7 +112,8 @@ def create_search_folder (source_folder, message_index, search_condition, search
 			log ('Creating search mail folder failed', 'fail')
 		else:
 			if total_messages == getrowcount ('frmEvolution-Mail', 'ttblMessageList'):
-				selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', search_folder)
+				selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', search_folder)
+				waittillguiexist ('frmEvolution-'+search_folder+'*')
 				time.sleep (2)
 				if search_mail_count == getrowcount ('frmEvolution-Mail', 'ttblMessageList'):
 					log ('Create search folder passed', 'pass')

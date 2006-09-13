@@ -1,10 +1,11 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Premkumar <jpremkumar@novell.com>
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -27,6 +28,14 @@
 from ldtp import *
 from ldtputils import *
 from evoutils.mail import *
+import datetime
+
+days   = ['Monday','Tuesday','Wednesday','Thursday',
+          'Friday','Saturday','Sunday']
+months = ['January','February','March','April',
+          'May','June','July','August','September',
+          'October','Novemeber','December']
+
 
 def getrecentrowindex (windowname, tablename, column, summary):
      totalcount = getrowcount (windowname, tablename)
@@ -83,70 +92,21 @@ def selectdate (new_date):
                log ('Given date is invalid', 'cause')
                raise LdtpExecutionError (0)
           year = date_components[2]
-          if int (year) < 1111 or int (year) > 9999:
-               log ('Given year is invalid', 'cause')
-               raise LdtpExecutionError (0)
-          setvalue ('dlgSelectDate', 'sbtn0', year)
+#           if int (year) < 11 or int (year) > 99:
+#                log ('Given year is invalid', 'cause')
+#                raise LdtpExecutionError (0)
+          setvalue ('dlgSelectDate', 'sbtn0', '20'+year)
           time.sleep (3)
-          selectcalendardate ('dlgSelectDate', 'calviewCalendar', day, mnt, int (year))
+          selectcalendardate ('dlgSelectDate', 'calviewCalendar', day, mnt,
+                              int ('20'+year))
 
      except LdtpExecutionError, msg:
           log ('Unable to select given date', 'cause')
 	  raise LdtpExecutionError (0)
 
-def insert_appointment (windowname, summary, location, description, from_date, from_time,
-                        to_date, to_time, calendar, more_items_todo):
-     try:
-          flag = 0
-          time.sleep (2)
-          setandverify (windowname, 'txtSummary', summary)
-          #setcontext ('Appointment - No summary', 'Appointment - ' + summary)
-          time.sleep (2)
-	  if setandverify (windowname, 'txtLocation', location) == 0:
-               log ('Failed to set value in location field', 'cause')
-               raise LdtpExecutionError (0)
-	  else:
-                value = gettextvalue (windowname, 'cboCalendar')
-		print value
-		if calendar != value:
-                    comboselect (windowname, 'cboCalendar', calendar)
-                    #if verifyselect (windowname, 'cboCalendar', calendar) == 0:
-                    #     print calendar
-		    #	 time.sleep(3)
-		    #	 log ('Verification of calendar combo box failed!!', 'warning')
-                    #     flag = 1
-          if from_date != '0':
-               if setandverify (windowname, 'txtDate1', from_date) == 0:
-               	    log ('Failed to set value in From date entry', 'cause')
-                    raise LdtpExecutionError (0)
-          #if str(from_time) != '0':
-          #     if setandverify (windowname, 'txt3', from_time) == 0:
-          #          log ('Failed to set value in From time entry', 'cause')
-          #          raise LdtpExecutionError (0)
-          if to_date != '0':
-               if setandverify (windowname, 'txtDate1', to_date) == 0:
-                    log ('Failed to set value in To date entry', 'cause')
-                    raise LdtpExecutionError (0)
-          if str(to_time) != '0':
-               if setandverify (windowname, 'txt5', to_time) == 0:
-                    log ('Failed to set value in From time entry', 'cause')
-                    raise LdtpExecutionError (0)
-	  if setandverify (windowname, 'txtDescription', description) == 0:
-               log ('Failed to set value in description field', 'cause')
-               raise LdtpExecutionError (0)
-          
-	  time.sleep(3)
-          if more_items_todo != 'yes':
-		click(windowname, 'btnSave')
-          return flag
-
-     except error,msg:
-          print "Problem in inserting appointment tab details " + str (msg)
-          log('errorinappointmenttab','error')
-          return 0
-
 
 def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type, no_of_times, exception):
+     print windowname, duration, dur_value, dur_day, count, for_type, no_of_times, exception
      try:
           flag = 0
           if waittillguiexist (windowname) == 0:
@@ -158,7 +118,7 @@ def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type
                flag = 1
           time.sleep (1)
 	  check (windowname, 'chkThisappointmentrecurs')
-
+          time.sleep (2)
           if verifycheck (windowname, 'chkThisappointmentrecurs') == 0:
                log ('Verification of checkbox failed!!', 'cause')
                raise LdtpExecutionError (0)
@@ -169,12 +129,9 @@ def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type
 
 	       setvalue (windowname, 'sbtn0', count)
 	       time.sleep(2)
-               remap ('evolution',windowname)
 	       comboselect (windowname,'cboday(s)',duration)	
-	       undoremap ('evolution',windowname)
-               remap ('evolution',windowname)
                time.sleep (2)
-
+               remap ('evolution',windowname)
 	       if duration == 'day(s)':
 		    pass
 	       elif duration == 'month(s)':
@@ -184,26 +141,25 @@ def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type
 		    # those toggle buttons are not recognized in the appmap. so leaving as it is.
 		    pass
                elif duration == 'year(s)':
-                    pass	  
-
+                    pass
 	       time.sleep(2)
-	       comboselect (windowname,'cbofor',for_type)
-               undoremap ('evolution',windowname)
                remap ('evolution',windowname)
+	       comboselect (windowname,'cbofor',for_type)
 	       time.sleep(2)
+               remap ('evolution',windowname)
 	       print no_of_times
 	       if for_type == 'for':
 	       	    setvalue(windowname,'sbtn1',str(no_of_times))
                     time.sleep(2)
 	       elif for_type == 'until':
-		    settextvalue(windowname,'txtTextDateEntry',str(no_of_times))    
+		    settextvalue(windowname,'txtDate',str(no_of_times))    
 	            time.sleep(2)
 	       elif for_type == 'forever':
 	            pass  	
-	       undoremap ('evolution',windowname)
-               remap ('evolution',windowname)
 	       time.sleep(3)
-
+               print exception
+               if exception:
+                    exception = exception[0]
 	       exception=exception.split(' ')	
                if len(exception) > 0:
                     for i in range (len (exception)):
@@ -213,15 +169,15 @@ def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type
                               log ('Failed to open exception add dialog', 'cause')
                               raise LdtpExecutionError (0)
                          else:
-                              settextvalue ('dlgAddexception', 'txtTextDateEntry', exception[i])
+                              settextvalue ('dlgAddexception', 'txtDate',
+                                            exception[i])
                               click ('dlgAddexception', 'btnOK')
                               if waittillguinotexist ('dlgAddexception') == 0:
-                                   log ('Failed to close exception add dialog', 'cause')
+                                   log ('Failed to close exception add dialog',
+                                        'cause')
                                    raise LdtpExecutionError (0)
 
 	       time.sleep(3)
-	       undoremap ('evolution',windowname)
-	       remap('evolution',windowname)
                click(windowname, 'btnClose')
 	       log ('Recurrence details set successfully','info')
           return flag
@@ -230,9 +186,77 @@ def insert_recurrence (windowname, duration, dur_value, dur_day, count, for_type
           log ('Error in insertng recurrence tab details', 'error')
           return 0
 
-def selectcalevent(fromdate,summary):
+def verify_recurrence (windowname, duration, dur_value, dur_day, count,
+                       for_type, no_of_times, exception):
+     try:
+          remap ('evolution', windowname)
+          objlist = getobjectlist (windowname)
+          if waittillguiexist (windowname) == 0:
+               log ('Window: ' + windowname + ' Is not open', 'cause')
+               raise LdtpExecutionError (0)
+	  activatewin (windowname)
+          if verifycheck (windowname, 'chkThisappointmentrecurs') == 0:
+               log ('Verification of checkbox failed!!', 'cause')
+               raise LdtpExecutionError (0)
+	  if stateenabled (windowname, 'btnAdd') == 0:
+               log ('Add button is not enabled', 'cause')
+               raise LdtpExecutionError (0)
+          else:
+               if count and int(getvalue (windowname, 'sbtn0')) !=  int(count[0]):
+                    log ('No of recurrence not set','cause')
+                    raise LdtpExecutionError (0)
+	       time.sleep(2)
 
-   log ('Selecting a Cal event','teststart')
+               if duration and not 'cbo'+duration[0] in objlist:
+                    log ('Duration not selected','cause')
+                    raise LdtpExecutionError (0)
+
+	       if duration and duration[0] == 'day(s)':
+		    pass
+	       elif duration and duration[0] == 'month(s)':
+                    if not ('cbo'+dur_value[0] in objlist and 'cbo'+dur_day[0] in objlist):
+                         log ('duration value not selected','cause')
+                         raise LdtpExecutionError (0)
+
+	       elif duration and duration[0] == 'week(s)':
+		    # those toggle buttons are not recognized in the appmap. so leaving as it is.
+		    pass
+               elif duration and duration[0] == 'year(s)':
+                    pass
+
+               if for_type and not 'cbo'+for_type[0] in objlist:
+                    log ('For Type not in object list','cause')
+                    raise LdtpExecutionError (0)
+
+               if for_type and for_type[0] == 'for' and str(int(getvalue(windowname,'sbtn1'))) != str (no_of_times[0]):
+                    log ('For value not properly set','cause')
+                    raise LdtpExecutionError (0)
+
+# 	       elif for_type and for_type[0] == 'until' and gettextvalue(windowname,'txtDate') != get_date_format(no_of_times[0]):
+#                     log ('Until Value not properly set','cause')
+#                     raise LdtpExecutionError (0)
+	       elif for_type and for_type[0] == 'forever':
+	            pass  	
+	       time.sleep(3)
+               if exception:
+                    exception = exception[0].split(' ')	
+               if len(exception) > 0:
+                    for ex in exception:
+                         try:
+                              select = ex.split ('/')
+                              selectrowpartialmatch (windowname,'tbl0',select[0]+'/'+select[1]+'/20'+select[2])
+                         except:
+                              log ('Execption not added','cause')
+                              raise LdtpExecutionError (0)
+	       time.sleep(3)
+               click(windowname, 'btnClose')
+	       log ('Recurrence details set successfully','info')
+     except:
+          log ('Error in insertng recurrence tab details', 'error')
+          click(windowname, 'btnClose')
+
+     
+def selectcalevent(fromdate,summary):
    try:
        time.sleep(5)
        date=fromdate.split('/')
@@ -245,39 +269,32 @@ def selectcalevent(fromdate,summary):
        log ('Selecting a  Cal event','testend')
        raise LdtpExecutionError (0)
    try:
-       #remap ('evolution','frmEvolution-Calendars')
        activatewin ('frmEvolution-Calendars')
-       selectevent ('frmEvolution-Calendars','calDayView',summary)
-       #undoremap ('evolution','frmEvolution-Calendars')
+       try:
+            selectevent ('frmEvolution-Calendars','calDayView',summary)
+       except:
+            print 'Unable to select event'
        time.sleep (3)
    except:
        log ('Unable to select event','error')
-       log ('Selecting a Cal event','testend')
        raise LdtpExecutionError (0)
-   log ('Selecting a Cal event','testend')
 
-def selectCalendarPane():
-    """Selects the Calendars Pane in Evolution"""
-    log ('Open Evolution Calendars Pane','teststart')
-    try:
-         window_id=getcurwindow()
-         click (window_id,'tbtnCalendars')
-         waittillguiexist ('frmEvolution-Calendars')
-    except:
-        log ('error selecting Calendars pane','error')
-        log ('Open Evolution Calendars Pane','testend')
-        raise LdtpExecutionError(0)
 
-    log ('Open Evolution Calendars Pane','testend')
+def get_date_format (date):
 
-def getcurwindow():
-     if guiexist ('frmEvolution-Mail')==1:
-          return 'frmEvolution-Mail'
-     elif guiexist ('frmEvolution-Contacts')==1:
-          return 'frmEvolution-Contacts'
-     elif guiexist ('frmEvolution-Calendars')==1:
-          return 'frmEvolution-Calendars'
-     elif guiexist ('frmEvolution-Memos')==1:
-          return 'frmEvolution-Memos'
-     elif guiexist ('frmEvolution-Tasks')==1:
-          return 'frmEvolution-Tasks'
+     date = date.split ('/')
+     year = int ('20'+date[2])
+     month = int (date[0])
+     day = int (date[1])
+     format = date[1] + ' ' + months[month-1] + ' ' + str(year)
+     date = datetime.date (year, month, day)
+     weekday = days [date.weekday()]
+     format = weekday + ' ' + format
+     return format
+
+def parsename (attendee,email):
+    name=attendee
+    name=name+' <'+email+'>'
+    return name
+
+

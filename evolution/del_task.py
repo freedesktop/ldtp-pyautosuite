@@ -1,8 +1,9 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan  <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -26,25 +27,18 @@
 
 from ldtp import *
 from ldtputils import *
-#from evoutils.tasks import *
-import string, sys, os, commands, time, filecmp
 
 def read_data ():
-
-	#log('read user data','teststart')
 	try:
 		data_object = LdtpDataFileParser (datafilename)
 		summary = data_object.gettagvalue ('summary')
 		log('User data read successfull','info')
-		#log('read user data','testend')
 		return summary
 		
 	except:
 		log('Unable to read the user data or data file missing','error')
- 		#log('read user data','testend')
 		raise LdtpExecutionError(0)
 
-	#log('read user data','testend')
 
 # The takes the tsak summary as input and deletes that task. 
 # Note: This doesnt chk whether the selected task is assigned or not.
@@ -55,40 +49,32 @@ try:
 	waittillguiexist('frmEvolution-Tasks')
 	summary = read_data()
 
-	#remap('evolution','frmEvolution-Tasks')
 	no_rows_b4deleting = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
-        print summary[0]
-        print summary
+
 	#if selectrowpartialmatch ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
         # selectrowpartialmatch doesn't work: 333090
 
         if selectrow ('frmEvolution-Tasks', 'tblTasks', summary[0]) == 1:
-		log('The specified task has been deleted','info')
 		click('frmEvolution-Tasks', 'btnDelete')
 		waittillguiexist('dlgEvolutionQuery')
-		#remap('evolution','dlgEvolutionQuery')
 		time.sleep(3)
 		click('dlgEvolutionQuery','btnDelete')
-		#undoremap('evolution','dlgEvolutionQuery')
-		#remap('evolution','frmEvolution-Tasks')
+		log('The specified task has been deleted','info')
                 time.sleep(2)
 		no_rows_afterdeleting = getrowcount ('frmEvolution-Tasks', 'tblTasks')
 		if no_rows_afterdeleting == no_rows_b4deleting -1:
-			print 'The task has been deleted'
 			time.sleep(3)
 			log('the task has been deleted','info')	
-                        log('the task has been deleted','pass')
 		else:
 			print 'Deletion of task verify failed'
 			log('Deletion of task verify failed','error')
-                        log('the task has been deleted','fail')
 	else:
 		print 'Unable to select a task with the given summary'
 		log('unable to select the task','error')
-	#undoremap('evolution','frmEvolution-Tasks')
 except:
 	log('Unable to delete a Task','error')
+	log('the task has been deleted','fail')
 	log('Delete a task','testend')
 	raise LdtpExecutionError(0)
-
+log('the task has been deleted','pass')
 log('Delete a task','testend')

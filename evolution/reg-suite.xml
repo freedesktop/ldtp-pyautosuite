@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- XML Logging -->
+<ldtp>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group1">
+<script name="textvalue.py">
+<datafilename>textvalue.xml</datafilename>
+<error>Unable to update context: *gedit in appmap</error>
+<test name="settextvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+</test>
+<test name="gettextvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+</test>
+</script>
+<script name="textmanip.py">
+<datafilename>textvalue.xml</datafilename>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<test name="appendtext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+</test>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<test name="getcharactercount">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+</test>
+<error>Traceback (most recent call last):
+  File &quot;/usr/bin/ldtprunner&quot;, line 200, in executescript
+    execfile (scriptname, scriptglobal)
+  File &quot;textmanip.py&quot;, line 58, in ?
+    if len (present_text) &lt; position:
+NameError: name &apos;position&apos; is not defined
+</error>
+</script>
+<groupstatus>1 test scripts passed of 2</groupstatus>
+</group>
+</ldtp>

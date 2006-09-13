@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -26,70 +26,72 @@
 
 
 from contact import *
+from evoutils import *
 from evoutils.mail import *
 from evoutils.mailpreferences import *
 from evoutils.composemail import *
-from evoutils.change_status import *
-from evoutils.change_properties import *
+# from change_status import *
+# from evoutils.change_properties import *
 from evoutils.menu_reorganization import *
 
 
 def apply_filter(folder,subject):
     log ('Apply Filter','teststart')
     try:
-        #selectMailPane()
-        window_id='frmEvolution-Mail'
-        remap ('evolution',window_id)
+        selectMailPane()
+        window_id='frmEvolution-*'
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',folder)
+            waittillguiexist ('frmEvolution-'+folder+'*')
         except:
             log ('Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
         try:
-            selectrow (window_id,'ttblMessageList',subject)
+            selectrow (window_id,'ttblMessages',subject)
         except:
             log ('Message not available','cause')
             raise LdtpExecutionError (0)
 
         selectmenuitem (window_id,'mnuMessage;mnuApplyFilters')
         time.sleep (2)
-        undoremap ('evolution',window_id)
     except:
         log ('Apply Filter failed','error')
+        log ('Apply Filter','fail')
         log ('Apply Filter','testend')
         raise LdtpExecutionError (0)
+    log ('Apply Filter','pass')
     log ('Apply Filter','testend')
 
 
 def movemessage (from_folder,to_folder,subject):
     log ('Move Message','teststart')
     try:
-        #selectMailPane()
-        window_id='frmEvolution-Mail'
-        time.sleep (3)
-        #remap ('evolution','frmEvolution-Mail')
+        selectMailPane()
+        window_id='frmEvolution-*'
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',to_folder)
+            waittillguiexist ('frmEvolution-'+to_folder+'*')
         except:
             log ('To Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
         print "To folder reached"
-        initial_dest_count=getrowcount (window_id,'ttblMessageList')
+        initial_dest_count = getrowcount (window_id,'ttblMessages')
         print initial_dest_count
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',from_folder)
+            waittillguiexist ('frmEvolution-'+from_folder+'*')
         except:
             log ('From Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
         print "from folder reached"
-        initial_src_count=getrowcount (window_id,'ttblMessageList')
+        initial_src_count=getrowcount (window_id,'ttblMessages')
         print initial_src_count
         time.sleep (2)
         try:
-            selectrow (window_id,'ttblMessageList',subject)
+            selectrow (window_id,'ttblMessages',subject)
         except:
             log ('Message not available','cause')
             raise LdtpExecutionError (0)
@@ -108,7 +110,7 @@ def movemessage (from_folder,to_folder,subject):
         click ('dlgSelectfolder','btnMove')
         time.sleep (3)
         #verification starts here
-        new_src_count=getrowcount (window_id,'ttblMessageList')
+        new_src_count=getrowcount (window_id,'ttblMessages')
         print new_src_count
         
         if new_src_count != initial_src_count-1:
@@ -116,8 +118,9 @@ def movemessage (from_folder,to_folder,subject):
             raise LdtpExecutionError (0)
         
         selectrowpartialmatch (window_id,'ttblMailFolderTree',to_folder)
+        waittillguiexist ('frmEvolution-'+to_folder+'*')
         time.sleep (1)
-        new_dest_count=getrowcount (window_id,'ttblMessageList')
+        new_dest_count=getrowcount (window_id,'ttblMessages')
         print new_dest_count
         
         if new_dest_count!=initial_dest_count+1:
@@ -125,10 +128,11 @@ def movemessage (from_folder,to_folder,subject):
             raise LdtpExecutionError (0)
     except:
         log ('Moving a Message failed','error')
+        log ('Move Message','fail')
         log ('Move Message','testend')
         raise LdtpExecutionError (0)
-    #undoremap ('evolution','frmEvolution-Mail')
     log ('Moving a Message succeeded','info')
+    log ('Move Message','pass')
     log ('Move Message','testend')
         
             
@@ -136,27 +140,28 @@ def movemessage (from_folder,to_folder,subject):
 def copymessage (from_folder,to_folder,subject):
     log ('Copy Message','teststart')
     try:
-        #selectMailPane()
-        #remap ('evolution','frmEvolution-Mail')
-        window_id='frmEvolution-Mail'
+        selectMailPane()
+        window_id='frmEvolution-*'
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',to_folder)
+            waittillguiexist ('frmEvolution-'+tp_folder+'*')
         except:
             log ('To Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (1)        
-        initial_dest_count=getrowcount (window_id,'ttblMessageList')
+        initial_dest_count=getrowcount (window_id,'ttblMessages')
         
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',from_folder)
+            waittillguiexist ('frmEvolution-'+from_folder+'*')
         except:
             log ('From Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (1)
-        initial_src_count=getrowcount (window_id,'ttblMessageList')
+        initial_src_count=getrowcount (window_id,'ttblMessages')
         
         try:
-            selectrow (window_id,'ttblMessageList',subject)
+            selectrow (window_id,'ttblMessages',subject)
         except:
             log ('Message not available','cause')
             raise LdtpExecutionError (0)
@@ -165,7 +170,7 @@ def copymessage (from_folder,to_folder,subject):
             selectmenuitem (window_id,'mnuMessage;mnuCopytoFolder')
             time.sleep (1)
             waittillguiexist ('dlgSelectfolder')
-            remap ('evolution','dlgSelectfolder')
+            #remap ('evolution','dlgSelectfolder')
             selectrowpartialmatch ('dlgSelectfolder','ttblMailFolderTree',to_folder)
         except:
             log ('To Folder not available','cause')
@@ -176,47 +181,47 @@ def copymessage (from_folder,to_folder,subject):
 
         click ('dlgSelectfolder','btnCopy')
         time.sleep (3)
-        undoremap ('evolution','dlgSelectfolder')
         #verification
-        new_src_count=getrowcount (window_id,'ttblMessageList')
+        new_src_count=getrowcount (window_id,'ttblMessages')
         if new_src_count != initial_src_count:
             log ('Message not in source folder','cause')
             raise LdtpExecutionError (0)
         
         selectrowpartialmatch (window_id,'ttblMailFolderTree',to_folder)
+        waittillguiexist ('frmEvolution-'+to_folder+'*')
         time.sleep (3)
-        new_dest_count=getrowcount (window_id,'ttblMessageList')
+        new_dest_count=getrowcount (window_id,'ttblMessages')
         print initial_dest_count, new_dest_count
-#        raw_input ("abc")
         if new_dest_count!=initial_dest_count+1:
             log ('Message not added to Destination folder','cause')
             raise LdtpExecutionError (0)
     except:
         log ('Copying a message failed','error')
+        log ('Move Message','fail')
         log ('Copy Message','testend')
         raise LdtpExecutionError (0)
-    #undoremap ('evolution','frmEvolution-Mail')
     log ('Copying a message succeeded','info')
+    log ('Move Message','pass')
     log ('Copy Message','testend')
 
 
 def deletemessage(folder,subject):
     log ('Delete Message','teststart')
     try:
-        #selectMailPane()
-        #remap ('evolution','frmEvolution-Mail')
-        window_id='frmEvolution-Mail'
+        selectMailPane()
+        window_id='frmEvolution-*'
         time.sleep (2)
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',folder)
+            waittillguiexist ('frmEvolution-'+folder+'*')
         except:
             log ('Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
-        initial_count=getrowcount (window_id,'ttblMessageList')
+        initial_count=getrowcount (window_id,'ttblMessages')
         time.sleep (2)
         try:
-            selectrow (window_id,'ttblMessageList',subject)
+            selectrow (window_id,'ttblMessages',subject)
         except:
             log ('Message not available','cause')
             raise LdtpExecutionError (0)
@@ -230,7 +235,7 @@ def deletemessage(folder,subject):
             raise LdtpExecutionError (0)
 
         #verification
-        new_count=getrowcount (window_id,'ttblMessageList')
+        new_count=getrowcount (window_id,'ttblMessages')
         
         if new_count != initial_count-1:
             log ('Folder still has mail','cause')
@@ -239,7 +244,6 @@ def deletemessage(folder,subject):
         log ('Unable to delete message','error')
         log ('Delete Message','testend')
         raise LdtpExecutionError (0)
-    #undoremap ('evolution','frmEvolution-Mail')
     log ('Delete Message successful','info')
     log ('Delete Message','testend')
 
@@ -247,107 +251,109 @@ def deletemessage(folder,subject):
 def saveattachments(folder,subject,save_location):
     log ('Save Attachments','teststart')
     try:
-        #selectMailPane()
-        #remap ('evolution','frmEvolution-Mail')
-        window_id='frmEvolution-Mail'
+        selectMailPane()
+        window_id='frmEvolution-*'
         try:
             selectrowpartialmatch (window_id,'ttblMailFolderTree',folder)
+            waittillguiexist ('frmEvolution-'+folder+'*')
         except:
             log ('Folder not available','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
         try:
-            selectrow (window_id,'ttblMessageList',subject)
+            selectrow (window_id,'ttblMessages',subject)
             time.sleep (2)
             selectmenuitem (window_id,'mnuMessage;mnuOpeninNewWindow')
-            setcontext ('Readonlyframe',subject)
-            waittillguiexist ('frmReadonly')
-            remap ('evolution','frmReadonly')
+            mail_name = get_mail_name (subject)
+            waittillguiexist (mail_name)
             time.sleep (3)
         except:
             log ('Message not available','cause')
             raise LdtpExecutionError (0)
 
         try:
-            click ('frmReadonly','btnSaveAll')
-            waittillguiexist ('dlgSelectfoldertosaveallattachments')
+            click (mail_name,'btnSave')
+            waittillguiexist ('*Selectfoldertosaveallattachments*')
         except:
             log ('Message does not have attachments','cause')
             raise LdtpExecutionError (0)
         time.sleep (2)
         try:
-            save_location=save_location.split ('/')
-            for fldr in save_location:
-                doubleclickrow ('dlgSelectfoldertosaveallattachments','tblFiles',fldr)
-                time.sleep (1)
-            if stateenabled ('dlgSelectfoldertosaveallattachments','btnSave')==0:
-                log ('Unable to Save in this folder','cause')
-                raise LdtpExecutionError (0)
+#             save_location = save_location.split ('/')
+#             for fldr in save_location:
+#                 doubleclickrow ('*Selectfoldertosaveallattachment*s','tblFiles',fldr)
+#                 time.sleep (1)
+#             if stateenabled ('*Selectfoldertosaveallattachments*','btnSave')==0:
+#                 log ('Unable to Save in this folder','cause')
+#                 raise LdtpExecutionError (0)
 
-            click ('dlgSelectfoldertosaveallattachments','btnSave')
+            click ('*Selectfoldertosaveallattachments*','btnSave')
+            time.sleep (5)
+            if guiexist ('*Overwrite*') == 1:
+                click ('*Overwrite*','btnOverwrite')
+                waittillguinotexist ('*Overwrite*')
         except:
             log ('Unable to find destination folder','cause')
             raise LdtpExecutionError (0)
-        selectmenuitem ('frmReadonly','mnuFile;mnuClose')
-        undoremap ('evolution','frmReadonly')
-        releasecontext()
+        selectmenuitem (mail_name,'mnuFile;mnuClose')
     except:
         log ('Unable to Save attachments','error')
+        log ('Save Attachments','fail')
         log ('Save Attachments','testend')
         raise LdtpExecutionError (0)
-    #undoremap ('evolution','frmEvolution-Mail')
     log ('All attachments saved','info')
+    log ('Save Attachments','pass')
     log ('Save Attachments','testend')
 
 
 def delete_folder_when_offline(folder):
     log ('Delete folder while offline','teststart')
+    #go_offline ()
+    #selectMailPane ()
     try:
-        go_offline ()
-        #selectMailPane ()
-        if delete_nonsys_folder(folder) == 0:
-            log ('Delete folder not permitted while offline','info')
-            #log ('Delete folder while offline','testend')
-            #return
-        else:
-            log ('Delete folder allowed while offline','cause')
-            log ('Delete folder while offline','testend')
-            raise LdtpExecutionError (0)
-    
+        delete_nonsys_folder(folder)
     except:
+        log ('Delete folder not permitted while offline','info')
+        log ('Delete folder while offline','pass')
         log ('Delete folder while offline','testend')
-        raise LdtpExecutionError (0)
+        return
+    log ('Delete folder allowed while offline','cause')
+    log ('Delete folder while offline','fail')
     log ('Delete folder while offline','testend')
+    raise LdtpExecutionError (0)
+
         
 def move_folder_when_offline (from_fldr,to_fldr):
     log ('Move folder while offline','teststart')
-    try:
-        go_offline ()
-        #selectMailPane()
-    except:
-        log ('unable to select Mailpane','error')
-        raise LdtpExecutionError (0)
+#     try:
+#         #go_offline ()
+#         selectMailPane()
+#     except:
+#         log ('unable to select Mailpane','error')
+#         raise LdtpExecutionError (0)
     try:
         move_to (from_fldr,to_fldr)
     except:
         log ('Move folder not permitted while offline','info')
+        log ('Move folder while offline','pass')
         log ('Move folder while offline','testend')
         return
 
     log ('Move folder permitted while offline','cause')
+    log ('Move folder while offline','fail')
     log ('Move folder while offline','testend')
     raise LdtpExecutionError (0)
             
 
 def copy_folder_when_offline (from_fldr,to_fldr):
     log ('Copy folder while offline','teststart')
-    try:
-        go_offline ()
-        #selectMailPane()
-    except:
-        log ('unable to select Mailpane','error')
-        log ('Copy folder while offline','testend')
-        raise LdtpExecutionError (0)
+#     try:
+#         #go_offline ()
+#         selectMailPane()
+#     except:
+#         log ('unable to select Mailpane','error')
+#         log ('Copy folder while offline','testend')
+#         raise LdtpExecutionError (0)
     try:
 
         copy_to (from_fldr, to_fldr)
@@ -364,31 +370,35 @@ def copy_folder_when_offline (from_fldr,to_fldr):
 def create_folder_when_offline (fldr,location=''):
     log ('create folder while offline','teststart')
     try:
-        go_offline ()
+        #go_offline ()
         selectmenuitem ('frmEvolution-*','mnuFile;mnuNew;mnuMailFolder')
         #selectMailPane()
     except:
         log ('unable to select Mailpane','error')
         log ('create folder while offline','testend')
         raise LdtpExecutionError (0)
-    if create_folder (fldr,location) != 0:
-        log ('Create folder permitted while offline','cause')
+    try:
+        create_folder (fldr,location)
+    except:
+        log ('Create folder not permitted while offline','info')
+        log ('create folder while offline','pass')
         log ('create folder while offline','testend')
-        raise LdtpExecutionError (0)
-
-    log ('Create folder not permitted while offline','info')
+        return
+    log ('Create folder permitted while offline','cause')
+    log ('create folder while offline','fail')
     log ('create folder while offline','testend')
+    raise LdtpExecutionError (0)
 
 
 def rename_folder_when_offline (old_name,new_name):
     log ('Rename folder while offline','teststart')
-    try:
-        go_offline ()
-        #selectMailPane()
-    except:
-        log ('unable to select Mailpane','error')
-        log ('Rename folder while offline','testend')
-        raise LdtpExecutionError (0)
+#     try:
+#         #go_offline ()
+#         selectMailPane()
+#     except:
+#         log ('unable to select Mailpane','error')
+#         log ('Rename folder while offline','testend')
+#         raise LdtpExecutionError (0)
     try:
         rename (old_name,new_name)
     except:

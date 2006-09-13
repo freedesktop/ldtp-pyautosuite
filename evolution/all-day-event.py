@@ -1,8 +1,9 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -23,62 +24,26 @@
 #
 
 #To create an Appointment
-from evoutils.calendar import *
-from ldtputils import *
+from evoutils import *
+from appointment import *
 
-def read_data():
-	#Initialising XML parser with data file
-	data_object = LdtpDataFileParser (datafilename)
-	
-	#Extracting imput data from xml file
-	summary = data_object.gettagvalue ('summary')[0]
-	location = data_object.gettagvalue ('location')[0]
-	description = data_object.gettagvalue ('description')[0]
-	from_date = data_object.gettagvalue ('from_date')[0]
-	to_date = data_object.gettagvalue ('to_date')[0]
-	calendar = data_object.gettagvalue ('calendar')[0]
-	return summary, location, description, from_date, to_date, calendar
-
-def create_appoinment():
-	log ('Create Appointment', 'teststart')
-	try:
-		windowname = 'frmAppointment-*'
-	    	flag = 0
-		more_items_todo = 'yes'
-		summary, location, description, from_date, to_date, calendar = read_data()
-
-	    	#selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
-	    	time.sleep (2)
-	    	selectmenuitem ('frmEvolution-Calendars', 'mnuFile;mnuNew;mnuAppointment')
-	    	time.sleep (2)
-
-	    	if guiexist (windowname) == 0:
-	        	log ('Failed to open new appointment window', 'cause')
-	        	raise LdtpExecutionError (0)
-	    	else:
-
-			try:
-				click(windowname,'tbtnAllDayEvent')
-				from_time=0
-				to_time=0
-			except:
-				print 'unable to click the button (All Day event)'
-				log ('Create Appointment', 'testend')
-				raise LdtpExecutionError (0)
-#                        print windowname, summary, location, description, from_date, from_time, to_date, to_time, calendar, more_items_todo
-			i = insert_appointment (windowname, summary, location, description, from_date, from_time, to_date, to_time, calendar, more_items_todo)
-
-			if i == 1:
-        	    		flag = 1
-        		time.sleep (2)
-			click(windowname,'btnSave')
-
-	except:
-		log('unable to Create a new appoinment','error')
-		log ('Create Appointment', 'testend')
-		raise LdtpExecutionError (0)
-	log ('All day Appointment created','info')
-	log ('Create Appointment', 'testend')
-
-selectPanel ('Calendars')
-create_appoinment()
+try:
+    log ('Create Non Recursive All Day Event','teststart')
+    selectCalendarPane ()
+    windowname = 'frmAppointment-*'
+    selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuAppointment')
+    
+    waittillguiexist (windowname) 
+    if guiexist (windowname) == 0:
+        log ('Failed to open new appointment window', 'cause')
+        raise LdtpExecutionError (0)
+    
+    menucheck (windowname, 'mnuOptions;mnuAllDayEvent')
+    
+    create_appointment (datafilename, 'no')
+except:
+    log ('Create Non Recursive All Day Event','fail')
+    log ('Create Non Recursive All Day Event','testend')
+    raise LdtpExecutionError (0)
+log ('Create Non Recursive All Day Event','pass')
+log ('Create Non Recursive All Day Event','testend')    

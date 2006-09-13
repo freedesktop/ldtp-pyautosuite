@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Authors:
 #     Bhargavi       <kbhargavi_83@yahoo.co.in>
@@ -26,30 +26,32 @@
 
 # Compose a new mail through File menu
 from evoutils.mail import *
+from evoutils import *
 
 # Section to compose a new mail through File menu
 def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
     try:
-        selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuMailMessage')
+        selectmenuitem ('*Evolution*', 'mnuFile;mnuNew;mnuMailMessage')
 	time.sleep (2)
-        if waittillguiexist ('frmComposeMessage') == 0:
+        window_id = '*ComposeMessage*'
+        if waittillguiexist (window_id) == 0:
             log('Compose message window does not appear', 'error')
             raise LdtpExecutionError (0)
         else:
-            populate_mail_header (to, subject, body, cc,bcc)
             if len(format)>0:
                 try:
                     if format[0]=='HTML':
-                        check ('frmComposeMessage','mnuHTML')
+                        selectmenuitem (window_id,'mnuFormat;mnuHTML')
                     elif format[0]=='Plain Text':
-                        uncheck ('frmComposeMessage','mnuHTML')
+                        uncheck (window_id,'mnuHTML')
                     else:
                         log ('Format not proper','warning')
                 except:
                     log ('Error while setting Format of mail','error')
                     raise LdtpExecutionError (0)                        
 	    if attachment:
-		    attach_files (attachment)
+                attach_files (attachment)
+        populate_mail_header (to, subject, body, cc,bcc)
     except ldtp.error, msg:
         log ('Compose message failed ' + str (msg), 'cause')
         log ('Compose message failed', 'Fail' );
@@ -58,47 +60,46 @@ def compose (to, subject=[], body=[], cc=[], bcc=[],attachment=[], format=[]):
 
 def sendmail(subject):
     try:
-        click ('frmComposeMessage', 'btnSend')
+        window_id = get_mail_name (subject[0])
+        click (window_id, 'btnSend')
         time.sleep (3)
-        if len(subject)==0 and  guiexist ('dlgEvolutionQuery')==1:
-            remap ('evolution','dlgEvolutionQuery')
+        if guiexist ('*EvolutionQuery')==1:
+            remap ('evolution','*EvolutionQuery')
             click ('dlgEvolutionQuery','btnSend')
-            undoremap ('evolution','dlgEvolutionQuery')
         if waittillguinotexist ('frmComposeMessage') == 0:
             log ('Failed during clicking the send button', 'error')
             raise LdtpExecutionError (0)
-        if guiexist ('dlgEvolutionError'):
-            log ('Error while sending mail', 'error')
-            click ('dlgEvolutionError', 'btnOK')
-            raise LdtpExecutionError (0)
-        else:
-            releasecontext()
-            time.sleep (2)
+#         if guiexist ('*EvolutionError') == 1:
+#             log ('Error while sending mail', 'error')
+#             click ('*EvolutionError', 'btnOK')
+#             raise LdtpExecutionError (0)
+#         else:
+#             time.sleep (2)
     except:
         log ('Could not send message','error')
         raise LdtpExecutionError (0)
 
 
-def savethismail (savemethod):
+def savethismail (savemethod, subject='frmComposeMessage'):
     """savemethod == 0 --> Save Draft
-       savemethod == 1 --> save in FS"""
+       savemethod == 1 --> Save in FS"""
     try:
         if savemethod==0:
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuSaveDraft')
+            selectmenuitem (subject,'mnuFile;mnuSaveDraft')
             time.sleep (1)
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
+            selectmenuitem (subject,'mnuFile;mnuClose')
         elif savemethod==1:
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuSaveAs')
-            waittillguiexist ('dlgSaveas')
-            settextvalue ('dlgSaveas','txtName','testfile')
-            click ('dlgSaveas','btnSave')
+            selectmenuitem (subject,'mnuFile;mnuSaveAs')
+            waittillguiexist ('dlgSaveas*')
+            settextvalue ('dlgSaveas*','txtName','testfile')
+            click ('dlgSaveas*','btnSave')
             time.sleep (2)
-            if guiexist ('dlgOverwritefile?')==1:
-                click ('dlgOverwritefile?','btnOverwrite')
+            if guiexist ('dlgOverwritefile*')==1:
+                click ('dlgOverwritefile*','btnOverwrite')
                 log ('testfile already exists','warning')
-            selectmenuitem ('frmComposeMessage','mnuFile;mnuClose')
-            waittillguiexist ('dlgWarning')
-            click ('dlgWarning','btnDiscardChanges')
+            selectmenuitem (subject,'mnuFile;mnuClose')
+            waittillguiexist ('dlgWarning*')
+            click ('dlgWarning*','btnDiscardChanges')
         else:
             log ('invalid save method','cause')
             raise LdtpExecutionError (0)
@@ -106,7 +107,6 @@ def savethismail (savemethod):
     except:
         log ('Saving Mail Failed!','error')
         raise LdtpExecutionError (0)
-
             
         
                     
@@ -145,5 +145,5 @@ def read_maildata (datafile):
 	sentitemsfolder = data_object.gettagvalue ('sentitemsfolder')
 	refimg = data_object.gettagvalue ('refimg')
 	#return [to, subject, body, cc, bcc, attachment, sentitemsfolder, refimg]
-        return to, cc, bcc, subject, body, attachment, sentitemsfolder, refimg 
+        return to, cc, bcc, subject, body, attachment, sentitemsfolder, refimg
    

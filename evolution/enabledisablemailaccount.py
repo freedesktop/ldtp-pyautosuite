@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -37,6 +37,7 @@ try:
         if account_name!=[]:
             disablemailaccount (account_name[0])
             time.sleep (3)
+            remap ('evolution','frmEvolution-*')
             enablemailaccount (account_name[0])
         elif email!=[]:
             disablemailaccount (email[0])

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -34,7 +34,7 @@ try:
         log ('Error while reading values for copy message test','cause')
         raise LdtpExecutionError (0)
     try:
-        #go_offline ()
+        go_offline ()
         copymessage (from_folder[0],to_folder[0],subject[0])
     except:
         log ('copy message when offline test failed','error')

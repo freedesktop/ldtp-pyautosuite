@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -25,20 +25,20 @@
 #To create a filter.
 from ldtp import *
 from ldtputils import *
-from create_filter import create_filter
+from create_filter import *
 
-def verify_filter(rule_name):
-        windowname = 'dlgFilters'
-        selectmenuitem('frmEvolution-Mail','mnuEdit;mnuMessageFilters')
-        waittillguiexist(windowname)
-        if gettablerowindex (windowname,'tblFilterRules',rule_name) == -1:
-                print 'rule not found in the table filter rules'
-                click(windowname,'btnCancel')
-                return 0
-        else:
-                print 'rule name found'
-                click(windowname,'btnOK')
-                return 1
+# def verify_filter(rule_name):
+#         windowname = 'dlgFilters'
+#         selectmenuitem('frmEvolution-Mail','mnuEdit;mnuMessageFilters')
+#         waittillguiexist(windowname)
+#         if gettablerowindex (windowname,'tblFilterRules',rule_name) == -1:
+#                 print 'rule not found in the table filter rules'
+#                 click(windowname,'btnCancel')
+#                 return 0
+#         else:
+#                 print 'rule name found'
+#                 click(windowname,'btnOK')
+#                 return 1
 
 def read_data():
 
@@ -66,6 +66,7 @@ def apply_filter(fldr,filter_on, rule_name, if_components, if_properties, if_val
 			log('Failure in creating a filter','error')
 		
 		if selectrowpartialmatch('frmEvolution-Mail','ttblMailFolderTree',fldr) == 1:
+			waittillguiexist ('frmEvolution-'+fldr+'*')
 			log('fldr selected','info')
 		else:
 			log('Unable to select the given folder','error')

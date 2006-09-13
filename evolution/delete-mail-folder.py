@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Khasim Shaheed <khasim.shaheed@gmail.com>

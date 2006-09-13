@@ -1,8 +1,9 @@
+
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
-#     Prem <jpremkumar@novell.com>
+#       Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -23,84 +24,29 @@
 #
 
 #To create an Appointment
-from evoutils.calendar import *
-from ldtputils import *
+from evoutils import *
+from appointment import *
 
-#Initialising XML parser with data file
-data_object = LdtpDataFileParser (datafilename)
 
-#Extracting imput data from xml file
-summary = data_object.gettagvalue ('summary')[0]
-location = data_object.gettagvalue ('location')[0]
-description = data_object.gettagvalue ('description')[0]
-from_date = data_object.gettagvalue ('from_date')[0]
-to_date = data_object.gettagvalue ('to_date')[0]
-from_time = data_object.gettagvalue ('from_time')[0]
-to_time = data_object.gettagvalue ('to_time')[0]
-calendar = data_object.gettagvalue ('calendar')[0]
-classification = data_object.gettagvalue ('classification')[0]
-categories = data_object.gettagvalue ('categories')[0]
-#count = data_object.gettagvalue ('count')[0]
-#forever = data_object.gettagvalue ('for')[0]
-#occurences = data_object.gettagvalue ('occurences')[0]
-#exception = data_object.gettagvalue ('exception')
-
-#creation fo appointment
-log ('Appointment Creation', 'teststart')
 
 try:
+    log ('Create Non Recursive Appointment','teststart')
+    selectCalendarPane ()
     windowname = 'frmAppointment-*'
-    ptlistname = 'ptl0'
-    flag = 0
-    #selectmenuitem ('frmEvolution-Calendars', 'mnuView;mnuWindow;mnuCalendars')
-    selectmenuitem ('frmEvolution-*', 'mnuFile;mnuFile;mnuAppointment')
-    time.sleep(2)
-    #click ('frmEvolution-Calendars', 'btnNew')
+    selectmenuitem ('frmEvolution-*', 'mnuFile;mnuNew;mnuAppointment')
+    
     waittillguiexist (windowname) 
     if guiexist (windowname) == 0:
         log ('Failed to open new appointment window', 'cause')
         raise LdtpExecutionError (0)
-    else:
-        log ('Insertion of Appointment values', 'teststart')
-        #i = insert_appointment (windowname, ptlistname, summary, location, description, from_date,from_time, to_date, to_time, calendar, classification, categories) 
-        i = insert_appointment (windowname, summary, location, description, from_date, from_time, to_date, to_time, calendar, 'No') 
-        if i == 1:
-            flag = 1
-        log ('Insertion of Appointment values', 'testend')
-        time.sleep (2)
-        if i == 0:
-            log ('Insertion of recurrence values', 'teststart')
-            #i = insert_recurrence (windowname, ptlistname, count, forever, occurences, exception)
-			
-            if i == 1:
-                flag = 1
-                log ('Insertion of recurrence values', 'testend')
-                time.sleep (2)
-        if stateenabled (windowname, 'btnOK') == 1:
-            click (windowname , 'btnOK')
-        else:
-            log ('OK Button is in disabled state!!', 'warning')
-            click (windowname , 'btnCancel')
-        time.sleep (3)
-        if waittillguinotexist ('dlgAppointment-Nosummary') == 0:
-            log ('Failed to close appointment dialog' ,'cause')
-            raise LdtpExecutionError (0)
-        time.sleep (2)
-        #releasecontext ()
-        if flag == 1:
-            log ('Appointment creation succeeded', 'fail')
-        else:
-            log ('Appointment creation succeeded', 'pass')
-except LdtpExecutionError,msg:
-    #releasecontext ()
-    print 'Creation of appointment failed' + str(msg)
-    log ('Creation of appointment failed', 'error')
-    log ('Appointment Creation', 'testend')
-except error, msg:
-    #releasecontext ()
-    print 'Creation of appointment failed' + str(msg)
-    log ('Creation of appointment failed', 'error')
-    log ('Appointment Creation', 'testend')
-    raise LdtpExecutionError (0)
     
-log ('Appointment Creation', 'testend')
+    menuuncheck (windowname, 'mnuOptions;mnuAllDayEvent')
+    
+    create_appointment (datafilename, 'no')
+except:
+    log ('Create Non Recursive Appointment','fail')
+    log ('Create Non Recursive Appointment','testend')
+    raise LdtpExecutionError (0)
+log ('Create Non Recursive Appointment','pass')
+log ('Create Non Recursive Appointment','testend')    
+    

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -30,4 +30,12 @@ from contact import deletecontact
 
 data_object = LdtpDataFileParser (datafilename)
 Name=data_object.gettagvalue ('Name')
-deletecontact (Name[0])
+try:
+    log ('Delete Contact','teststart')
+    deletecontact (Name[0])
+    log ('Delete Contact','pass')
+except:
+    log ('Delete Contact','fail')
+    log ('Delete Contact','testend')
+    raise LdtpExecutionError (0)
+log ('Delete Contact','testend')    

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -24,31 +25,10 @@
 #
 from ldtp import *
 from ldtputils import *
+from evoutils import *
 
-def select_mail(fldr,subject):
-	try:
-		#log('select mail in a folder','teststart')
-		#remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch('frmEvolution-*','ttblMailFolderTree',fldr) == 1:
-                #if selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr) == 1:
-			log('Folder selected','info')
-			if selectrow('frmEvolution-*','ttblMessages',subject) == 1:
-				log('Mail selected','info')
-				#undoremap('evolution','frmEvolution-Mail')
-				#log('select mail in a folder','testend')
-				return 1
-			else:
-				log('Unable to select the mail','error')
-				#undoremap('evolution','frmEvolution-Mail')
-				#log('select mail in a folder','testend')
-				return 0
-	except:
-		log('Folder not found','cause')
-		#log('select mail in a folder','testend')
-		raise LdtpExecutionError (0)
 
 def selectfolder(windowname,fldr,dest=''):
-	
 	try:
 		log('Selecting a given folder','teststart')
 
@@ -69,6 +49,7 @@ def selectfolder(windowname,fldr,dest=''):
 					log('Folder Already exists','error')
 		
 			selectrowpartialmatch (windowname, 'ttblMailFolderTree',fldr)
+			waittillguiexist ('frmEvolution-'+fldr+'*')
 			log('Required folder selected','info')
 			log('Selecting a given folder','testend')
 			return 1
@@ -81,11 +62,11 @@ def selectfolder(windowname,fldr,dest=''):
 
 	
 def verify_folder_exist(Folder_name):
-
 	try:
 		#log('Verify Folder Exists','teststart')
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',Folder_name) == 1:
+			waittillguiexist ('frmEvolution-'+Folder_name+'*')
 			log('Verify succeeded')
 		#undoremap('evolution','frmEvolution-Mail')
 		#log('Verify Folder Exists','testend')
@@ -145,6 +126,7 @@ def copy_to (from_fldr,to_fldr):
 		windowname = 'dlgSelectfolder'
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
+			waittillguiexist ('frmEvolution-'+from_fldr+'*')
 			log('From folder selected','info')
 			selectmenuitem('frmEvolution-*','mnuFolder;mnuCopyFolderTo*')
 			time.sleep(3)
@@ -185,6 +167,7 @@ def move_to (from_fldr,to_fldr):
 		windowname = 'dlgSelectfolder'
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
+			waittillguiexist ('frmEvolution-'+from_fldr+'*')
 			log('From folder selected','info')
 			selectmenuitem('frmEvolution-*','mnuFolder;mnuMoveFolderTo')
 			time.sleep(3)
@@ -223,11 +206,11 @@ def move_to (from_fldr,to_fldr):
 			
 
 def select_all (fldrname):	
-
 	try:
 		#log('select all mails in a folder','teststart')
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldrname) == 1:
+			waittillguiexist ('frmEvolution-'+fldrname+'*')
 			log('From folder selected','info')
 			time.sleep (3)
 			if selectmenuitem('frmEvolution-*','mnuFolder;mnuSelectAllMessages') == 1:
@@ -250,7 +233,6 @@ def select_all (fldrname):
 
 
 def mark_all_read(fldrname):	
-
 	try:
 		log('Mark all as read','teststart')
 		select_all(fldrname)
@@ -261,13 +243,71 @@ def mark_all_read(fldrname):
 			print 'Unable to select the mails'
 			log('Unable to select the menu Markas;Read','error')
 		log('Mark all as read','testend')
-	except :
+	except:
 		print 'Cannot set all items in the folder as read'
 		log('Cannot mark as read','error')
 		log('Mark all as read','testend')
 		raise LdtpExecutionError(0)
+
+def mark_read (subject, fldr=''):
+	try:
+		if fldr != '':
+			selectrowpartialmatch ('frmEvolution-*','ttblMessageFolderTree',fldr)
+			waittillguiexist ('frmEvolution-'+fldr+'*')
+		selectrowpartialmatch ('frmEvolution-*','ttblMessages',subject)
+		try:
+			selectmenuitem ('frmEvolution-*','mnuMessage;mnuMarkas;mnuRead')
+		except:
+			log ('Already in Read state','info')
+	except:
+		log ('Unable to mark message as read','error')
+		raise LdtpExecutionError (0)
 	
-	
+
+def mark_unread (subject, fldr=''):
+	try:
+		if fldr != '':
+			selectrowpartialmatch ('frmEvolution-*','ttblMessageFolderTree',fldr)
+			waittillguiexist ('frmEvolution-'+fldr+'*')
+		selectrowpartialmatch ('frmEvolution-*','ttblMessages',subject)
+		try:
+			selectmenuitem ('frmEvolution-*','mnuMessage;mnuMarkas;mnuUnread')
+		except:
+			log ('Already in Unread state','info')
+	except:
+		log ('Unable to mark message as Unread','error')
+		raise LdtpExecutionError (0)
+
+def mark_junk (subject, fldr=''):
+	try:
+		if fldr != '':
+			selectrowpartialmatch ('frmEvolution-*','ttblMessageFolderTree',fldr)
+			waittillguiexist ('frmEvolution-'+fldr+'*')
+		selectrowpartialmatch ('frmEvolution-*','ttblMessages',subject)
+		try:
+			selectmenuitem ('frmEvolution-*','mnuMessage;mnuMarkas;mnuJunk')
+		except:
+			log ('Already in Junk state','info')
+	except:
+		log ('Unable to mark message as Junk','error')
+		raise LdtpExecutionError (0)
+
+def mark_notjunk (subject, fldr=''):
+	try:
+		if fldr != '':
+			selectrowpartialmatch ('frmEvolution-*','ttblMessageFolderTree',fldr)
+			waittillguiexist ('frmEvolution-'+fldr+'*')
+		selectrowpartialmatch ('frmEvolution-*','ttblMessages',subject)
+		try:
+			selectmenuitem ('frmEvolution-*','mnuMessage;mnuMarkas;mnuNotJunk')
+		except:
+			log ('Already in Not Junk state','info')
+	except:
+		log ('Unable to mark message as not junk','error')
+		raise LdtpExecutionError (0)
+
+
+
 def rename (old_name,new_name):
 
 	try:
@@ -275,6 +315,7 @@ def rename (old_name,new_name):
 		windowname = 'dlgRenameFolder'
 		#remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',old_name) == 1:
+			waittillguiexist ('frmEvolution-'+old_name+'*')
 			log('From folder selected','info')
 			selectmenuitem('frmEvolution-*','mnuFolder;mnuRename')
 
@@ -313,20 +354,16 @@ def rename (old_name,new_name):
 	log('Rename a folder','testend')
 	return 0
 def delete_nonsys_folder (fldr):	
-
 	try:
-		#log('delete a non system folder','teststart')
 		windowname = 'dlgDelete' 
-		defaultname = '\"Inbox/ashwin\"?'
+		#defaultname = '\"Inbox/ashwin\"?'
 		sysfolder = ['Inbox','Drafts','Junk','Outbox','Sent','Trash']
 		if fldr in sysfolder: 
 			log ('A system folder has been selected','error')
 			print 'You cannot delete a system folder'
 		else:
-			#remap('evolution','frmEvolution-Mail')
 			selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr)
 			selectmenuitem('frmEvolution-*','mnuFolder;mnuDelete')
-			#setcontext ('Delete \"Inbox/ashwin\"?','Delete \"' + fldr + '\"?')
 			time.sleep(2)
 			#if waittillguiexist (windowname + defaultname) == 1:
                         print windowname + '\"'+fldr+'\"?'
@@ -345,13 +382,10 @@ def delete_nonsys_folder (fldr):
 				log('unable to find the delete window','error')
 				log('delete a non system folder','testend')
 				raise LdtpExecutionError (0)
-			#undoremap('evolution','frmEvolution-Mail')
-			#log('delete a non system folder','testend')
 			return 1
 	except :
 		print 'Cannot delete the folder'
 		log('Cannot delete the folder','error')
-		#log('delete a non system folder','testend')
 		raise LdtpExecutionError (0)
 
 def insert_followup_details (follow_up_flag, due_date, time, progress):
@@ -387,6 +421,7 @@ def expunge():
 		fldr = 'Trash'
 		remap('evolution','frmEvolution-Mail')
 		if selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', fldr):
+			waittillguiexist ('frmEvolution-'+fldr+'*')
 			log('fldr has been selected','info')
 			time.sleep(2)
 			if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuExpunge') == 1:

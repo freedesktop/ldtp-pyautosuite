@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 # 
 #  Author:
 #     A. Nagappan <anagappan@novell.com>

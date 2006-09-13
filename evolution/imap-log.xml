@@ -3,19 +3,15 @@
 <ldtp>
 <info>appmap file name evolution.map</info>
 <group name="Executing-group1">
-<script name="account-setup.py">
-<datafilename>imap-account.xml</datafilename>
-<test name="Account-setup">
-<debug>Evolution Account Assistant</debug>
-<debug>Evolution Setup Assistant</debug>
-<warning>Page tab name already in selected state</warning>
-<info>Executing imap receiving mail configuration</info>
-<info>Executing imap receiving options configuration</info>
-<warning>Check box is not checked</warning>
-<debug>Enter password</debug>
-<debug>Enter Password for IMAP Account</debug>
-<pass>1</pass>
-</test>
+<script name="compose-mail.py">
+<datafilename>compose-mail.xml</datafilename>
+<info>User data read successfull</info>
+<debug>Object definition ttblMailFolderTree not found in appmap</debug>
+<debug>Object definition ttblMailFolderTree not found in appmap</debug>
+<error>Unable to find object name: ttblMailFolderTree in appmap</error>
+<error>stopping this group execution</error>
+<cause>"'selectrowpartialmatch failed</cause>
 </script>
+<groupstatus>0 test scripts passed of 1</groupstatus>
 </group>
 </ldtp>

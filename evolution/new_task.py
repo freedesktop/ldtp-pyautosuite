@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
@@ -24,112 +24,57 @@
 # This script will create a new task.
 
 
-from ldtp import *
-from ldtputils import *
-import string, sys, os, commands, time, filecmp
-from contact import *
-
-def selectTasksPane():
-   """Selects the Tasks Pane in Evolution"""
-   log ('Open Evolution Tasks Pane','teststart')
-   #setcontext ('Evolution - Mail','Evolution - Mail')
-   #code to find the present window and revert back to the Tasks Pane
-   if guiexist('frmEvolution-Mail')!=1:
-        log ('Present Window now Mail pane','info')
-        #setcontext ('Evolution - Mail','Evolution - Contacts')
-        if guiexist('frmEvolution-Mail')!=1:
-             log ('Present Window now Tasks pane','info')
-             #setcontext ('Evolution - Mail','Evolution - Calendars')
-             if guiexist('frmEvolution-Mail')!=1:
-                  log ('Present Window now Calendars pane','info')
-                  #setcontext ('Evolution - Mail','Evolution - Memos')
-                  if guiexist('frmEvolution-Mail')!=1:
-                       log ('Present Window now Memos pane','info')
-                       #setcontext ('Evolution - Mail','Evolution - Tasks')
-                       log ('Present Window has to be Taskspane','info')
-   time.sleep (1)
-   try:
-       click ('frmEvolution-*','tbtnTasks')
-       time.sleep(3)
-       waittillguiexist ('frmEvolution-Tasks')
-
-   except:
-       log ('error selecting Tasks pane','error')
-       log ('Open Evolution Tasks Pane','testend')
-       raise LdtpExecutionError(0)
-
-   log ('Open Evolution Tasks Pane','testend')
+from task import *
 
 def create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories):
 	log('Create New Task','teststart')
 	try:
-		#remap('evolution','frmEvolution-Tasks')
+		selectTaskPane()
 		no_rows_b4creat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
 		click('frmEvolution-Tasks','btnNew')
-		if waittillguiexist('frmTask-Nosummary'):
+		if waittillguiexist('frmTask-Nosummary') == 1:
 			log('New task window opened','info')
 		else:
 			log('Unable to open the new task window','error')
-		comboselect ('frmTask-Nosummary', 'cboPersonal', Group[0])
-		time.sleep(3)
-		settextvalue ('frmTask-Nosummary', 'txtSummary', Summary[0])
-		#setcontext('Task - No summary','Task - '+Summary[0])
-		settextvalue ('frmTask-*', 'txtDescription', Desc[0])
-		settextvalue ('frmTask-*', 'txtDate1',Start_date[0])
-		settextvalue ('frmTask-*', 'txtDate',End_date[0])
-		settextvalue ('frmTask-*', 'txt8',Start_time[0])
-		settextvalue ('frmTask-*', 'txt6',End_time[0])
-		settextvalue ('frmTask-*', 'txt4',Time_zone[0])
-		settextvalue ('frmTask-*', 'txt1',Categories[0])
-		time.sleep(2)
-		log('User Details entered','info')
+			raise LdtpExecutionError (0)
+		fill_task (Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories)
+		click('frmTask-*','btnSave')
 	except:
-		print 'Error in entering the values'
-		#releasecontext()		
-		log('Error in entering the values','error')
-		log('Create New Task','testend')
-	        raise LdtpExecutionError(0)
+		log ('Unable to create Task','cause')
+		log('Create New Task','fail')
+		log('Create New Task','teststart')
+		raise LdtpExecutionError (0)
 	
 	try:
-		click('frmTask-*','btnSave')
 		time.sleep(3)
 		no_rows_aftercreat = getrowcount ('frmEvolution-Tasks', 'tblTasks') 
-		if no_rows_aftercreat == no_rows_b4creat + 1:
-			if selectrow('frmEvolution-Tasks','tblTasks',Summary[0]) == 1:
-				log('Task Creation Completed and verified','info')
-				print 'Task Creation completed and verified.'
-                                log('Task Creation Completed and verified','pass') 
+		if no_rows_aftercreat == no_rows_b4creat + 1 and \
+		       selectrow('frmEvolution-Tasks','tblTasks',Summary[0]) == 1:
+			log('Task Creation Completed and verified','info')
+			verify_task (Group, Summary, Desc, Start_date,
+				     Start_time, End_date, End_time,
+				     Time_zone, Categories)
+			print 'Task Creation completed and verified.'
 		else:
-			raise LdtpExecutionError(0)	
-                        log('Task Creation Completed and verified','fail')
+			raise LdtpExecutionError(0)
+		click ('frmTask-*','btnClose')		
 	except:
 		print 'Unable to verify the task :'+Summary[0]
-		log('Unable to save the task')
+		log('Task not created','cause')
+		log('Task Creation Completed and verified','fail')
 		log('Create New Task','testend')
-		#releasecontext()
+		click ('frmTask-*','btnClose')
 	        raise LdtpExecutionError(0)	
-
-	#undoremap('evolution','frmEvolution-Tasks')
-	#releasecontext()
+	log('Task Creation Completed and verified','pass') 
 	log('Create New Task','testend')
+
+		
 	
-
-# Read the data from the xml file.	
-
-data_object = LdtpDataFileParser (datafilename)
-Group = data_object.gettagvalue ('group')
-Summary = data_object.gettagvalue ('summary')
-Desc = data_object.gettagvalue ('desc')
-Start_date = data_object.gettagvalue ('start_date')
-Start_time = data_object.gettagvalue ('start_time')
-End_date = data_object.gettagvalue ('end_date')
-End_time = data_object.gettagvalue ('end_time')
-Time_zone = data_object.gettagvalue ('time_zone')
-Categories = data_object.gettagvalue ('Categories') 
-
 # Call the function
 
-#selectTasksPane()
-selectPanel('Tasks')
+Group, Summary, Desc, Start_date, Start_time, \
+       End_date, End_time, Time_zone, \
+       Categories = gettaskdata (datafilename)
+
 create_task(Group, Summary, Desc, Start_date, Start_time, End_date, End_time, Time_zone, Categories)
 

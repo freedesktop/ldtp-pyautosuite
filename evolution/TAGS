@@ -1,0 +1,53 @@
+
+all-day-event.py,0
+
+appointment.py,129
+def create_appointment 6,81
+def insert_appointment 41,1670
+def verify_appointment 112,4693
+def create_all_day_event 169,7176
+
+appointment-with-attachment.py,63
+def read_data(32,1061
+def appointment_withattachment(48,1779
+
+calen.py,63
+def create_appointment 6,81
+def create_all_day_event 42,1648
+
+create_appointment.py,0
+
+create-appointment.py,0
+
+createmeeting.py,0
+
+createrecurmeet.py,0
+
+create-recursive-app.py,63
+def read_data(32,1061
+def appointment_withrecurrence(55,2199
+
+deletemessagewhenoffline.py,0
+
+deletesingleinstmeeting.py,0
+
+meeting.py,201
+def addmeeting(31,1030
+def getmeetingdata(81,3279
+def addattendees(124,5231
+def verimeetattendees(161,6789
+def verifymeeting(177,7391
+def verimeetmainwindow(209,8914
+def definemeeting(244,10835
+
+modifyallinstmeet.py,0
+
+modify-appointment.py,54
+def read_data(30,1031
+def modifyappointment(48,1929
+
+modifymeeting.py,53
+def modifymeeting(28,958
+def deletemeeting(95,4518
+
+modifythisinstmeet.py,0

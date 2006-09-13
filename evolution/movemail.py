@@ -1,5 +1,5 @@
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Authors:
 #     Nagashree <mnagashree@novell.com>
@@ -34,9 +34,11 @@ from evoutils.mail import *
 def move_mail (from_fldr, to_fldr, mail_index):
 	try:
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', to_fldr)
+		waittillguiexist ('frmEvolution-'+to_fldr+'*')
 		time.sleep (2)
 		row_before = getrowcount('frmEvolution-*', 'ttblMessages')
 		selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', from_fldr)
+		waittillguiexist ('frmEvolution-'+from_fldr+'*')
 		time.sleep (2)
 		rowcount = getrowcount('frmEvolution-*', 'ttblMessages') 
 		if rowcount > 0:
@@ -59,9 +61,11 @@ def move_mail (from_fldr, to_fldr, mail_index):
 			else:
 				# TODO: Moving a duplicate message has to be handled
 				selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree',to_fldr)
+				waittillguiexist ('frmEvolution-'+to_fldr+'*')
 				time.sleep (2)
 				row_after = getrowcount ('frmEvolution-*', 'ttblMessages')
 				selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', from_fldr)
+				waittillguiexist ('frmEvolution-'+from_fldr+'*')
 				time.sleep (2)
 				rowcount_after_move = getrowcount('frmEvolution-*', 'ttblMessages')
 				if row_after == (row_before+1) and rowcount == (rowcount_after_move+1):

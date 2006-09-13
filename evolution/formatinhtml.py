@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Prashanth Mohan  <prashmohan@gmail.com>
@@ -24,4 +24,7 @@
 #
 from composerprefs import *
 
-format_in_HTML ()
+data_object = LdtpDataFileParser (datafilename)
+to = data_object.gettagvalue ('to')
+body = data_object.gettagvalue ('body')
+format_in_HTML (to,body)

@@ -2,7 +2,6 @@
 <ldtp>
  <logfileoverwrite>1</logfileoverwrite>
  <logfile>evo-testing.xml</logfile>
- <appmapfile>evolution.map</appmapfile>
  <group>
   <script>
    <name>addcontact.py</name>
@@ -13,12 +12,6 @@
   <script>
    <name>modifycontact.py</name>
    <data>modifycontact.xml</data>
-  </script>
- </group>
- <group>
-  <script>
-   <name>searchcontact.py</name>
-   <data>searchcontact.xml</data>
   </script>
  </group>
  <group>

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 #
-#  Linux Desktop Testing Project http://www.gnomebangalore.org/ldtp
+#  Linux Desktop Testing Project http://ldtp.freedesktop.org
 #
 #  Author:
 #     Venkateswaran S <wenkat.s@gmail.com>
+#     Prashanth Mohan <prashmohan@gmail.com>
 #
 #  Copyright 2004 Novell, Inc.
 #
@@ -26,8 +27,8 @@ from ldtp import *
 from ldtputils import *
 
 def selectfolder(windowname,fldr,dest=''):
-	
-	waittillguiexist(windowname)
+	if waittillguiexist(windowname) == 0:
+		return 0
 	if gettreetablerowindex (windowname, 'ttblMailFolderTree', fldr) == -1:
 		click(windowname,'btnNew')
 		time.sleep(3)
@@ -44,6 +45,7 @@ def selectfolder(windowname,fldr,dest=''):
 			print 'Folder Name already exist'
 			log('Folder Already exists','error')
 	selectrowpartialmatch (windowname, 'ttblMailFolderTree',fldr)
+	#waittillguiexist ('frmEvolution-'+fldr+'*')
 	log('Required folder selected','info')
 	return 1
 
@@ -52,10 +54,11 @@ def verify_folder_exist(Folder_name):
 	try:
 		log('Verify Folder Exists','teststart')
 		time.sleep(3)
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',Folder_name) == 1:
-			log('Verify succeeded')
-		undoremap('evolution','frmEvolution-Mail')
+		#remap('evolution','frmEvolution-*')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',Folder_name) == 1:
+			waittillguiexist ('frmEvolution-'+Folder_name+'*')
+			log('Verify succeeded', 'pass')
+		#undoremap('evolution','frmEvolution-*')
 		log('Verify Folder Exists','testend')
 		return 1
 	except:
@@ -66,11 +69,13 @@ def verify_folder_exist(Folder_name):
 
 
 def create_folder(Folder_name, location=''):
+	log('Create a new folder','teststart')
+	windowname = 'dlgCreatefolder'
 	try:
-		log('Create a new folder','teststart')
-		windowname = 'dlgCreatefolder'
-		time.sleep(3)
-		waittillguiexist (windowname)	
+		if waittillguiexist (windowname) == 0:
+			log ('Create Folder Dialog did not arise','cause')
+			log('Create a new folder','testend')
+			raise LdtpExecutionError (0)
 	        settextvalue(windowname,'txtFoldername',Folder_name)
 		selectrowpartialmatch ('dlgCreatefolder', 'ttblMailFolderTree',location)
 		log('User Value Entered','info')
@@ -82,15 +87,13 @@ def create_folder(Folder_name, location=''):
 			click(windowname,'btnCancel')
 			print 'Folder Name already exist'
 			log('Folder Already exists','cause')
-			log('Create a new folder','testend')
-			return 0
+			raise LdtpExecutionError (0)
 		else:
 			print 'Folder created'
 			if verify_folder_exist(Folder_name) != 1:
 				print 'Folder Creatation Verify failed'
 				log('Verification failed','error')
-				log('Create a new folder','testend')
-				return 0
+				raise LdtpExecutionError (0)
 			else:
 				print 'Folder Creation verified'
 				log('Folder Verified','info')
@@ -105,15 +108,17 @@ def create_folder(Folder_name, location=''):
 
 
 def copy_to (from_fldr,to_fldr):
-
+	log('Copy a folder','teststart')
+	windowname = 'dlgSelectfolder'
 	try:
-		log('Copy a folder','teststart')
-		windowname = 'dlgSelectfolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',from_fldr) == 1:
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
+			waittillguiexist ('frmEvolution-'+from_fldr+'*')
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuCopyFolderTo')
-			time.sleep(3)
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuCopyFolderTo')
+			if waittillguiexist (windowname) == 0:
+				log ('Select Folder did not arise','cause')
+				raise LdtpExecutionError (0)
+				
 			if selectfolder(windowname,to_fldr) == 1:
 				log('Destionation folder selected')
 			else:
@@ -125,19 +130,14 @@ def copy_to (from_fldr,to_fldr):
 			if guiexist ('dlgEvolutionError') == 1:
 				log ('Evolution is offline','cause')
 				click('dlgEvolutionError','btnOK')
-				log('Copy a folder','testend')
 				raise LdtpExecutionError (0)
 
 		else:
 			print 'Unable to find the source folder'
 			log('Unable to find the source folder','cause')
-			log('Copy a folder','testend')
-			return 0
-		undoremap('evolution','frmEvolution-Mail')	
+			raise LdtpExecutionError (0)
 		print from_fldr+ ' has been copied to '+ to_fldr
-		return 1
 	except :
-		
 		log('Cannot copy the folder','error')
 		log('Copy a folder','testend')
 		raise LdtpExecutionError (0)
@@ -145,58 +145,51 @@ def copy_to (from_fldr,to_fldr):
 
 
 def move_to (from_fldr,to_fldr):
+	log('move a folder','teststart')
+	windowname = 'dlgSelectfolder'
 
 	try:
-		log('move a folder','teststart')
-		windowname = 'dlgSelectfolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',from_fldr) == 1:
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',from_fldr) == 1:
+			waittillguiexist ('frmEvolution-'+from_fldr+'*')
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuMoveFolderTo')
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuMoveFolderTo')
+			if waittillguiexist (windowname) == 0:
+				log ('Select Folder did not arise','cause')
+				raise LdtpExecutionError (0)
 			time.sleep(3)
 			if selectfolder(windowname,to_fldr) == 1:
 				log('Destionation folder selected')
 			else:
 				log('Unable to get hold of destination folder','error')
-				log('Move a folder','testend')
-				return 0
+				raise LdtpExecutionError (0)
+
 			time.sleep(2)
-			remap('evolution',windowname)
 			click(windowname,'btnMove')
 			time.sleep (1)
 			if guiexist ('dlgEvolutionError') == 1:
 				log ('Evolution is offline','cause')
-				undoremap('evolution',windowname)
 				click('dlgEvolutionError','btnOK')
-				log('Move a folder','testend')
 				raise LdtpExecutionError (0)
-			undoremap('evolution',windowname)
 		else:
 			print 'Unable to find the source folder'
 			log('Unable to find the source folder','cause')
-			log('Move a folder','testend')
-			return 0
-
-		undoremap('evolution',windowname)
-		log('Move a folder','testend')
-		return 1
+			raise LdtpExecutionError (0)
 	except :
 		log('Cannot copy the folder','error')
 		log('Move a folder','testend')
 		raise LdtpExecutionError (0)
-	
 	log('Move a folder','testend')
 			
 
 def select_all (fldrname):	
-
 	try:
 		log('select all mails in a folder','teststart')
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',fldrname) == 1:
+		#remap('evolution','frmEvolution-*')
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',fldrname) == 1:
+			waittillguiexist ('frmEvolution-'+fldrname+'*')
 			log('From folder selected','info')
 			time.sleep (3)
-			if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuSelectAllMessages') == 1:
+			if selectmenuitem('frmEvolution-*','mnuFolder;mnuSelectAllMessages') == 1:
 				print 'All Mails have been selected'
 				log('All items have been selected','info')	
 				return 1
@@ -220,7 +213,7 @@ def mark_all_read(fldrname):
 	try:
 		log('Mark all as read','teststart')
 		select_all(fldrname)
-		if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuMarkMessagesasRead') == 1:
+		if selectmenuitem('frmEvolution-*','mnuFolder;mnuMarkMessagesasRead') == 1:
 			print 'All messages has been marked read'
 			log('All items have been selected','info')	
 		else:
@@ -235,19 +228,19 @@ def mark_all_read(fldrname):
 
 	
 def rename (old_name,new_name):
-
+	log('Rename a folder','teststart')
+	windowname = 'dlgRenameFolder'
 	try:
-		log('Rename a folder','teststart')
-		windowname = 'dlgRenameFolder'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail','ttblMailFolderTree',old_name) == 1:
+		if selectrowpartialmatch ('frmEvolution-*','ttblMailFolderTree',old_name) == 1:
+			waittillguiexist ('frmEvolution-'+old_name+'*')
 			log('From folder selected','info')
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuRename')
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuRename')
 
-			time.sleep(3)
-			waittillguiexist(windowname)
+			if waittillguiexist(windowname) == 0:
+				log ('Rename Folder Dialog did not arise','cause')
+				raise LdtpExecutionError (0)
+				
 			settextvalue(windowname,'txt0',new_name)
-			undoremap('evolution','frmEvolution-Mail')
 			click(windowname,'btnOK')
 			time.sleep(3)
 			if guiexist('dlgEvolutionError'):
@@ -257,20 +250,16 @@ def rename (old_name,new_name):
 					click(windowname,'btnCancel')
 					print 'Folder Name already exist'
 					log('Folder Already exists','error')
-					log('Rename a folder','testend')
-					return 0
 				else:
 					log ('Evolution is Offline','cause')
-					log('Rename a folder','testend')
-					return 0
+				raise LdtpExecutionError (0)
 			else:
 				print 'Rename Sucessfull'
 				log('Rename sucessfull','info')	
 		else:
 			print 'Unable to find the folder'
 			log('Unable to find the folder','cause')
-			log('Rename a folder','testend')
-			return 0
+			raise LdtpExecutionError (0)
 	except :
 		print 'Unable to rename'
 		log('Cannot rename the folder','error')
@@ -282,41 +271,33 @@ def delete_nonsys_folder (fldr):
 
 	try:
 		log('delete a non system folder','teststart')
-		windowname = 'dlgDelete' 
-		defaultname = '\"Inbox/ashwin\"?'
+		windowname = 'dlgDelete*' 
 		sysfolder = ['Inbox','Drafts','Junk','Outbox','Sent','Trash']
 		if fldr in sysfolder: 
 			log ('A system folder has been selected','error')
 			print 'You cannot delete a system folder'
 		else:
-			remap('evolution','frmEvolution-Mail')
-			selectrow ('frmEvolution-Mail', 'ttblMailFolderTree', fldr)
+			selectrow ('frmEvolution-*', 'ttblMailFolderTree', fldr)
 			time.sleep (2)
 			if guiexist ('dlgEvolutionError') == 1:
 				click ('dlgEvolutionError','btnOK')
 				log('delete a non system folder','testend')
-				return 0
-			selectmenuitem('frmEvolution-Mail','mnuFolder;mnuDelete')
-			setcontext ('Delete \"Inbox/ashwin\"?','Delete \"' + fldr + '\"?')
+				raise LdtpExecutionError (0)
+			selectmenuitem('frmEvolution-*','mnuFolder;mnuDelete')
 			time.sleep(3)
-			if waittillguiexist (windowname + defaultname) == 1:
-				click(windowname + defaultname, 'btnDelete')
+			if waittillguiexist (windowname) == 1:
+				click(windowname, 'btnDelete')
 				time.sleep(3)
 				if guiexist('dlgEvolutionError') ==1:
 					click('dlgEvolutionError','btnOK')
 					log('The folder has subfolders or evolution is offline','cause')
-					log('delete a non system folder','testend')
-					return 0
+					raise LdtpExecutionError (0)
 				else:				
 					print 'the folder has been deleted'
 					log('the folder has been deleted','info')	
 			else:
 				log('unable to find the delete window','error')
-				log('delete a non system folder','testend')
 				raise LdtpExecutionError (0)
-			undoremap('evolution','frmEvolution-Mail')
-			log('delete a non system folder','testend')
-			return 1
 	except :
 		print 'Cannot delete the folder'
 		log('Cannot delete the folder','error')
@@ -352,11 +333,12 @@ def expunge():
 		log('Expunge mails','teststart')
 		# Assuming that only the mails in the trash can be expunged.
 		fldr = 'Trash'
-		remap('evolution','frmEvolution-Mail')
-		if selectrowpartialmatch ('frmEvolution-Mail', 'ttblMailFolderTree', fldr):
+		#remap('evolution','frmEvolution-*')
+		if selectrowpartialmatch ('frmEvolution-*', 'ttblMailFolderTree', fldr):
+			waittillguiexist ('frmEvolution-'+fldr+'*')
 			log('fldr has been selected','info')
 			time.sleep(2)
-			if selectmenuitem('frmEvolution-Mail','mnuFolder;mnuExpunge') == 1:
+			if selectmenuitem('frmEvolution-*','mnuFolder;mnuExpunge') == 1:
 				log('Expunge successfull','info')
 				print 'Mails have been permanently removed'
 			else:
@@ -367,7 +349,7 @@ def expunge():
 			print fldr+ 'not found'
 			log('Unable to find trash','error')
 		time.sleep (2)
-		if getrowcount ('frmEvolution-Mail','mnuFolder;mnuExpunge') == 0:
+		if getrowcount ('frmEvolution-*','mnuFolder;mnuExpunge') == 0:
 			log ('Expunge Verified','info')
 		else:
 			log ('Expunge Failed during verification','cause')
