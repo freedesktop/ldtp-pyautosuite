@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- XML Logging -->
+<ldtp>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group1">
+<script name="text.py">
+<datafilename>textvalue.xml</datafilename>
+<error>Unable to update context: *gedit in appmap</error>
+<test name="settextvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="gettextvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="verifysettext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<cause>Verify set text value failed</cause>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<cause>Verify set text value failed</cause>
+<pass>1</pass>
+</test>
+<test name="stateenabled">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<info>Successfully completed</info>
+<info>State Enabled</info>
+<pass>1</pass>
+</test>
+<test name="appendtext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="getcharactercount">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="getcursorposition">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="inserttext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="cuttext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="pastetext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="copytext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="pastetext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="deletetext">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="cursorposition">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="verifypartialmatch">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<cause>Verify partial match failed</cause>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<cause>Verify partial match failed</cause>
+<pass>1</pass>
+</test>
+<test name="selecttextbyname">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group2">
+<debug>Data file maynot be present</debug>
+<script name="menu.py">
+<warning>data xml tag missing</warning>
+<test name="listsubmenus">
+<info>New</info>
+<info>Open...</info>
+<info>Open Location...</info>
+<info>Save</info>
+<info>Save As...</info>
+<info>Revert</info>
+<info>Page Setup...</info>
+<info>Print Preview</info>
+<info>Print...</info>
+<info>1.  bst-1.cpp</info>
+<info>2.  kripa</info>
+<info>3.  INSTALL</info>
+<info>4.  README</info>
+<info>5.  sources-list.txt</info>
+<info>Close</info>
+<info>Quit</info>
+<info>Empty</info>
+<info>Toolbar</info>
+<info>Statusbar</info>
+<info>Side Pane</info>
+<info>Bottom Pane</info>
+<info>Highlight Mode</info>
+<info>Empty</info>
+<pass>1</pass>
+</test>
+<test name="doesmenuitemexist">
+<debug>Object definition mnuTESTVALUE not found in appmap</debug>
+<debug>Object definition mnuTESTVALUE not found in appmap</debug>
+<error>ldtp-gui.c - 1077 - Unable to find object name: mnuTESTVALUE in appmap</error>
+<cause>Unable to get gui handle mnuTESTVALUE menu.c 252</cause>
+<cause>Unable to get gui handle menu.c 204</cause>
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group3">
+<debug>Data file maynot be present</debug>
+<script name="pushbutton.py">
+<warning>data xml tag missing</warning>
+<test name="click-on-push-button">
+<debug>Object definition *DocumentStatistics not found in appmap</debug>
+<error>Unable to update context: *DocumentStatistics in appmap</error>
+<debug>Object definition *DocumentStatistics not found in appmap</debug>
+<error>Unable to update context: *DocumentStatistics in appmap</error>
+<debug>Object definition *DocumentStatistics not found in appmap</debug>
+<debug>Object definition btn123 not found in appmap</debug>
+<debug>Object definition btn123 not found in appmap</debug>
+<error>ldtp-gui.c - 1077 - Unable to find object name: btn123 in appmap</error>
+<pass>1</pass>
+</test>
+<test name="enterstring-on-push-button">
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group4">
+<debug>Data file maynot be present</debug>
+<script name="checkbox.py">
+<warning>data xml tag missing</warning>
+<error>XML &quot;&quot; file not found</error>
+<test name="check">
+<debug>Object definition *Pref* not found in appmap</debug>
+<error>Unable to update context: *Pref* in appmap</error>
+<debug>Object definition *Pref* not found in appmap</debug>
+<error>Unable to update context: *Pref* in appmap</error>
+<debug>Object definition *Pref* not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="uncheck">
+<pass>1</pass>
+</test>
+<test name="click-on-checkbox">
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group5">
+<debug>Data file maynot be present</debug>
+<script name="checkmenuitem.py">
+<warning>data xml tag missing</warning>
+<test name="menucheck">
+<warning>Check Menu Item is already checked</warning>
+<pass>1</pass>
+</test>
+<test name="menuuncheck">
+<pass>1</pass>
+</test>
+<test name="selectmenuitem-on-checkmenu">
+<pass>0</pass>
+</test>
+<error>stopping this group execution</error>
+<cause>0</cause>
+</script>
+<groupstatus>0 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group6">
+<debug>Data file maynot be present</debug>
+<script name="spinbutton.py">
+<warning>data xml tag missing</warning>
+<error>XML &quot;&quot; file not found</error>
+<test name="getvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Object definition sbtnSOMETHINGNOTPRESENT not found in appmap</debug>
+<debug>Object definition sbtnSOMETHINGNOTPRESENT not found in appmap</debug>
+<error>ldtp-gui.c - 1077 - Unable to find object name: sbtnSOMETHINGNOTPRESENT in appmap</error>
+<pass>1</pass>
+</test>
+<test name="setvalue">
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group7">
+<debug>Data file maynot be present</debug>
+<script name="radiomenuitem.py">
+<warning>data xml tag missing</warning>
+<debug>Object definition *Evolution-* not found in appmap</debug>
+<error>Unable to update context: *Evolution-* in appmap</error>
+<debug>Object definition *Evolution not found in appmap</debug>
+<error>Unable to update context: *Evolution in appmap</error>
+<debug>Object definition *Evolution-* not found in appmap</debug>
+<error>Unable to update context: *Evolution-* in appmap</error>
+<debug>Object definition *Evolution-* not found in appmap</debug>
+<debug>Object definition *Evolution-Inbox* not found in appmap</debug>
+<test name="menucheck-on-radiomenuitem">
+<cause>Radio menu item already checked</cause>
+<pass>1</pass>
+</test>
+<test name="selectmenuitem-on-radiomenuitem">
+<cause>Radio menu item already checked</cause>
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group8">
+<debug>Data file maynot be present</debug>
+<script name="table.py">
+<warning>data xml tag missing</warning>
+<debug>Object definition *Evolution not found in appmap</debug>
+<error>Unable to update context: *Evolution in appmap</error>
+<error>XML &quot;&quot; file not found</error>
+<test name="getrowcount">
+<debug>Object definition frmEvolution-* not found in appmap</debug>
+<debug>Object definition frmEvolution-* not found in appmap</debug>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<error>Unable to update context: *EvolutionPreferences in appmap</error>
+<debug>Object definition *EvolutionPreferences not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="getcellvalue">
+<pass>1</pass>
+</test>
+<test name="selectrowindex">
+<pass>1</pass>
+</test>
+<test name="selectrow">
+<pass>1</pass>
+</test>
+<test name="selectlastrow">
+<pass>1</pass>
+</test>
+<test name="checkrow">
+<pass>1</pass>
+</test>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group9">
+<debug>Data file maynot be present</debug>
+<script name="combobox.py">
+<warning>data xml tag missing</warning>
+<error>XML &quot;&quot; file not found</error>
+<test name="comboselect">
+<debug>Property label not found in appmap</debug>
+<debug>Property label_by not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="capturetofile">
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<pass>1</pass>
+</test>
+<test name="selectindex">
+<debug>Object definition *Find not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<debug>Property label not found in appmap</debug>
+<cause>Verify set text value failed</cause>
+<cause>Verify Combo box SetTextValue action failed</cause>
+<cause>verify Combo box select action failed</cause>
+<cause>Option not selected</cause>
+<pass>0</pass>
+</test>
+<error>stopping this group execution</error>
+<cause>0</cause>
+</script>
+<groupstatus>0 test scripts passed of 1</groupstatus>
+</group>
+<warning>testcaseid entry not present - skipping</warning>
+<warning>comment entry not present - skipping</warning>
+<group name="Executing-group10">
+<debug>Data file maynot be present</debug>
+<script name="closeall.py">
+<warning>data xml tag missing</warning>
+<debug>Object definition *Question not found in appmap</debug>
+</script>
+<groupstatus>1 test scripts passed of 1</groupstatus>
+</group>
+</ldtp>

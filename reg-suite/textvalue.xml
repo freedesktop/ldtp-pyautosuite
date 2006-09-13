@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<data>
+  <text>Test Data for text manipulations in Gedit</text>
+  <inserttext>Inserted TEXT</inserttext>
+  <insertpos>0</insertpos>
+  <cutstart>0</cutstart>
+  <cutstop>5</cutstop>
+  <deletestart>3</deletestart>
+  <deletestop>5</deletestop>
+</data>

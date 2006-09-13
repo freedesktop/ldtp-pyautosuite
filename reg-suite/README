@@ -1,0 +1,15 @@
+			 LDTP Regression Suite
+			 ---------------------
+
+Requirements: LDTP (>=0.5.0), gedit (=2.14.x), evolution (=2.6.x)
+
+This Regression Suite tests the following functionalities of LDTP:
+     Text Box (text.py)
+     Menu Bar (menu.py)
+     Push Button (pushbutton.py)
+     Check Box (checkbox.py)
+     Check Menu Item (checkmenuitem.py)
+     Radio Menu Item (radiomenuitem.py)
+     Spin Button (spinbutton.py)
+     Table and Tree Table (table.py)
+     Combobox (combobox.py)     
