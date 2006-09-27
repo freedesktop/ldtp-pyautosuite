@@ -23,52 +23,56 @@
 
 from ldtp import *
 from ldtputils import *
+
+import os
+
 try:
-    obj = LdtpDataFileParser(datafilename)
-    fname = obj.gettagvalue('newfile')[0]
+    obj = LdtpDataFileParser (datafilename)
+    fname = obj.gettagvalue ('newfile')[0]
     new_text = 'LDTP Testing'
-    log('Gedit-create-file','teststart')
-    launchapp('gedit',1)
-    waittillguiexist('*gedit')
-    selectmenuitem('*gedit','mnuFile;mnuNew')
-    if selecttabindex('*gedit','ptl1',getrowcount('*gedit','tbl*') - 1) == 1:
-            log('New,unsaved document exists','info')
+    log ('Gedit-create-file', 'teststart')
+    launchapp ('gedit',  1)
+    waittillguiexist ('*gedit')
+    selectmenuitem ('*gedit', 'mnuFile;mnuNew')
+    default_dir = os.getcwd ()
+    if selecttabindex ('*gedit', 'ptl1', getrowcount ('*gedit', 'tbl*') - 1) == 1:
+            log ('New, unsaved document exists', 'info')
             #insert some txt into the now opened tab
-            settextvalue('*gedit',
-            'txt' + str(getrowcount('*gedit','tbl0')-1),
+            settextvalue ('*gedit',
+            'txt' + str (getrowcount ('*gedit', 'tbl0')-1), 
             new_text)
-            log('Inserted some text','info')
-            selectmenuitem('*gedit','mnuFile;mnuSaveAs')
-            if waittillguiexist('dlgSaveAs...') == 0:
-                log('Save as dialog does not appear','error')
-                raise LdtpExecutionError(0);
+            log ('Inserted some text', 'info')
+            selectmenuitem ('*gedit', 'mnuFile;mnuSaveAs')
+            if waittillguiexist ('dlgSaveAs...') == 0:
+                log ('Save as dialog does not appear', 'error')
+                raise LdtpExecutionError (0);
             else:
-                settextvalue('dlgSaveAs...','txtName',fname)
-                click('dlgSaveAs...','btnSave')
-		time.sleep(2)
-		if guiexist('dlgQuestion') == 1:
-			log('File already exists.. Replacing','warning')
-			log('Change file name in gedit-data.xml to prevent this','info')
-			click('dlgQuestion','btnReplace')
-			waittillguinotexist('dlgQuestion')
-                time.sleep(5)
-    if guiexist('dlgSaveAs...') == 0:
-        log('File Saved','info')
+                settextvalue ('dlgSaveAs...', 'txtName', default_dir + '/' + fname)
+                click ('dlgSaveAs...', 'btnSave')
+		time.sleep (2)
+		if guiexist ('dlgQuestion') == 1:
+			log ('File already exists.. Replacing', 'warning')
+			log ('Change file name in gedit-data.xml to prevent this', 'info')
+			click ('dlgQuestion', 'btnReplace')
+			waittillguinotexist ('dlgQuestion')
+                time.sleep (5)
+    if guiexist ('dlgSaveAs...') == 0:
+        log ('File Saved', 'info')
     else:
-        raise LdtpExecutionError(0)
-    selectmenuitem('*gedit','mnuDocuments;mnuCloseAll')
-    log('Checking if file was created','info')
-    f = open('ldt','r')
-    a = f.read()
-    if a.find(new_text) >= 0:
-         log('File was created, containing entered text','info')
+        raise LdtpExecutionError (0)
+    selectmenuitem ('*gedit', 'mnuDocuments;mnuCloseAll')
+    log ('Checking if file was created', 'info')
+    f = open (default_dir + '/' + fname,  'r')
+    a = f.read ()
+    print 'Junk ', a, a.find (new_text)
+    if a.find (new_text) >= 0:
+        log ('File was created, containing entered text', 'info')
     else:
-         log('File was not created or has invalid data','error')
-         raise LdtpExecutionError(0)
-except:
-    log('Gedit-create-file failed','error')
-    raise LdtpExecutionError(0)
-selectmenuitem('*gedit','mnuFile;mnuQuit')
-time.sleep(5)
-log('Gedit-create-file','testend')
+        log ('File was not created or has invalid data', 'error')
+        raise LdtpExecutionError (0)
+    selectmenuitem ('*gedit', 'mnuFile;mnuQuit')
+except LdtpExecutionError, msg:
+    log ('Gedit-create-file failed', 'error')
+    raise LdtpExecutionError (str (msg))
+log ('Gedit-create-file', 'testend')
 
