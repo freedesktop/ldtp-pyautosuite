@@ -47,7 +47,7 @@ try:
     open_pref()
     if guiexist (pref) != 1:
         log ('Gedit Preferences Window not open','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     tab = getvalue (pref,'sbtnTabwidth')
     flag = True
     try:
@@ -56,10 +56,10 @@ try:
         flag = False
     if flag:
         log ('get value works for non present objects','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('getvalue')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('getvalue')
 
 
@@ -70,15 +70,15 @@ try:
     if int(getvalue (pref,'sbtnTabwidth')) != tab_width: #and \
 #           verifysetvalue (pref,'sbtnTabwidth',tab_width) == 1:
         log ('Spin Button value not set','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     setvalue (pref,'sbtnTabwidth',tab)
     if getvalue (pref,'sbtnTabwidth') != tab:# and \:
 #           verifysetvalue (pref,'sbtnTabwidth',tab) == 1:
         log ('Spin Button value not set to initial value','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('setvalue')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('setvalue')
 
 click (pref, 'btnClose')

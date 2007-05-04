@@ -35,7 +35,7 @@ def check_open (app_name='gedit'):
         launchapp (app_name,1)
         waittillguiexist ('*gedit')
     if guiexist ('*gedit') !=1:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     return
 
 
@@ -47,14 +47,14 @@ def close_gedit ():
 
 
 def open_evo():
-    if guiexist ('*Evolution-*') != 1:
+    if guiexist ('*Evolution*') != 1:
         launchapp ('evolution',1)
-        time.sleep (2)
+        #time.sleep (2)
         if guiexist ('*Evolution') == 1:
-            click ('*Evolution','btnNo')
-        waittillguiexist ('*Evolution-*')
-    if guiexist ('*Evolution-*') !=1:
-        raise LdtpExecutionError (0)
+            click ('*Evolution', 'btnNo')
+        waittillguiexist ('*Evolution*')
+    if guiexist ('*Evolution*') != 1:
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     return
 
 
@@ -69,7 +69,7 @@ def open_pref ():
     waittillguiexist ('*Pref*')
     if guiexist ('*Pref*') == 0:
         log ('Preferences Window could not be opened','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     return
 
 

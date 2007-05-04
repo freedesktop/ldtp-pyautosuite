@@ -48,20 +48,20 @@ try:
     open_pref()
     if guiexist (pref) != 1:
         log ('Gedit Preferences Window not open','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if check (pref,chkbox) != 1:
         log ('Check failed','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
     if verifycheck (pref,chkbox) != 1:
         log ('Checkbox not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifyuncheck (pref,chkbox) != 0:
         log ('Checkbox not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('check')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('check')
 
 
@@ -69,17 +69,17 @@ log ('uncheck','teststart')
 try:
     if uncheck (pref,chkbox) != 1:
         log ('UnCheck failed','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
     if verifyuncheck (pref,chkbox) != 1:
         log ('Checkbox not unchecked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifycheck (pref,chkbox) != 0:
         log ('Checkbox not unchecked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('uncheck')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('uncheck')
 
 
@@ -87,18 +87,18 @@ log ('click on checkbox','teststart')
 try:
     pres = verifycheck (pref,chkbox)
     click (pref,chkbox)
-    time.sleep (2)
+    #time.sleep (2)
     if verifycheck (pref,chkbox) == pres:
         log ('Click did not function properly','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     click (pref,chkbox)
-    time.sleep (2)
+    #time.sleep (2)
     if verifycheck (pref,chkbox) != pres:
         log ('Click did not function properly','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     click (pref,'btnClose')
     waittillguinotexist (pref)
 except:
     testfail ('click on checkbox')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('click on checkbox')

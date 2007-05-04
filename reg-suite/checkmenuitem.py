@@ -39,17 +39,17 @@ log ('menucheck','teststart')
 try:
     if menucheck ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
     if verifymenucheck ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('verifymenucheck - Check Menu item not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifymenuuncheck ('*gedit','mnuView;mnuStatusbar') != 0:
         log ('verifymenuuncheck - Check Menu item not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('menucheck')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('menucheck')
 
 
@@ -58,17 +58,17 @@ log ('menuuncheck','teststart')
 try:
     if menuuncheck ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
     if verifymenuuncheck ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('verifymenuuncheck - Check Menu item not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifymenucheck ('*gedit','mnuView;mnuStatusbar') != 0:
         log ('verifymenucheck - Check Menu item not checked','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('menuuncheck')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('menuuncheck')
 
 
@@ -77,22 +77,20 @@ try:
     curstate = verifymenucheck ('*gedit','mnuView;mnuStatusbar')
     if selectmenuitem ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
-    if verifymenucheck ('*gedit','mnuView;mnuStatusbar') == curstart:
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
+    if verifymenucheck ('*gedit','mnuView;mnuStatusbar') == curstate:
         log ('verifymenucheck - Check Menu item not inverted','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     curstate = verifymenucheck ('*gedit','mnuView;mnuStatusbar')
     if selectmenuitem ('*gedit','mnuView;mnuStatusbar') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (2)
-    if verifymenucheck ('*gedit','mnuView;mnuStatusbar') == curstart:
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (2)
+    if verifymenucheck ('*gedit','mnuView;mnuStatusbar') == curstate:
         log ('verifymenucheck - Check Menu item not inverted 2nd time','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('selectmenuitem on checkmenu')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('selectmenuitem on checkmenu')
-
-

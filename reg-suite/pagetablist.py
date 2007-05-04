@@ -50,10 +50,10 @@ try:
     count = gettabcount (pref,'ptl0')
     if count != tab_count:
         log ('number of tabs do not tally','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('tab list count')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('tab list count')
 
 
@@ -63,27 +63,27 @@ try:
     obj = [ x for x in getobjectlist(pref) if x.startswith ('ptab')]
     if selecttab (pref,'ptl0','View') == 0:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if selecttab (pref,'ptl0','Editor') == 0:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if selecttab (pref,'ptl0','Font & Colors') == 0:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if selecttab (pref,'ptl0','Syntax Highlighting') == 0:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if selecttab (pref,'ptl0','Plugins') == 0:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 
 #     for tab in obj:
 #         if selecttab (pref,'ptl0',tab[4:]) == 0:
 #             log ('Unable to select tab','cause')
-#             raise LdtpExecutionError (0)
+#             raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('selecttab')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('selecttab')
 
 
@@ -92,10 +92,10 @@ try:
     for ind in range (tab_count):
         if selecttabindex (pref,'ptl0',ind) == 0:
             log ('Unable to select tab','cause')
-            raise LdtpExecutionError (0)
+            raise LdtpExecutionError (str (traceback.format_exc ()))
     click (pref,'btnClose')
     waittillguinotexist (pref)
 except:
     testfail ('selecttabindex')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('selecttabindex')

@@ -47,10 +47,10 @@ try:
         flag = False
     if flag:
         log ('Also clicking unavailable buttons','cause')
-        raise LdtpExecutionError (0)    
+        raise LdtpExecutionError (str (traceback.format_exc ()))    
 except:
     testfail ('click on push button')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('click on push button')
 
 
@@ -60,8 +60,8 @@ try:
     waittillguinotexist ('*DocumentStatistics')
     if guiexist ('*DocumentStatistics') == 1:
         log ('Dialog did not close','cause')
-        raise LdtpExecutionErro (0)
+        raise LdtpExecutionErro (str (traceback.format_exc ()))
 except:
     testfail ('enterstring on push button')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('enterstring on push button')

@@ -1,0 +1,8 @@
+2007-05-04  Nagappan A  <anagappan@novell.com>
+
+	* checkbox.py, checkmenuitem.py, combobox.py, menu.py:
+	pagetablist.py, pushbutton.py, radiomenuitem.py, reg-suite.xml:
+	regression.py, spinbutton.py, table.py, text.py: Updated to work
+	with latest gedit and LDTP.
+
+	* regression.pyc: Removed.

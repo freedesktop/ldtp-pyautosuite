@@ -69,13 +69,13 @@ except:
 log ('settextvalue','teststart')
 try:
     if settextvalue ('*gedit','txt0',text) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 
     if verifysettext ('*gedit','txt0',text) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('settextvalue')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('settextvalue')
 
 
@@ -83,10 +83,10 @@ log ('gettextvalue','teststart')
 try:
     present_text = gettextvalue ('*gedit','txt0')
     if present_text != text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('gettextvalue')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('gettextvalue')
 
 
@@ -95,20 +95,20 @@ try:
     present_text = gettextvalue ('*gedit','txt0')
     if verifysettext ('*gedit','txt0',present_text) != 1:
         log ('Text present but says not present','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifysettext ('*gedit','txt0',present_text+'123') != 0:
         log ('Text not present but says present','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifysettext ('*gedit','txt0',present_text[:-1]) != 0:
         log ('Text not present but says present','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     # http://bugzilla.gnome.org/show_bug.cgi?id=351227    
 #     if verifysettext ('*gedit','txt0','') != 0 and present_text != '':
 #         log ('Text not present but says present','cause')
-#         raise LdtpExecutionError (0)
+#         raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('verifysettext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass('verifysettext')
     
 
@@ -116,12 +116,12 @@ log ('stateenabled','teststart')
 try:
     if istextstateenabled ('*gedit','txt0') == 0:
         log ('State Disabled','info')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     else:
         log ('State Enabled','info')
 except:
     testfail ('stateenbled')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('stateenbled')
 
 
@@ -129,12 +129,12 @@ log ('appendtext','teststart')
 try:
     present_text = gettextvalue ('*gedit','txt0')
     if appendtext ('*gedit','txt0',text) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != present_text+text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('appendtext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('appendtext')
 
 
@@ -142,20 +142,20 @@ log ('getcharactercount','teststart')
 try:
     present_text = gettextvalue ('*gedit','txt0')
     if getcharcount ('*gedit','txt0') != len(present_text):
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('getcharactercount')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('getcharactercount')
 
 
 log ('getcursorposition','teststart')
 try:
     if getcharcount ('*gedit','txt0') != getcursorposition ('*gedit','txt0'):
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('getcursorposition')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('getcursorposition')
 
 
@@ -167,13 +167,13 @@ else:
 log ('inserttext','teststart')
 try:
     if inserttext ('*gedit', 'txt0', insert_pos, insert_text) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 
     if gettextvalue ('*gedit','txt0') != new_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('inserttext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('inserttext')
     
 
@@ -189,17 +189,17 @@ try:
 
     if cut_stop < cut_start or cut_start > length or cut_stop > length:
         log ('Input not proper','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     new_text = present_text[:cut_start]+present_text[cut_stop:]
     cut_text = present_text[cut_start:cut_stop]
 
     if cuttext ('*gedit','txt0',cut_start, cut_stop) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != new_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('cuttext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('cuttext')
 
 
@@ -209,13 +209,13 @@ try:
     new_text = present_text[:cut_start]+cut_text+present_text[cut_start:]
 
     if pastetext ('*gedit','txt0',cut_start) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != new_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 
 except:
     testfail ('pastetext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('pastetext')
 
 
@@ -224,7 +224,7 @@ try:
     length = getcharcount ('*gedit','txt0')
     if cut_stop < cut_start or cut_start > length:
         log ('Input not proper','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if cut_stop > length:
         cut_stop = length-1
         
@@ -232,12 +232,12 @@ try:
     copy_text = present_text[cut_start:cut_stop]
     
     if copytext ('*gedit','txt0',cut_start, cut_stop) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != present_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('copytext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('copytext')
 
 
@@ -247,13 +247,13 @@ try:
     new_text = present_text[:cut_start]+copy_text+present_text[cut_start:]
 
     if pastetext ('*gedit','txt0',cut_start) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != new_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 
 except:
     testfail ('pastetext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('pastetext')
 
 
@@ -268,24 +268,24 @@ try:
     if delete_stop == []:
         if delete_start+1 <= length:
             log ('Not enough text on screen','cause')
-            raise LdtpExecutionError (0)
+            raise LdtpExecutionError (str (traceback.format_exc ()))
         delete_stop = delete_start + 1
     else:
         delete_stop = int (delete_stop[0])
         
     if delete_stop < delete_start  or delete_start > length or delete_stop > length:
         log ('Input not proper','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
         
     new_text = present_text[:delete_start]+present_text[delete_stop:]
 
     if deletetext ('*gedit','txt0',delete_start, delete_stop) == 0:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if gettextvalue ('*gedit','txt0') != new_text:
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('deletetext')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('deletetext')
 
 
@@ -295,7 +295,7 @@ try:
     setcursorposition ('*gedit','txt0',0)
     if getcursorposition ('*gedit','txt0') != 0:
         log ('Unable to Set Cursor position to 0','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if length == 0:
         val = 0
     else:
@@ -303,15 +303,15 @@ try:
     setcursorposition ('*gedit','txt0',val)
     if getcursorposition ('*gedit','txt0') != val:
         log ('Unable to Set Cursor position to end of sentence','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     val = length/2
     setcursorposition ('*gedit','txt0',val)
     if getcursorposition ('*gedit','txt0') != val:
         log ('Unable to Set Cursor position to middle of sentence','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('cursorposition')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('cursorposition')
 
 
@@ -323,16 +323,16 @@ try:
     if verifypartialmatch ('*gedit','txt0',
                            present_text[middle:random.randint (middle, length-1)]) != 1:
         log ('Does not do correct matching','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifypartialmatch ('*gedit','txt0',text+'123') != 0:
         log ('Does not check for overflow','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if verifypartialmatch ('*gedit','txt0','123'+text) != 0:
         log ('Does not check for overflow','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('cursorposition')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('cursorposition')
 
 
@@ -343,7 +343,7 @@ try:
     setcursorposition ('*gedit','txt0',0)
 except:
     testfail ('selecttextbyname')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('selecttextbyname')
     
 

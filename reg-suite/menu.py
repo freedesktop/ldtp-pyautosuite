@@ -44,7 +44,7 @@ try:
 #     listsubmenus ('*gedit','mnuView;mnuHighlightMode')
 except:
     testfail ('listsubmenus')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('listsubmenus')
 
 
@@ -52,22 +52,22 @@ log ('doesmenuitemexist','teststart')
 try:
     if doesmenuitemexist ('*gedit','mnuFile;mnuNew') != 1:
         log ('File-->New is reported as non existent','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if doesmenuitemexist ('*gedit','mnuFile;mnuTESTVALUE') != 0:
         log ('non existent item reported as existent','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if doesmenuitemexist ('*gedit','mnuFile') != 0:
         log ('File is reported as end node','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     ## Long Heirarchy
     # http://bugzilla.gnome.org/show_bug.cgi?id=351802
 #     if doesmenuitemexist ('*gedit','mnuView;mnuHighlightMode;mnuNormal') != 1 or \
 #            doesmenuitemexist ('*gedit','mnuView;mnuHighlightMode;mnuSources;mnuC') != 1:
 #         log ('Long Heirarchy is reported as non existent','cause')
-#         raise LdtpExecutionError (0)
+#         raise LdtpExecutionError (str (traceback.format_exc ()))
 except:
     testfail ('doesmenuitemexist')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('doesmenuitemexist')
 
 
@@ -86,9 +86,9 @@ testpass ('doesmenuitemexist')
 # #                 break
 # #         if not flag:
 # #             log ('New Tab not opened','cause')
-# #             raise LdtpExecutionError (0)        
+# #             raise LdtpExecutionError (str (traceback.format_exc ()))        
 #     else:
-#         raise LdtpExecutionError(0)
+#         raise LdtpExecutionError(str (traceback.format_exc ()))
 #     if doesmenuitemexist ('*gedit','mnuFile;mnuClose') == 1:
 #         selectmenuitem ('*gedit','mnuFile;mnuClose')
 #         time.sleep (5)
@@ -100,10 +100,10 @@ testpass ('doesmenuitemexist')
 # #                 flag = False
 # #                 break
 # #         if flag:
-# #             raise LdtpExecutionError (0)        
+# #             raise LdtpExecutionError (str (traceback.format_exc ()))        
 #     else:
-#         raise LdtpExecutionError(0)
+#         raise LdtpExecutionError(str (traceback.format_exc ()))
 # except:
 #     testfail ('selectmenuitem')
-#     raise LdtpExecutionError (0)
+#     raise LdtpExecutionError (str (traceback.format_exc ()))
 # testpass ('selectmenuitem')

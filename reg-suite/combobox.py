@@ -53,18 +53,16 @@ log ('comboselect','teststart')
 try:
     if guiexist (pref) == 0:
         open_pref()
-    if selecttab (pref,'ptl0','Syntax Highlighting') == 0:
+    if selecttab (pref,'ptl0','Syntax Highlighting') != 1:
         log ('Unable to select tab','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     if comboselect (pref,'cboHighlightmode',value) != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    if verifyselect (pref,'cboHighlightmode', value) != 1:
-        log ('Option not selected','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    verifyselect (pref,'cboHighlightmode', value)
 except:
     testfail ('comboselect')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('comboselect')
 
 
@@ -73,19 +71,17 @@ try:
     file_name = tempfile.NamedTemporaryFile()
     if capturetofile (pref,'cboHighlightmode',file_name.name) != 1:
         log ('Undefined return Value','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     contents = file_name.file.read().split('\n')[:-1]
     for value in contents:
         comboselect (pref,'cboHighlightmode',value)
-        time.sleep (1)
-        if verifyselect (pref,'cboHighlightmode', value) != 1:
-            log ('Option not selected','cause')
-            raise LdtpExecutionError (0)
+        #time.sleep (1)
+        verifyselect (pref,'cboHighlightmode', value)
     click (pref,'btnClose')
     file_name.close ()
 except:
     testfail ('capturetofile')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('capturetofile')
         
 
@@ -98,37 +94,33 @@ try:
     waittillguiexist ('*Find')
     if capturetofile ('*Find','cboSearchfor',file_name.name) != 1:
         log ('Undefined return Value','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
     contents = file_name.file.read().split('\n')
     for value in contents:
         if selectindex ('*Find', 'cboSearchfor', index) != 1:
             log ('Undefined return value','cause')
-            raise LdtpExecutionError (0)
-        time.sleep (1)
-        if verifyselect ('*Find', 'cboSearchfor', value) != 1:
-            log ('Option not selected','cause')
-            raise LdtpExecutionError (0)
+            raise LdtpExecutionError (str (traceback.format_exc ()))
+        #time.sleep (1)
+        verifyselect ('*Find', 'cboSearchfor', value)
 except:
     testfail ('selectindex')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('selectindex')
         
 
 log ('settextvalue on combobox','teststart')
 try:
-    if guiexist ('*Find') != 0:
+    if guiexist ('*Find') != 1:
         log ('Find window not open','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError ('Find window not open')
     if settextvalue ('*Find','cboSearchfor', text) != 1:
         log ('settextvalue failed','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (0)
-    if verifyselect ('*Find', 'cboSearchfor', text) != 1:
-        log ('Option not selected','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError ('settextvalue failed')
+    #time.sleep (0)
+    verifyselect ('*Find', 'cboSearchfor', text)
 except:
     testfail ('settextvalue on combobox')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('settextvalue on combobox')
 
 
@@ -136,14 +128,14 @@ log ('showlist','teststart')
 try:
     if showlist ('*Find','cboSearchfor') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (1)
+        raise LdtpExecutionError (str (traceback.format_exc ()))
+    #time.sleep (1)
     if verifyshowlist ('*Find','cboSearchfor') != 1:
         log ('List not being shown','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError ('List not being shown')
 except:
     testfail ('showlist')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('showlist')
 
 
@@ -151,13 +143,13 @@ log ('hidelist','teststart')
 try:
     if hidelist ('*Find','cboSearchfor') != 1:
         log ('Undefined return value','cause')
-        raise LdtpExecutionError (0)
-    time.sleep (1)
+        raise LdtpExecutionError ('Undefined return value')
+    #time.sleep (1)
     if verifyhidelist ('*Find','cboSearchfor') != 1:
         log ('List still being shown','cause')
-        raise LdtpExecutionError (0)
+        raise LdtpExecutionError ('List still being shown')
     click ('*Find','btnClose')
 except:
     testfail ('hidelist')
-    raise LdtpExecutionError (0)
+    raise LdtpExecutionError (str (traceback.format_exc ()))
 testpass ('hidelist')
